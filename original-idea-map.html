@@ -1,0 +1,712 @@
+<title>Argon × Atlas Idea Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: blueprint sheet. One 1240px column of stacked sections; the explorer is a tree | 3D-stack split that stacks under 960px.
+   Colour encodes role everywhere: slate = people & inputs, blue = Gemini, green = MongoDB Atlas, amber = verify & human gate. */
+@property --gap { syntax: "<length>"; inherits: true; initial-value: 54px; }
+:root {
+  --bg: #EDF0F5; --surface: #FFFFFF; --surface-2: #E2E7EF; --ink: #121A2B; --ink-2: #4B566C; --line: #B4BED0; --dot: #CBD3E0;
+  --gem: #3149C9; --gem-soft: #E0E6FF;
+  --mdb: #08744A; --mdb-soft: #D5F0E1;
+  --ver: #9C5A00; --ver-soft: #FCEACB;
+  --inp: #556074; --inp-soft: #E1E5EE;
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --f-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0C111D; --surface: #141B2A; --surface-2: #1C2536; --ink: #E7ECF5; --ink-2: #9BA7BD; --line: #36435B; --dot: #1E2738;
+    --gem: #97ABFF; --gem-soft: #1D2753; --mdb: #55D69A; --mdb-soft: #0F3224; --ver: #F2B452; --ver-soft: #38290F; --inp: #AFB9CB; --inp-soft: #242D40;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0C111D; --surface: #141B2A; --surface-2: #1C2536; --ink: #E7ECF5; --ink-2: #9BA7BD; --line: #36435B; --dot: #1E2738;
+  --gem: #97ABFF; --gem-soft: #1D2753; --mdb: #55D69A; --mdb-soft: #0F3224; --ver: #F2B452; --ver-soft: #38290F; --inp: #AFB9CB; --inp-soft: #242D40;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background-color: var(--bg); color: var(--ink);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.2px); background-size: 22px 22px;
+  font-family: var(--f-body); font-size: 15px; line-height: 1.55;
+}
+h1, h2, h3, h4 { font-family: var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+p { margin: 0; }
+code, .mono { font-family: var(--f-mono); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--gem); outline-offset: 2px; }
+
+.wrap {
+  max-width: 1240px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 44px 72px; display: flex; flex-direction: column; gap: 64px;
+}
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+
+/* Hero */
+.hero { display: flex; flex-direction: column; gap: 16px; }
+.hero h1 { font-size: clamp(36px, 6vw, 68px); font-weight: 800; line-height: 1; }
+.hero h1 .x { color: var(--ink-2); font-weight: 500; }
+.lede { max-width: 68ch; font-size: 17px; color: var(--ink-2); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 4px; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-2); }
+.legend i { width: 14px; height: 14px; border-radius: 4px; border: 1.5px solid; display: inline-block; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.facts span { font-family: var(--f-mono); font-size: 12px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink-2); }
+
+/* Role colours */
+.k-inp { --c: var(--inp); --cs: var(--inp-soft); }
+.k-gem { --c: var(--gem); --cs: var(--gem-soft); }
+.k-mdb { --c: var(--mdb); --cs: var(--mdb-soft); }
+.k-ver { --c: var(--ver); --cs: var(--ver-soft); }
+.k-out { --c: var(--ink); --cs: var(--surface-2); }
+.k-path { --c: var(--ink-2); --cs: var(--surface-2); }
+.legend i { border-color: var(--c); background: var(--cs); }
+
+/* Section heads */
+.sec-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+.sec-head h2 { font-size: clamp(26px, 3.4vw, 38px); font-weight: 700; line-height: 1.1; }
+.sec-head p { max-width: 70ch; color: var(--ink-2); }
+
+/* Core loop */
+.core-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.ring-wrap { overflow-x: auto; }
+#ring { width: 100%; max-width: 640px; min-width: 520px; display: block; margin: 0 auto; }
+.ring-track { fill: none; stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 4 6; }
+.ring-chev { fill: none; stroke: var(--ink-2); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+rect.pill { fill: var(--surface); stroke-width: 1.5; stroke: var(--c); }
+.pill-t { font-family: var(--f-display); font-weight: 700; font-size: 15px; fill: var(--ink); }
+.pill-s { font-family: var(--f-mono); font-size: 10.5px; fill: var(--c); }
+.ring-c1 { font-family: var(--f-display); font-weight: 800; font-size: 26px; fill: var(--ink); }
+.ring-c2 { font-size: 13px; fill: var(--ink-2); font-family: var(--f-body); }
+.ring-c3 { font-family: var(--f-mono); font-size: 11.5px; fill: var(--mdb); }
+.stage-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; counter-reset: st; }
+.stage-list li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 4px 12px; counter-increment: st; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.stage-list li::before { content: counter(st); grid-row: span 2; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-mono); font-size: 12px; border: 1.5px solid var(--c); color: var(--c); background: var(--cs); }
+.stage-list h4 { font-size: 15px; font-weight: 700; }
+.stage-list p { font-size: 13.5px; color: var(--ink-2); }
+.stage-list b { color: var(--ink); font-weight: 600; }
+.learn { margin-top: 2px; font-size: 13.5px; color: var(--mdb); font-family: var(--f-mono); }
+
+/* Trees (horizontal, CSS connectors) */
+.tree-scroll { overflow-x: auto; padding: 6px 2px 10px; }
+.t-row { display: flex; align-items: center; width: max-content; }
+.tree ul { list-style: none; margin: 0; padding: 0 0 0 24px; position: relative; display: flex; flex-direction: column; }
+.tree ul::before { content: ""; position: absolute; left: 0; top: 50%; width: 24px; border-top: 1.5px solid var(--line); }
+.tree li { position: relative; display: flex; align-items: center; padding: 3px 0 3px 24px; }
+.tree li::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; border-left: 1.5px solid var(--line); }
+.tree li::after { content: ""; position: absolute; left: 0; top: 50%; width: 24px; border-top: 1.5px solid var(--line); }
+.tree li:first-child::before { top: 50%; }
+.tree li:last-child::before { bottom: 50%; }
+.tree li:only-child::before { display: none; }
+.node { position: relative; z-index: 1; border: 1.5px solid var(--c, var(--line)); border-radius: 9px; background: var(--surface); padding: 7px 11px; font-size: 13px; line-height: 1.4; text-align: left; }
+.node.root { width: 172px; background: var(--ink); color: var(--bg); border-color: var(--ink); padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.node.root strong { font-family: var(--f-display); font-size: 18px; line-height: 1.15; }
+.node.root span { font-size: 12.5px; opacity: .8; }
+.node.root .n-eyebrow { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+.node.branch { width: 132px; background: var(--cs); font-weight: 600; font-family: var(--f-display); font-size: 14px; }
+.node.branch small { display: block; font-family: var(--f-body); font-weight: 400; font-size: 12px; color: var(--ink-2); }
+.node.leaf { width: 330px; display: flex; flex-direction: column; gap: 1px; }
+.node.leaf code { font-size: 12.5px; color: var(--c); font-weight: 500; }
+.node.leaf .lt { font-weight: 600; }
+.node.leaf .ld { color: var(--ink-2); font-size: 12.5px; }
+
+/* Overview idea leaves */
+.idea-leaf { cursor: pointer; width: 340px; transition: transform .15s ease, box-shadow .15s ease; }
+.idea-leaf:hover { transform: translateX(3px); box-shadow: 0 3px 0 var(--line); }
+.idea-leaf[aria-pressed="true"] { border-color: var(--ink); box-shadow: 0 0 0 2px var(--ink); }
+.il-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.il-name { font-family: var(--f-display); font-weight: 700; font-size: 16px; }
+.il-score { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.il-tag { color: var(--ink-2); font-size: 12.5px; }
+.dots { display: inline-flex; gap: 3px; margin-top: 4px; align-items: center; }
+.dots i { width: 9px; height: 9px; border-radius: 2px; border: 1.2px solid var(--mdb); }
+.dots i.on { background: var(--mdb); }
+.dots em { font-style: normal; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-2); margin-left: 5px; }
+
+/* Explorer */
+.picker { display: flex; flex-direction: column; gap: 10px; margin-bottom: 26px; }
+.picker-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.picker-row .eyebrow { width: 100%; }
+.pick { cursor: pointer; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); font-size: 14px; font-weight: 500; }
+.pick:hover { border-color: var(--ink-2); }
+.pick[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.idea-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; align-items: flex-end; padding-bottom: 18px; border-bottom: 1.5px solid var(--line); margin-bottom: 22px; }
+.idea-head h3 { font-size: clamp(30px, 4.4vw, 48px); font-weight: 800; line-height: 1; }
+.idea-head .tag { font-size: 17px; color: var(--ink-2); margin-top: 6px; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge { font-family: var(--f-mono); font-size: 12px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); white-space: nowrap; }
+.badge.strong { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.detail-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); display: flex; flex-direction: column; gap: 16px; }
+.panel { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 16px; min-width: 0; }
+.panel h4 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.panel .hint { font-size: 12.5px; color: var(--ink-2); }
+
+/* 3D stack */
+.stage { height: 430px; perspective: 1300px; display: grid; place-items: center; overflow: hidden; border-radius: 10px; background: var(--bg); cursor: grab; }
+.stage-scale { transform-style: preserve-3d; }
+.iso { position: relative; width: 290px; height: 180px; transform-style: preserve-3d; transform: translateY(70px) rotateX(var(--rx, 58deg)) rotateZ(var(--rz, -36deg)); transition: transform .25s ease-out, --gap .45s ease; }
+.stage:hover .iso, .stage:focus-within .iso { --gap: 74px; }
+.plane { position: absolute; inset: 0; border-radius: 14px; border: 1.5px solid var(--c); background: color-mix(in srgb, var(--cs) 86%, transparent); transform: translateZ(calc(var(--z) * var(--gap))); padding: 12px 12px 10px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 10%, transparent); }
+.pl-label { font-family: var(--f-display); font-weight: 700; font-size: 14px; color: var(--c); }
+.pl-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.pl-chips span { font-family: var(--f-mono); font-size: 10.5px; padding: 2px 7px; border-radius: 5px; background: var(--surface); border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); color: var(--ink); }
+.beam { position: absolute; width: 0; height: calc(3 * var(--gap)); border-left: 1.5px dashed var(--ink-2); transform-origin: top; transform: rotateX(90deg); opacity: .55; }
+.stack-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; margin-top: 12px; }
+.stack-legend span { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-2); }
+.stack-legend i { width: 12px; height: 12px; border-radius: 3px; border: 1.5px solid var(--c); background: var(--cs); }
+
+/* Scores */
+.bars { display: flex; flex-direction: column; gap: 9px; }
+.bar { display: grid; grid-template-columns: 128px minmax(0, 1fr) 34px; gap: 10px; align-items: center; font-size: 13px; }
+.bar .track { height: 8px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }
+.bar .fill { height: 100%; background: var(--ink); border-radius: 4px; }
+.bar .v { font-family: var(--f-mono); font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; }
+.bar small { color: var(--ink-2); font-family: var(--f-mono); font-size: 11px; }
+.total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.total strong { font-family: var(--f-display); font-size: 28px; font-variant-numeric: tabular-nums; }
+
+/* Lower detail */
+.lower { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-top: 28px; }
+.colls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+.coll { border: 1.5px solid var(--mdb); border-radius: 9px; padding: 10px 12px; background: var(--surface); min-width: 0; }
+.coll-h { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.coll-h code { font-weight: 500; color: var(--mdb); font-size: 13.5px; }
+.coll-h span { font-size: 11.5px; color: var(--ink-2); }
+.coll pre { margin: 6px 0 0; font-family: var(--f-mono); font-size: 11.5px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; color: var(--ink); }
+.demo { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.demo li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.demo li:last-child { border-bottom: 0; }
+.demo time { font-family: var(--f-mono); font-size: 12.5px; color: var(--ver); font-weight: 500; padding-top: 1px; font-variant-numeric: tabular-nums; }
+.notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
+.notes p { font-size: 14px; color: var(--ink-2); }
+
+/* Compare */
+.shortlist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 22px; }
+.sl { border: 1.5px solid var(--ink); border-radius: 12px; padding: 14px 16px; background: var(--surface); cursor: pointer; text-align: left; display: flex; flex-direction: column; gap: 4px; }
+.sl:hover { box-shadow: 0 3px 0 var(--ink); }
+.sl .rank { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-2); letter-spacing: .06em; text-transform: uppercase; }
+.sl strong { font-family: var(--f-display); font-size: 22px; }
+.sl span:last-child { color: var(--ink-2); font-size: 13.5px; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 860px; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--surface-2); white-space: nowrap; }
+th { font-family: var(--f-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); font-weight: 500; background: var(--surface); }
+td.c, th.c { text-align: center; }
+td.n { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; }
+tbody tr { cursor: pointer; }
+tbody tr:hover td { background: var(--bg); }
+tbody tr:last-child td { border-bottom: 0; }
+.dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--mdb); }
+.dot.on { background: var(--mdb); }
+.pth { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-2); }
+
+/* Toolkit */
+.kit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+.kit-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.kit-list li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 9px 0; border-bottom: 1px dashed var(--line); }
+.kit-list li:last-child { border-bottom: 0; }
+.kit-list code { font-size: 13px; font-weight: 500; color: var(--c); word-break: break-word; }
+.kit-list p { font-size: 13.5px; color: var(--ink-2); }
+.rules { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-top: 20px; }
+.rules ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.rules code { font-size: 12.5px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+footer { font-size: 13px; color: var(--ink-2); max-width: 75ch; }
+
+@media (max-width: 960px) {
+  .core-grid, .detail-grid, .lower, .kit, .rules { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; }
+  .notes, .shortlist { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .stage { height: 360px; }
+  .stage-scale { transform: scale(.78); }
+  .bar { grid-template-columns: 104px minmax(0, 1fr) 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .iso, .idea-leaf { transition: none; }
+}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Encode London 2026 · Google DeepMind track × MongoDB Atlas track</div>
+    <h1>Argon <span class="x">×</span> Atlas Idea Map</h1>
+    <p class="lede">Ten project ideas that can enter both challenges at once: a Gemini 4 Argon agent with a real pass/fail verification loop, built on MongoDB Atlas as its data layer. Every idea is the same core loop with a different user, input and check. Pick one to see the models, the Atlas features, the data you'll create and a 3-minute demo script.</p>
+    <div class="legend">
+      <span class="k-inp"><i></i>People &amp; inputs</span>
+      <span class="k-gem"><i></i>Gemini models</span>
+      <span class="k-mdb"><i></i>MongoDB Atlas</span>
+      <span class="k-ver"><i></i>Verify &amp; human gate</span>
+      <span class="k-out"><i></i>Output</span>
+    </div>
+    <div class="facts"><span>10 ideas</span><span>2 pathways</span><span>6 Atlas features</span><span>judged on a 3-min live demo</span></div>
+  </header>
+
+  <section id="core">
+    <div class="sec-head">
+      <div class="eyebrow">The shared core</div>
+      <h2>One loop under every idea</h2>
+      <p>Both challenges reward the same skeleton. Atlas holds and finds the data, Argon reasons and acts, a hard check proves the result, and a person approves anything that leaves the system. The creative part is which user, which input and which check you choose.</p>
+    </div>
+    <div class="core-grid">
+      <div class="ring-wrap"><svg id="ring" viewBox="0 0 660 580" role="img" aria-label="Seven-stage loop: capture, store and embed, retrieve, reason and plan, act, verify, human approves, then back to capture"></svg></div>
+      <div>
+        <ol class="stage-list" id="stages"></ol>
+        <p class="learn">↻ Learn: every run's result goes back into Atlas, so the next run starts with memory.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="map">
+    <div class="sec-head">
+      <div class="eyebrow">Idea tree</div>
+      <h2>Ten paths across the two pathways</h2>
+      <p>Green squares show how many of the six MongoDB Atlas features each idea uses (more features, more MongoDB points). The number is a rough weighted score against the DeepMind judging criteria. Click any idea to open it.</p>
+    </div>
+    <div class="tree-scroll tree" id="overview"></div>
+  </section>
+
+  <section id="explore">
+    <div class="sec-head">
+      <div class="eyebrow">Explore an idea</div>
+      <h2>What you'd build, layer by layer</h2>
+      <p>The tree shows every part of the build. The stack beside it shows the same build as layers, with Atlas at the base. Hover or drag on the stack to pull the layers apart.</p>
+    </div>
+    <div class="picker" id="picker"></div>
+    <div class="idea-head">
+      <div><h3 id="i-name"></h3><p class="tag" id="i-tag"></p></div>
+      <div class="badges" id="i-badges"></div>
+    </div>
+    <div class="detail-grid">
+      <div class="panel"><h4>Build tree</h4><div class="tree-scroll tree" id="i-tree"></div></div>
+      <div class="side">
+        <div class="panel">
+          <h4>Architecture stack</h4>
+          <div class="stage" id="stage" tabindex="0" aria-label="3D layer stack of the selected idea"><div class="stage-scale"><div class="iso" id="iso"></div></div></div>
+          <div class="stack-legend">
+            <span class="k-inp"><i></i>Person &amp; inputs (top)</span>
+            <span class="k-ver"><i></i>Verify &amp; human gate</span>
+            <span class="k-gem"><i></i>Gemini models</span>
+            <span class="k-mdb"><i></i>MongoDB Atlas (base)</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h4>Estimated judging score</h4>
+          <div class="bars" id="i-bars"></div>
+          <div class="total"><span class="hint">Weighted total (my estimate)</span><strong id="i-total"></strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="lower">
+      <div class="panel"><h4>Data you'll create in Atlas</h4><div class="colls" id="i-data"></div></div>
+      <div class="panel"><h4>3-minute demo script</h4><ol class="demo" id="i-demo"></ol></div>
+    </div>
+    <div class="notes">
+      <div class="panel"><h4>Why it needs Argon</h4><p id="i-why"></p></div>
+      <div class="panel"><h4>Grows into</h4><p id="i-grow"></p></div>
+      <div class="panel"><h4>Watch out</h4><p id="i-risk"></p></div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <div class="sec-head">
+      <div class="eyebrow">Compare all ten</div>
+      <h2>Shortlist and feature matrix</h2>
+      <p>Sorted by the weighted estimate: live demo 50%, usefulness 25%, originality 15%, pitch clarity 10%. Click a row to open that idea.</p>
+    </div>
+    <div class="shortlist" id="shortlist"></div>
+    <div class="table-scroll"><table id="matrix"></table></div>
+  </section>
+
+  <section id="kit">
+    <div class="sec-head">
+      <div class="eyebrow">Toolkit reference</div>
+      <h2>Models and Atlas features</h2>
+      <p>What each piece is for, using the model IDs from the challenge brief.</p>
+    </div>
+    <div class="kit">
+      <div class="panel k-gem"><h4>Google DeepMind toolkit</h4><ul class="kit-list" id="kit-gem"></ul></div>
+      <div class="panel k-mdb"><h4>MongoDB Atlas features</h4><ul class="kit-list" id="kit-mdb"></ul></div>
+    </div>
+    <div class="rules">
+      <div class="panel k-gem">
+        <h4>Argon API rules to follow</h4>
+        <ul>
+          <li>Use the Interactions API: <code>client.interactions.create</code>. SDK <code>google-genai&gt;=2.3.0</code> or <code>@google/genai@latest</code>.</li>
+          <li>Set <code>thinking_level</code> to <code>"low"</code>, <code>"medium"</code> (default) or <code>"high"</code>. Don't use <code>thinking_budget</code>.</li>
+          <li>Remove <code>temperature</code>, <code>top_p</code>, <code>top_k</code> and explicit <code>cached_content</code>. Caching is implicit.</li>
+          <li>Set <code>background=True</code> to generate past 65,536 tokens, up to 1M.</li>
+          <li>Pathway 1 agents: <code>thinking_level</code> medium or high, long decode in background, or run inside <code>antigravity-preview-09-2026</code>.</li>
+        </ul>
+      </div>
+      <div class="panel k-ver">
+        <h4>What sinks a project</h4>
+        <ul>
+          <li>A chat wrapper or Q&amp;A bot over a single PDF.</li>
+          <li>A static page with no autonomous reasoning, verification loop or multimodal workflow.</li>
+          <li>Medical, mental-health or financial advice without a human in the loop.</li>
+          <li>Code written before kickoff. Starter templates are fine; the demo must show hackathon code.</li>
+          <li>A demo that needs slides or runs past 3 minutes.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>Scores are my rough estimates to help you choose, not predictions. Every "who" is a role: before the demo, replace it with a real person you can name and have spoken to.</footer>
+</div>
+
+<script>
+const FEAT = [["search","Atlas Search","Atlas Search"],["vector","Vector Search","Vector"],["hybrid","Hybrid Search","Hybrid"],["auto","Automated Embedding","Auto-embed"],["stream","Stream Processing","Stream"],["voyage","Voyage AI","Voyage"]];
+const W = [0.5, 0.25, 0.15, 0.1];
+const CRIT = [["Live demo","50%"],["Usefulness","25%"],["Needs Argon","15%"],["Pitch clarity","10%"]];
+
+const IDEAS = [
+{ id:"patchpilot", name:"PatchPilot", path:1, effort:"Medium", tag:"Reproduce the CVE, patch it, prove it, then ask.",
+  who:"The volunteer maintainer of a mid-sized open-source npm library who gets security alerts faster than they can triage them.",
+  whoS:"OSS maintainer", pain:"Advisories pile up. Bumping one dependency breaks three tests, and nobody checks whether the vulnerable code path is even reachable.",
+  inputs:["GitHub repo and lockfile","Live advisory feed (OSV / GitHub Security Advisories)","Existing test suite"], inS:["repo","advisory feed","test suite"],
+  models:[["gemini-4-argon","Reads the whole repo, the advisory and upstream changelogs in one context; plans the patch. thinking_level: high"],["antigravity-preview-09-2026","Linux sandbox: installs deps, writes an exploit test, runs the suite"],["gemini-3.8-flash","Parallel subagents, one per vulnerable package"],["gemini-3.8-flash-tts","Narrates the diff walkthrough (optional)"]],
+  mongo:{stream:"Advisory feed matched against every tracked lockfile; emits a scan job the moment a CVE lands",search:"Exact package@version and GHSA ID lookups",vector:"Finds call sites that resemble the vulnerable function",hybrid:"$rankFusion of exact and semantic hits ranks which files Argon reads first",auto:"Advisories embedded on insert, with no pipeline code",voyage:"voyage-code-3 for code; rerank model on candidate call sites"},
+  extra:[],
+  data:[["advisories","{ ghsa_id, package, vulnerable_range,\n  summary, embedding }","auto-embedded"],["repos","{ name, deps: [{ pkg, version }],\n  last_scan }",""],["fix_attempts","{ repo, ghsa_id, exploit_test,\n  before: 'red', after: 'green',\n  test_log, diff }","every attempt kept"],["fix_memory","{ pattern, diff, embedding }","reused next time"]],
+  verify:["Exploit test fails before the patch (red)","Same test passes after the patch (green)","Full test suite still green","npm audit / pip-audit clean"], vS:["exploit test red→green","suite green","audit clean","draft PR only"],
+  gate:["Opens a draft PR only","Maintainer approves the merge; the agent never pushes to main"],
+  output:["Draft PR","Visual diff walkthrough page","Audit trail in Atlas"],
+  demo:[["0:00","Name the maintainer. Show their repo pinned to a real vulnerable version."],["0:20","Publish an advisory to the feed. The stream processor matches it to the repo in seconds."],["0:45","The sandbox writes an exploit test. It fails: red."],["1:30","Argon patches across files. The suite reruns: green."],["2:15","Walk the visual diff: what changed and why."],["2:40","The maintainer approves. A draft PR appears on GitHub."]],
+  why:"Holding the full repo, the lockfile tree and upstream changelogs at once lets Argon reason about breaking changes instead of just bumping a version. The managed sandbox gives a real red/green signal.",
+  grow:"A GitHub App for open-source maintainers: free for public repos, paid for private ones.",
+  risk:"Dependency installs can be slow. Pick a repo with a fast test suite and warm the sandbox before the demo. The brief lists this idea as an example, so originality scores lower.",
+  s:[9,8,6,8] },
+
+{ id:"legacylift", name:"Legacy Lift", path:1, effort:"High", tag:"Old app plus a screen recording in, tested modern app out.",
+  who:"The one IT volunteer at a local charity keeping a 2011 PHP volunteer-rota app alive.",
+  whoS:"Charity IT volunteer", pain:"Nobody dares touch the old code, and agencies quote tens of thousands of pounds for a rewrite.",
+  inputs:["Zipped legacy codebase","2-minute screen recording of someone using it","MySQL dump"], inS:["PHP codebase","screen recording","MySQL dump"],
+  models:[["gemini-4-argon","Watches the recording and reads the code together; writes a behaviour spec, then the new app. background=True for long output"],["antigravity-preview-09-2026","Builds the new app and runs Playwright in a sandbox"],["gemini-3.8-flash","One subagent per screen or module"],["gemini-3.5-flash-lite","Tags recording frames by screen at high volume"]],
+  mongo:{auto:"Behaviour specs and code chunks embedded on write",vector:"Maps each recorded user action to the legacy functions that handle it",search:"Symbol and route lookups across the old codebase",hybrid:"Symbol matches fused with semantic matches to trace behaviour to code",voyage:"voyage-code-3 for PHP and JS chunks"},
+  extra:["Atlas is also the new app's database (MySQL rows migrated to documents)"],
+  data:[["behaviours","{ screen, action, expected,\n  recording_ts, legacy_refs: [] }","from the video"],["code_chunks","{ file, symbol, text, embedding }",""],["parity_checks","{ behaviour_id, test, shot_old,\n  shot_new, pass }","the scoreboard"],["volunteers, shifts","{ ... }","migrated app data"]],
+  verify:["One Playwright test per recorded behaviour","Screenshot parity, old vs new","Parity score, e.g. 18 of 20 behaviours passing"], vS:["Playwright per behaviour","screenshot parity","owner approves spec"],
+  gate:["Owner approves the behaviour list before the build","Owner previews the data migration before cutover"],
+  output:["Modern web app on Atlas","Parity report","Behaviour spec"],
+  demo:[["0:00","Name the charity volunteer. Play 15 seconds of the old app."],["0:25","Argon's behaviour timeline appears, each item linked to a video timestamp and a PHP function."],["1:00","The owner approves the spec."],["1:15","The parity board reruns against the new app; tests turn green one by one."],["2:20","Open the new app and do the same task as the recording."],["2:45","Show the one failing behaviour and the agent's fix plan."]],
+  why:"Video, a whole codebase and a database schema in one 1M context lets it learn what the app does, not only what the code says.",
+  grow:"A modernisation service for charities, schools and councils stuck on unsupported stacks.",
+  risk:"Generating a whole app takes longer than 3 minutes. Pre-build during the hackathon, then rerun verification live.",
+  s:[7,8,8,7] },
+
+{ id:"pagerzero", name:"Pager Zero", path:1, effort:"Medium–High", tag:"Spot the spike, find the commit, prove the fix.",
+  who:"The on-call engineer at a 10-person startup who gets paged at 3am with no runbook.",
+  whoS:"On-call engineer", pain:"Logs, metrics, deploys and code live in four tools. Finding the cause takes an hour while customers see errors.",
+  inputs:["Live app logs and metrics","Git history and deploy events","Runbooks and past postmortems"], inS:["live logs","deploys","runbooks"],
+  models:[["gemini-4-argon","Reads the error window, recent diffs and code in one context; ranks hypotheses. thinking_level: high"],["antigravity-preview-09-2026","Reproduces the failing request against the suspect commit in a sandbox"],["gemini-3.5-flash-lite","Classifies log lines at stream speed"],["gemini-3.8-live","Voice briefing for the on-call: what changed, what to approve"]],
+  mongo:{stream:"$tumblingWindow over error rate per service; emits an anomaly document when it crosses baseline",search:"Exact stack-trace and error-code search across logs",vector:"Finds similar past incidents and runbooks",hybrid:"Exact error string plus semantic similarity ranks the right runbook",auto:"Postmortems and runbooks embedded on insert"},
+  extra:["Time series collection for metrics and logs"],
+  data:[["logs","{ ts, service, level, msg, trace_id }","time series"],["anomalies","{ service, window, error_rate,\n  baseline }","from Stream Processing"],["incidents","{ hypotheses: [], evidence: [],\n  repro: 'red→green', fix_pr,\n  postmortem }",""],["runbooks","{ title, text, embedding }","auto-embedded"]],
+  verify:["Failing request reproduced in the sandbox (red)","The fix makes it pass (green)","After rollback, the live error rate drops back under baseline in the stream"], vS:["repro red→green","live error rate recovers","1-click rollback"],
+  gate:["Rollback or deploy needs one click from the on-call","Agent has read-only access to production"],
+  output:["Incident timeline","Root cause with evidence","Fix PR","Draft postmortem"],
+  demo:[["0:00","Name the on-call engineer. Show a small demo shop with live traffic."],["0:20","Deploy a bad commit live. The error chart spikes."],["0:40","The stream processor flags the anomaly; Argon opens an incident."],["1:20","Argon names the commit and line. The sandbox reproduces the error: red."],["2:00","The engineer approves the rollback by voice or click."],["2:30","The error rate falls back to baseline on the live chart. Postmortem drafted."]],
+  why:"An hour of logs, the deploy diff and the codebase together is far beyond a normal context window. Argon can hold it all and reason across it.",
+  grow:"Open-source AI on-call for small teams, with Slack and PagerDuty hooks.",
+  risk:"Keep the demo app small and the injected bug deterministic so the spike appears every time.",
+  s:[9,8,7,9] },
+
+{ id:"bidsmith", name:"BidSmith", path:1, effort:"Medium", tag:"Never miss a 'must' in a 300-page tender.",
+  who:"The founder of a 6-person digital agency bidding for council contracts on Find a Tender.",
+  whoS:"Agency founder", pain:"Tender packs run to hundreds of pages with 100+ mandatory requirements. One missed 'shall' disqualifies the whole bid.",
+  inputs:["Tender pack PDFs (specification, ITT, pricing schedule)","Company evidence library: case studies, policies, CVs, certificates"], inS:["tender pack","evidence library"],
+  models:[["gemini-4-argon","Holds the full pack and the evidence library; extracts the compliance matrix and drafts answers. background=True for the full response"],["gemini-3.8-flash","Claim-checker subagents, one per section"],["deep-research-preview-04-2026","The buyer's published strategy and priorities, with citations"]],
+  mongo:{auto:"Evidence library embedded on upload",hybrid:"Exact clause refs ('4.2.1', 'ISO 27001') fused with semantic matches",search:"Facets by evidence type and expiry date",vector:"Finds the best case study for each requirement",voyage:"Rerank model orders evidence per requirement"},
+  extra:[],
+  data:[["tenders","{ buyer, deadline, docs: [] }",""],["requirements","{ clause_ref, text,\n  kind: 'must' | 'should',\n  word_limit, status }","compliance matrix"],["evidence","{ type, text, expires, embedding }","auto-embedded"],["answers","{ requirement_id, draft,\n  citations: [], checker: 'pass' }",""]],
+  verify:["Every 'must' has an answer","Every answer is within its word limit","Every claim cites evidence a checker agent confirms","Expired certificates flagged red"], vS:["every 'must' answered","word limits","claims cited","founder approves"],
+  gate:["The founder edits and approves each answer","The agent never submits on the procurement portal"],
+  output:["Compliance matrix","Draft response document","Gap list of missing evidence"],
+  demo:[["0:00","Name the founder. Drop in a real public tender pack."],["0:30","The matrix fills: every requirement found, each with its clause ref."],["1:10","Drafts appear with citations; the checker flags four unsupported claims in red."],["1:50","The founder attaches evidence to one; it turns green."],["2:30","Export the response pack with a pass/fail summary."]],
+  why:"The full tender pack and the company's whole evidence library fit in one context, so cross-references between sections aren't lost to chunking.",
+  grow:"SaaS for small suppliers. The Procurement Act 2023 pushes public buyers toward SMEs, and SMEs have no bid teams.",
+  risk:"Judges may read it as a PDF Q&A bot. Lead with the compliance matrix and the checker loop, not with chat.",
+  s:[8,9,7,8] },
+
+{ id:"paper2lab", name:"Paper2Lab", path:1, effort:"High", tag:"From a PDF to a reproduced baseline.",
+  who:"A first-year PhD student who must reproduce a baseline from a paper before their own experiments can start.",
+  whoS:"PhD student", pain:"The paper's code is missing or broken. Weeks go into re-implementing details buried in an appendix.",
+  inputs:["arXiv PDF with figures, tables and equations","Optional link to the authors' repo"], inS:["arXiv PDF","authors' repo"],
+  models:[["deep-research-preview-04-2026","Finds errata, reimplementations and issue threads, with citations"],["gemini-4-argon","Lead orchestrator: reads the paper, plans modules, integrates. thinking_level: high"],["gemini-3.8-flash","Subagents write the data loader, model, training loop and eval"],["antigravity-preview-09-2026","Runs tests and a small-scale training run"]],
+  mongo:{vector:"Papers and code snippets searchable by meaning",auto:"Paper sections embedded on ingest",search:"Exact hyperparameter and symbol lookups",hybrid:"Equation symbols fused with semantic matches",stream:"Training metrics streamed in; windowed checks stop runs that diverge",voyage:"voyage-code-3 for code; contextual embeddings for long sections"},
+  extra:[],
+  data:[["papers","{ arxiv_id, sections: [], tables: [] }",""],["claims","{ metric, value, table_ref }","what the paper says"],["modules","{ name, agent, code, tests_pass }",""],["runs","{ config, metrics: [],\n  matches_claim }","the result"]],
+  verify:["Unit tests per module","Reproduced metric within a set tolerance of the paper's table","Divergent runs stopped automatically"], vS:["module tests","metric within tolerance","budget approval"],
+  gate:["The student approves the compute budget","The student approves any deviation from the paper's settings"],
+  output:["Working repo","Reproduction report: claimed vs measured","List of undocumented choices"],
+  demo:[["0:00","Name the PhD student. Paste a small, recent arXiv paper."],["0:20","Argon splits the work; four subagents start in parallel."],["1:00","Module tests go green one by one."],["1:40","Training metrics stream in; the chart tracks the paper's number."],["2:30","Report: claimed 91.2%, measured 90.8%, within tolerance."]],
+  why:"Deep Research, a lead model and parallel subagents is the exact orchestration pattern the brief describes, and the paper, code and logs need a large context.",
+  grow:"An open-source reproducibility tool; labs could publish reproduction badges.",
+  risk:"Training time. Choose a paper whose method reproduces on CPU in under a minute.",
+  s:[7,7,8,7] },
+
+{ id:"linedetective", name:"Line Detective", path:2, effort:"High", tag:"Line up the footage, the sensors and the datasheet.",
+  who:"The quality engineer at a small CNC or injection-moulding shop who must explain a spike in rejected parts by Friday.",
+  whoS:"Quality engineer", pain:"Inspection video, machine sensor logs and 400-page datasheets never get looked at together.",
+  inputs:["Inspection camera footage","Sensor CSVs: temperature, vibration, spindle load","Machine datasheets and manuals"], inS:["inspection video","sensor CSVs","datasheets"],
+  models:[["gemini-4-argon","Agentic video analysis aligned to the sensor timeline and datasheets; forms the root-cause hypothesis"],["antigravity-preview-09-2026","Runs pandas/scipy to test the hypothesis on held-out data"],["gemini-3.8-flash","Triage: which clips contain defects"],["gemini-nano-banana-2.1","Annotated defect stills for the report"]],
+  mongo:{stream:"Sensor feed into windowed stats; anomalies trigger review of the same minutes of video",vector:"Find frames that look like this defect",hybrid:"Part numbers and fault codes (exact) fused with symptom descriptions (semantic)",auto:"Datasheet pages embedded on upload",voyage:"Multimodal embeddings for frames and diagram pages"},
+  extra:["Time series collection for sensor readings"],
+  data:[["readings","{ ts, machine, temp_c,\n  vibration_mm_s, load_pct }","time series"],["frames","{ ts, clip, defect, embedding }","multimodal"],["datasheet_pages","{ machine, page, text, image,\n  embedding }",""],["findings","{ hypothesis, evidence: [],\n  test: { p_value }, status }",""]],
+  verify:["The hypothesis must predict defects in a held-out time window","Statistical test computed in the sandbox: pass or fail","Every claim links to a timestamp and a datasheet page"], vS:["held-out prediction","stats test","engineer sign-off"],
+  gate:["The engineer signs off the corrective action","The agent never writes setpoints to the machine"],
+  output:["Root-cause report with evidence","Corrective action proposal","Annotated defect gallery"],
+  demo:[["0:00","Name the engineer. Load a 3D-printer timelapse and its temperature log, a desk-sized stand-in for the line."],["0:30","The stream flags a temperature window; Argon jumps to the matching footage."],["1:10","Argon proposes that a nozzle temperature dip causes layer shift, citing the datasheet page."],["1:50","The sandbox tests it on held-out prints: pass."],["2:30","The engineer approves the corrective action."]],
+  why:"Long video, dense sensor data and long datasheets reasoned over together is what the 1M unified multimodal context is for.",
+  grow:"A root-cause tool for small manufacturers and university labs, priced per machine.",
+  risk:"Real factory footage is hard to get. A 3D printer with OctoPrint logs gives real data you control.",
+  s:[8,8,9,7] },
+
+{ id:"formpilot", name:"FormPilot", path:2, effort:"Medium", tag:"Fill any form by voice, in your own language.",
+  who:"A Bengali-speaking grandparent in Tower Hamlets applying for Council Tax Reduction, whose grandchild can't take time off work to help.",
+  whoS:"Bengali-speaking grandparent", pain:"Online public-service forms assume fluent English and confident web use. Mistakes delay money people are entitled to.",
+  inputs:["Live voice in any of 70+ languages","The web form itself","Photos of letters and payslips"], inS:["voice (70+ langs)","web form","letter photos"],
+  models:[["gemini-3.8-live","Real-time voice conversation"],["gemini-3.5-live-translate-preview","Speech translation both ways"],["gemini-4-argon","Plans the form, reads guidance and letters, maps answers to fields; drives a headless browser"],["gemini-3.8-flash-tts","Reads every filled field back in the user's language"]],
+  mongo:{search:"Eligibility guidance searchable by exact terms",hybrid:"Plain-language questions matched to guidance sections",auto:"Guidance embedded on ingest",vector:"Maps a spoken answer to the right form field"},
+  extra:["Queryable Encryption on personal profiles","Change streams push confirmations to the screen"],
+  data:[["guidance","{ url, section, text, embedding }","auto-embedded"],["profiles","{ name, address, household,\n  docs: [] }","encrypted"],["form_sessions","{ form_url, fields: [{ label,\n  value, source, confirmed }],\n  status }","audit of every field"]],
+  verify:["Every field has a source: a spoken answer or a document","The form's own validation shows zero errors","Each field read back and confirmed in the user's language"], vS:["every field sourced","zero form errors","spoken read-back","'yes, submit'"],
+  gate:["Spoken 'yes, submit' plus an on-screen button","No payments, ever","The demo uses a test form you build, never a live government site"],
+  output:["Completed, confirmed form","Summary in the user's language","Copy of what was sent"],
+  demo:[["0:00","Name the grandparent. Start speaking in Bengali."],["0:20","The agent asks questions in Bengali and fills the English test form live on screen."],["1:10","Hold a payslip to the camera; income fields fill with source tags."],["1:50","Read-back in Bengali; one field corrected by voice."],["2:30","Spoken confirmation, then the submit button. Summary shown."]],
+  why:"Live voice, translation, vision and a long browser task, all coordinated by one lead model with human confirmation at the end.",
+  grow:"An accessibility tool for councils, charities and Citizens Advice volunteers.",
+  risk:"Live audio in a noisy hall. Bring a headset mic and a fallback recording.",
+  s:[8,9,7,9] },
+
+{ id:"dampproof", name:"DampProof", path:2, effort:"Medium", tag:"Turn a phone walkthrough into an evidence pack.",
+  who:"A private renter in London whose letting agent keeps ignoring black mould in the bedroom.",
+  whoS:"London renter", pain:"Complaints get ignored because they lack dates, photos and reference to the standards landlords must meet.",
+  inputs:["Phone walkthrough video","Photos and message history with the agent","Tenancy agreement","Optional humidity sensor readings"], inS:["walkthrough video","messages","humidity sensor"],
+  models:[["gemini-4-argon","Agentic video analysis: finds each defect with timestamps; reads the tenancy and standards"],["gemini-3.8-flash","Classifies each defect against the 29 HHSRS hazards"],["gemini-nano-banana-2.1","Annotated evidence stills"],["deep-research-preview-04-2026","The local council's private-housing team and process, with citations"]],
+  mongo:{hybrid:"Housing standards: exact clause refs plus plain-language matches",vector:"Frame embeddings find every shot of the same defect",auto:"Guidance embedded on ingest",stream:"Humidity readings windowed into hours above 70% RH per day",search:"Search message history by date and keyword",voyage:"Multimodal embeddings for frames"},
+  extra:["Time series collection for humidity"],
+  data:[["defects","{ room, hazard, first_seen,\n  frames: [ts], severity }",""],["evidence","{ kind: 'video' | 'photo' | 'message',\n  ts, ref }",""],["readings","{ ts, rh_pct, temp_c }","time series"],["letters","{ draft, claims: [{ text,\n  evidence_ids }], checker }",""]],
+  verify:["Every claim in the letter links to a timestamped frame or message","The checker agent rejects unsupported claims","Facts-only rubric: no legal conclusions"], vS:["every claim evidenced","checker agent","tenant sends"],
+  gate:["The tenant reviews and sends the letter themselves","Clearly not legal advice; links to Shelter and the council"],
+  output:["Evidence pack","Dated complaint letter","Timeline of reports and responses"],
+  demo:[["0:00","Name the renter. Upload a real 60-second walkthrough of a damp flat."],["0:30","Defects appear with timestamps; click one and the video jumps there."],["1:10","Humidity chart: 14 nights above 70% RH."],["1:40","The letter drafts; the checker strikes one unsupported claim."],["2:20","The renter approves; the evidence pack exports."]],
+  why:"Long video, message history and standards documents in one context, plus multimodal search across frames.",
+  grow:"A free tool for tenants' unions and renters' advice charities.",
+  risk:"Keep it factual. Anything that reads as legal advice hurts the score and the user.",
+  s:[8,9,8,8] },
+
+{ id:"simlab", name:"SimLab", path:2, effort:"Medium–High", tag:"Exam question in, verified 3D simulation out.",
+  who:"A secondary-school physics teacher preparing a GCSE lesson on forces and motion.",
+  whoS:"Physics teacher", pain:"Good interactive simulations rarely match the exact question being taught, and building one takes hours.",
+  inputs:["Photo of an exam or textbook question","The teacher's spoken request"], inS:["question photo","voice request"],
+  models:[["gemini-4-argon","Writes the Three.js/WebGPU scene and physics code; fixes it when checks fail"],["gemini-3.8-live","Students ask questions by voice while the sim runs"],["lyria-3.5","Soundtrack for the scene"],["gemini-nano-banana-2.1","Textures and labelled diagrams"],["gemini-3.8-flash","Quiz variants with new numbers"]],
+  mongo:{vector:"Reuse: find an existing sim close to a new question",search:"Exam spec references and topic names",hybrid:"Spec codes fused with question meaning",auto:"Sim descriptions embedded on save",stream:"Student answers windowed per minute into a live misconception heatmap"},
+  extra:[],
+  data:[["sims","{ question, spec_ref, code,\n  checks: [], embedding }",""],["checks","{ sim_id, quantity, analytic,\n  simulated, error_pct, pass }","the verification"],["answers","{ class, pseudonym, sim_id,\n  answer, ts }","streamed"]],
+  verify:["A headless browser runs the sim and reads values out","Simulated result within 1% of the analytic answer","If not, Argon reads the error and patches the code"], vS:["headless run","within 1% of analytic","teacher approves"],
+  gate:["The teacher approves the sim before class","Students are pseudonymous; no personal data stored"],
+  output:["Playable 3D simulation","Quiz variants","Live misconception heatmap"],
+  demo:[["0:00","Name the teacher. Photograph a projectile question."],["0:20","Argon builds the scene; the headless check fails at 3.2% error."],["0:50","Argon fixes the timestep; the check passes at 0.4%."],["1:20","Play the sim with music; ask a question by voice."],["2:10","Judges answer the quiz on their phones; the heatmap fills live."]],
+  why:"Generating working 3D/WebGPU code and verifying it numerically is the brief's own example of an Argon-only build.",
+  grow:"A lesson library shared across schools, searchable by exam specification.",
+  risk:"Stick to topics with clean analytic answers so the check is unambiguous.",
+  s:[8,7,9,8] },
+
+{ id:"fixitbench", name:"Fixit Bench", path:2, effort:"Medium", tag:"A second pair of expert eyes at the Repair Café.",
+  who:"A volunteer fixer at a monthly Repair Café who gets a different broken kettle, lamp or coffee machine every 20 minutes.",
+  whoS:"Repair Café fixer", pain:"Service manuals are hard to find and long. Fixers guess, and repairable items get thrown away.",
+  inputs:["Live camera on the device and its rating label","Service manuals and teardown guides","Multimeter readings, spoken aloud"], inS:["live camera","manuals","meter readings"],
+  models:[["gemini-3.8-live","Camera and voice in real time"],["gemini-4-argon","Reads whole manuals and builds a diagnosis tree"],["gemini-3.8-live-extended-thinking","Harder steps that need more reasoning mid-conversation"],["gemini-3.8-flash-tts","Spoken step instructions"]],
+  mongo:{search:"Fuzzy match on model and part numbers read from the label",vector:"Manual pages searchable by symptom",hybrid:"$rankFusion of label match and symptom match finds the right manual",auto:"Manuals embedded on upload",voyage:"Multimodal embeddings match a photo to exploded-view diagrams"},
+  extra:[],
+  data:[["manuals","{ brand, model, page, text,\n  diagram, embedding }",""],["repairs","{ device, symptom, steps: [{ check,\n  expected, measured, ok }], outcome }","learning log"],["parts","{ part_no, fits: [], supplier }",""]],
+  verify:["Each step states an expected measurement, e.g. fuse continuity under 1 Ω","The agent proceeds only when the reading matches","The camera confirms the plug is out before the case is opened"], vS:["expected readings","camera: unplugged","fixer decides"],
+  gate:["Safety confirmation before opening anything","No live mains work, ever","The fixer decides when to stop"],
+  output:["Step-by-step repair log","Part to order","Shared fix record for the next fixer"],
+  demo:[["0:00","Name the Repair Café fixer. Hold a dead kettle to the camera."],["0:20","The label is read; hybrid search finds the right manual."],["0:50","The camera confirms it's unplugged; first check: thermal fuse continuity."],["1:30","The fixer reads 'open circuit'; the agent names the part and the manual page."],["2:20","The repair is logged; the next fixer gets it as a suggestion."]],
+  why:"Live camera and voice from companion models, paired with a lead model that holds whole manuals.",
+  grow:"An open-source toolkit for the Repair Café network and right-to-repair groups.",
+  risk:"Live camera and noise in a busy hall. Rehearse with the exact device you'll bring.",
+  s:[7,8,8,9] }
+];
+
+const STAGES = [
+  ["Capture","video · voice · docs · code","inp","The input arrives and is logged.","a repo, a screen recording, a phone video, a sensor feed, a voice."],
+  ["Store & embed","Atlas · auto-embed · stream","mdb","Every input lands in Atlas and is embedded on write.","the collections, and which stream feeds them."],
+  ["Retrieve","search · vector · hybrid","mdb","Atlas Search and Vector Search, fused by Hybrid Search, pick what Argon reads.","what an exact match means: a CVE ID, a part number, a clause ref."],
+  ["Reason & plan","gemini-4-argon","gem","Argon holds the whole case in its 1M context and plans.","the thinking level and the shape of the plan."],
+  ["Act","antigravity · subagents","gem","Work happens in a sandbox or through subagents, never directly on live systems.","code edits, a browser, a simulation, a voice conversation."],
+  ["Verify","tests · sims · checks","ver","A concrete pass/fail signal.","test suites, a numerical check, a statistical test, a citation checker."],
+  ["Human approves","confirm before acting","ver","A person confirms anything that touches external systems, money or private data.","a PR merge, a form submit, a rollback, a letter."]
+];
+
+const KIT_GEM = [
+  ["gemini-4-argon","Lead reasoning, coding, 3D/WebGPU and orchestration. 1M-token unified context; thinking_level low, medium or high; background=True for output up to 1M tokens."],
+  ["antigravity-preview-09-2026","Antigravity Managed Agent: autonomous execution in a Google-hosted Linux sandbox."],
+  ["gemini-3.8-flash · gemini-3.5-flash-lite","Fast parallel subagents and high-volume routing or classification."],
+  ["deep-research-preview-04-2026","Deep web research with citations."],
+  ["gemini-3.8-live · gemini-3.8-live-extended-thinking","Real-time voice and camera; the extended-thinking variant reasons more mid-conversation."],
+  ["gemini-3.5-transcribe-live · gemini-3.5-live-translate-preview · gemini-3.8-flash-tts","Live transcription, live translation and speech output."],
+  ["gemini-nano-banana-2.1 · gemini-omni-1.1-flash · lyria-3.5","Images, video with sound, and music."],
+  ["gemma-4-31b-it (plus E2B, E4B)","Open models in the cloud or on-device."]
+];
+const KIT_MDB = [
+  ["Atlas Search","Full-text search with $search: fuzzy matching, facets, autocomplete. Best for exact IDs, part numbers and clause refs."],
+  ["Vector Search","$vectorSearch over embeddings: find things by meaning, including image frames with multimodal embeddings."],
+  ["Hybrid Search","Fuses text and vector results in one query ($rankFusion). Exact match and meaning together."],
+  ["Automated Embedding","Atlas generates embeddings when documents are written, so there is no embedding pipeline to build."],
+  ["Stream Processing","Continuous aggregation over Kafka or change streams with time windows; emits documents when conditions are met."],
+  ["Voyage AI","Embedding and reranking models: general text, code, multimodal and rerankers."],
+  ["Bonus, not on the list","Time series collections, change streams and Queryable Encryption. They strengthen the build but don't count toward the six."]
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const score = i => i.s.reduce((a, v, k) => a + v * W[k], 0);
+const nFeat = i => FEAT.filter(([k]) => i.mongo[k]).length;
+const dots = i => `<span class="dots">${FEAT.map(([k, l]) => `<i class="${i.mongo[k] ? "on" : ""}" title="${l}"></i>`).join("")}<em>${nFeat(i)}/6</em></span>`;
+const PATHS = { 1: ["Pathway 1", "Autonomous agents that ship"], 2: ["Pathway 2", "Real world & multimodal"] };
+let current = null;
+
+function renderRing() {
+  const cx = 330, cy = 290, r = 205, n = STAGES.length;
+  let h = `<circle cx="${cx}" cy="${cy}" r="${r}" class="ring-track"/>`;
+  for (let k = 0; k < n; k++) {
+    const d = -90 + (k + 0.5) * 360 / n, m = d * Math.PI / 180;
+    h += `<path d="M-5 -6 L3 0 L-5 6" class="ring-chev" transform="translate(${(cx + r * Math.cos(m)).toFixed(1)} ${(cy + r * Math.sin(m)).toFixed(1)}) rotate(${(d + 90).toFixed(1)})"/>`;
+  }
+  STAGES.forEach(([t, sub, k], i) => {
+    const a = (-90 + i * 360 / n) * Math.PI / 180;
+    h += `<g class="k-${k}" transform="translate(${(cx + r * Math.cos(a)).toFixed(1)} ${(cy + r * Math.sin(a)).toFixed(1)})"><rect x="-86" y="-25" width="172" height="50" rx="10" class="pill"/><text y="-4" text-anchor="middle" class="pill-t">${esc(t)}</text><text y="13" text-anchor="middle" class="pill-s">${esc(sub)}</text></g>`;
+  });
+  h += `<text x="${cx}" y="${cy - 22}" text-anchor="middle" class="ring-c1">Same core loop</text>
+        <text x="${cx}" y="${cy + 4}" text-anchor="middle" class="ring-c2">A different user, input and check</text>
+        <text x="${cx}" y="${cy + 22}" text-anchor="middle" class="ring-c2">for each of the ten ideas</text>
+        <text x="${cx}" y="${cy + 52}" text-anchor="middle" class="ring-c3">↻ results written back to Atlas</text>`;
+  $("#ring").innerHTML = h;
+  $("#stages").innerHTML = STAGES.map(([t, , k, same, diff]) => `<li class="k-${k}"><h4>${esc(t)}</h4><p><b>Same:</b> ${esc(same)} <b>Changes:</b> ${esc(diff)}</p></li>`).join("");
+}
+
+function renderOverview() {
+  let h = `<div class="t-row"><div class="node root"><span class="n-eyebrow">Your build</span><strong>gemini-4-argon</strong><span>on MongoDB Atlas</span></div><ul>`;
+  for (const p of [1, 2]) {
+    h += `<li><div class="node branch k-path">${PATHS[p][0]}<small>${PATHS[p][1]}</small></div><ul>`;
+    for (const i of IDEAS.filter(x => x.path === p)) {
+      h += `<li><button type="button" class="node leaf idea-leaf" data-id="${i.id}" aria-pressed="false"><span class="il-top"><span class="il-name">${esc(i.name)}</span><span class="il-score">${score(i).toFixed(1)}</span></span><span class="il-tag">${esc(i.tag)}</span>${dots(i)}</button></li>`;
+    }
+    h += `</ul></li>`;
+  }
+  $("#overview").innerHTML = h + `</ul></div>`;
+}
+
+function renderPicker() {
+  $("#picker").innerHTML = [1, 2].map(p => `<div class="picker-row"><span class="eyebrow">${PATHS[p][0]} · ${PATHS[p][1]}</span>${IDEAS.filter(i => i.path === p).map(i => `<button type="button" class="pick" data-id="${i.id}" aria-pressed="false">${esc(i.name)}</button>`).join("")}</div>`).join("");
+}
+
+function leafList(kind, items) {
+  return `<ul>${items.map(x => `<li><div class="node leaf k-${kind}">${x}</div></li>`).join("")}</ul>`;
+}
+function branch(label, kind, items) {
+  return `<li><div class="node branch k-${kind}">${label}</div>${leafList(kind, items)}</li>`;
+}
+
+function renderIdea(id) {
+  const i = IDEAS.find(x => x.id === id) || IDEAS[0];
+  current = i.id;
+  document.querySelectorAll("[data-id]").forEach(b => b.setAttribute("aria-pressed", b.dataset.id === i.id ? "true" : "false"));
+  $("#i-name").textContent = i.name;
+  $("#i-tag").textContent = i.tag;
+  $("#i-badges").innerHTML = `<span class="badge">${PATHS[i.path][0]}</span><span class="badge">Effort: ${esc(i.effort)}</span><span class="badge">${nFeat(i)}/6 Atlas features</span><span class="badge">${i.models.length} Gemini models</span><span class="badge strong">Est. ${score(i).toFixed(1)} / 10</span>`;
+
+  const used = FEAT.filter(([k]) => i.mongo[k]);
+  const tree = `<div class="t-row"><div class="node root"><span class="n-eyebrow">${PATHS[i.path][0]}</span><strong>${esc(i.name)}</strong><span>${esc(i.tag)}</span></div><ul>` +
+    branch("Who", "inp", [`<span class="lt">Named user</span><span class="ld">${esc(i.who)}</span>`, `<span class="lt">Problem</span><span class="ld">${esc(i.pain)}</span>`]) +
+    branch("Inputs", "inp", i.inputs.map(x => `<span>${esc(x)}</span>`)) +
+    branch("Gemini models", "gem", i.models.map(([m, r]) => `<code>${esc(m)}</code><span class="ld">${esc(r)}</span>`)) +
+    branch("MongoDB Atlas", "mdb", used.map(([k, l]) => `<span class="lt">${l}</span><span class="ld">${esc(i.mongo[k])}</span>`).concat(i.extra.map(x => `<span class="lt">Also</span><span class="ld">${esc(x)}</span>`))) +
+    branch("Data", "mdb", i.data.map(([n, , note]) => `<code>${esc(n)}</code>${note ? `<span class="ld">${esc(note)}</span>` : ""}`)) +
+    branch("Verify", "ver", i.verify.map(x => `<span>${esc(x)}</span>`)) +
+    branch("Human gate", "ver", i.gate.map(x => `<span>${esc(x)}</span>`)) +
+    branch("Output", "out", i.output.map(x => `<span>${esc(x)}</span>`)) +
+    `</ul></div>`;
+  $("#i-tree").innerHTML = tree;
+
+  const layers = [
+    ["mdb", "MongoDB Atlas", used.map(f => f[2])],
+    ["gem", "Gemini", i.models.map(m => m[0])],
+    ["ver", "Verify + human gate", i.vS],
+    ["inp", i.whoS, i.inS]
+  ];
+  $("#iso").innerHTML = ["14px 14px", "14px auto", "auto 14px"].map((pos, k) => {
+    const [t, l] = pos.split(" ");
+    return `<div class="beam" style="${t === "auto" ? "bottom:14px" : "top:" + t};${l === "auto" ? "right:14px" : "left:" + l}"></div>`;
+  }).join("") + layers.map(([k, label, chips], z) => `<div class="plane k-${k}" style="--z:${z}"><span class="pl-label">${esc(label)}</span><div class="pl-chips">${chips.map(c => `<span>${esc(c)}</span>`).join("")}</div></div>`).join("");
+
+  $("#i-bars").innerHTML = CRIT.map(([c, w], k) => `<div class="bar"><span>${c} <small>${w}</small></span><span class="track"><span class="fill" style="display:block;width:${i.s[k] * 10}%"></span></span><span class="v">${i.s[k]}/10</span></div>`).join("");
+  $("#i-total").textContent = score(i).toFixed(2);
+
+  $("#i-data").innerHTML = i.data.map(([n, d, note]) => `<div class="coll"><div class="coll-h"><code>${esc(n)}</code>${note ? `<span>${esc(note)}</span>` : ""}</div><pre>${esc(d)}</pre></div>`).join("");
+  $("#i-demo").innerHTML = i.demo.map(([t, s]) => `<li><time>${t}</time><span>${esc(s)}</span></li>`).join("");
+  $("#i-why").textContent = i.why;
+  $("#i-grow").textContent = i.grow;
+  $("#i-risk").textContent = i.risk;
+  try { localStorage.setItem("idea-map-current", i.id); } catch (e) {}
+}
+
+function renderCompare() {
+  const sorted = [...IDEAS].sort((a, b) => score(b) - score(a));
+  $("#shortlist").innerHTML = sorted.slice(0, 3).map((i, k) => `<button type="button" class="sl" data-id="${i.id}"><span class="rank">Top pick ${k + 1} · ${PATHS[i.path][0]}</span><strong>${esc(i.name)}</strong><span>${esc(i.tag)} Est. ${score(i).toFixed(2)}.</span></button>`).join("");
+  $("#matrix").innerHTML = `<thead><tr><th>Idea</th><th>Pathway</th>${FEAT.map(f => `<th class="c">${f[2]}</th>`).join("")}<th class="c">Gemini models</th><th>Effort</th><th class="c">Est. score</th></tr></thead><tbody>` +
+    sorted.map(i => `<tr data-id="${i.id}"><td><strong>${esc(i.name)}</strong></td><td class="pth">${PATHS[i.path][0]}</td>${FEAT.map(([k, l]) => `<td class="c"><span class="dot ${i.mongo[k] ? "on" : ""}" title="${l}${i.mongo[k] ? "" : " not used"}"></span></td>`).join("")}<td class="n">${i.models.length}</td><td>${esc(i.effort)}</td><td class="n">${score(i).toFixed(2)}</td></tr>`).join("") + `</tbody>`;
+}
+
+function renderKit() {
+  $("#kit-gem").innerHTML = KIT_GEM.map(([n, d]) => `<li><code>${esc(n)}</code><p>${esc(d)}</p></li>`).join("");
+  $("#kit-mdb").innerHTML = KIT_MDB.map(([n, d]) => `<li><code>${esc(n)}</code><p>${esc(d)}</p></li>`).join("");
+}
+
+function openIdea(id, scroll) {
+  renderIdea(id);
+  if (scroll) $("#explore").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+}
+
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-id]");
+  if (!el) return;
+  openIdea(el.dataset.id, !el.classList.contains("pick"));
+});
+
+// Drag / hover tilt on the 3D stack
+(function () {
+  const stage = $("#stage"), iso = $("#iso");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  stage.addEventListener("pointermove", e => {
+    const r = stage.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+    iso.style.setProperty("--rz", (-36 + x * 40).toFixed(1) + "deg");
+    iso.style.setProperty("--rx", (58 - y * 22).toFixed(1) + "deg");
+  });
+  stage.addEventListener("pointerleave", () => { iso.style.removeProperty("--rz"); iso.style.removeProperty("--rx"); });
+})();
+
+renderRing();
+renderOverview();
+renderPicker();
+renderCompare();
+renderKit();
+let start = (location.hash || "").slice(1);
+if (!IDEAS.some(i => i.id === start)) { try { start = localStorage.getItem("idea-map-current") || ""; } catch (e) { start = ""; } }
+if (!IDEAS.some(i => i.id === start)) start = [...IDEAS].sort((a, b) => score(b) - score(a))[0].id;
+renderIdea(start);
+</script>

@@ -1,0 +1,1931 @@
+{
+  "run_id": "run-simulated-fixture",
+  "status": "completed",
+  "created_at": "2026-10-24T10:00:00+00:00",
+  "updated_at": "2026-10-24T10:00:18+00:00",
+  "request": {
+    "title": "Preserved abundance · reduced activity",
+    "research_question": "Which variants meet our declared assay criteria, and what uncertainty should follow-up resolve?",
+    "candidate_budget": 10,
+    "criteria": {
+      "abundance_min": 0.7,
+      "activity_max": 0.35,
+      "mapping": "all",
+      "evidence": "all"
+    },
+    "selected_ids": null,
+    "explanation_mode": "fixture"
+  },
+  "workers": [
+    {
+      "id": "coordinator",
+      "name": "Coordinator",
+      "kind": "deterministic_tool",
+      "depends_on": [],
+      "description": "Controls the bounded workflow and saves the review brief."
+    },
+    {
+      "id": "data-retrieval",
+      "name": "Data retrieval",
+      "kind": "deterministic_tool",
+      "depends_on": [],
+      "description": "Loads the configured repository; never substitutes another store."
+    },
+    {
+      "id": "assay-analysis",
+      "name": "Assay analysis",
+      "kind": "deterministic_tool",
+      "depends_on": [
+        "data-retrieval"
+      ],
+      "description": "Applies explicit criteria, retaining missing measurement states."
+    },
+    {
+      "id": "structure-mapping",
+      "name": "Structure mapping",
+      "kind": "deterministic_tool",
+      "depends_on": [
+        "assay-analysis"
+      ],
+      "description": "Checks coordinate coverage and calculates Euclidean neighbours."
+    },
+    {
+      "id": "evidence-review",
+      "name": "Evidence review",
+      "kind": "deterministic_tool",
+      "depends_on": [
+        "assay-analysis",
+        "structure-mapping"
+      ],
+      "description": "Collects source records and their variant references."
+    },
+    {
+      "id": "brief-synthesis",
+      "name": "Brief synthesis",
+      "kind": "deterministic_tool",
+      "depends_on": [
+        "evidence-review"
+      ],
+      "description": "Optional single model call or explicitly configured fixture explanation."
+    },
+    {
+      "id": "verification",
+      "name": "Verification",
+      "kind": "deterministic_tool",
+      "depends_on": [
+        "brief-synthesis"
+      ],
+      "description": "Checks deterministic identifiers, outputs and accepted source references."
+    }
+  ],
+  "events": [
+    {
+      "event_id": "run-simulated-fixture:1",
+      "run_id": "run-simulated-fixture",
+      "sequence": 1,
+      "timestamp": "2026-10-24T10:00:00+00:00",
+      "type": "run.created",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "queued",
+      "summary": "Investigation accepted. Waiting for the local development worker.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:2",
+      "run_id": "run-simulated-fixture",
+      "sequence": 2,
+      "timestamp": "2026-10-24T10:00:00.450000+00:00",
+      "type": "task.queued",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "queued",
+      "summary": "Waiting for declared inputs.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:3",
+      "run_id": "run-simulated-fixture",
+      "sequence": 3,
+      "timestamp": "2026-10-24T10:00:00.900000+00:00",
+      "type": "task.queued",
+      "worker_id": "data-retrieval",
+      "worker_kind": "deterministic_tool",
+      "task_id": "data-retrieval",
+      "parent_task_id": "investigate",
+      "status": "queued",
+      "summary": "Waiting for declared inputs.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:4",
+      "run_id": "run-simulated-fixture",
+      "sequence": 4,
+      "timestamp": "2026-10-24T10:00:01.350000+00:00",
+      "type": "task.queued",
+      "worker_id": "assay-analysis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "assay-analysis",
+      "parent_task_id": "investigate",
+      "status": "queued",
+      "summary": "Waiting for declared inputs.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:5",
+      "run_id": "run-simulated-fixture",
+      "sequence": 5,
+      "timestamp": "2026-10-24T10:00:01.800000+00:00",
+      "type": "task.queued",
+      "worker_id": "structure-mapping",
+      "worker_kind": "deterministic_tool",
+      "task_id": "structure-mapping",
+      "parent_task_id": "investigate",
+      "status": "queued",
+      "summary": "Waiting for declared inputs.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:6",
+      "run_id": "run-simulated-fixture",
+      "sequence": 6,
+      "timestamp": "2026-10-24T10:00:02.250000+00:00",
+      "type": "task.queued",
+      "worker_id": "evidence-review",
+      "worker_kind": "deterministic_tool",
+      "task_id": "evidence-review",
+      "parent_task_id": "investigate",
+      "status": "queued",
+      "summary": "Waiting for declared inputs.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:7",
+      "run_id": "run-simulated-fixture",
+      "sequence": 7,
+      "timestamp": "2026-10-24T10:00:02.700000+00:00",
+      "type": "task.queued",
+      "worker_id": "brief-synthesis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "brief-synthesis",
+      "parent_task_id": "investigate",
+      "status": "queued",
+      "summary": "Waiting for declared inputs.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:8",
+      "run_id": "run-simulated-fixture",
+      "sequence": 8,
+      "timestamp": "2026-10-24T10:00:03.150000+00:00",
+      "type": "task.queued",
+      "worker_id": "verification",
+      "worker_kind": "deterministic_tool",
+      "task_id": "verification",
+      "parent_task_id": "investigate",
+      "status": "queued",
+      "summary": "Waiting for declared inputs.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:9",
+      "run_id": "run-simulated-fixture",
+      "sequence": 9,
+      "timestamp": "2026-10-24T10:00:03.600000+00:00",
+      "type": "run.started",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Starting investigation with the original question, shortlist and declared criteria.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:10",
+      "run_id": "run-simulated-fixture",
+      "sequence": 10,
+      "timestamp": "2026-10-24T10:00:04.050000+00:00",
+      "type": "task.started",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Coordinating deterministic tools and the configured optional explanation.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:11",
+      "run_id": "run-simulated-fixture",
+      "sequence": 11,
+      "timestamp": "2026-10-24T10:00:04.500000+00:00",
+      "type": "artifact.created",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Research context recorded.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-context"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:12",
+      "run_id": "run-simulated-fixture",
+      "sequence": 12,
+      "timestamp": "2026-10-24T10:00:04.950000+00:00",
+      "type": "handoff",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Declared research context → data retrieval.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-context"
+      ],
+      "metrics": {},
+      "sender": "coordinator",
+      "recipient": "data-retrieval",
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:13",
+      "run_id": "run-simulated-fixture",
+      "sequence": 13,
+      "timestamp": "2026-10-24T10:00:05.400000+00:00",
+      "type": "tool.started",
+      "worker_id": "data-retrieval",
+      "worker_kind": "deterministic_tool",
+      "task_id": "data-retrieval",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Loading variants, assay metadata, structure and fictional source records.",
+      "input_refs": [],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:14",
+      "run_id": "run-simulated-fixture",
+      "sequence": 14,
+      "timestamp": "2026-10-24T10:00:05.850000+00:00",
+      "type": "artifact.created",
+      "worker_id": "data-retrieval",
+      "worker_kind": "deterministic_tool",
+      "task_id": "data-retrieval",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Versioned synthetic source records.",
+      "input_refs": [
+        "workspace-demo",
+        "DEMO-PROT-001",
+        "assay-abundance-demo",
+        "assay-activity-demo"
+      ],
+      "output_refs": [
+        "artifact-data"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:15",
+      "run_id": "run-simulated-fixture",
+      "sequence": 15,
+      "timestamp": "2026-10-24T10:00:06.300000+00:00",
+      "type": "tool.completed",
+      "worker_id": "data-retrieval",
+      "worker_kind": "deterministic_tool",
+      "task_id": "data-retrieval",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Loaded 8 variant records and 2 assay datasets.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-data"
+      ],
+      "metrics": {
+        "variants": 8,
+        "assays": 2
+      },
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:16",
+      "run_id": "run-simulated-fixture",
+      "sequence": 16,
+      "timestamp": "2026-10-24T10:00:06.750000+00:00",
+      "type": "handoff",
+      "worker_id": "data-retrieval",
+      "worker_kind": "deterministic_tool",
+      "task_id": "data-retrieval",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Data retrieval → Assay analysis",
+      "input_refs": [
+        "workspace-demo",
+        "DEMO-PROT-001",
+        "assay-abundance-demo",
+        "assay-activity-demo"
+      ],
+      "output_refs": [
+        "artifact-data"
+      ],
+      "metrics": {},
+      "sender": "data-retrieval",
+      "recipient": "assay-analysis",
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:17",
+      "run_id": "run-simulated-fixture",
+      "sequence": 17,
+      "timestamp": "2026-10-24T10:00:07.200000+00:00",
+      "type": "tool.started",
+      "worker_id": "assay-analysis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "assay-analysis",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Applying the declared assay criteria; missing measurements remain missing.",
+      "input_refs": [
+        "artifact-data"
+      ],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:18",
+      "run_id": "run-simulated-fixture",
+      "sequence": 18,
+      "timestamp": "2026-10-24T10:00:07.650000+00:00",
+      "type": "artifact.created",
+      "worker_id": "assay-analysis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "assay-analysis",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Deterministic selection and exclusion reasons.",
+      "input_refs": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "output_refs": [
+        "artifact-filter-results"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:19",
+      "run_id": "run-simulated-fixture",
+      "sequence": 19,
+      "timestamp": "2026-10-24T10:00:08.100000+00:00",
+      "type": "tool.completed",
+      "worker_id": "assay-analysis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "assay-analysis",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "5 variants meet the filters; 1 have insufficient measurements.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-filter-results"
+      ],
+      "metrics": {
+        "matching_variants": 5,
+        "selected_variants": 5,
+        "missing_measurements": 1
+      },
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:20",
+      "run_id": "run-simulated-fixture",
+      "sequence": 20,
+      "timestamp": "2026-10-24T10:00:08.550000+00:00",
+      "type": "handoff",
+      "worker_id": "assay-analysis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "assay-analysis",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Assay analysis → Structure mapping",
+      "input_refs": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "output_refs": [
+        "artifact-filter-results"
+      ],
+      "metrics": {},
+      "sender": "assay-analysis",
+      "recipient": "structure-mapping",
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:21",
+      "run_id": "run-simulated-fixture",
+      "sequence": 21,
+      "timestamp": "2026-10-24T10:00:09+00:00",
+      "type": "tool.started",
+      "worker_id": "structure-mapping",
+      "worker_kind": "deterministic_tool",
+      "task_id": "structure-mapping",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Checking mapped coordinates and calculating spatial neighbours.",
+      "input_refs": [
+        "artifact-filter-results"
+      ],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:22",
+      "run_id": "run-simulated-fixture",
+      "sequence": 22,
+      "timestamp": "2026-10-24T10:00:09.450000+00:00",
+      "type": "artifact.created",
+      "worker_id": "structure-mapping",
+      "worker_kind": "deterministic_tool",
+      "task_id": "structure-mapping",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Calculated geometry in demo coordinate units; radius 12.",
+      "input_refs": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "output_refs": [
+        "artifact-mapping"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:23",
+      "run_id": "run-simulated-fixture",
+      "sequence": 23,
+      "timestamp": "2026-10-24T10:00:09.900000+00:00",
+      "type": "tool.completed",
+      "worker_id": "structure-mapping",
+      "worker_kind": "deterministic_tool",
+      "task_id": "structure-mapping",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "3 selected candidates mapped; 2 lack coordinates.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-mapping"
+      ],
+      "metrics": {
+        "mapped": 3,
+        "unmapped": 2
+      },
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:24",
+      "run_id": "run-simulated-fixture",
+      "sequence": 24,
+      "timestamp": "2026-10-24T10:00:10.350000+00:00",
+      "type": "warning",
+      "worker_id": "structure-mapping",
+      "worker_kind": "deterministic_tool",
+      "task_id": "structure-mapping",
+      "parent_task_id": "investigate",
+      "status": "needs_review",
+      "summary": "Unmapped candidates remain in the shortlist. Structural proximity does not establish shared function.",
+      "input_refs": [
+        "demo-v06",
+        "demo-v08"
+      ],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:25",
+      "run_id": "run-simulated-fixture",
+      "sequence": 25,
+      "timestamp": "2026-10-24T10:00:10.800000+00:00",
+      "type": "handoff",
+      "worker_id": "assay-analysis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "assay-analysis",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Assay analysis → Evidence review",
+      "input_refs": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "output_refs": [
+        "artifact-filter-results"
+      ],
+      "metrics": {},
+      "sender": "assay-analysis",
+      "recipient": "evidence-review",
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:26",
+      "run_id": "run-simulated-fixture",
+      "sequence": 26,
+      "timestamp": "2026-10-24T10:00:11.250000+00:00",
+      "type": "handoff",
+      "worker_id": "structure-mapping",
+      "worker_kind": "deterministic_tool",
+      "task_id": "structure-mapping",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Structure mapping → Evidence review",
+      "input_refs": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "output_refs": [
+        "artifact-mapping"
+      ],
+      "metrics": {},
+      "sender": "structure-mapping",
+      "recipient": "evidence-review",
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:27",
+      "run_id": "run-simulated-fixture",
+      "sequence": 27,
+      "timestamp": "2026-10-24T10:00:11.700000+00:00",
+      "type": "tool.started",
+      "worker_id": "evidence-review",
+      "worker_kind": "deterministic_tool",
+      "task_id": "evidence-review",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Collecting supplied fictional evidence and checking source-to-variant links.",
+      "input_refs": [
+        "artifact-filter-results",
+        "artifact-mapping"
+      ],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:28",
+      "run_id": "run-simulated-fixture",
+      "sequence": 28,
+      "timestamp": "2026-10-24T10:00:12.150000+00:00",
+      "type": "artifact.created",
+      "worker_id": "evidence-review",
+      "worker_kind": "deterministic_tool",
+      "task_id": "evidence-review",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Fictional records, not publications or biological validation.",
+      "input_refs": [
+        "demo-evidence-01",
+        "demo-evidence-02",
+        "demo-evidence-03",
+        "demo-evidence-04"
+      ],
+      "output_refs": [
+        "artifact-evidence"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:29",
+      "run_id": "run-simulated-fixture",
+      "sequence": 29,
+      "timestamp": "2026-10-24T10:00:12.600000+00:00",
+      "type": "tool.completed",
+      "worker_id": "evidence-review",
+      "worker_kind": "deterministic_tool",
+      "task_id": "evidence-review",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Collected 4 fictional source records; real assay compatibility is not established.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-evidence"
+      ],
+      "metrics": {
+        "source_records": 4
+      },
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:30",
+      "run_id": "run-simulated-fixture",
+      "sequence": 30,
+      "timestamp": "2026-10-24T10:00:13.050000+00:00",
+      "type": "handoff",
+      "worker_id": "evidence-review",
+      "worker_kind": "deterministic_tool",
+      "task_id": "evidence-review",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Evidence review → Brief synthesis",
+      "input_refs": [
+        "demo-evidence-01",
+        "demo-evidence-02",
+        "demo-evidence-03",
+        "demo-evidence-04"
+      ],
+      "output_refs": [
+        "artifact-evidence"
+      ],
+      "metrics": {},
+      "sender": "evidence-review",
+      "recipient": "brief-synthesis",
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:31",
+      "run_id": "run-simulated-fixture",
+      "sequence": 31,
+      "timestamp": "2026-10-24T10:00:13.500000+00:00",
+      "type": "task.started",
+      "worker_id": "brief-synthesis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "brief-synthesis",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Awaiting mock explanation of supplied evidence. No intermediate model progress is inferred.",
+      "input_refs": [
+        "artifact-evidence",
+        "artifact-filter-results"
+      ],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:32",
+      "run_id": "run-simulated-fixture",
+      "sequence": 32,
+      "timestamp": "2026-10-24T10:00:13.950000+00:00",
+      "type": "artifact.created",
+      "worker_id": "brief-synthesis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "brief-synthesis",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Source-linked narrative; hypotheses remain unverified.",
+      "input_refs": [
+        "demo-evidence-01",
+        "demo-evidence-02",
+        "demo-evidence-03",
+        "demo-evidence-04"
+      ],
+      "output_refs": [
+        "artifact-narrative"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:33",
+      "run_id": "run-simulated-fixture",
+      "sequence": 33,
+      "timestamp": "2026-10-24T10:00:14.400000+00:00",
+      "type": "task.completed",
+      "worker_id": "brief-synthesis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "brief-synthesis",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Structured explanation returned and passed the provider-adapter reference and claim checks.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-narrative"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:34",
+      "run_id": "run-simulated-fixture",
+      "sequence": 34,
+      "timestamp": "2026-10-24T10:00:14.850000+00:00",
+      "type": "handoff",
+      "worker_id": "brief-synthesis",
+      "worker_kind": "deterministic_tool",
+      "task_id": "brief-synthesis",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Brief synthesis → Verification",
+      "input_refs": [
+        "demo-evidence-01",
+        "demo-evidence-02",
+        "demo-evidence-03",
+        "demo-evidence-04"
+      ],
+      "output_refs": [
+        "artifact-narrative"
+      ],
+      "metrics": {},
+      "sender": "brief-synthesis",
+      "recipient": "verification",
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:35",
+      "run_id": "run-simulated-fixture",
+      "sequence": 35,
+      "timestamp": "2026-10-24T10:00:15.300000+00:00",
+      "type": "tool.started",
+      "worker_id": "verification",
+      "worker_kind": "deterministic_tool",
+      "task_id": "verification",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Checking selected identifiers, numeric outputs and source references before saving.",
+      "input_refs": [
+        "artifact-filter-results",
+        "artifact-evidence"
+      ],
+      "output_refs": [],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:36",
+      "run_id": "run-simulated-fixture",
+      "sequence": 36,
+      "timestamp": "2026-10-24T10:00:15.750000+00:00",
+      "type": "artifact.created",
+      "worker_id": "verification",
+      "worker_kind": "deterministic_tool",
+      "task_id": "verification",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Identifier and deterministic output checks.",
+      "input_refs": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08",
+        "demo-evidence-01",
+        "demo-evidence-02",
+        "demo-evidence-03",
+        "demo-evidence-04"
+      ],
+      "output_refs": [
+        "artifact-verification"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:37",
+      "run_id": "run-simulated-fixture",
+      "sequence": 37,
+      "timestamp": "2026-10-24T10:00:16.200000+00:00",
+      "type": "tool.completed",
+      "worker_id": "verification",
+      "worker_kind": "deterministic_tool",
+      "task_id": "verification",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Deterministic identifier and evidence checks passed. Scientific correctness still requires researcher review.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-verification"
+      ],
+      "metrics": {
+        "selected_ids": 5,
+        "sources": 4
+      },
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:38",
+      "run_id": "run-simulated-fixture",
+      "sequence": 38,
+      "timestamp": "2026-10-24T10:00:16.650000+00:00",
+      "type": "artifact.created",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "running",
+      "summary": "Saved shortlist, decision notes and Markdown export.",
+      "input_refs": [
+        "inv-a565496e546c40e684077fc5bb94d7b2",
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "output_refs": [
+        "artifact-brief"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:39",
+      "run_id": "run-simulated-fixture",
+      "sequence": 39,
+      "timestamp": "2026-10-24T10:00:17.100000+00:00",
+      "type": "artifact.ready",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "output",
+      "summary": "Review brief saved with its original criteria, evidence and model identity.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-brief"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:40",
+      "run_id": "run-simulated-fixture",
+      "sequence": 40,
+      "timestamp": "2026-10-24T10:00:17.550000+00:00",
+      "type": "task.completed",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Review brief ready. Researcher review remains required.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-brief"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    },
+    {
+      "event_id": "run-simulated-fixture:41",
+      "run_id": "run-simulated-fixture",
+      "sequence": 41,
+      "timestamp": "2026-10-24T10:00:18+00:00",
+      "type": "run.completed",
+      "worker_id": "coordinator",
+      "worker_kind": "deterministic_tool",
+      "task_id": "coordinator",
+      "parent_task_id": "investigate",
+      "status": "completed",
+      "summary": "Investigation completed; saved output and provenance are available.",
+      "input_refs": [],
+      "output_refs": [
+        "inv-00000000000000000000000000000000",
+        "artifact-brief"
+      ],
+      "metrics": {},
+      "sender": null,
+      "recipient": null,
+      "mode": "simulated"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact-context",
+      "name": "Declared research context",
+      "worker_id": "coordinator",
+      "summary": "Original objective, criteria and candidate capacity.",
+      "refs": [],
+      "data": {
+        "title": "Preserved abundance · reduced activity",
+        "research_question": "Which variants meet our declared assay criteria, and what uncertainty should follow-up resolve?",
+        "candidate_budget": 10,
+        "criteria": {
+          "abundance_min": 0.7,
+          "activity_max": 0.35,
+          "mapping": "all",
+          "evidence": "all"
+        },
+        "selected_ids": null,
+        "explanation_mode": "fixture"
+      }
+    },
+    {
+      "id": "artifact-data",
+      "name": "Workspace records",
+      "worker_id": "data-retrieval",
+      "summary": "Versioned synthetic source records.",
+      "refs": [
+        "workspace-demo",
+        "DEMO-PROT-001",
+        "assay-abundance-demo",
+        "assay-activity-demo"
+      ],
+      "data": {
+        "dataset_version": "demo-1.0.0",
+        "variants": 8,
+        "assays": 2,
+        "evidence": 4,
+        "structure_points": 109
+      }
+    },
+    {
+      "id": "artifact-filter-results",
+      "name": "Assay filter results",
+      "worker_id": "assay-analysis",
+      "summary": "Deterministic selection and exclusion reasons.",
+      "refs": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "data": {
+        "criteria": {
+          "abundance_min": 0.7,
+          "activity_max": 0.35,
+          "mapping": "all",
+          "evidence": "all"
+        },
+        "matching_ids": [
+          "demo-v01",
+          "demo-v02",
+          "demo-v05",
+          "demo-v06",
+          "demo-v08"
+        ],
+        "mapped_count": 3,
+        "unmapped_count": 2,
+        "missing_measurement_count": 1,
+        "results": [
+          {
+            "variant_id": "demo-v01",
+            "matches": true,
+            "abundance": 0.92,
+            "activity": 0.18,
+            "mapping_status": "mapped",
+            "evidence_count": 1,
+            "reasons": [
+              "Meets the editable synthetic assay criteria."
+            ]
+          },
+          {
+            "variant_id": "demo-v02",
+            "matches": true,
+            "abundance": 0.82,
+            "activity": 0.25,
+            "mapping_status": "mapped",
+            "evidence_count": 2,
+            "reasons": [
+              "Meets the editable synthetic assay criteria."
+            ]
+          },
+          {
+            "variant_id": "demo-v03",
+            "matches": false,
+            "abundance": 0.2,
+            "activity": 0.12,
+            "mapping_status": "mapped",
+            "evidence_count": 1,
+            "reasons": [
+              "Abundance is below the demo minimum."
+            ]
+          },
+          {
+            "variant_id": "demo-v04",
+            "matches": false,
+            "abundance": 0.9,
+            "activity": 0.88,
+            "mapping_status": "mapped",
+            "evidence_count": 1,
+            "reasons": [
+              "Activity is above the demo maximum."
+            ]
+          },
+          {
+            "variant_id": "demo-v05",
+            "matches": true,
+            "abundance": 0.74,
+            "activity": 0.3,
+            "mapping_status": "mapped",
+            "evidence_count": 2,
+            "reasons": [
+              "Meets the editable synthetic assay criteria."
+            ]
+          },
+          {
+            "variant_id": "demo-v06",
+            "matches": true,
+            "abundance": 0.81,
+            "activity": 0.2,
+            "mapping_status": "missing_coordinates",
+            "evidence_count": 1,
+            "reasons": [
+              "Meets the editable synthetic assay criteria."
+            ]
+          },
+          {
+            "variant_id": "demo-v07",
+            "matches": false,
+            "abundance": 0.77,
+            "activity": null,
+            "mapping_status": "mapped",
+            "evidence_count": 0,
+            "reasons": [
+              "Insufficient measurement: abundance or activity is missing."
+            ]
+          },
+          {
+            "variant_id": "demo-v08",
+            "matches": true,
+            "abundance": 0.91,
+            "activity": 0.22,
+            "mapping_status": "outside_structure_coverage",
+            "evidence_count": 1,
+            "reasons": [
+              "Meets the editable synthetic assay criteria."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "artifact-mapping",
+      "name": "Mapping and neighbours",
+      "worker_id": "structure-mapping",
+      "summary": "Calculated geometry in demo coordinate units; radius 12.",
+      "refs": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "data": {
+        "mapped": 3,
+        "unmapped": 2,
+        "neighbors": [
+          {
+            "variant_id": "demo-v01",
+            "radius": 12.0,
+            "units": "demo coordinate units",
+            "status": "available",
+            "reason": null,
+            "neighbors": []
+          },
+          {
+            "variant_id": "demo-v02",
+            "radius": 12.0,
+            "units": "demo coordinate units",
+            "status": "available",
+            "reason": null,
+            "neighbors": []
+          },
+          {
+            "variant_id": "demo-v05",
+            "radius": 12.0,
+            "units": "demo coordinate units",
+            "status": "available",
+            "reason": null,
+            "neighbors": []
+          },
+          {
+            "variant_id": "demo-v06",
+            "radius": 12.0,
+            "units": "demo coordinate units",
+            "status": "unavailable",
+            "reason": "No coordinate: missing coordinates.",
+            "neighbors": []
+          },
+          {
+            "variant_id": "demo-v08",
+            "radius": 12.0,
+            "units": "demo coordinate units",
+            "status": "unavailable",
+            "reason": "No coordinate: outside structure coverage.",
+            "neighbors": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "artifact-evidence",
+      "name": "Supplied evidence",
+      "worker_id": "evidence-review",
+      "summary": "Fictional records, not publications or biological validation.",
+      "refs": [
+        "demo-evidence-01",
+        "demo-evidence-02",
+        "demo-evidence-03",
+        "demo-evidence-04"
+      ],
+      "data": {
+        "records": [
+          {
+            "id": "demo-evidence-01",
+            "title": "Abundance and activity can diverge",
+            "text": "Fictional record: preserved abundance and reduced activity coexist in the supplied synthetic measurements. This does not establish a mechanism.",
+            "variant_ids": [
+              "demo-v01",
+              "demo-v02"
+            ],
+            "kind": "fictional_record",
+            "synthetic": true
+          },
+          {
+            "id": "demo-evidence-02",
+            "title": "Low abundance needs separate interpretation",
+            "text": "Fictional record: reduced activity alone does not distinguish an abundance change from another explanation. These are fabricated observations.",
+            "variant_ids": [
+              "demo-v02",
+              "demo-v03"
+            ],
+            "kind": "fictional_record",
+            "synthetic": true
+          },
+          {
+            "id": "demo-evidence-03",
+            "title": "A contrasting assay profile",
+            "text": "Fictional record: the synthetic comparison includes both high-activity and low-activity measurements. Comparison is illustrative, not a validated control experiment.",
+            "variant_ids": [
+              "demo-v04",
+              "demo-v05"
+            ],
+            "kind": "fictional_record",
+            "synthetic": true
+          },
+          {
+            "id": "demo-evidence-04",
+            "title": "Geometry does not determine eligibility",
+            "text": "Fictional record: missing structural coordinates do not remove an otherwise qualifying assay profile. Structural proximity is not evidence of shared function.",
+            "variant_ids": [
+              "demo-v05",
+              "demo-v06",
+              "demo-v08"
+            ],
+            "kind": "fictional_record",
+            "synthetic": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "artifact-narrative",
+      "name": "Validated explanation",
+      "worker_id": "brief-synthesis",
+      "summary": "Source-linked narrative; hypotheses remain unverified.",
+      "refs": [
+        "demo-evidence-01",
+        "demo-evidence-02",
+        "demo-evidence-03",
+        "demo-evidence-04"
+      ],
+      "data": {
+        "summary": "Fixture explanation: the shortlist follows the editable demo criteria. Inspect linked fictional records and missing geometry before planning follow-up.",
+        "findings": [
+          {
+            "variant_ids": [
+              "demo-v01",
+              "demo-v02"
+            ],
+            "text": "Fictional record: preserved abundance and reduced activity coexist in the supplied synthetic measurements. This does not establish a mechanism.",
+            "evidence_ids": [
+              "demo-evidence-01"
+            ]
+          },
+          {
+            "variant_ids": [
+              "demo-v02"
+            ],
+            "text": "Fictional record: reduced activity alone does not distinguish an abundance change from another explanation. These are fabricated observations.",
+            "evidence_ids": [
+              "demo-evidence-02"
+            ]
+          },
+          {
+            "variant_ids": [
+              "demo-v05"
+            ],
+            "text": "Fictional record: the synthetic comparison includes both high-activity and low-activity measurements. Comparison is illustrative, not a validated control experiment.",
+            "evidence_ids": [
+              "demo-evidence-03"
+            ]
+          },
+          {
+            "variant_ids": [
+              "demo-v05",
+              "demo-v06",
+              "demo-v08"
+            ],
+            "text": "Fictional record: missing structural coordinates do not remove an otherwise qualifying assay profile. Structural proximity is not evidence of shared function.",
+            "evidence_ids": [
+              "demo-evidence-04"
+            ]
+          }
+        ],
+        "hypotheses": [
+          {
+            "text": "Could a repeat measurement distinguish a stable assay profile from measurement variability?",
+            "status": "unverified"
+          }
+        ],
+        "follow_up_questions": [
+          "Which measurements should be repeated under a documented assay protocol?",
+          "What additional evidence would distinguish the competing explanations?"
+        ],
+        "limitations": [
+          "Synthetic measurements and illustrative geometry",
+          "Fictional evidence; no actual protein effects, clinical conclusions or validated experimental priorities."
+        ]
+      }
+    },
+    {
+      "id": "artifact-verification",
+      "name": "Verification report",
+      "worker_id": "verification",
+      "summary": "Identifier and deterministic output checks.",
+      "refs": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08",
+        "demo-evidence-01",
+        "demo-evidence-02",
+        "demo-evidence-03",
+        "demo-evidence-04"
+      ],
+      "data": {
+        "selected_ids_valid": true,
+        "evidence_ids_valid": true,
+        "narrative_validated": true,
+        "narrative_error": null
+      }
+    },
+    {
+      "id": "artifact-brief",
+      "name": "Review brief",
+      "worker_id": "coordinator",
+      "summary": "Saved shortlist, decision notes and Markdown export.",
+      "refs": [
+        "inv-00000000000000000000000000000000",
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "data": {
+        "investigation_id": "inv-00000000000000000000000000000000",
+        "selected_ids": [
+          "demo-v01",
+          "demo-v02",
+          "demo-v05",
+          "demo-v06",
+          "demo-v08"
+        ],
+        "result_mode": "fixture"
+      }
+    }
+  ],
+  "dataset_version": "demo-1.0.0",
+  "data_mode": "synthetic",
+  "execution_mode": "simulated",
+  "storage": "local",
+  "provider": "mock",
+  "model": "fixture-extractive-v1",
+  "result_id": "inv-00000000000000000000000000000000",
+  "result": {
+    "id": "inv-00000000000000000000000000000000",
+    "title": "Preserved abundance · reduced activity",
+    "created_at": "2026-10-24T10:00:18+00:00",
+    "dataset_version": "demo-1.0.0",
+    "research_question": "Which variants meet our declared assay criteria, and what uncertainty should follow-up resolve?",
+    "candidate_budget": 10,
+    "decision_notes": [
+      {
+        "variant_id": "demo-v01",
+        "observations": [
+          {
+            "variant_id": "demo-v01",
+            "assay_id": "assay-abundance-demo",
+            "value": 0.92,
+            "synthetic": true
+          },
+          {
+            "variant_id": "demo-v01",
+            "assay_id": "assay-activity-demo",
+            "value": 0.18,
+            "synthetic": true
+          }
+        ],
+        "selection_reason": "Demo abundance 0.92 ≥ 0.70 and demo activity 0.18 ≤ 0.35; matches the declared filters and is included in the researcher-selected shortlist.",
+        "evidence_ids": [
+          "demo-evidence-01"
+        ],
+        "unresolved_question": "Could differences in protein abundance, measured function, or assay context explain this supplied profile?",
+        "alternative_explanation": "Assay variability, model-system differences or unmatched conditions could explain the pattern; the measurements alone do not distinguish them.",
+        "follow_up_approach": "Discuss reviewing assay identity and conditions, then comparing independently repeated abundance and activity measurements with suitable controls. This is a planning suggestion, not a laboratory protocol.",
+        "hypothesis_status": "unverified",
+        "limitations": [
+          "Synthetic observations only; no biological mechanism is established.",
+          "The shared artificial assay scale does not demonstrate compatibility of real experiments."
+        ]
+      },
+      {
+        "variant_id": "demo-v02",
+        "observations": [
+          {
+            "variant_id": "demo-v02",
+            "assay_id": "assay-abundance-demo",
+            "value": 0.82,
+            "synthetic": true
+          },
+          {
+            "variant_id": "demo-v02",
+            "assay_id": "assay-activity-demo",
+            "value": 0.25,
+            "synthetic": true
+          }
+        ],
+        "selection_reason": "Demo abundance 0.82 ≥ 0.70 and demo activity 0.25 ≤ 0.35; matches the declared filters and is included in the researcher-selected shortlist.",
+        "evidence_ids": [
+          "demo-evidence-01",
+          "demo-evidence-02"
+        ],
+        "unresolved_question": "Could differences in protein abundance, measured function, or assay context explain this supplied profile?",
+        "alternative_explanation": "Assay variability, model-system differences or unmatched conditions could explain the pattern; the measurements alone do not distinguish them.",
+        "follow_up_approach": "Discuss reviewing assay identity and conditions, then comparing independently repeated abundance and activity measurements with suitable controls. This is a planning suggestion, not a laboratory protocol.",
+        "hypothesis_status": "unverified",
+        "limitations": [
+          "Synthetic observations only; no biological mechanism is established.",
+          "The shared artificial assay scale does not demonstrate compatibility of real experiments."
+        ]
+      },
+      {
+        "variant_id": "demo-v05",
+        "observations": [
+          {
+            "variant_id": "demo-v05",
+            "assay_id": "assay-abundance-demo",
+            "value": 0.74,
+            "synthetic": true
+          },
+          {
+            "variant_id": "demo-v05",
+            "assay_id": "assay-activity-demo",
+            "value": 0.3,
+            "synthetic": true
+          }
+        ],
+        "selection_reason": "Demo abundance 0.74 ≥ 0.70 and demo activity 0.30 ≤ 0.35; matches the declared filters and is included in the researcher-selected shortlist.",
+        "evidence_ids": [
+          "demo-evidence-03",
+          "demo-evidence-04"
+        ],
+        "unresolved_question": "Could differences in protein abundance, measured function, or assay context explain this supplied profile?",
+        "alternative_explanation": "Assay variability, model-system differences or unmatched conditions could explain the pattern; the measurements alone do not distinguish them.",
+        "follow_up_approach": "Discuss reviewing assay identity and conditions, then comparing independently repeated abundance and activity measurements with suitable controls. This is a planning suggestion, not a laboratory protocol.",
+        "hypothesis_status": "unverified",
+        "limitations": [
+          "Synthetic observations only; no biological mechanism is established.",
+          "The shared artificial assay scale does not demonstrate compatibility of real experiments."
+        ]
+      },
+      {
+        "variant_id": "demo-v06",
+        "observations": [
+          {
+            "variant_id": "demo-v06",
+            "assay_id": "assay-abundance-demo",
+            "value": 0.81,
+            "synthetic": true
+          },
+          {
+            "variant_id": "demo-v06",
+            "assay_id": "assay-activity-demo",
+            "value": 0.2,
+            "synthetic": true
+          }
+        ],
+        "selection_reason": "Demo abundance 0.81 ≥ 0.70 and demo activity 0.20 ≤ 0.35; matches the declared filters and is included in the researcher-selected shortlist.",
+        "evidence_ids": [
+          "demo-evidence-04"
+        ],
+        "unresolved_question": "Could differences in protein abundance, measured function, or assay context explain this supplied profile?",
+        "alternative_explanation": "Assay variability, model-system differences or unmatched conditions could explain the pattern; the measurements alone do not distinguish them.",
+        "follow_up_approach": "Discuss reviewing assay identity and conditions, then comparing independently repeated abundance and activity measurements with suitable controls. This is a planning suggestion, not a laboratory protocol.",
+        "hypothesis_status": "unverified",
+        "limitations": [
+          "Synthetic observations only; no biological mechanism is established.",
+          "The shared artificial assay scale does not demonstrate compatibility of real experiments.",
+          "Geometry unavailable: missing coordinates. Assay-based inclusion remains valid for this demo."
+        ]
+      },
+      {
+        "variant_id": "demo-v08",
+        "observations": [
+          {
+            "variant_id": "demo-v08",
+            "assay_id": "assay-abundance-demo",
+            "value": 0.91,
+            "synthetic": true
+          },
+          {
+            "variant_id": "demo-v08",
+            "assay_id": "assay-activity-demo",
+            "value": 0.22,
+            "synthetic": true
+          }
+        ],
+        "selection_reason": "Demo abundance 0.91 ≥ 0.70 and demo activity 0.22 ≤ 0.35; matches the declared filters and is included in the researcher-selected shortlist.",
+        "evidence_ids": [
+          "demo-evidence-04"
+        ],
+        "unresolved_question": "Could differences in protein abundance, measured function, or assay context explain this supplied profile?",
+        "alternative_explanation": "Assay variability, model-system differences or unmatched conditions could explain the pattern; the measurements alone do not distinguish them.",
+        "follow_up_approach": "Discuss reviewing assay identity and conditions, then comparing independently repeated abundance and activity measurements with suitable controls. This is a planning suggestion, not a laboratory protocol.",
+        "hypothesis_status": "unverified",
+        "limitations": [
+          "Synthetic observations only; no biological mechanism is established.",
+          "The shared artificial assay scale does not demonstrate compatibility of real experiments.",
+          "Geometry unavailable: outside structure coverage. Assay-based inclusion remains valid for this demo."
+        ]
+      }
+    ],
+    "evidence_snapshot": [
+      {
+        "id": "demo-evidence-01",
+        "title": "Abundance and activity can diverge",
+        "text": "Fictional record: preserved abundance and reduced activity coexist in the supplied synthetic measurements. This does not establish a mechanism.",
+        "variant_ids": [
+          "demo-v01",
+          "demo-v02"
+        ],
+        "kind": "fictional_record",
+        "synthetic": true
+      },
+      {
+        "id": "demo-evidence-02",
+        "title": "Low abundance needs separate interpretation",
+        "text": "Fictional record: reduced activity alone does not distinguish an abundance change from another explanation. These are fabricated observations.",
+        "variant_ids": [
+          "demo-v02",
+          "demo-v03"
+        ],
+        "kind": "fictional_record",
+        "synthetic": true
+      },
+      {
+        "id": "demo-evidence-03",
+        "title": "A contrasting assay profile",
+        "text": "Fictional record: the synthetic comparison includes both high-activity and low-activity measurements. Comparison is illustrative, not a validated control experiment.",
+        "variant_ids": [
+          "demo-v04",
+          "demo-v05"
+        ],
+        "kind": "fictional_record",
+        "synthetic": true
+      },
+      {
+        "id": "demo-evidence-04",
+        "title": "Geometry does not determine eligibility",
+        "text": "Fictional record: missing structural coordinates do not remove an otherwise qualifying assay profile. Structural proximity is not evidence of shared function.",
+        "variant_ids": [
+          "demo-v05",
+          "demo-v06",
+          "demo-v08"
+        ],
+        "kind": "fictional_record",
+        "synthetic": true
+      }
+    ],
+    "variant_snapshot": [
+      {
+        "id": "demo-v01",
+        "protein_id": "DEMO-PROT-001",
+        "position": 12,
+        "ref": "W",
+        "alt": "C",
+        "synthetic": true,
+        "mapping_status": "mapped",
+        "evidence_ids": [
+          "demo-evidence-01"
+        ]
+      },
+      {
+        "id": "demo-v02",
+        "protein_id": "DEMO-PROT-001",
+        "position": 28,
+        "ref": "N",
+        "alt": "R",
+        "synthetic": true,
+        "mapping_status": "mapped",
+        "evidence_ids": [
+          "demo-evidence-01",
+          "demo-evidence-02"
+        ]
+      },
+      {
+        "id": "demo-v05",
+        "protein_id": "DEMO-PROT-001",
+        "position": 76,
+        "ref": "N",
+        "alt": "R",
+        "synthetic": true,
+        "mapping_status": "mapped",
+        "evidence_ids": [
+          "demo-evidence-03",
+          "demo-evidence-04"
+        ]
+      },
+      {
+        "id": "demo-v06",
+        "protein_id": "DEMO-PROT-001",
+        "position": 95,
+        "ref": "H",
+        "alt": "L",
+        "synthetic": true,
+        "mapping_status": "missing_coordinates",
+        "evidence_ids": [
+          "demo-evidence-04"
+        ]
+      },
+      {
+        "id": "demo-v08",
+        "protein_id": "DEMO-PROT-001",
+        "position": 118,
+        "ref": "L",
+        "alt": "P",
+        "synthetic": true,
+        "mapping_status": "outside_structure_coverage",
+        "evidence_ids": [
+          "demo-evidence-04"
+        ]
+      }
+    ],
+    "criteria": {
+      "abundance_min": 0.7,
+      "activity_max": 0.35,
+      "mapping": "all",
+      "evidence": "all"
+    },
+    "selected_ids": [
+      "demo-v01",
+      "demo-v02",
+      "demo-v05",
+      "demo-v06",
+      "demo-v08"
+    ],
+    "source_ids": [
+      "demo-evidence-01",
+      "demo-evidence-02",
+      "demo-evidence-03",
+      "demo-evidence-04"
+    ],
+    "analysis": {
+      "criteria": {
+        "abundance_min": 0.7,
+        "activity_max": 0.35,
+        "mapping": "all",
+        "evidence": "all"
+      },
+      "matching_ids": [
+        "demo-v01",
+        "demo-v02",
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "mapped_count": 3,
+      "unmapped_count": 2,
+      "missing_measurement_count": 1,
+      "results": [
+        {
+          "variant_id": "demo-v01",
+          "matches": true,
+          "abundance": 0.92,
+          "activity": 0.18,
+          "mapping_status": "mapped",
+          "evidence_count": 1,
+          "reasons": [
+            "Meets the editable synthetic assay criteria."
+          ]
+        },
+        {
+          "variant_id": "demo-v02",
+          "matches": true,
+          "abundance": 0.82,
+          "activity": 0.25,
+          "mapping_status": "mapped",
+          "evidence_count": 2,
+          "reasons": [
+            "Meets the editable synthetic assay criteria."
+          ]
+        },
+        {
+          "variant_id": "demo-v03",
+          "matches": false,
+          "abundance": 0.2,
+          "activity": 0.12,
+          "mapping_status": "mapped",
+          "evidence_count": 1,
+          "reasons": [
+            "Abundance is below the demo minimum."
+          ]
+        },
+        {
+          "variant_id": "demo-v04",
+          "matches": false,
+          "abundance": 0.9,
+          "activity": 0.88,
+          "mapping_status": "mapped",
+          "evidence_count": 1,
+          "reasons": [
+            "Activity is above the demo maximum."
+          ]
+        },
+        {
+          "variant_id": "demo-v05",
+          "matches": true,
+          "abundance": 0.74,
+          "activity": 0.3,
+          "mapping_status": "mapped",
+          "evidence_count": 2,
+          "reasons": [
+            "Meets the editable synthetic assay criteria."
+          ]
+        },
+        {
+          "variant_id": "demo-v06",
+          "matches": true,
+          "abundance": 0.81,
+          "activity": 0.2,
+          "mapping_status": "missing_coordinates",
+          "evidence_count": 1,
+          "reasons": [
+            "Meets the editable synthetic assay criteria."
+          ]
+        },
+        {
+          "variant_id": "demo-v07",
+          "matches": false,
+          "abundance": 0.77,
+          "activity": null,
+          "mapping_status": "mapped",
+          "evidence_count": 0,
+          "reasons": [
+            "Insufficient measurement: abundance or activity is missing."
+          ]
+        },
+        {
+          "variant_id": "demo-v08",
+          "matches": true,
+          "abundance": 0.91,
+          "activity": 0.22,
+          "mapping_status": "outside_structure_coverage",
+          "evidence_count": 1,
+          "reasons": [
+            "Meets the editable synthetic assay criteria."
+          ]
+        }
+      ]
+    },
+    "narrative": {
+      "summary": "Fixture explanation: the shortlist follows the editable demo criteria. Inspect linked fictional records and missing geometry before planning follow-up.",
+      "findings": [
+        {
+          "variant_ids": [
+            "demo-v01",
+            "demo-v02"
+          ],
+          "text": "Fictional record: preserved abundance and reduced activity coexist in the supplied synthetic measurements. This does not establish a mechanism.",
+          "evidence_ids": [
+            "demo-evidence-01"
+          ]
+        },
+        {
+          "variant_ids": [
+            "demo-v02"
+          ],
+          "text": "Fictional record: reduced activity alone does not distinguish an abundance change from another explanation. These are fabricated observations.",
+          "evidence_ids": [
+            "demo-evidence-02"
+          ]
+        },
+        {
+          "variant_ids": [
+            "demo-v05"
+          ],
+          "text": "Fictional record: the synthetic comparison includes both high-activity and low-activity measurements. Comparison is illustrative, not a validated control experiment.",
+          "evidence_ids": [
+            "demo-evidence-03"
+          ]
+        },
+        {
+          "variant_ids": [
+            "demo-v05",
+            "demo-v06",
+            "demo-v08"
+          ],
+          "text": "Fictional record: missing structural coordinates do not remove an otherwise qualifying assay profile. Structural proximity is not evidence of shared function.",
+          "evidence_ids": [
+            "demo-evidence-04"
+          ]
+        }
+      ],
+      "hypotheses": [
+        {
+          "text": "Could a repeat measurement distinguish a stable assay profile from measurement variability?",
+          "status": "unverified"
+        }
+      ],
+      "follow_up_questions": [
+        "Which measurements should be repeated under a documented assay protocol?",
+        "What additional evidence would distinguish the competing explanations?"
+      ],
+      "limitations": [
+        "Synthetic measurements and illustrative geometry",
+        "Fictional evidence; no actual protein effects, clinical conclusions or validated experimental priorities."
+      ]
+    },
+    "result_mode": "fixture",
+    "provider": "mock",
+    "model": "fixture-extractive-v1",
+    "explanation_error": null,
+    "steps": [
+      {
+        "name": "Validate input",
+        "status": "completed",
+        "detail": "Thresholds validated on the artificial zero-to-one scale.",
+        "completed_at": "2026-10-24T10:00:18+00:00"
+      },
+      {
+        "name": "Filter variants",
+        "status": "completed",
+        "detail": "5 matching candidates; 5 included in this investigation.",
+        "completed_at": "2026-10-24T10:00:18+00:00"
+      },
+      {
+        "name": "Check coverage",
+        "status": "completed",
+        "detail": "3 mapped, 2 unmapped selected candidates; missing measurements were not coerced to zero.",
+        "completed_at": "2026-10-24T10:00:18+00:00"
+      },
+      {
+        "name": "Collect evidence",
+        "status": "completed",
+        "detail": "4 fictional source records linked by stable IDs.",
+        "completed_at": "2026-10-24T10:00:18+00:00"
+      },
+      {
+        "name": "Explain supplied evidence",
+        "status": "completed",
+        "detail": "mock: validated structured explanation; findings restricted to supplied source text.",
+        "completed_at": "2026-10-24T10:00:18+00:00"
+      },
+      {
+        "name": "Verify shortlist",
+        "status": "completed",
+        "detail": "Selected IDs remain a subset of the deterministic result. Evidence references and supplied claims checked; scientific correctness still requires researcher review.",
+        "completed_at": "2026-10-24T10:00:18+00:00"
+      },
+      {
+        "name": "Save investigation",
+        "status": "completed",
+        "detail": "Criteria, numeric tool outputs, sources, provider, mode and completed steps saved with this record.",
+        "completed_at": "2026-10-24T10:00:18+00:00"
+      }
+    ],
+    "synthetic": true
+  },
+  "error": null
+}

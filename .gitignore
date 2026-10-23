@@ -1,0 +1,24 @@
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+
+# Dependencies, caches, generated builds and local run state
+node_modules/
+.venv/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.tsbuildinfo
+dist/
+var/
+test-results/
+playwright-report/
+.browsers/
+
+# Separate published idea-atlas checkout (has its own Git remote)
+research-atlas/

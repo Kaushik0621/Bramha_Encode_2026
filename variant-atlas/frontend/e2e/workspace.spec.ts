@@ -1,0 +1,87 @@
+import {test,expect} from '@playwright/test';
+import {PerspectiveCamera,Vector3} from 'three';
+test('filter → select → investigate → persist → export',async({page})=>{
+  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('/');
+  await expect(page.getByRole('heading',{name:'What deserves a closer look?'})).toBeVisible();
+  await expect(page.getByText('5 included',{exact:true})).toBeVisible();
+  await expect(page.locator('tbody tr')).toHaveCount(8);
+  await page.getByLabel('Structural coverage',{exact:true}).selectOption('mapped');
+  await expect(page.getByText('3 included',{exact:true})).toBeVisible();
+  for(const id of ['demo-v01','demo-v02','demo-v05'])await expect(page.getByLabel(`Include ${id} in shortlist`,{exact:true})).toBeChecked();
+  for(const id of ['demo-v06','demo-v08'])await expect(page.getByLabel(`Include ${id} in shortlist`,{exact:true})).not.toBeChecked();
+  await page.getByTestId('row-demo-v05').getByRole('button').click();
+  await expect(page.getByRole('complementary',{name:'Selected variant details'})).toContainText('demo-v05');
+  await expect(page.getByRole('complementary',{name:'Selected variant details'})).toContainText('0.74');
+  // Verify a real canvas pointer selection using the fixture position and reset camera.
+  await page.getByRole('button',{name:'Reset view'}).click();
+  await page.waitForTimeout(2000);
+  const fixture=await (await page.request.get('/api/workspace')).json();
+  const point=fixture.structure.points.find((p:{position:number})=>p.position===28);
+  const rect=await page.locator('canvas').boundingBox();expect(rect).not.toBeNull();
+  const camera=new PerspectiveCamera(43,rect!.width/rect!.height,.1,400);camera.position.set(45,24,65);camera.lookAt(0,0,0);camera.updateMatrixWorld();
+  const projected=new Vector3(point.x,point.y,point.z).project(camera);
+  await page.mouse.click(rect!.x+(projected.x+1)*rect!.width/2,rect!.y+(-projected.y+1)*rect!.height/2);
+  await expect(page.getByRole('complementary',{name:'Selected variant details'})).toContainText('demo-v02');
+  await page.screenshot({path:'../artifacts/workspace-desktop.png',fullPage:true});
+  await page.getByRole('button',{name:'Abundance',exact:true}).click();
+  await expect(page.getByRole('button',{name:'Abundance',exact:true})).toHaveAttribute('aria-pressed','true');
+  await page.getByTestId('row-demo-v08').getByRole('button').click();
+  await expect(page.getByText(/Selected variant is outside the current filter/)).toBeVisible();
+  await page.getByRole('tab',{name:'Neighbours'}).click();
+  await expect(page.getByText('No coordinate: outside structure coverage.')).toBeVisible();
+  await page.getByLabel('Structural coverage',{exact:true}).selectOption('all');
+  await expect(page.getByText('5 included',{exact:true})).toBeVisible();
+  await page.getByLabel('Research question',{exact:true}).fill('Which profiles should be reviewed next, and what uncertainty could repeat measurements resolve?');
+  await page.getByLabel('Candidate capacity',{exact:true}).fill('2');
+  await expect(page.getByText(/Over capacity: uncheck variants/)).toBeVisible();
+  await expect(page.getByRole('button',{name:'Start investigation · 5 variants'})).toBeDisabled();
+  await page.getByLabel('Candidate capacity',{exact:true}).fill('10');
+  await page.getByLabel('Investigation title',{exact:true}).fill('Browser acceptance shortlist');
+  await page.getByRole('button',{name:'Start investigation · 5 variants'}).click();
+  await expect(page.getByTestId('investigation-chamber')).toBeVisible();
+  await page.getByRole('button',{name:'Open saved review brief',exact:false}).last().click();
+  await expect(page.getByTestId('investigation-result')).toBeVisible();
+  await expect(page.getByText('FIXTURE EXPLANATION · NOT AI')).toBeVisible();
+  await expect(page.getByTestId('investigation-result').getByRole('heading',{name:'Browser acceptance shortlist',exact:true})).toBeVisible();
+  const downloadPromise=page.waitForEvent('download');
+  await page.getByRole('link',{name:'Export Markdown'}).click();
+  const download=await downloadPromise;
+  const stream=await download.createReadStream();let text='';for await(const chunk of stream!)text+=chunk.toString();
+  expect(text).toContain('Synthetic data');expect(text).toContain('Illustrative geometry');expect(text).toContain('demo-v08');expect(text).toContain('demo-evidence-04');expect(text).toContain('Candidate capacity: 10');expect(text).toContain('Unresolved question');expect(text).toContain('Proposed follow-up approach');
+  await page.reload();await page.getByRole('button',{name:/Browser acceptance shortlist/}).first().click();
+  await expect(page.getByTestId('investigation-result').getByRole('heading',{name:'Browser acceptance shortlist',exact:true})).toBeVisible();
+  await expect(page.getByRole('region',{name:'Research decision brief'})).toContainText('Which profiles should be reviewed next');
+  expect(errors).toEqual([]);
+});
+
+test('keyboard selection, edited thresholds and empty shortlist remain usable',async({page})=>{
+  await page.goto('/');await expect(page.getByText('5 included',{exact:true})).toBeVisible();
+  const row=page.getByTestId('row-demo-v07');await row.getByRole('button').focus();await page.keyboard.press('Enter');
+  const drawer=page.getByRole('complementary',{name:'Selected variant details'});
+  await expect(drawer).toContainText('Not measured');await expect(drawer).toContainText('No linked evidence');
+  await page.getByLabel('Minimum abundance',{exact:true}).fill('1');
+  await page.getByLabel('Minimum abundance',{exact:true}).press('Tab');
+  await expect(page.getByText('0 included',{exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'Start investigation · 0 variants'}).click();
+  await expect(page.getByTestId('investigation-chamber')).toBeVisible();
+  await page.getByRole('button',{name:'Open saved review brief',exact:false}).last().click();
+  await expect(page.getByTestId('investigation-result')).toBeVisible();
+  await expect(page.getByText('0 included · demo-1.0.0', {exact:false})).toBeVisible();
+});
+
+test('WebGL-unavailable fallback keeps core workflow available',async({page})=>{
+  await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(this:HTMLCanvasElement,type:string,...args:unknown[]){if(type.startsWith('webgl'))return null;return (original as Function).apply(this,[type,...args]);} as typeof original;});
+  await page.goto('/');await expect(page.getByText('Structure viewer unavailable',{exact:true})).toBeVisible();
+  await expect(page.getByText('5 included',{exact:true})).toBeVisible();
+  await page.getByTestId('row-demo-v02').getByRole('button').click();
+  await expect(page.getByRole('complementary',{name:'Selected variant details'})).toContainText('demo-v02');
+});
+
+test('narrow workspace stacks without page overflow and respects reduced motion',async({page})=>{
+  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');
+  await expect(page.getByText('5 included',{exact:true})).toBeVisible();
+  await expect(page.getByRole('button',{name:'Rotate slowly'})).toBeDisabled();
+  await page.screenshot({path:'../artifacts/workspace-mobile.png',fullPage:true});
+  const hasOverflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth);expect(hasOverflow).toBe(false);
+});

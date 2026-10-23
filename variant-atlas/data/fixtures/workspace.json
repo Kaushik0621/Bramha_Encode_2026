@@ -1,0 +1,935 @@
+{
+  "id": "workspace-demo",
+  "name": "Synthetic variant research",
+  "dataset_version": "demo-1.0.0",
+  "synthetic": true,
+  "protein": {
+    "id": "DEMO-PROT-001",
+    "name": "Fictional protein-like sequence",
+    "sequence": "AIRCKSDLTEMWGPYHQAIRCKTEMVFNWGPYHRCKSDLTEMVFPYHQAIRCKSDMVFNWGPYHQAKSDLTEMVFNWHQAIRCKSDLTFNWGPYHQAIRDLTEMVFNWGPAIRCKSDLTE",
+    "length": 120,
+    "synthetic": true
+  },
+  "variants": [
+    {
+      "id": "demo-v01",
+      "protein_id": "DEMO-PROT-001",
+      "position": 12,
+      "ref": "W",
+      "alt": "C",
+      "synthetic": true,
+      "mapping_status": "mapped",
+      "evidence_ids": [
+        "demo-evidence-01"
+      ]
+    },
+    {
+      "id": "demo-v02",
+      "protein_id": "DEMO-PROT-001",
+      "position": 28,
+      "ref": "N",
+      "alt": "R",
+      "synthetic": true,
+      "mapping_status": "mapped",
+      "evidence_ids": [
+        "demo-evidence-01",
+        "demo-evidence-02"
+      ]
+    },
+    {
+      "id": "demo-v03",
+      "protein_id": "DEMO-PROT-001",
+      "position": 44,
+      "ref": "F",
+      "alt": "I",
+      "synthetic": true,
+      "mapping_status": "mapped",
+      "evidence_ids": [
+        "demo-evidence-02"
+      ]
+    },
+    {
+      "id": "demo-v04",
+      "protein_id": "DEMO-PROT-001",
+      "position": 60,
+      "ref": "W",
+      "alt": "C",
+      "synthetic": true,
+      "mapping_status": "mapped",
+      "evidence_ids": [
+        "demo-evidence-03"
+      ]
+    },
+    {
+      "id": "demo-v05",
+      "protein_id": "DEMO-PROT-001",
+      "position": 76,
+      "ref": "N",
+      "alt": "R",
+      "synthetic": true,
+      "mapping_status": "mapped",
+      "evidence_ids": [
+        "demo-evidence-03",
+        "demo-evidence-04"
+      ]
+    },
+    {
+      "id": "demo-v06",
+      "protein_id": "DEMO-PROT-001",
+      "position": 95,
+      "ref": "H",
+      "alt": "L",
+      "synthetic": true,
+      "mapping_status": "missing_coordinates",
+      "evidence_ids": [
+        "demo-evidence-04"
+      ]
+    },
+    {
+      "id": "demo-v07",
+      "protein_id": "DEMO-PROT-001",
+      "position": 108,
+      "ref": "W",
+      "alt": "C",
+      "synthetic": true,
+      "mapping_status": "mapped",
+      "evidence_ids": []
+    },
+    {
+      "id": "demo-v08",
+      "protein_id": "DEMO-PROT-001",
+      "position": 118,
+      "ref": "L",
+      "alt": "P",
+      "synthetic": true,
+      "mapping_status": "outside_structure_coverage",
+      "evidence_ids": [
+        "demo-evidence-04"
+      ]
+    }
+  ],
+  "measurements": [
+    {
+      "variant_id": "demo-v01",
+      "assay_id": "assay-abundance-demo",
+      "value": 0.92,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v01",
+      "assay_id": "assay-activity-demo",
+      "value": 0.18,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v02",
+      "assay_id": "assay-abundance-demo",
+      "value": 0.82,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v02",
+      "assay_id": "assay-activity-demo",
+      "value": 0.25,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v03",
+      "assay_id": "assay-abundance-demo",
+      "value": 0.2,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v03",
+      "assay_id": "assay-activity-demo",
+      "value": 0.12,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v04",
+      "assay_id": "assay-abundance-demo",
+      "value": 0.9,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v04",
+      "assay_id": "assay-activity-demo",
+      "value": 0.88,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v05",
+      "assay_id": "assay-abundance-demo",
+      "value": 0.74,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v05",
+      "assay_id": "assay-activity-demo",
+      "value": 0.3,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v06",
+      "assay_id": "assay-abundance-demo",
+      "value": 0.81,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v06",
+      "assay_id": "assay-activity-demo",
+      "value": 0.2,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v07",
+      "assay_id": "assay-abundance-demo",
+      "value": 0.77,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v07",
+      "assay_id": "assay-activity-demo",
+      "value": null,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v08",
+      "assay_id": "assay-abundance-demo",
+      "value": 0.91,
+      "synthetic": true
+    },
+    {
+      "variant_id": "demo-v08",
+      "assay_id": "assay-activity-demo",
+      "value": 0.22,
+      "synthetic": true
+    }
+  ],
+  "assays": [
+    {
+      "id": "assay-abundance-demo",
+      "name": "Demo abundance",
+      "property": "abundance",
+      "scale": "Artificial 0–1; higher means more of the measured property",
+      "synthetic": true
+    },
+    {
+      "id": "assay-activity-demo",
+      "name": "Demo activity",
+      "property": "activity",
+      "scale": "Artificial 0–1; higher means more of the measured property",
+      "synthetic": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "demo-evidence-01",
+      "title": "Abundance and activity can diverge",
+      "text": "Fictional record: preserved abundance and reduced activity coexist in the supplied synthetic measurements. This does not establish a mechanism.",
+      "variant_ids": [
+        "demo-v01",
+        "demo-v02"
+      ],
+      "kind": "fictional_record",
+      "synthetic": true
+    },
+    {
+      "id": "demo-evidence-02",
+      "title": "Low abundance needs separate interpretation",
+      "text": "Fictional record: reduced activity alone does not distinguish an abundance change from another explanation. These are fabricated observations.",
+      "variant_ids": [
+        "demo-v02",
+        "demo-v03"
+      ],
+      "kind": "fictional_record",
+      "synthetic": true
+    },
+    {
+      "id": "demo-evidence-03",
+      "title": "A contrasting assay profile",
+      "text": "Fictional record: the synthetic comparison includes both high-activity and low-activity measurements. Comparison is illustrative, not a validated control experiment.",
+      "variant_ids": [
+        "demo-v04",
+        "demo-v05"
+      ],
+      "kind": "fictional_record",
+      "synthetic": true
+    },
+    {
+      "id": "demo-evidence-04",
+      "title": "Geometry does not determine eligibility",
+      "text": "Fictional record: missing structural coordinates do not remove an otherwise qualifying assay profile. Structural proximity is not evidence of shared function.",
+      "variant_ids": [
+        "demo-v05",
+        "demo-v06",
+        "demo-v08"
+      ],
+      "kind": "fictional_record",
+      "synthetic": true
+    }
+  ],
+  "structure": {
+    "id": "demo-structure-001",
+    "protein_id": "DEMO-PROT-001",
+    "label": "Illustrative geometry — not a biological structure.",
+    "coordinate_units": "demo coordinate units",
+    "points": [
+      {
+        "position": 1,
+        "x": 13.0,
+        "y": -17.0,
+        "z": 2.0
+      },
+      {
+        "position": 2,
+        "x": 14.166911,
+        "y": -15.960443,
+        "z": 3.131882
+      },
+      {
+        "position": 3,
+        "x": 14.925406,
+        "y": -14.96434,
+        "z": 3.941526
+      },
+      {
+        "position": 4,
+        "x": 15.157535,
+        "y": -14.052548,
+        "z": 4.475944
+      },
+      {
+        "position": 5,
+        "x": 14.779877,
+        "y": -13.260891,
+        "z": 4.818938
+      },
+      {
+        "position": 6,
+        "x": 13.753826,
+        "y": -12.618018,
+        "z": 5.074118
+      },
+      {
+        "position": 7,
+        "x": 12.091443,
+        "y": -12.143692,
+        "z": 5.344976
+      },
+      {
+        "position": 8,
+        "x": 9.856215,
+        "y": -11.847611,
+        "z": 5.715261
+      },
+      {
+        "position": 9,
+        "x": 7.158573,
+        "y": -11.72883,
+        "z": 6.232894
+      },
+      {
+        "position": 10,
+        "x": 4.146631,
+        "y": -11.775815,
+        "z": 6.900042
+      },
+      {
+        "position": 11,
+        "x": 0.993077,
+        "y": -11.96713,
+        "z": 7.671001
+      },
+      {
+        "position": 12,
+        "x": -2.12041,
+        "y": -12.272723,
+        "z": 8.458265
+      },
+      {
+        "position": 13,
+        "x": -5.019581,
+        "y": -12.655718,
+        "z": 9.145828
+      },
+      {
+        "position": 14,
+        "x": -7.553176,
+        "y": -13.074613,
+        "z": 9.607596
+      },
+      {
+        "position": 15,
+        "x": -9.605985,
+        "y": -13.485764,
+        "z": 9.727972
+      },
+      {
+        "position": 16,
+        "x": -11.108051,
+        "y": -13.845992,
+        "z": 9.421277
+      },
+      {
+        "position": 17,
+        "x": -12.039115,
+        "y": -14.115155,
+        "z": 8.646889
+      },
+      {
+        "position": 18,
+        "x": -12.427841,
+        "y": -14.258551,
+        "z": 7.41763
+      },
+      {
+        "position": 19,
+        "x": -12.346007,
+        "y": -14.248989,
+        "z": 5.800022
+      },
+      {
+        "position": 20,
+        "x": -11.898322,
+        "y": -14.068412,
+        "z": 3.906315
+      },
+      {
+        "position": 21,
+        "x": -11.209044,
+        "y": -13.708976,
+        "z": 1.879515
+      },
+      {
+        "position": 22,
+        "x": -10.406888,
+        "y": -13.173518,
+        "z": -0.126243
+      },
+      {
+        "position": 23,
+        "x": -9.609896,
+        "y": -12.475388,
+        "z": -1.966897
+      },
+      {
+        "position": 24,
+        "x": -8.911959,
+        "y": -11.637648,
+        "z": -3.527908
+      },
+      {
+        "position": 25,
+        "x": -8.37244,
+        "y": -10.691701,
+        "z": -4.738901
+      },
+      {
+        "position": 26,
+        "x": -8.010062,
+        "y": -9.675408,
+        "z": -5.58123
+      },
+      {
+        "position": 27,
+        "x": -7.801695,
+        "y": -8.630834,
+        "z": -6.087327
+      },
+      {
+        "position": 28,
+        "x": -7.686176,
+        "y": -7.601731,
+        "z": -6.332015
+      },
+      {
+        "position": 29,
+        "x": -7.572701,
+        "y": -6.63093,
+        "z": -6.417255
+      },
+      {
+        "position": 30,
+        "x": -7.352856,
+        "y": -5.757775,
+        "z": -6.452837
+      },
+      {
+        "position": 31,
+        "x": -6.914919,
+        "y": -5.015785,
+        "z": -6.536189
+      },
+      {
+        "position": 32,
+        "x": -6.158838,
+        "y": -4.430641,
+        "z": -6.734587
+      },
+      {
+        "position": 33,
+        "x": -5.010185,
+        "y": -4.01866,
+        "z": -7.07268
+      },
+      {
+        "position": 34,
+        "x": -3.431503,
+        "y": -3.785817,
+        "z": -7.527355
+      },
+      {
+        "position": 35,
+        "x": -1.429759,
+        "y": -3.727389,
+        "z": -8.030806
+      },
+      {
+        "position": 36,
+        "x": 0.941003,
+        "y": -3.828238,
+        "z": -8.481315
+      },
+      {
+        "position": 37,
+        "x": 3.582142,
+        "y": -4.063712,
+        "z": -8.760024
+      },
+      {
+        "position": 38,
+        "x": 6.357857,
+        "y": -4.401123,
+        "z": -8.750988
+      },
+      {
+        "position": 39,
+        "x": 9.106821,
+        "y": -4.801691,
+        "z": -8.361275
+      },
+      {
+        "position": 40,
+        "x": 11.656826,
+        "y": -5.222869,
+        "z": -7.537851
+      },
+      {
+        "position": 41,
+        "x": 13.840896,
+        "y": -5.620875,
+        "z": -6.278492
+      },
+      {
+        "position": 42,
+        "x": 15.513167,
+        "y": -5.953314,
+        "z": -4.634932
+      },
+      {
+        "position": 43,
+        "x": 16.562864,
+        "y": -6.181704,
+        "z": -2.707675
+      },
+      {
+        "position": 44,
+        "x": 16.924881,
+        "y": -6.273778,
+        "z": -0.633238
+      },
+      {
+        "position": 45,
+        "x": 16.585848,
+        "y": -6.205411,
+        "z": 1.434185
+      },
+      {
+        "position": 46,
+        "x": 15.58505,
+        "y": -5.962057,
+        "z": 3.343781
+      },
+      {
+        "position": 47,
+        "x": 14.010098,
+        "y": -5.53962,
+        "z": 4.968585
+      },
+      {
+        "position": 48,
+        "x": 11.987833,
+        "y": -4.944701,
+        "z": 6.222143
+      },
+      {
+        "position": 49,
+        "x": 9.671449,
+        "y": -4.1942,
+        "z": 7.068785
+      },
+      {
+        "position": 50,
+        "x": 7.225197,
+        "y": -3.314306,
+        "z": 7.525914
+      },
+      {
+        "position": 51,
+        "x": 4.808333,
+        "y": -2.33894,
+        "z": 7.658036
+      },
+      {
+        "position": 52,
+        "x": 2.559997,
+        "y": -1.307721,
+        "z": 7.563535
+      },
+      {
+        "position": 53,
+        "x": 0.586641,
+        "y": -0.263603,
+        "z": 7.356394
+      },
+      {
+        "position": 54,
+        "x": -1.0467,
+        "y": 0.749686,
+        "z": 7.145838
+      },
+      {
+        "position": 55,
+        "x": -2.320373,
+        "y": 1.690264,
+        "z": 7.017213
+      },
+      {
+        "position": 56,
+        "x": -3.258976,
+        "y": 2.520587,
+        "z": 7.017213
+      },
+      {
+        "position": 57,
+        "x": -3.925289,
+        "y": 3.209697,
+        "z": 7.145838
+      },
+      {
+        "position": 58,
+        "x": -4.410025,
+        "y": 3.73507,
+        "z": 7.356394
+      },
+      {
+        "position": 59,
+        "x": -4.81857,
+        "y": 4.083959,
+        "z": 7.563535
+      },
+      {
+        "position": 60,
+        "x": -5.256228,
+        "y": 4.254155,
+        "z": 7.658036
+      },
+      {
+        "position": 61,
+        "x": -5.813657,
+        "y": 4.254125,
+        "z": 7.525914
+      },
+      {
+        "position": 62,
+        "x": -6.554133,
+        "y": 4.102496,
+        "z": 7.068785
+      },
+      {
+        "position": 63,
+        "x": -7.504088,
+        "y": 3.826952,
+        "z": 6.222143
+      },
+      {
+        "position": 64,
+        "x": -8.648017,
+        "y": 3.462576,
+        "z": 4.968585
+      },
+      {
+        "position": 65,
+        "x": -9.928343,
+        "y": 3.049757,
+        "z": 3.343781
+      },
+      {
+        "position": 66,
+        "x": -11.250296,
+        "y": 2.631774,
+        "z": 1.434185
+      },
+      {
+        "position": 67,
+        "x": -12.491304,
+        "y": 2.252218,
+        "z": -0.633238
+      },
+      {
+        "position": 68,
+        "x": -13.513896,
+        "y": 1.952383,
+        "z": -2.707675
+      },
+      {
+        "position": 69,
+        "x": -14.180714,
+        "y": 1.768802,
+        "z": -4.634932
+      },
+      {
+        "position": 70,
+        "x": -14.370007,
+        "y": 1.731067,
+        "z": -6.278492
+      },
+      {
+        "position": 71,
+        "x": -13.989903,
+        "y": 1.86006,
+        "z": -7.537851
+      },
+      {
+        "position": 72,
+        "x": -12.989888,
+        "y": 2.166704,
+        "z": -8.361275
+      },
+      {
+        "position": 73,
+        "x": -11.368209,
+        "y": 2.651315,
+        "z": -8.750988
+      },
+      {
+        "position": 74,
+        "x": -9.17436,
+        "y": 3.303581,
+        "z": -8.760024
+      },
+      {
+        "position": 75,
+        "x": -6.506325,
+        "y": 4.103177,
+        "z": -8.481315
+      },
+      {
+        "position": 76,
+        "x": -3.502834,
+        "y": 5.02098,
+        "z": -8.030806
+      },
+      {
+        "position": 77,
+        "x": -0.331405,
+        "y": 6.020808,
+        "z": -7.527355
+      },
+      {
+        "position": 78,
+        "x": 2.826586,
+        "y": 7.06158,
+        "z": -7.07268
+      },
+      {
+        "position": 79,
+        "x": 5.792252,
+        "y": 8.09977,
+        "z": -6.734587
+      },
+      {
+        "position": 80,
+        "x": 8.405251,
+        "y": 9.092007,
+        "z": -6.536189
+      },
+      {
+        "position": 81,
+        "x": 10.537871,
+        "y": 9.997663,
+        "z": -6.452837
+      },
+      {
+        "position": 82,
+        "x": 12.105684,
+        "y": 10.781282,
+        "z": -6.417255
+      },
+      {
+        "position": 83,
+        "x": 13.073671,
+        "y": 11.414694,
+        "z": -6.332015
+      },
+      {
+        "position": 84,
+        "x": 13.457228,
+        "y": 11.878701,
+        "z": -6.087327
+      },
+      {
+        "position": 85,
+        "x": 13.317978,
+        "y": 12.16422,
+        "z": -5.58123
+      },
+      {
+        "position": 86,
+        "x": 12.754928,
+        "y": 12.27283,
+        "z": -4.738901
+      },
+      {
+        "position": 87,
+        "x": 11.891947,
+        "y": 12.216671,
+        "z": -3.527908
+      },
+      {
+        "position": 88,
+        "x": 10.862987,
+        "y": 12.017726,
+        "z": -1.966897
+      },
+      {
+        "position": 89,
+        "x": 9.796672,
+        "y": 11.706502,
+        "z": -0.126243
+      },
+      {
+        "position": 90,
+        "x": 8.801948,
+        "y": 11.320214,
+        "z": 1.879515
+      },
+      {
+        "position": 91,
+        "x": 7.956379,
+        "y": 10.900559,
+        "z": 3.906315
+      },
+      {
+        "position": 92,
+        "x": 7.298331,
+        "y": 10.491225,
+        "z": 5.800022
+      },
+      {
+        "position": 93,
+        "x": 6.823916,
+        "y": 10.135285,
+        "z": 7.41763
+      },
+      {
+        "position": 94,
+        "x": 6.488976,
+        "y": 9.872624,
+        "z": 8.646889
+      },
+      {
+        "position": 96,
+        "x": 5.904334,
+        "y": 9.756773,
+        "z": 9.727972
+      },
+      {
+        "position": 97,
+        "x": 5.445004,
+        "y": 9.947757,
+        "z": 9.607596
+      },
+      {
+        "position": 98,
+        "x": 4.734379,
+        "y": 10.317731,
+        "z": 9.145828
+      },
+      {
+        "position": 99,
+        "x": 3.689225,
+        "y": 10.863227,
+        "z": 8.458265
+      },
+      {
+        "position": 100,
+        "x": 2.258977,
+        "y": 11.570297,
+        "z": 7.671001
+      },
+      {
+        "position": 101,
+        "x": 0.434647,
+        "y": 12.415344,
+        "z": 6.900042
+      },
+      {
+        "position": 102,
+        "x": -1.746782,
+        "y": 13.36653,
+        "z": 6.232894
+      },
+      {
+        "position": 103,
+        "x": -4.203031,
+        "y": 14.385679,
+        "z": 5.715261
+      },
+      {
+        "position": 104,
+        "x": -6.812264,
+        "y": 15.430558,
+        "z": 5.344976
+      },
+      {
+        "position": 105,
+        "x": -9.423336,
+        "y": 16.457394,
+        "z": 5.074118
+      },
+      {
+        "position": 106,
+        "x": -11.869488,
+        "y": 17.423495,
+        "z": 4.818938
+      },
+      {
+        "position": 107,
+        "x": -13.984067,
+        "y": 18.289793,
+        "z": 4.475944
+      },
+      {
+        "position": 108,
+        "x": -15.616601,
+        "y": 19.023183,
+        "z": 3.941526
+      },
+      {
+        "position": 109,
+        "x": -16.647527,
+        "y": 19.598495,
+        "z": 3.131882
+      },
+      {
+        "position": 110,
+        "x": -17.0,
+        "y": 20.0,
+        "z": 2.0
+      }
+    ],
+    "synthetic": true
+  }
+}
