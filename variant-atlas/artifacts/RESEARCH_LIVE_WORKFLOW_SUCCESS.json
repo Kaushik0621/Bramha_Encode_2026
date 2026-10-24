@@ -1,0 +1,962 @@
+{
+  "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+  "status": "completed_with_limitations",
+  "provider": "openrouter",
+  "model": "x-ai/grok-4.3",
+  "dataset_version": "pten-transform-1.0-97b699d687c8",
+  "selected_ids": [
+    "PTEN:p.S10L",
+    "PTEN:p.A39D",
+    "PTEN:p.C124S",
+    "PTEN:p.G129E",
+    "PTEN:p.R130Q",
+    "PTEN:p.M1A"
+  ],
+  "budget": {
+    "model_requests": 15,
+    "tool_calls": 6,
+    "spawned_tasks": 3,
+    "max_model_requests": 20,
+    "max_tool_calls": 40,
+    "max_spawned_tasks": 12,
+    "cost_usd": 0.15809465,
+    "cost_status": "provider_reported",
+    "cost_enforcement": "No prepaid hard cap; request/time/tool ceilings enforced.",
+    "usage": [
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4350,
+          "completion_tokens": 482,
+          "total_tokens": 4832,
+          "cost": 0.0063737,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0063737,
+            "upstream_inference_prompt_cost": 0.0051687,
+            "upstream_inference_completions_cost": 0.001205
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 349,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0063737,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4720,
+          "completion_tokens": 380,
+          "total_tokens": 5100,
+          "cost": 0.0067156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0067156,
+            "upstream_inference_prompt_cost": 0.0057656,
+            "upstream_inference_completions_cost": 0.00095
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 266,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0067156,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4006,
+          "completion_tokens": 533,
+          "total_tokens": 4539,
+          "cost": 0.0060712,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0060712,
+            "upstream_inference_prompt_cost": 0.0047387,
+            "upstream_inference_completions_cost": 0.0013325
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 441,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0060712,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4308,
+          "completion_tokens": 374,
+          "total_tokens": 4682,
+          "cost": 0.0061856,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0061856,
+            "upstream_inference_prompt_cost": 0.0052506,
+            "upstream_inference_completions_cost": 0.000935
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 280,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0061856,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 5080,
+          "completion_tokens": 594,
+          "total_tokens": 5674,
+          "cost": 0.0077006,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0077006,
+            "upstream_inference_prompt_cost": 0.0062156,
+            "upstream_inference_completions_cost": 0.001485
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 446,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0077006,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4894,
+          "completion_tokens": 525,
+          "total_tokens": 5419,
+          "cost": 0.004742,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 2560,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004742,
+            "upstream_inference_prompt_cost": 0.0034295,
+            "upstream_inference_completions_cost": 0.0013125
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 381,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.004742,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 5231,
+          "completion_tokens": 342,
+          "total_tokens": 5573,
+          "cost": 0.00725935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00725935,
+            "upstream_inference_prompt_cost": 0.00640435,
+            "upstream_inference_completions_cost": 0.000855
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 246,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00725935,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6799,
+          "completion_tokens": 321,
+          "total_tokens": 7120,
+          "cost": 0.00916685,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00916685,
+            "upstream_inference_prompt_cost": 0.00836435,
+            "upstream_inference_completions_cost": 0.0008025
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 231,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00916685,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6256,
+          "completion_tokens": 493,
+          "total_tokens": 6749,
+          "cost": 0.0087837,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0087837,
+            "upstream_inference_prompt_cost": 0.0075512,
+            "upstream_inference_completions_cost": 0.0012325
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 293,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0087837,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6845,
+          "completion_tokens": 598,
+          "total_tokens": 7443,
+          "cost": 0.00991685,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00991685,
+            "upstream_inference_prompt_cost": 0.00842185,
+            "upstream_inference_completions_cost": 0.001495
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 324,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00991685,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 10030,
+          "completion_tokens": 657,
+          "total_tokens": 10687,
+          "cost": 0.0140456,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0140456,
+            "upstream_inference_prompt_cost": 0.0124031,
+            "upstream_inference_completions_cost": 0.0016425
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 384,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0140456,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 12941,
+          "completion_tokens": 536,
+          "total_tokens": 13477,
+          "cost": 0.01738185,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.01738185,
+            "upstream_inference_prompt_cost": 0.01604185,
+            "upstream_inference_completions_cost": 0.00134
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 284,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.01738185,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 11062,
+          "completion_tokens": 585,
+          "total_tokens": 11647,
+          "cost": 0.0150212,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0150212,
+            "upstream_inference_prompt_cost": 0.0135587,
+            "upstream_inference_completions_cost": 0.0014625
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 257,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0150212,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 13155,
+          "completion_tokens": 224,
+          "total_tokens": 13379,
+          "cost": 0.01686935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.01686935,
+            "upstream_inference_prompt_cost": 0.01630935,
+            "upstream_inference_completions_cost": 0.00056
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 201,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.01686935,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 14594,
+          "completion_tokens": 1555,
+          "total_tokens": 16149,
+          "cost": 0.0218612,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0218612,
+            "upstream_inference_prompt_cost": 0.0179737,
+            "upstream_inference_completions_cost": 0.0038875
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 420,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0218612,
+        "background": false
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "coordinator",
+      "role": "coordinator",
+      "question": "Investigate preserved abundance with reduced activity among these PTEN substitutions. Delegate independent assay-context and structure reviews. Inspect identity, comparability, declared filtering and mapping. Record a revision when actual source or coordinate limitations narrow the plan, reconcile the branches, and finalize a brief with checked evidence. Stay within 20 model calls: use scoped workers with at most two tools each. Do not make causal or clinical claims.",
+      "allowed_tools": [
+        "fetch_source_snapshot",
+        "inspect_table_schema",
+        "resolve_reference_sequence",
+        "validate_variant_identity",
+        "inspect_assay",
+        "check_score_direction",
+        "assess_comparability",
+        "join_measurements",
+        "filter_measurements",
+        "summarize_measurement_coverage",
+        "compare_measurement_patterns",
+        "load_structure_metadata",
+        "align_structure_reference",
+        "map_variant_residues",
+        "calculate_residue_distances",
+        "find_spatial_neighbors",
+        "retrieve_functional_annotations",
+        "search_methods_text",
+        "retrieve_passage",
+        "validate_evidence_references",
+        "validate_numeric_claims",
+        "compare_analysis_scenarios",
+        "update_scene_selection",
+        "validate_shortlist",
+        "inspect_run_budget",
+        "export_reproducibility_package",
+        "save_research_brief",
+        "spawn_specialist",
+        "request_reconciliation"
+      ],
+      "depth": 0,
+      "status": "completed",
+      "input_artifact_ids": [],
+      "parent_task_id": null,
+      "started_at": "2026-10-24T02:04:21.956886+00:00",
+      "step": 7,
+      "finished_at": "2026-10-24T02:05:15.845188+00:00"
+    },
+    {
+      "id": "task-f79374eb17",
+      "role": "assay",
+      "question": "Inspect assay identity, comparability, declared filtering and mapping for preserved abundance reduced activity PTEN variants using at most two tools.",
+      "input_artifact_ids": [],
+      "allowed_tools": [
+        "assess_comparability",
+        "filter_measurements",
+        "validate_variant_identity",
+        "map_variant_residues"
+      ],
+      "max_steps": 8,
+      "max_seconds": 180,
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "dedup_key": "43182a6bc53e398c9b5fa502c9a4a2ee58c510f776fb57501a9586b22a79c9ec",
+      "status": "completed",
+      "started_at": "2026-10-24T02:04:28.493212+00:00",
+      "step": 2,
+      "finished_at": "2026-10-24T02:04:48.597341+00:00"
+    },
+    {
+      "id": "task-9db2ba8cd6",
+      "role": "structure",
+      "question": "Inspect variant identity, mapping and structure context for preserved abundance reduced activity PTEN substitutions using at most two tools.",
+      "input_artifact_ids": [],
+      "allowed_tools": [
+        "validate_variant_identity",
+        "map_variant_residues"
+      ],
+      "max_steps": 8,
+      "max_seconds": 180,
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "dedup_key": "c6c0682ecd3c9cbb48d9f654db47852f90a7ab7154491e257be6bd5a7cf5fd92",
+      "status": "completed",
+      "started_at": "2026-10-24T02:04:32.996200+00:00",
+      "step": 2,
+      "finished_at": "2026-10-24T02:04:49.971975+00:00"
+    },
+    {
+      "id": "task-a5f69943d2",
+      "role": "reconciliation",
+      "question": "Reconcile assay-context and structure review findings on identity, comparability, filtering, mapping and eligibility for the six selected PTEN variants under preserved abundance reduced activity criteria.",
+      "input_artifact_ids": [
+        "artifact-7692f95b3ff5451b805184691ff7b5a5",
+        "artifact-c57d00e0228d46589afc2a283b45dc37",
+        "artifact-aa75c87f208f42e286f8cb6f2eb06d3e",
+        "artifact-8e161e12e61142b9a969b7d962614aab",
+        "artifact-97fed9157b414f82a0388eb1bbdffa57",
+        "artifact-56b5aeed7f03407e9d8100e70558c2c5"
+      ],
+      "allowed_tools": [
+        "validate_evidence_references",
+        "validate_numeric_claims"
+      ],
+      "max_steps": 8,
+      "max_seconds": 180,
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "dedup_key": "e2345f489802cc6bc82e3422fe1ca6fce61d6c529f2699e1a61ab66d44ed27b3",
+      "status": "completed",
+      "started_at": "2026-10-24T02:04:51.708075+00:00",
+      "step": 0,
+      "finished_at": "2026-10-24T02:04:58.765467+00:00"
+    }
+  ],
+  "event_types": [
+    "task.queued",
+    "task.started",
+    "model.action",
+    "handoff",
+    "task.progress",
+    "tool.started",
+    "artifact.created",
+    "tool.completed",
+    "verification.result",
+    "task.completed",
+    "task.deduplicated",
+    "run.completed_with_limitations"
+  ],
+  "artifact_kinds": [
+    "assess_comparability",
+    "validate_variant_identity",
+    "assess_comparability",
+    "filter_measurements",
+    "map_variant_residues",
+    "filter_measurements",
+    "verification",
+    "specialist_result",
+    "verification",
+    "specialist_result",
+    "verification",
+    "specialist_result",
+    "verification",
+    "shortlist_eligibility",
+    "research_brief"
+  ],
+  "findings": [
+    {
+      "id": "task-f79374eb17:assay-find-1",
+      "claim_type": "reported_observation",
+      "text": "filter_measurements identified 5 matching PTEN variants (S10L, A39D, C124S, G129E, R130Q) under explicit criteria; activity and abundance scores reported on original scales with mapping statuses noted.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab"
+      ],
+      "limitations": [
+        "Activity is humanized-yeast proxy; abundance separate VAMP-seq endpoint; no causality established."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "task-9db2ba8cd6:struct-1",
+      "claim_type": "reported_observation",
+      "text": "validate_variant_identity: all 6 variants (S10L,A39D,C124S,G129E,R130Q,M1A) match P60484 positions with ref/alt.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-c57d00e0228d46589afc2a283b45dc37"
+      ],
+      "limitations": [
+        "Research use only"
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "task-9db2ba8cd6:struct-2",
+      "claim_type": "reported_observation",
+      "text": "map_variant_residues: A39D(39),C124S(124),G129E(129),R130Q(130) mapped to 1D5R C-alpha; S10L missing coords; M1A outside coverage.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "limitations": [
+        "Research use only"
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "task-a5f69943d2:recon-1",
+      "claim_type": "reported_observation",
+      "text": "5 variants eligible under criteria with original-scale scores; mapping statuses: 4 mapped, 1 missing coords, 1 outside coverage. Evidence from artifacts 8e161e12e61142b9a969b7d962614aab, c57d00e0228d46589afc2a283b45dc37, 97fed9157b414f82a0388eb1bbdffa57.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab",
+        "artifact-c57d00e0228d46589afc2a283b45dc37",
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "limitations": [
+        "Observational patterns only; no causality or clinical claims."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "coordinator:task-f79374eb17:assay-find-1",
+      "claim_type": "reported_observation",
+      "text": "filter_measurements identified 5 matching PTEN variants (S10L, A39D, C124S, G129E, R130Q) under explicit criteria; activity and abundance scores reported on original scales with mapping statuses noted.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab"
+      ],
+      "limitations": [
+        "Activity is humanized-yeast proxy; abundance separate VAMP-seq endpoint; no causality established."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "task-f79374eb17:assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-a5f69943d2:recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "coordinator:task-9db2ba8cd6:struct-1",
+      "claim_type": "reported_observation",
+      "text": "validate_variant_identity: all 6 variants (S10L,A39D,C124S,G129E,R130Q,M1A) match P60484 positions with ref/alt.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-c57d00e0228d46589afc2a283b45dc37"
+      ],
+      "limitations": [
+        "Research use only"
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "task-f79374eb17:assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-a5f69943d2:recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "coordinator:task-9db2ba8cd6:struct-2",
+      "claim_type": "reported_observation",
+      "text": "map_variant_residues: A39D(39),C124S(124),G129E(129),R130Q(130) mapped to 1D5R C-alpha; S10L missing coords; M1A outside coverage.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "limitations": [
+        "Research use only"
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "task-f79374eb17:assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-a5f69943d2:recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "coordinator:task-a5f69943d2:recon-1",
+      "claim_type": "reported_observation",
+      "text": "5 variants eligible under criteria with original-scale scores; mapping statuses: 4 mapped, 1 missing coords, 1 outside coverage. Evidence from artifacts 8e161e12e61142b9a969b7d962614aab, c57d00e0228d46589afc2a283b45dc37, 97fed9157b414f82a0388eb1bbdffa57.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab",
+        "artifact-c57d00e0228d46589afc2a283b45dc37",
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "limitations": [
+        "Observational patterns only; no causality or clinical claims."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "task-f79374eb17:assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-a5f69943d2:recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    }
+  ],
+  "error": null,
+  "challenge_qualifying": false,
+  "independent_researcher_review": "pending"
+}

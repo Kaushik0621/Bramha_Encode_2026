@@ -1,0 +1,3370 @@
+{
+  "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+  "workspace_id": "pten-real",
+  "dataset_version": "pten-transform-1.0-97b699d687c8",
+  "mapping_version": "pten-transform-1.0-97b699d687c8",
+  "data_mode": "real",
+  "execution_mode": "live",
+  "playback_mode": "live",
+  "provider": "openrouter",
+  "model": "x-ai/grok-4.3",
+  "storage_mode": "local",
+  "status": "completed_with_limitations",
+  "created_at": "2026-10-24T02:04:21.952676+00:00",
+  "request": {
+    "workspace_id": "pten-real",
+    "title": "PTEN evidence investigation",
+    "question": "Investigate preserved abundance with reduced activity among these PTEN substitutions. Delegate independent assay-context and structure reviews. Inspect identity, comparability, declared filtering and mapping. Record a revision when actual source or coordinate limitations narrow the plan, reconcile the branches, and finalize a brief with checked evidence. Stay within 20 model calls: use scoped workers with at most two tools each. Do not make causal or clinical claims.",
+    "criteria": {
+      "scenario": "preserved_abundance_reduced_activity",
+      "activity_cutoff": -1.11,
+      "abundance_cutoff": 0.6121866579147568,
+      "mapping": "all",
+      "require_both_measurements": true
+    },
+    "selected_ids": [
+      "PTEN:p.S10L",
+      "PTEN:p.A39D",
+      "PTEN:p.C124S",
+      "PTEN:p.G129E",
+      "PTEN:p.R130Q",
+      "PTEN:p.M1A"
+    ],
+    "capacity": 10,
+    "provider": "openrouter",
+    "require_independent_reviews": true,
+    "max_seconds": 600
+  },
+  "events": [
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:1",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 1,
+      "timestamp": "2026-10-24T02:04:21.953510+00:00",
+      "type": "task.queued",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Investigation durably queued.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:2",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 2,
+      "timestamp": "2026-10-24T02:04:21.957675+00:00",
+      "type": "task.started",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:3",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 3,
+      "timestamp": "2026-10-24T02:04:28.411554+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Spawn independent assay-context specialist to handle required checks for comparability, filtering, identity and mapping on selected PTEN variants.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:4",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 4,
+      "timestamp": "2026-10-24T02:04:28.416425+00:00",
+      "type": "task.queued",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Inspect assay identity, comparability, declared filtering and mapping for preserved abundance reduced activity PTEN variants using at most two tools.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:5",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 5,
+      "timestamp": "2026-10-24T02:04:28.418654+00:00",
+      "type": "handoff",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Scoped task delegated.",
+      "input_refs": [],
+      "output_refs": [
+        "task-f79374eb17"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:6",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 6,
+      "timestamp": "2026-10-24T02:04:28.425470+00:00",
+      "type": "task.progress",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:7",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 7,
+      "timestamp": "2026-10-24T02:04:28.494152+00:00",
+      "type": "task.started",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:8",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 8,
+      "timestamp": "2026-10-24T02:04:32.914601+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Spawn structure review branch for independent spatial/identity checks on selected PTEN variants before reconciliation.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:9",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 9,
+      "timestamp": "2026-10-24T02:04:32.922832+00:00",
+      "type": "task.queued",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Inspect variant identity, mapping and structure context for preserved abundance reduced activity PTEN substitutions using at most two tools.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:10",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 10,
+      "timestamp": "2026-10-24T02:04:32.926141+00:00",
+      "type": "handoff",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Scoped task delegated.",
+      "input_refs": [],
+      "output_refs": [
+        "task-9db2ba8cd6"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:11",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 11,
+      "timestamp": "2026-10-24T02:04:32.932995+00:00",
+      "type": "task.progress",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:12",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 12,
+      "timestamp": "2026-10-24T02:04:32.997459+00:00",
+      "type": "task.started",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:13",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 13,
+      "timestamp": "2026-10-24T02:04:35.023698+00:00",
+      "type": "model.action",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Invoke assess_comparability to inspect assay identity and comparability for PTEN variants.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:14",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 14,
+      "timestamp": "2026-10-24T02:04:35.032901+00:00",
+      "type": "tool.started",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "assess_comparability",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:15",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 15,
+      "timestamp": "2026-10-24T02:04:35.061487+00:00",
+      "type": "artifact.created",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "assess_comparability",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-7692f95b3ff5451b805184691ff7b5a5"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:16",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 16,
+      "timestamp": "2026-10-24T02:04:35.063184+00:00",
+      "type": "tool.completed",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "assess_comparability: ok",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-7692f95b3ff5451b805184691ff7b5a5"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:17",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 17,
+      "timestamp": "2026-10-24T02:04:35.067870+00:00",
+      "type": "task.progress",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:18",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 18,
+      "timestamp": "2026-10-24T02:04:38.073263+00:00",
+      "type": "model.action",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Invoke validate_variant_identity on selected PTEN variants to inspect identity and mapping.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:19",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 19,
+      "timestamp": "2026-10-24T02:04:38.081548+00:00",
+      "type": "tool.started",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "validate_variant_identity",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:20",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 20,
+      "timestamp": "2026-10-24T02:04:38.111702+00:00",
+      "type": "artifact.created",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "validate_variant_identity",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-c57d00e0228d46589afc2a283b45dc37"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:21",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 21,
+      "timestamp": "2026-10-24T02:04:38.113556+00:00",
+      "type": "tool.completed",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "validate_variant_identity: ok",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-c57d00e0228d46589afc2a283b45dc37"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:22",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 22,
+      "timestamp": "2026-10-24T02:04:38.118796+00:00",
+      "type": "task.progress",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:23",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 23,
+      "timestamp": "2026-10-24T02:04:39.427780+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Invoke assess_comparability to address required check for PTEN variants.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:24",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 24,
+      "timestamp": "2026-10-24T02:04:39.437340+00:00",
+      "type": "tool.started",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "assess_comparability",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:25",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 25,
+      "timestamp": "2026-10-24T02:04:39.465134+00:00",
+      "type": "artifact.created",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "assess_comparability",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-aa75c87f208f42e286f8cb6f2eb06d3e"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:26",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 26,
+      "timestamp": "2026-10-24T02:04:39.467233+00:00",
+      "type": "tool.completed",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "assess_comparability: ok",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-aa75c87f208f42e286f8cb6f2eb06d3e"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:27",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 27,
+      "timestamp": "2026-10-24T02:04:39.473346+00:00",
+      "type": "task.progress",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:28",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 28,
+      "timestamp": "2026-10-24T02:04:41.711717+00:00",
+      "type": "model.action",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Invoke filter_measurements to inspect declared filtering for preserved abundance reduced activity PTEN variants.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:29",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 29,
+      "timestamp": "2026-10-24T02:04:41.720922+00:00",
+      "type": "tool.started",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "filter_measurements",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:30",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 30,
+      "timestamp": "2026-10-24T02:04:41.766400+00:00",
+      "type": "artifact.created",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "filter_measurements",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:31",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 31,
+      "timestamp": "2026-10-24T02:04:41.768464+00:00",
+      "type": "tool.completed",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "filter_measurements: ok",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:32",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 32,
+      "timestamp": "2026-10-24T02:04:41.774775+00:00",
+      "type": "task.progress",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:33",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 33,
+      "timestamp": "2026-10-24T02:04:42.467173+00:00",
+      "type": "model.action",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Call map_variant_residues on validated PTEN variants for structure context.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:34",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 34,
+      "timestamp": "2026-10-24T02:04:42.478847+00:00",
+      "type": "tool.started",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "map_variant_residues",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:35",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 35,
+      "timestamp": "2026-10-24T02:04:42.508392+00:00",
+      "type": "artifact.created",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "map_variant_residues",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:36",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 36,
+      "timestamp": "2026-10-24T02:04:42.511361+00:00",
+      "type": "tool.completed",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "map_variant_residues: ok",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:37",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 37,
+      "timestamp": "2026-10-24T02:04:42.519417+00:00",
+      "type": "task.progress",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:38",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 38,
+      "timestamp": "2026-10-24T02:04:43.515329+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Invoke filter_measurements to address required check.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:39",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 39,
+      "timestamp": "2026-10-24T02:04:43.531557+00:00",
+      "type": "tool.started",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "filter_measurements",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:40",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 40,
+      "timestamp": "2026-10-24T02:04:43.573553+00:00",
+      "type": "artifact.created",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "filter_measurements",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-56b5aeed7f03407e9d8100e70558c2c5"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:41",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 41,
+      "timestamp": "2026-10-24T02:04:43.576461+00:00",
+      "type": "tool.completed",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "filter_measurements: ok",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-56b5aeed7f03407e9d8100e70558c2c5"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:42",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 42,
+      "timestamp": "2026-10-24T02:04:43.584676+00:00",
+      "type": "task.progress",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:43",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 43,
+      "timestamp": "2026-10-24T02:04:48.549456+00:00",
+      "type": "model.action",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Assay inspection complete via assess_comparability and filter_measurements. 5 variants match preserved_abundance_reduced_activity criteria with checked identity/comparability/filtering/mapping; M1A excluded for missing data.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:44",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 44,
+      "timestamp": "2026-10-24T02:04:48.561886+00:00",
+      "type": "artifact.created",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "verification",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-5d35dae30d4441c68e8fd83ad001f050"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:45",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 45,
+      "timestamp": "2026-10-24T02:04:48.565249+00:00",
+      "type": "verification.result",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Reference existence and numeric checks completed.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-5d35dae30d4441c68e8fd83ad001f050"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:46",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 46,
+      "timestamp": "2026-10-24T02:04:48.595397+00:00",
+      "type": "artifact.created",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "specialist_result",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-3c8e85770425478f91dbf669ca900fd9"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:47",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 47,
+      "timestamp": "2026-10-24T02:04:48.600976+00:00",
+      "type": "task.completed",
+      "task_id": "task-f79374eb17",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Assay inspection complete via assess_comparability and filter_measurements. 5 variants match preserved_abundance_reduced_activity criteria with checked identity/comparability/filtering/mapping; M1A excluded for missing data.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:48",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 48,
+      "timestamp": "2026-10-24T02:04:49.935459+00:00",
+      "type": "model.action",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Structure task complete: validated 6 PTEN variants; 4 mapped to 1D5R coords, S10L missing, M1A outside coverage. No further checks needed.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:49",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 49,
+      "timestamp": "2026-10-24T02:04:49.951089+00:00",
+      "type": "artifact.created",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "verification",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-d42b4bd90ac84ed38e22db1ac70c1b5f"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:50",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 50,
+      "timestamp": "2026-10-24T02:04:49.955607+00:00",
+      "type": "verification.result",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Reference existence and numeric checks completed.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-d42b4bd90ac84ed38e22db1ac70c1b5f"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:51",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 51,
+      "timestamp": "2026-10-24T02:04:49.969228+00:00",
+      "type": "artifact.created",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "specialist_result",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-ca227267283a446bad139129cfe065ca"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:52",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 52,
+      "timestamp": "2026-10-24T02:04:49.976873+00:00",
+      "type": "task.completed",
+      "task_id": "task-9db2ba8cd6",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Structure task complete: validated 6 PTEN variants; 4 mapped to 1D5R coords, S10L missing, M1A outside coverage. No further checks needed.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:53",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 53,
+      "timestamp": "2026-10-24T02:04:51.614957+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Reconcile assay and structure branch outputs on variant identity, mapping, comparability, and eligibility for PTEN preserved-abundance reduced-activity set before brief finalization.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:54",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 54,
+      "timestamp": "2026-10-24T02:04:51.627270+00:00",
+      "type": "task.queued",
+      "task_id": "task-a5f69943d2",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Reconcile assay-context and structure review findings on identity, comparability, filtering, mapping and eligibility for the six selected PTEN variants under preserved abundance reduced activity criteria.",
+      "input_refs": [
+        "artifact-7692f95b3ff5451b805184691ff7b5a5",
+        "artifact-c57d00e0228d46589afc2a283b45dc37",
+        "artifact-aa75c87f208f42e286f8cb6f2eb06d3e",
+        "artifact-8e161e12e61142b9a969b7d962614aab",
+        "artifact-97fed9157b414f82a0388eb1bbdffa57",
+        "artifact-56b5aeed7f03407e9d8100e70558c2c5"
+      ],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:55",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 55,
+      "timestamp": "2026-10-24T02:04:51.632443+00:00",
+      "type": "handoff",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Scoped task delegated.",
+      "input_refs": [
+        "artifact-7692f95b3ff5451b805184691ff7b5a5",
+        "artifact-c57d00e0228d46589afc2a283b45dc37",
+        "artifact-aa75c87f208f42e286f8cb6f2eb06d3e",
+        "artifact-8e161e12e61142b9a969b7d962614aab",
+        "artifact-97fed9157b414f82a0388eb1bbdffa57",
+        "artifact-56b5aeed7f03407e9d8100e70558c2c5"
+      ],
+      "output_refs": [
+        "task-a5f69943d2"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:56",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 56,
+      "timestamp": "2026-10-24T02:04:51.646239+00:00",
+      "type": "task.progress",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:57",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 57,
+      "timestamp": "2026-10-24T02:04:51.712225+00:00",
+      "type": "task.started",
+      "task_id": "task-a5f69943d2",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:58",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 58,
+      "timestamp": "2026-10-24T02:04:58.481783+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Reconcile completed assay and structure specialist findings on identity, comparability, filtering, mapping for the 6 PTEN variants.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:59",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 59,
+      "timestamp": "2026-10-24T02:04:58.492261+00:00",
+      "type": "task.deduplicated",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Identical scoped task already exists.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:60",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 60,
+      "timestamp": "2026-10-24T02:04:58.509040+00:00",
+      "type": "task.progress",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:61",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 61,
+      "timestamp": "2026-10-24T02:04:58.728720+00:00",
+      "type": "model.action",
+      "task_id": "task-a5f69943d2",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Reconciled assay/structure artifacts: 5/6 variants (S10L,A39D,C124S,G129E,R130Q) match preserved abundance reduced activity criteria per filter_measurements (artifact-8e161e12e61142b9a969b7d962614aab); identities validated (artifact-c57d00e0228d46589afc2a283b45dc37); 4 mapped in 1D5R, S10L missing coords, M1A outside coverage (artifact-97fed9157b414f82a0388eb1bbdffa57). No numeric claims or evidence ref issues. All outputs retain uncertainty.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:62",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 62,
+      "timestamp": "2026-10-24T02:04:58.744677+00:00",
+      "type": "artifact.created",
+      "task_id": "task-a5f69943d2",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "verification",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-fcca194630dd41f986815e076948c53f"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:63",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 63,
+      "timestamp": "2026-10-24T02:04:58.749427+00:00",
+      "type": "verification.result",
+      "task_id": "task-a5f69943d2",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Reference existence and numeric checks completed.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-fcca194630dd41f986815e076948c53f"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:64",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 64,
+      "timestamp": "2026-10-24T02:04:58.762727+00:00",
+      "type": "artifact.created",
+      "task_id": "task-a5f69943d2",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "specialist_result",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-12c8c95a1c42408784c8cc4e7d87f342"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:65",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 65,
+      "timestamp": "2026-10-24T02:04:58.770567+00:00",
+      "type": "task.completed",
+      "task_id": "task-a5f69943d2",
+      "parent_task_id": "coordinator",
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Reconciled assay/structure artifacts: 5/6 variants (S10L,A39D,C124S,G129E,R130Q) match preserved abundance reduced activity criteria per filter_measurements (artifact-8e161e12e61142b9a969b7d962614aab); identities validated (artifact-c57d00e0228d46589afc2a283b45dc37); 4 mapped in 1D5R, S10L missing coords, M1A outside coverage (artifact-97fed9157b414f82a0388eb1bbdffa57). No numeric claims or evidence ref issues. All outputs retain uncertainty.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:66",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 66,
+      "timestamp": "2026-10-24T02:05:01.958679+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Waiting for reconciliation task to complete before finalizing.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:67",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 67,
+      "timestamp": "2026-10-24T02:05:01.980559+00:00",
+      "type": "task.progress",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting next bounded action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:68",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 68,
+      "timestamp": "2026-10-24T02:05:15.771556+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Reconciled: 5/6 PTEN variants (S10L,A39D,C124S,G129E,R130Q) match preserved_abundance_reduced_activity per filter_measurements (artifact-8e161e12e61142b9a969b7d962614aab); identities/mappings validated (artifacts c57d00e0228d46589afc2a283b45dc37,97fed9157b414f82a0388eb1bbdffa57). M1A excluded. All retain uncertainty. No numeric claims.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:69",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 69,
+      "timestamp": "2026-10-24T02:05:15.799115+00:00",
+      "type": "artifact.created",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "verification",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-2faf7d096f2741459005d3bdab2b0898"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:70",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 70,
+      "timestamp": "2026-10-24T02:05:15.804893+00:00",
+      "type": "verification.result",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Reference existence and numeric checks completed.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-2faf7d096f2741459005d3bdab2b0898"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:71",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 71,
+      "timestamp": "2026-10-24T02:05:15.828747+00:00",
+      "type": "artifact.created",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "shortlist_eligibility",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-cffc25db78914c26bb25bc1bed6fc854"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:72",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 72,
+      "timestamp": "2026-10-24T02:05:15.842116+00:00",
+      "type": "artifact.created",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "research_brief",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-d4e9ab85732545dab783efd3803d913e"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:73",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 73,
+      "timestamp": "2026-10-24T02:05:15.851060+00:00",
+      "type": "task.completed",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Reconciled: 5/6 PTEN variants (S10L,A39D,C124S,G129E,R130Q) match preserved_abundance_reduced_activity per filter_measurements (artifact-8e161e12e61142b9a969b7d962614aab); identities/mappings validated (artifacts c57d00e0228d46589afc2a283b45dc37,97fed9157b414f82a0388eb1bbdffa57). M1A excluded. All retain uncertainty. No numeric claims.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-dd775fe90cc54cfe9828364e4149c65c:74",
+      "run_id": "research-dd775fe90cc54cfe9828364e4149c65c",
+      "sequence": 74,
+      "timestamp": "2026-10-24T02:05:15.878962+00:00",
+      "type": "run.completed_with_limitations",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Investigation ended; findings require scientific review.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "coordinator",
+      "role": "coordinator",
+      "question": "Investigate preserved abundance with reduced activity among these PTEN substitutions. Delegate independent assay-context and structure reviews. Inspect identity, comparability, declared filtering and mapping. Record a revision when actual source or coordinate limitations narrow the plan, reconcile the branches, and finalize a brief with checked evidence. Stay within 20 model calls: use scoped workers with at most two tools each. Do not make causal or clinical claims.",
+      "allowed_tools": [
+        "fetch_source_snapshot",
+        "inspect_table_schema",
+        "resolve_reference_sequence",
+        "validate_variant_identity",
+        "inspect_assay",
+        "check_score_direction",
+        "assess_comparability",
+        "join_measurements",
+        "filter_measurements",
+        "summarize_measurement_coverage",
+        "compare_measurement_patterns",
+        "load_structure_metadata",
+        "align_structure_reference",
+        "map_variant_residues",
+        "calculate_residue_distances",
+        "find_spatial_neighbors",
+        "retrieve_functional_annotations",
+        "search_methods_text",
+        "retrieve_passage",
+        "validate_evidence_references",
+        "validate_numeric_claims",
+        "compare_analysis_scenarios",
+        "update_scene_selection",
+        "validate_shortlist",
+        "inspect_run_budget",
+        "export_reproducibility_package",
+        "save_research_brief",
+        "spawn_specialist",
+        "request_reconciliation"
+      ],
+      "depth": 0,
+      "status": "completed",
+      "input_artifact_ids": [],
+      "parent_task_id": null,
+      "started_at": "2026-10-24T02:04:21.956886+00:00",
+      "step": 7,
+      "finished_at": "2026-10-24T02:05:15.845188+00:00"
+    },
+    {
+      "id": "task-f79374eb17",
+      "role": "assay",
+      "question": "Inspect assay identity, comparability, declared filtering and mapping for preserved abundance reduced activity PTEN variants using at most two tools.",
+      "input_artifact_ids": [],
+      "allowed_tools": [
+        "assess_comparability",
+        "filter_measurements",
+        "validate_variant_identity",
+        "map_variant_residues"
+      ],
+      "max_steps": 8,
+      "max_seconds": 180,
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "dedup_key": "43182a6bc53e398c9b5fa502c9a4a2ee58c510f776fb57501a9586b22a79c9ec",
+      "status": "completed",
+      "started_at": "2026-10-24T02:04:28.493212+00:00",
+      "step": 2,
+      "finished_at": "2026-10-24T02:04:48.597341+00:00"
+    },
+    {
+      "id": "task-9db2ba8cd6",
+      "role": "structure",
+      "question": "Inspect variant identity, mapping and structure context for preserved abundance reduced activity PTEN substitutions using at most two tools.",
+      "input_artifact_ids": [],
+      "allowed_tools": [
+        "validate_variant_identity",
+        "map_variant_residues"
+      ],
+      "max_steps": 8,
+      "max_seconds": 180,
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "dedup_key": "c6c0682ecd3c9cbb48d9f654db47852f90a7ab7154491e257be6bd5a7cf5fd92",
+      "status": "completed",
+      "started_at": "2026-10-24T02:04:32.996200+00:00",
+      "step": 2,
+      "finished_at": "2026-10-24T02:04:49.971975+00:00"
+    },
+    {
+      "id": "task-a5f69943d2",
+      "role": "reconciliation",
+      "question": "Reconcile assay-context and structure review findings on identity, comparability, filtering, mapping and eligibility for the six selected PTEN variants under preserved abundance reduced activity criteria.",
+      "input_artifact_ids": [
+        "artifact-7692f95b3ff5451b805184691ff7b5a5",
+        "artifact-c57d00e0228d46589afc2a283b45dc37",
+        "artifact-aa75c87f208f42e286f8cb6f2eb06d3e",
+        "artifact-8e161e12e61142b9a969b7d962614aab",
+        "artifact-97fed9157b414f82a0388eb1bbdffa57",
+        "artifact-56b5aeed7f03407e9d8100e70558c2c5"
+      ],
+      "allowed_tools": [
+        "validate_evidence_references",
+        "validate_numeric_claims"
+      ],
+      "max_steps": 8,
+      "max_seconds": 180,
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "dedup_key": "e2345f489802cc6bc82e3422fe1ca6fce61d6c529f2699e1a61ab66d44ed27b3",
+      "status": "completed",
+      "started_at": "2026-10-24T02:04:51.708075+00:00",
+      "step": 0,
+      "finished_at": "2026-10-24T02:04:58.765467+00:00"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact-7692f95b3ff5451b805184691ff7b5a5",
+      "task_id": "task-f79374eb17",
+      "kind": "assess_comparability",
+      "created_at": "2026-10-24T02:04:35.059752+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "tool": "assess_comparability",
+        "outcome": "ok",
+        "summary": "assess_comparability: ok",
+        "data": {
+          "status": "descriptive_only",
+          "shared_reference": true,
+          "endpoints_interchangeable": false,
+          "normalization_supported": false,
+          "limitations": [
+            "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+            "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+            "Replicate scores are not automatically exchangeable raw biological replicates.",
+            "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+          ]
+        },
+        "source_ids": [
+          "uniprot-P60484",
+          "pdb-1D5R",
+          "pdb-1D5R-metadata",
+          "mavedb-activity-metadata",
+          "mavedb-activity-scores",
+          "mavedb-abundance-metadata",
+          "mavedb-abundance-scores",
+          "mavedb-abundance-original-metadata"
+        ],
+        "limitations": [
+          "Research use; observational measurements do not establish causality or clinical pathogenicity."
+        ]
+      }
+    },
+    {
+      "id": "artifact-c57d00e0228d46589afc2a283b45dc37",
+      "task_id": "task-9db2ba8cd6",
+      "kind": "validate_variant_identity",
+      "created_at": "2026-10-24T02:04:38.109626+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "tool": "validate_variant_identity",
+        "outcome": "ok",
+        "summary": "validate_variant_identity: ok",
+        "data": {
+          "identities": [
+            {
+              "id": "PTEN:p.S10L",
+              "position": 10,
+              "ref": "S",
+              "alt": "L",
+              "protein_hgvs": "p.S10L",
+              "reference_sequence_version": 1
+            },
+            {
+              "id": "PTEN:p.A39D",
+              "position": 39,
+              "ref": "A",
+              "alt": "D",
+              "protein_hgvs": "p.A39D",
+              "reference_sequence_version": 1
+            },
+            {
+              "id": "PTEN:p.C124S",
+              "position": 124,
+              "ref": "C",
+              "alt": "S",
+              "protein_hgvs": "p.C124S",
+              "reference_sequence_version": 1
+            },
+            {
+              "id": "PTEN:p.G129E",
+              "position": 129,
+              "ref": "G",
+              "alt": "E",
+              "protein_hgvs": "p.G129E",
+              "reference_sequence_version": 1
+            },
+            {
+              "id": "PTEN:p.R130Q",
+              "position": 130,
+              "ref": "R",
+              "alt": "Q",
+              "protein_hgvs": "p.R130Q",
+              "reference_sequence_version": 1
+            },
+            {
+              "id": "PTEN:p.M1A",
+              "position": 1,
+              "ref": "M",
+              "alt": "A",
+              "protein_hgvs": "p.M1A",
+              "reference_sequence_version": 1
+            }
+          ],
+          "dna_ambiguity": "Protein substitutions do not uniquely identify DNA alleles."
+        },
+        "source_ids": [
+          "uniprot-P60484",
+          "pdb-1D5R",
+          "pdb-1D5R-metadata",
+          "mavedb-activity-metadata",
+          "mavedb-activity-scores",
+          "mavedb-abundance-metadata",
+          "mavedb-abundance-scores",
+          "mavedb-abundance-original-metadata"
+        ],
+        "limitations": [
+          "Research use; observational measurements do not establish causality or clinical pathogenicity."
+        ]
+      }
+    },
+    {
+      "id": "artifact-aa75c87f208f42e286f8cb6f2eb06d3e",
+      "task_id": "coordinator",
+      "kind": "assess_comparability",
+      "created_at": "2026-10-24T02:04:39.462909+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "tool": "assess_comparability",
+        "outcome": "ok",
+        "summary": "assess_comparability: ok",
+        "data": {
+          "status": "descriptive_only",
+          "shared_reference": true,
+          "endpoints_interchangeable": false,
+          "normalization_supported": false,
+          "limitations": [
+            "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+            "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+            "Replicate scores are not automatically exchangeable raw biological replicates.",
+            "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+          ]
+        },
+        "source_ids": [
+          "uniprot-P60484",
+          "pdb-1D5R",
+          "pdb-1D5R-metadata",
+          "mavedb-activity-metadata",
+          "mavedb-activity-scores",
+          "mavedb-abundance-metadata",
+          "mavedb-abundance-scores",
+          "mavedb-abundance-original-metadata"
+        ],
+        "limitations": [
+          "Research use; observational measurements do not establish causality or clinical pathogenicity."
+        ]
+      }
+    },
+    {
+      "id": "artifact-8e161e12e61142b9a969b7d962614aab",
+      "task_id": "task-f79374eb17",
+      "kind": "filter_measurements",
+      "created_at": "2026-10-24T02:04:41.764159+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "tool": "filter_measurements",
+        "outcome": "ok",
+        "summary": "filter_measurements: ok",
+        "data": {
+          "criteria": {
+            "scenario": "preserved_abundance_reduced_activity",
+            "activity_cutoff": -1.11,
+            "abundance_cutoff": 0.6121866579147568,
+            "mapping": "all",
+            "require_both_measurements": true
+          },
+          "matching_ids": [
+            "PTEN:p.S10L",
+            "PTEN:p.A39D",
+            "PTEN:p.C124S",
+            "PTEN:p.G129E",
+            "PTEN:p.R130Q"
+          ],
+          "results": [
+            {
+              "variant_id": "PTEN:p.M1A",
+              "matches": false,
+              "reasons": [
+                "Missing assay measurement; not coerced to zero."
+              ],
+              "activity": null,
+              "abundance": null,
+              "mapping_status": "outside_structure_coverage"
+            },
+            {
+              "variant_id": "PTEN:p.S10L",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -1.632332053,
+              "abundance": 0.963165896844095,
+              "mapping_status": "missing_coordinates"
+            },
+            {
+              "variant_id": "PTEN:p.A39D",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -3.318258058,
+              "abundance": 0.9500131197128101,
+              "mapping_status": "mapped"
+            },
+            {
+              "variant_id": "PTEN:p.C124S",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -4.895642908999999,
+              "abundance": 1.04741806408857,
+              "mapping_status": "mapped"
+            },
+            {
+              "variant_id": "PTEN:p.G129E",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -5.409763516,
+              "abundance": 0.6380127329020711,
+              "mapping_status": "mapped"
+            },
+            {
+              "variant_id": "PTEN:p.R130Q",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -2.04016411,
+              "abundance": 1.4229832276312,
+              "mapping_status": "mapped"
+            }
+          ],
+          "selected_scope_count": 6,
+          "mapped_count": 4,
+          "unmapped_count": 1,
+          "units": {
+            "activity": "published enrichment/fitness score; original scale",
+            "abundance": "published VAMP-seq abundance score; original scale (not clamped to 0\u20131)"
+          },
+          "dataset_version": "pten-transform-1.0-97b699d687c8",
+          "limitations": [
+            "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+            "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+            "Replicate scores are not automatically exchangeable raw biological replicates.",
+            "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+          ]
+        },
+        "source_ids": [
+          "uniprot-P60484",
+          "pdb-1D5R",
+          "pdb-1D5R-metadata",
+          "mavedb-activity-metadata",
+          "mavedb-activity-scores",
+          "mavedb-abundance-metadata",
+          "mavedb-abundance-scores",
+          "mavedb-abundance-original-metadata"
+        ],
+        "limitations": [
+          "Research use; observational measurements do not establish causality or clinical pathogenicity."
+        ]
+      }
+    },
+    {
+      "id": "artifact-97fed9157b414f82a0388eb1bbdffa57",
+      "task_id": "task-9db2ba8cd6",
+      "kind": "map_variant_residues",
+      "created_at": "2026-10-24T02:04:42.505476+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "tool": "map_variant_residues",
+        "outcome": "ok",
+        "summary": "map_variant_residues: ok",
+        "data": {
+          "mappings": [
+            {
+              "label_seq_id": 4,
+              "amino_acid": "S",
+              "auth_seq_id": "10",
+              "insertion_code": ".",
+              "chain_id": "A",
+              "label_asym_id": "A",
+              "reference_position": 10,
+              "status": "missing_coordinates",
+              "reason": "Aligned residue has no experimental C-alpha coordinate.",
+              "coordinate": null,
+              "mapping_id": "P60484:1D5R:A:10:4",
+              "units": "angstrom",
+              "coordinate_type": "experimental",
+              "variant_id": "PTEN:p.S10L"
+            },
+            {
+              "label_seq_id": 33,
+              "amino_acid": "A",
+              "auth_seq_id": "39",
+              "insertion_code": ".",
+              "chain_id": "A",
+              "label_asym_id": "A",
+              "reference_position": 39,
+              "status": "mapped",
+              "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+              "coordinate": {
+                "x": 41.488,
+                "y": 98.426,
+                "z": 16.492
+              },
+              "mapping_id": "P60484:1D5R:A:39:33",
+              "units": "angstrom",
+              "coordinate_type": "experimental",
+              "variant_id": "PTEN:p.A39D"
+            },
+            {
+              "label_seq_id": 118,
+              "amino_acid": "C",
+              "auth_seq_id": "124",
+              "insertion_code": ".",
+              "chain_id": "A",
+              "label_asym_id": "A",
+              "reference_position": 124,
+              "status": "mapped",
+              "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+              "coordinate": {
+                "x": 39.5,
+                "y": 92.465,
+                "z": 25.288
+              },
+              "mapping_id": "P60484:1D5R:A:124:118",
+              "units": "angstrom",
+              "coordinate_type": "experimental",
+              "variant_id": "PTEN:p.C124S"
+            },
+            {
+              "label_seq_id": 123,
+              "amino_acid": "G",
+              "auth_seq_id": "129",
+              "insertion_code": ".",
+              "chain_id": "A",
+              "label_asym_id": "A",
+              "reference_position": 129,
+              "status": "mapped",
+              "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+              "coordinate": {
+                "x": 33.359,
+                "y": 88.072,
+                "z": 29.237
+              },
+              "mapping_id": "P60484:1D5R:A:129:123",
+              "units": "angstrom",
+              "coordinate_type": "experimental",
+              "variant_id": "PTEN:p.G129E"
+            },
+            {
+              "label_seq_id": 124,
+              "amino_acid": "R",
+              "auth_seq_id": "130",
+              "insertion_code": ".",
+              "chain_id": "A",
+              "label_asym_id": "A",
+              "reference_position": 130,
+              "status": "mapped",
+              "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+              "coordinate": {
+                "x": 37.127,
+                "y": 88.459,
+                "z": 29.595
+              },
+              "mapping_id": "P60484:1D5R:A:130:124",
+              "units": "angstrom",
+              "coordinate_type": "experimental",
+              "variant_id": "PTEN:p.R130Q"
+            },
+            {
+              "reference_position": 1,
+              "status": "outside_structure_coverage",
+              "reason": "No accepted construct-to-reference alignment at this position.",
+              "coordinate": null,
+              "mapping_id": "P60484:1D5R:A:1:unavailable",
+              "units": "angstrom",
+              "coordinate_type": "experimental",
+              "chain_id": "A",
+              "label_asym_id": "A",
+              "label_seq_id": null,
+              "auth_seq_id": null,
+              "insertion_code": null,
+              "amino_acid": "M",
+              "variant_id": "PTEN:p.M1A"
+            }
+          ]
+        },
+        "source_ids": [
+          "uniprot-P60484",
+          "pdb-1D5R",
+          "pdb-1D5R-metadata",
+          "mavedb-activity-metadata",
+          "mavedb-activity-scores",
+          "mavedb-abundance-metadata",
+          "mavedb-abundance-scores",
+          "mavedb-abundance-original-metadata"
+        ],
+        "limitations": [
+          "Research use; observational measurements do not establish causality or clinical pathogenicity."
+        ]
+      }
+    },
+    {
+      "id": "artifact-56b5aeed7f03407e9d8100e70558c2c5",
+      "task_id": "coordinator",
+      "kind": "filter_measurements",
+      "created_at": "2026-10-24T02:04:43.570673+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "tool": "filter_measurements",
+        "outcome": "ok",
+        "summary": "filter_measurements: ok",
+        "data": {
+          "criteria": {
+            "scenario": "preserved_abundance_reduced_activity",
+            "activity_cutoff": -1.11,
+            "abundance_cutoff": 0.6121866579147568,
+            "mapping": "all",
+            "require_both_measurements": true
+          },
+          "matching_ids": [
+            "PTEN:p.S10L",
+            "PTEN:p.A39D",
+            "PTEN:p.C124S",
+            "PTEN:p.G129E",
+            "PTEN:p.R130Q"
+          ],
+          "results": [
+            {
+              "variant_id": "PTEN:p.M1A",
+              "matches": false,
+              "reasons": [
+                "Missing assay measurement; not coerced to zero."
+              ],
+              "activity": null,
+              "abundance": null,
+              "mapping_status": "outside_structure_coverage"
+            },
+            {
+              "variant_id": "PTEN:p.S10L",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -1.632332053,
+              "abundance": 0.963165896844095,
+              "mapping_status": "missing_coordinates"
+            },
+            {
+              "variant_id": "PTEN:p.A39D",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -3.318258058,
+              "abundance": 0.9500131197128101,
+              "mapping_status": "mapped"
+            },
+            {
+              "variant_id": "PTEN:p.C124S",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -4.895642908999999,
+              "abundance": 1.04741806408857,
+              "mapping_status": "mapped"
+            },
+            {
+              "variant_id": "PTEN:p.G129E",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -5.409763516,
+              "abundance": 0.6380127329020711,
+              "mapping_status": "mapped"
+            },
+            {
+              "variant_id": "PTEN:p.R130Q",
+              "matches": true,
+              "reasons": [
+                "Matches the explicit descriptive criteria."
+              ],
+              "activity": -2.04016411,
+              "abundance": 1.4229832276312,
+              "mapping_status": "mapped"
+            }
+          ],
+          "selected_scope_count": 6,
+          "mapped_count": 4,
+          "unmapped_count": 1,
+          "units": {
+            "activity": "published enrichment/fitness score; original scale",
+            "abundance": "published VAMP-seq abundance score; original scale (not clamped to 0\u20131)"
+          },
+          "dataset_version": "pten-transform-1.0-97b699d687c8",
+          "limitations": [
+            "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+            "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+            "Replicate scores are not automatically exchangeable raw biological replicates.",
+            "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+          ]
+        },
+        "source_ids": [
+          "uniprot-P60484",
+          "pdb-1D5R",
+          "pdb-1D5R-metadata",
+          "mavedb-activity-metadata",
+          "mavedb-activity-scores",
+          "mavedb-abundance-metadata",
+          "mavedb-abundance-scores",
+          "mavedb-abundance-original-metadata"
+        ],
+        "limitations": [
+          "Research use; observational measurements do not establish causality or clinical pathogenicity."
+        ]
+      }
+    },
+    {
+      "id": "artifact-5d35dae30d4441c68e8fd83ad001f050",
+      "task_id": "task-f79374eb17",
+      "kind": "verification",
+      "created_at": "2026-10-24T02:04:48.558175+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numbers": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      }
+    },
+    {
+      "id": "artifact-3c8e85770425478f91dbf669ca900fd9",
+      "task_id": "task-f79374eb17",
+      "kind": "specialist_result",
+      "created_at": "2026-10-24T02:04:48.592418+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "summary": "Assay inspection complete via assess_comparability and filter_measurements. 5 variants match preserved_abundance_reduced_activity criteria with checked identity/comparability/filtering/mapping; M1A excluded for missing data.",
+        "findings": [
+          {
+            "id": "assay-find-1",
+            "claim_type": "reported_observation",
+            "text": "filter_measurements identified 5 matching PTEN variants (S10L, A39D, C124S, G129E, R130Q) under explicit criteria; activity and abundance scores reported on original scales with mapping statuses noted.",
+            "variant_ids": [],
+            "evidence_refs": [
+              "artifact-8e161e12e61142b9a969b7d962614aab"
+            ],
+            "limitations": [
+              "Activity is humanized-yeast proxy; abundance separate VAMP-seq endpoint; no causality established."
+            ],
+            "verifier_outcomes": {},
+            "reviewer_status": "pending"
+          }
+        ],
+        "numeric_claims": [],
+        "numeric_claim_coverage": "Only explicitly declared numeric claims are mechanically checked; narrative completeness requires reviewer audit.",
+        "limitations": [
+          "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+          "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+          "Replicate scores are not automatically exchangeable raw biological replicates.",
+          "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+        ],
+        "abstained": false,
+        "review_status": "pending"
+      }
+    },
+    {
+      "id": "artifact-d42b4bd90ac84ed38e22db1ac70c1b5f",
+      "task_id": "task-9db2ba8cd6",
+      "kind": "verification",
+      "created_at": "2026-10-24T02:04:49.945884+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numbers": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      }
+    },
+    {
+      "id": "artifact-ca227267283a446bad139129cfe065ca",
+      "task_id": "task-9db2ba8cd6",
+      "kind": "specialist_result",
+      "created_at": "2026-10-24T02:04:49.965133+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "summary": "Structure task complete: validated 6 PTEN variants; 4 mapped to 1D5R coords, S10L missing, M1A outside coverage. No further checks needed.",
+        "findings": [
+          {
+            "id": "struct-1",
+            "claim_type": "reported_observation",
+            "text": "validate_variant_identity: all 6 variants (S10L,A39D,C124S,G129E,R130Q,M1A) match P60484 positions with ref/alt.",
+            "variant_ids": [],
+            "evidence_refs": [
+              "artifact-c57d00e0228d46589afc2a283b45dc37"
+            ],
+            "limitations": [
+              "Research use only"
+            ],
+            "verifier_outcomes": {},
+            "reviewer_status": "pending"
+          },
+          {
+            "id": "struct-2",
+            "claim_type": "reported_observation",
+            "text": "map_variant_residues: A39D(39),C124S(124),G129E(129),R130Q(130) mapped to 1D5R C-alpha; S10L missing coords; M1A outside coverage.",
+            "variant_ids": [],
+            "evidence_refs": [
+              "artifact-97fed9157b414f82a0388eb1bbdffa57"
+            ],
+            "limitations": [
+              "Research use only"
+            ],
+            "verifier_outcomes": {},
+            "reviewer_status": "pending"
+          }
+        ],
+        "numeric_claims": [],
+        "numeric_claim_coverage": "Only explicitly declared numeric claims are mechanically checked; narrative completeness requires reviewer audit.",
+        "limitations": [
+          "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+          "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+          "Replicate scores are not automatically exchangeable raw biological replicates.",
+          "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+        ],
+        "abstained": false,
+        "review_status": "pending"
+      }
+    },
+    {
+      "id": "artifact-fcca194630dd41f986815e076948c53f",
+      "task_id": "task-a5f69943d2",
+      "kind": "verification",
+      "created_at": "2026-10-24T02:04:58.739773+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numbers": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      }
+    },
+    {
+      "id": "artifact-12c8c95a1c42408784c8cc4e7d87f342",
+      "task_id": "task-a5f69943d2",
+      "kind": "specialist_result",
+      "created_at": "2026-10-24T02:04:58.758601+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "summary": "Reconciled assay/structure artifacts: 5/6 variants (S10L,A39D,C124S,G129E,R130Q) match preserved abundance reduced activity criteria per filter_measurements (artifact-8e161e12e61142b9a969b7d962614aab); identities validated (artifact-c57d00e0228d46589afc2a283b45dc37); 4 mapped in 1D5R, S10L missing coords, M1A outside coverage (artifact-97fed9157b414f82a0388eb1bbdffa57). No numeric claims or evidence ref issues. All outputs retain uncertainty.",
+        "findings": [
+          {
+            "id": "recon-1",
+            "claim_type": "reported_observation",
+            "text": "5 variants eligible under criteria with original-scale scores; mapping statuses: 4 mapped, 1 missing coords, 1 outside coverage. Evidence from artifacts 8e161e12e61142b9a969b7d962614aab, c57d00e0228d46589afc2a283b45dc37, 97fed9157b414f82a0388eb1bbdffa57.",
+            "variant_ids": [],
+            "evidence_refs": [
+              "artifact-8e161e12e61142b9a969b7d962614aab",
+              "artifact-c57d00e0228d46589afc2a283b45dc37",
+              "artifact-97fed9157b414f82a0388eb1bbdffa57"
+            ],
+            "limitations": [
+              "Observational patterns only; no causality or clinical claims."
+            ],
+            "verifier_outcomes": {},
+            "reviewer_status": "pending"
+          }
+        ],
+        "numeric_claims": [],
+        "numeric_claim_coverage": "Only explicitly declared numeric claims are mechanically checked; narrative completeness requires reviewer audit.",
+        "limitations": [
+          "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+          "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+          "Replicate scores are not automatically exchangeable raw biological replicates.",
+          "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+        ],
+        "abstained": false,
+        "review_status": "pending"
+      }
+    },
+    {
+      "id": "artifact-2faf7d096f2741459005d3bdab2b0898",
+      "task_id": "coordinator",
+      "kind": "verification",
+      "created_at": "2026-10-24T02:05:15.792723+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "task-f79374eb17:assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-a5f69943d2:recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numbers": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      }
+    },
+    {
+      "id": "artifact-cffc25db78914c26bb25bc1bed6fc854",
+      "task_id": "coordinator",
+      "kind": "shortlist_eligibility",
+      "created_at": "2026-10-24T02:05:15.824176+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "criteria": {
+          "scenario": "preserved_abundance_reduced_activity",
+          "activity_cutoff": -1.11,
+          "abundance_cutoff": 0.6121866579147568,
+          "mapping": "all",
+          "require_both_measurements": true
+        },
+        "matching_ids": [
+          "PTEN:p.S10L",
+          "PTEN:p.A39D",
+          "PTEN:p.C124S",
+          "PTEN:p.G129E",
+          "PTEN:p.R130Q"
+        ],
+        "results": [
+          {
+            "variant_id": "PTEN:p.M1A",
+            "matches": false,
+            "reasons": [
+              "Missing assay measurement; not coerced to zero."
+            ],
+            "activity": null,
+            "abundance": null,
+            "mapping_status": "outside_structure_coverage"
+          },
+          {
+            "variant_id": "PTEN:p.S10L",
+            "matches": true,
+            "reasons": [
+              "Matches the explicit descriptive criteria."
+            ],
+            "activity": -1.632332053,
+            "abundance": 0.963165896844095,
+            "mapping_status": "missing_coordinates"
+          },
+          {
+            "variant_id": "PTEN:p.A39D",
+            "matches": true,
+            "reasons": [
+              "Matches the explicit descriptive criteria."
+            ],
+            "activity": -3.318258058,
+            "abundance": 0.9500131197128101,
+            "mapping_status": "mapped"
+          },
+          {
+            "variant_id": "PTEN:p.C124S",
+            "matches": true,
+            "reasons": [
+              "Matches the explicit descriptive criteria."
+            ],
+            "activity": -4.895642908999999,
+            "abundance": 1.04741806408857,
+            "mapping_status": "mapped"
+          },
+          {
+            "variant_id": "PTEN:p.G129E",
+            "matches": true,
+            "reasons": [
+              "Matches the explicit descriptive criteria."
+            ],
+            "activity": -5.409763516,
+            "abundance": 0.6380127329020711,
+            "mapping_status": "mapped"
+          },
+          {
+            "variant_id": "PTEN:p.R130Q",
+            "matches": true,
+            "reasons": [
+              "Matches the explicit descriptive criteria."
+            ],
+            "activity": -2.04016411,
+            "abundance": 1.4229832276312,
+            "mapping_status": "mapped"
+          }
+        ],
+        "selected_scope_count": 6,
+        "mapped_count": 4,
+        "unmapped_count": 1,
+        "units": {
+          "activity": "published enrichment/fitness score; original scale",
+          "abundance": "published VAMP-seq abundance score; original scale (not clamped to 0\u20131)"
+        },
+        "dataset_version": "pten-transform-1.0-97b699d687c8",
+        "limitations": [
+          "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+          "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+          "Replicate scores are not automatically exchangeable raw biological replicates.",
+          "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+        ],
+        "shortlist_ids": [
+          "PTEN:p.S10L",
+          "PTEN:p.A39D",
+          "PTEN:p.C124S",
+          "PTEN:p.G129E",
+          "PTEN:p.R130Q"
+        ],
+        "capacity": 10
+      }
+    },
+    {
+      "id": "artifact-d4e9ab85732545dab783efd3803d913e",
+      "task_id": "coordinator",
+      "kind": "research_brief",
+      "created_at": "2026-10-24T02:05:15.837625+00:00",
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "data": {
+        "summary": "Reconciled: 5/6 PTEN variants (S10L,A39D,C124S,G129E,R130Q) match preserved_abundance_reduced_activity per filter_measurements (artifact-8e161e12e61142b9a969b7d962614aab); identities/mappings validated (artifacts c57d00e0228d46589afc2a283b45dc37,97fed9157b414f82a0388eb1bbdffa57). M1A excluded. All retain uncertainty. No numeric claims.",
+        "findings": [
+          {
+            "id": "task-f79374eb17:assay-find-1",
+            "claim_type": "reported_observation",
+            "text": "filter_measurements identified 5 matching PTEN variants (S10L, A39D, C124S, G129E, R130Q) under explicit criteria; activity and abundance scores reported on original scales with mapping statuses noted.",
+            "variant_ids": [],
+            "evidence_refs": [
+              "artifact-8e161e12e61142b9a969b7d962614aab"
+            ],
+            "limitations": [
+              "Activity is humanized-yeast proxy; abundance separate VAMP-seq endpoint; no causality established."
+            ],
+            "verifier_outcomes": {
+              "references": {
+                "passed": true,
+                "checks": [
+                  {
+                    "finding_id": "assay-find-1",
+                    "references_exist": true,
+                    "identities_valid": true,
+                    "support_assessment": "Existence only; applicability and scientific truth require review."
+                  }
+                ],
+                "scientific_truth_established": false
+              },
+              "numeric": {
+                "passed": true,
+                "checks": [],
+                "undeclared_decimal_values": []
+              },
+              "scientific_truth_established": false
+            },
+            "reviewer_status": "pending"
+          },
+          {
+            "id": "task-9db2ba8cd6:struct-1",
+            "claim_type": "reported_observation",
+            "text": "validate_variant_identity: all 6 variants (S10L,A39D,C124S,G129E,R130Q,M1A) match P60484 positions with ref/alt.",
+            "variant_ids": [],
+            "evidence_refs": [
+              "artifact-c57d00e0228d46589afc2a283b45dc37"
+            ],
+            "limitations": [
+              "Research use only"
+            ],
+            "verifier_outcomes": {
+              "references": {
+                "passed": true,
+                "checks": [
+                  {
+                    "finding_id": "struct-1",
+                    "references_exist": true,
+                    "identities_valid": true,
+                    "support_assessment": "Existence only; applicability and scientific truth require review."
+                  },
+                  {
+                    "finding_id": "struct-2",
+                    "references_exist": true,
+                    "identities_valid": true,
+                    "support_assessment": "Existence only; applicability and scientific truth require review."
+                  }
+                ],
+                "scientific_truth_established": false
+              },
+              "numeric": {
+                "passed": true,
+                "checks": [],
+                "undeclared_decimal_values": []
+              },
+              "scientific_truth_established": false
+            },
+            "reviewer_status": "pending"
+          },
+          {
+            "id": "task-9db2ba8cd6:struct-2",
+            "claim_type": "reported_observation",
+            "text": "map_variant_residues: A39D(39),C124S(124),G129E(129),R130Q(130) mapped to 1D5R C-alpha; S10L missing coords; M1A outside coverage.",
+            "variant_ids": [],
+            "evidence_refs": [
+              "artifact-97fed9157b414f82a0388eb1bbdffa57"
+            ],
+            "limitations": [
+              "Research use only"
+            ],
+            "verifier_outcomes": {
+              "references": {
+                "passed": true,
+                "checks": [
+                  {
+                    "finding_id": "struct-1",
+                    "references_exist": true,
+                    "identities_valid": true,
+                    "support_assessment": "Existence only; applicability and scientific truth require review."
+                  },
+                  {
+                    "finding_id": "struct-2",
+                    "references_exist": true,
+                    "identities_valid": true,
+                    "support_assessment": "Existence only; applicability and scientific truth require review."
+                  }
+                ],
+                "scientific_truth_established": false
+              },
+              "numeric": {
+                "passed": true,
+                "checks": [],
+                "undeclared_decimal_values": []
+              },
+              "scientific_truth_established": false
+            },
+            "reviewer_status": "pending"
+          },
+          {
+            "id": "task-a5f69943d2:recon-1",
+            "claim_type": "reported_observation",
+            "text": "5 variants eligible under criteria with original-scale scores; mapping statuses: 4 mapped, 1 missing coords, 1 outside coverage. Evidence from artifacts 8e161e12e61142b9a969b7d962614aab, c57d00e0228d46589afc2a283b45dc37, 97fed9157b414f82a0388eb1bbdffa57.",
+            "variant_ids": [],
+            "evidence_refs": [
+              "artifact-8e161e12e61142b9a969b7d962614aab",
+              "artifact-c57d00e0228d46589afc2a283b45dc37",
+              "artifact-97fed9157b414f82a0388eb1bbdffa57"
+            ],
+            "limitations": [
+              "Observational patterns only; no causality or clinical claims."
+            ],
+            "verifier_outcomes": {
+              "references": {
+                "passed": true,
+                "checks": [
+                  {
+                    "finding_id": "recon-1",
+                    "references_exist": true,
+                    "identities_valid": true,
+                    "support_assessment": "Existence only; applicability and scientific truth require review."
+                  }
+                ],
+                "scientific_truth_established": false
+              },
+              "numeric": {
+                "passed": true,
+                "checks": [],
+                "undeclared_decimal_values": []
+              },
+              "scientific_truth_established": false
+            },
+            "reviewer_status": "pending"
+          }
+        ],
+        "numeric_claims": [],
+        "numeric_claim_coverage": "Only explicitly declared numeric claims are mechanically checked; narrative completeness requires reviewer audit.",
+        "limitations": [
+          "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+          "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+          "Replicate scores are not automatically exchangeable raw biological replicates.",
+          "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+        ],
+        "abstained": false,
+        "review_status": "pending"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "task-f79374eb17:assay-find-1",
+      "claim_type": "reported_observation",
+      "text": "filter_measurements identified 5 matching PTEN variants (S10L, A39D, C124S, G129E, R130Q) under explicit criteria; activity and abundance scores reported on original scales with mapping statuses noted.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab"
+      ],
+      "limitations": [
+        "Activity is humanized-yeast proxy; abundance separate VAMP-seq endpoint; no causality established."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "task-9db2ba8cd6:struct-1",
+      "claim_type": "reported_observation",
+      "text": "validate_variant_identity: all 6 variants (S10L,A39D,C124S,G129E,R130Q,M1A) match P60484 positions with ref/alt.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-c57d00e0228d46589afc2a283b45dc37"
+      ],
+      "limitations": [
+        "Research use only"
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "task-9db2ba8cd6:struct-2",
+      "claim_type": "reported_observation",
+      "text": "map_variant_residues: A39D(39),C124S(124),G129E(129),R130Q(130) mapped to 1D5R C-alpha; S10L missing coords; M1A outside coverage.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "limitations": [
+        "Research use only"
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "task-a5f69943d2:recon-1",
+      "claim_type": "reported_observation",
+      "text": "5 variants eligible under criteria with original-scale scores; mapping statuses: 4 mapped, 1 missing coords, 1 outside coverage. Evidence from artifacts 8e161e12e61142b9a969b7d962614aab, c57d00e0228d46589afc2a283b45dc37, 97fed9157b414f82a0388eb1bbdffa57.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab",
+        "artifact-c57d00e0228d46589afc2a283b45dc37",
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "limitations": [
+        "Observational patterns only; no causality or clinical claims."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "coordinator:task-f79374eb17:assay-find-1",
+      "claim_type": "reported_observation",
+      "text": "filter_measurements identified 5 matching PTEN variants (S10L, A39D, C124S, G129E, R130Q) under explicit criteria; activity and abundance scores reported on original scales with mapping statuses noted.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab"
+      ],
+      "limitations": [
+        "Activity is humanized-yeast proxy; abundance separate VAMP-seq endpoint; no causality established."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "task-f79374eb17:assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-a5f69943d2:recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "coordinator:task-9db2ba8cd6:struct-1",
+      "claim_type": "reported_observation",
+      "text": "validate_variant_identity: all 6 variants (S10L,A39D,C124S,G129E,R130Q,M1A) match P60484 positions with ref/alt.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-c57d00e0228d46589afc2a283b45dc37"
+      ],
+      "limitations": [
+        "Research use only"
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "task-f79374eb17:assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-a5f69943d2:recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "coordinator:task-9db2ba8cd6:struct-2",
+      "claim_type": "reported_observation",
+      "text": "map_variant_residues: A39D(39),C124S(124),G129E(129),R130Q(130) mapped to 1D5R C-alpha; S10L missing coords; M1A outside coverage.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "limitations": [
+        "Research use only"
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "task-f79374eb17:assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-a5f69943d2:recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "coordinator:task-a5f69943d2:recon-1",
+      "claim_type": "reported_observation",
+      "text": "5 variants eligible under criteria with original-scale scores; mapping statuses: 4 mapped, 1 missing coords, 1 outside coverage. Evidence from artifacts 8e161e12e61142b9a969b7d962614aab, c57d00e0228d46589afc2a283b45dc37, 97fed9157b414f82a0388eb1bbdffa57.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-8e161e12e61142b9a969b7d962614aab",
+        "artifact-c57d00e0228d46589afc2a283b45dc37",
+        "artifact-97fed9157b414f82a0388eb1bbdffa57"
+      ],
+      "limitations": [
+        "Observational patterns only; no causality or clinical claims."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "task-f79374eb17:assay-find-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-9db2ba8cd6:struct-2",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            },
+            {
+              "finding_id": "task-a5f69943d2:recon-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [],
+          "undeclared_decimal_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    }
+  ],
+  "reviews": [],
+  "hypotheses": [],
+  "cancel_requested": false,
+  "source_versions": [
+    {
+      "id": "uniprot-P60484",
+      "release": {
+        "firstPublicDate": "2004-02-16",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2004-02-16",
+        "entryVersion": 226,
+        "sequenceVersion": 1
+      },
+      "asset": {
+        "asset_id": "01f54fb2f12979ee90ad06243485914f1f6d349725b0fa83d266cbe888f40405",
+        "key": "01/01f54fb2f12979ee90ad06243485914f1f6d349725b0fa83d266cbe888f40405.json",
+        "sha256": "01f54fb2f12979ee90ad06243485914f1f6d349725b0fa83d266cbe888f40405",
+        "size_bytes": 220215
+      }
+    },
+    {
+      "id": "pdb-1D5R",
+      "release": null,
+      "asset": {
+        "asset_id": "ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3",
+        "key": "ea/ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3.cif",
+        "sha256": "ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3",
+        "size_bytes": 346885
+      }
+    },
+    {
+      "id": "pdb-1D5R-metadata",
+      "release": {
+        "deposit_date": "1999-10-11T00:00:00.000+00:00",
+        "has_released_experimental_data": "N",
+        "initial_release_date": "1999-11-04T00:00:00.000+00:00",
+        "major_revision": 1,
+        "minor_revision": 5,
+        "revision_date": "2024-02-07T00:00:00.000+00:00",
+        "status_code": "REL"
+      },
+      "asset": {
+        "asset_id": "d5b87248ef348d2aa5484e20a465c22ea88a6ee5afa51aa735c20df38a341588",
+        "key": "d5/d5b87248ef348d2aa5484e20a465c22ea88a6ee5afa51aa735c20df38a341588.json",
+        "sha256": "d5b87248ef348d2aa5484e20a465c22ea88a6ee5afa51aa735c20df38a341588",
+        "size_bytes": 12090
+      }
+    },
+    {
+      "id": "mavedb-activity-metadata",
+      "release": "2026-06-30",
+      "asset": {
+        "asset_id": "3b709043642c1dab26367d672fde3f6aea6de783d03f15d713b03c3dbaba862f",
+        "key": "3b/3b709043642c1dab26367d672fde3f6aea6de783d03f15d713b03c3dbaba862f.json",
+        "sha256": "3b709043642c1dab26367d672fde3f6aea6de783d03f15d713b03c3dbaba862f",
+        "size_bytes": 150195
+      }
+    },
+    {
+      "id": "mavedb-activity-scores",
+      "release": null,
+      "asset": {
+        "asset_id": "16764c9b4afed9f7507bb8e615fdcd703329f3145108a8c28bdf0b1c60f076e7",
+        "key": "16/16764c9b4afed9f7507bb8e615fdcd703329f3145108a8c28bdf0b1c60f076e7.csv",
+        "sha256": "16764c9b4afed9f7507bb8e615fdcd703329f3145108a8c28bdf0b1c60f076e7",
+        "size_bytes": 2438297
+      }
+    },
+    {
+      "id": "mavedb-abundance-metadata",
+      "release": "2025-01-04",
+      "asset": {
+        "asset_id": "b05a57d2323f7280d2d6e0404bcd3bc3a7be87fe6520260ff7fc0280dc3150ad",
+        "key": "b0/b05a57d2323f7280d2d6e0404bcd3bc3a7be87fe6520260ff7fc0280dc3150ad.json",
+        "sha256": "b05a57d2323f7280d2d6e0404bcd3bc3a7be87fe6520260ff7fc0280dc3150ad",
+        "size_bytes": 8223
+      }
+    },
+    {
+      "id": "mavedb-abundance-scores",
+      "release": null,
+      "asset": {
+        "asset_id": "7ea649a9b53f6ea052c80470bcb15b1081693255c81eb10b4762affadc039928",
+        "key": "7e/7ea649a9b53f6ea052c80470bcb15b1081693255c81eb10b4762affadc039928.csv",
+        "sha256": "7ea649a9b53f6ea052c80470bcb15b1081693255c81eb10b4762affadc039928",
+        "size_bytes": 1805100
+      }
+    },
+    {
+      "id": "mavedb-abundance-original-metadata",
+      "release": "2026-06-01",
+      "asset": {
+        "asset_id": "60f4ef6a2118a9a0cc0a6a9110b34b4522f8a1cf309435e86e7bda3a2d0e7f85",
+        "key": "60/60f4ef6a2118a9a0cc0a6a9110b34b4522f8a1cf309435e86e7bda3a2d0e7f85.json",
+        "sha256": "60f4ef6a2118a9a0cc0a6a9110b34b4522f8a1cf309435e86e7bda3a2d0e7f85",
+        "size_bytes": 134719
+      }
+    }
+  ],
+  "budget": {
+    "model_requests": 15,
+    "tool_calls": 6,
+    "spawned_tasks": 3,
+    "max_model_requests": 20,
+    "max_tool_calls": 40,
+    "max_spawned_tasks": 12,
+    "cost_usd": 0.15809465,
+    "cost_status": "provider_reported",
+    "cost_enforcement": "No prepaid hard cap; request/time/tool ceilings enforced.",
+    "usage": [
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4350,
+          "completion_tokens": 482,
+          "total_tokens": 4832,
+          "cost": 0.0063737,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0063737,
+            "upstream_inference_prompt_cost": 0.0051687,
+            "upstream_inference_completions_cost": 0.001205
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 349,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0063737,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4720,
+          "completion_tokens": 380,
+          "total_tokens": 5100,
+          "cost": 0.0067156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0067156,
+            "upstream_inference_prompt_cost": 0.0057656,
+            "upstream_inference_completions_cost": 0.00095
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 266,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0067156,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4006,
+          "completion_tokens": 533,
+          "total_tokens": 4539,
+          "cost": 0.0060712,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0060712,
+            "upstream_inference_prompt_cost": 0.0047387,
+            "upstream_inference_completions_cost": 0.0013325
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 441,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0060712,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4308,
+          "completion_tokens": 374,
+          "total_tokens": 4682,
+          "cost": 0.0061856,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0061856,
+            "upstream_inference_prompt_cost": 0.0052506,
+            "upstream_inference_completions_cost": 0.000935
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 280,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0061856,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 5080,
+          "completion_tokens": 594,
+          "total_tokens": 5674,
+          "cost": 0.0077006,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0077006,
+            "upstream_inference_prompt_cost": 0.0062156,
+            "upstream_inference_completions_cost": 0.001485
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 446,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0077006,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4894,
+          "completion_tokens": 525,
+          "total_tokens": 5419,
+          "cost": 0.004742,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 2560,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004742,
+            "upstream_inference_prompt_cost": 0.0034295,
+            "upstream_inference_completions_cost": 0.0013125
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 381,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.004742,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 5231,
+          "completion_tokens": 342,
+          "total_tokens": 5573,
+          "cost": 0.00725935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00725935,
+            "upstream_inference_prompt_cost": 0.00640435,
+            "upstream_inference_completions_cost": 0.000855
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 246,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00725935,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6799,
+          "completion_tokens": 321,
+          "total_tokens": 7120,
+          "cost": 0.00916685,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00916685,
+            "upstream_inference_prompt_cost": 0.00836435,
+            "upstream_inference_completions_cost": 0.0008025
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 231,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00916685,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6256,
+          "completion_tokens": 493,
+          "total_tokens": 6749,
+          "cost": 0.0087837,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0087837,
+            "upstream_inference_prompt_cost": 0.0075512,
+            "upstream_inference_completions_cost": 0.0012325
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 293,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0087837,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6845,
+          "completion_tokens": 598,
+          "total_tokens": 7443,
+          "cost": 0.00991685,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00991685,
+            "upstream_inference_prompt_cost": 0.00842185,
+            "upstream_inference_completions_cost": 0.001495
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 324,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00991685,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 10030,
+          "completion_tokens": 657,
+          "total_tokens": 10687,
+          "cost": 0.0140456,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0140456,
+            "upstream_inference_prompt_cost": 0.0124031,
+            "upstream_inference_completions_cost": 0.0016425
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 384,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0140456,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 12941,
+          "completion_tokens": 536,
+          "total_tokens": 13477,
+          "cost": 0.01738185,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.01738185,
+            "upstream_inference_prompt_cost": 0.01604185,
+            "upstream_inference_completions_cost": 0.00134
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 284,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.01738185,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 11062,
+          "completion_tokens": 585,
+          "total_tokens": 11647,
+          "cost": 0.0150212,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0150212,
+            "upstream_inference_prompt_cost": 0.0135587,
+            "upstream_inference_completions_cost": 0.0014625
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 257,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0150212,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 13155,
+          "completion_tokens": 224,
+          "total_tokens": 13379,
+          "cost": 0.01686935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.01686935,
+            "upstream_inference_prompt_cost": 0.01630935,
+            "upstream_inference_completions_cost": 0.00056
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 201,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.01686935,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 14594,
+          "completion_tokens": 1555,
+          "total_tokens": 16149,
+          "cost": 0.0218612,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0218612,
+            "upstream_inference_prompt_cost": 0.0179737,
+            "upstream_inference_completions_cost": 0.0038875
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 420,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0218612,
+        "background": false
+      }
+    ]
+  },
+  "revision": 163,
+  "lease_owner": "worker-1c077380f6f646158e227d42ad3875dd",
+  "lease_until": 1792807542.0668612,
+  "finished_at": "2026-10-24T02:05:15.856216+00:00"
+}

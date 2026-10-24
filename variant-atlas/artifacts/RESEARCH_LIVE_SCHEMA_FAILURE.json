@@ -1,0 +1,210 @@
+{
+  "run_id": "research-d6a98146a55d409497546ee02a4fcfea",
+  "status": "failed",
+  "provider": "openrouter",
+  "model": "x-ai/grok-4.3",
+  "dataset_version": "pten-transform-1.0-97b699d687c8",
+  "selected_ids": [
+    "PTEN:p.S10L",
+    "PTEN:p.A39D",
+    "PTEN:p.C124S",
+    "PTEN:p.G129E",
+    "PTEN:p.R130Q",
+    "PTEN:p.M1A"
+  ],
+  "budget": {
+    "model_requests": 5,
+    "tool_calls": 4,
+    "spawned_tasks": 0,
+    "max_model_requests": 20,
+    "max_tool_calls": 40,
+    "max_spawned_tasks": 12,
+    "cost_usd": 0.0320074,
+    "cost_status": "provider_reported",
+    "cost_enforcement": "No prepaid hard cap; request/time/tool ceilings enforced.",
+    "usage": [
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4286,
+          "completion_tokens": 677,
+          "total_tokens": 4963,
+          "cost": 0.0069156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0069156,
+            "upstream_inference_prompt_cost": 0.0052231,
+            "upstream_inference_completions_cost": 0.0016925
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 530,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0069156,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4806,
+          "completion_tokens": 600,
+          "total_tokens": 5406,
+          "cost": 0.0073731,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0073731,
+            "upstream_inference_prompt_cost": 0.0058731,
+            "upstream_inference_completions_cost": 0.0015
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 481,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0073731,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 5791,
+          "completion_tokens": 445,
+          "total_tokens": 6236,
+          "cost": 0.00821685,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00821685,
+            "upstream_inference_prompt_cost": 0.00710435,
+            "upstream_inference_completions_cost": 0.0011125
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 351,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00821685,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 7027,
+          "completion_tokens": 341,
+          "total_tokens": 7368,
+          "cost": 0.00950185,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00950185,
+            "upstream_inference_prompt_cost": 0.00864935,
+            "upstream_inference_completions_cost": 0.0008525
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 249,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00950185,
+        "background": false
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "coordinator",
+      "role": "coordinator",
+      "question": "Investigate preserved abundance with reduced activity among these PTEN substitutions. Delegate independent assay-context and structure reviews. Inspect identity, comparability, declared filtering and mapping. Record a revision when actual source or coordinate limitations narrow the plan, reconcile the branches, and finalize a brief with checked evidence. Stay within 20 model calls: use scoped workers with at most two tools each. Do not make causal or clinical claims.",
+      "allowed_tools": [
+        "fetch_source_snapshot",
+        "inspect_table_schema",
+        "resolve_reference_sequence",
+        "validate_variant_identity",
+        "inspect_assay",
+        "check_score_direction",
+        "assess_comparability",
+        "join_measurements",
+        "filter_measurements",
+        "summarize_measurement_coverage",
+        "compare_measurement_patterns",
+        "load_structure_metadata",
+        "align_structure_reference",
+        "map_variant_residues",
+        "calculate_residue_distances",
+        "find_spatial_neighbors",
+        "retrieve_functional_annotations",
+        "search_methods_text",
+        "retrieve_passage",
+        "validate_evidence_references",
+        "validate_numeric_claims",
+        "compare_analysis_scenarios",
+        "update_scene_selection",
+        "validate_shortlist",
+        "inspect_run_budget",
+        "export_reproducibility_package",
+        "save_research_brief",
+        "spawn_specialist",
+        "request_reconciliation"
+      ],
+      "depth": 0,
+      "status": "cancelled",
+      "input_artifact_ids": [],
+      "parent_task_id": null,
+      "started_at": "2026-10-24T02:01:58.017675+00:00",
+      "step": 4,
+      "finished_at": "2026-10-24T02:02:33.990345+00:00"
+    }
+  ],
+  "event_types": [
+    "task.queued",
+    "task.started",
+    "model.action",
+    "tool.started",
+    "artifact.created",
+    "tool.completed",
+    "task.progress",
+    "run.failed",
+    "task.cancelled"
+  ],
+  "artifact_kinds": [
+    "assess_comparability",
+    "filter_measurements",
+    "map_variant_residues",
+    "validate_variant_identity"
+  ],
+  "findings": [],
+  "error": "1 validation error for AgentAction\nsummary\n  String should have at most 500 characters [type=string_too_long, input_value='Coordinator finalizes re...inty; no causal claims.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_too_long",
+  "challenge_qualifying": false,
+  "independent_researcher_review": "pending"
+}

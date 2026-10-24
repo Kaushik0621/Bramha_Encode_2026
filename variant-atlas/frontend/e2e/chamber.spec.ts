@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 
 test('live start → inspect tool → open output → reconnect saved chamber',async({page})=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('/');await expect(page.getByText('5 included',{exact:true})).toBeVisible();
+  await page.goto('/?workspace=fixture');await expect(page.getByText('5 included',{exact:true})).toBeVisible();
   await page.getByLabel('Explanation',{exact:true}).selectOption('fixture');
   await page.getByLabel('Investigation title',{exact:true}).fill('Inspectable chamber run');
   await page.getByRole('button',{name:'Start investigation · 5 variants'}).click();
@@ -27,7 +27,7 @@ test('live start → inspect tool → open output → reconnect saved chamber',a
 });
 
 test('simulated provenance → inspect handoff → replay → linked protein selection',async({page})=>{
-  await page.goto('/');await page.getByRole('button',{name:'Preview simulated chamber (no model call)'}).click();
+  await page.goto('/?workspace=fixture');await page.getByRole('button',{name:'Preview simulated chamber (no model call)'}).click();
   const chamber=page.getByRole('region',{name:'Investigation chamber',exact:true});
   await expect(chamber.getByText('Simulated workflow — synthetic data',{exact:true})).toBeVisible();
   await chamber.getByRole('button',{name:'Inspect Assay analysis',exact:true}).click();
@@ -52,7 +52,7 @@ test('simulated provenance → inspect handoff → replay → linked protein sel
 test('reduced-motion chamber and WebGL fallback keep worker inspection functional',async({page})=>{
   await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
   await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(this:HTMLCanvasElement,type:string,...args:unknown[]){if(type.startsWith('webgl'))return null;return (original as Function).apply(this,[type,...args]);} as typeof original;});
-  await page.goto('/');await page.getByRole('button',{name:'Preview simulated chamber (no model call)'}).click();
+  await page.goto('/?workspace=fixture');await page.getByRole('button',{name:'Preview simulated chamber (no model call)'}).click();
   const chamber=page.getByRole('region',{name:'Investigation chamber',exact:true});
   await expect(chamber.getByText('3D unavailable — execution remains inspectable.',{exact:true})).toBeVisible();
   await expect(chamber.getByRole('button',{name:'Motion paused'})).toBeDisabled();

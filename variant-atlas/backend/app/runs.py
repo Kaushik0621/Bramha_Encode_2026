@@ -22,11 +22,8 @@ class RunManager:
         self.signals={}
 
     def get(self, run_id):
-        if run_id not in self.cache:
-            run=self.repository.get_run(run_id)
-            if run is None: return None
-            self.cache[run_id]=run
-        return self.cache[run_id]
+        # Readers see the last atomic persisted snapshot, never a mutable worker object.
+        return self.repository.get_run(run_id)
 
     async def emit(self, run, type, worker_id, summary, status=None, **kwargs):
         worker=next(w for w in run.workers if w.id==worker_id)
@@ -34,6 +31,7 @@ class RunManager:
             sequence=len(run.events)+1,timestamp=now(),type=type,worker_id=worker_id,
             worker_kind=worker.kind,task_id=worker_id,status=status or run.status,summary=summary,
             mode=run.execution_mode,**kwargs)
+        if type.startswith('run.') and status in TERMINAL:run.status=status
         run.events.append(event)
         run.updated_at=event.timestamp
         # Atomic local snapshot contains both sequence and events. This synchronous,
@@ -92,12 +90,11 @@ class RunManager:
             result=await investigate(self.repository,self.settings,run.request,observer=observe)
             run.result=result
             run.result_id=result.id
-            run.status='needs_review' if result.result_mode=='llm_error' else 'completed'
-            await self.emit(run,'task.completed','coordinator','Partial deterministic brief ready; explanation needs review.' if run.status=='needs_review' else 'Review brief ready. Researcher review remains required.','completed',output_refs=['artifact-brief'])
-            await self.emit(run,'run.needs_review' if run.status=='needs_review' else 'run.completed','coordinator',
-                'Saved a partial result with the explanation error visible.' if run.status=='needs_review' else 'Investigation completed; saved output and provenance are available.',run.status,output_refs=[result.id,'artifact-brief'])
+            final_status='needs_review' if result.result_mode=='llm_error' else 'completed'
+            await self.emit(run,'task.completed','coordinator','Partial deterministic brief ready; explanation needs review.' if final_status=='needs_review' else 'Review brief ready. Researcher review remains required.','completed',output_refs=['artifact-brief'])
+            await self.emit(run,'run.needs_review' if final_status=='needs_review' else 'run.completed','coordinator',
+                'Saved a partial result with the explanation error visible.' if final_status=='needs_review' else 'Investigation completed; saved output and provenance are available.',final_status,output_refs=[result.id,'artifact-brief'])
         except asyncio.CancelledError:
-            run.status='cancelled'
             run.error='Execution cancelled. Any in-flight client request was interrupted; the remote provider may still process or bill an already submitted request. No returned model output will be used.'
             if active:
                 await self.emit(run,'task.cancelled',active,'Active task interrupted; its output is not accepted.','cancelled')
@@ -107,13 +104,12 @@ class RunManager:
                     await self.emit(run,'task.cancelled',w.id,'Cancelled before completion.','cancelled')
             await self.emit(run,'run.cancelled','coordinator',run.error,'cancelled')
         except Exception as exc:
-            run.status='failed'
             run.error=str(exc) if isinstance(exc,ValueError) else 'Execution failed. Check the configured repository and service availability; no storage or model fallback was used.'
             if active: await self.emit(run,'task.failed',active,run.error,'failed')
             await self.emit(run,'run.failed','coordinator',run.error,'failed')
 
     async def cancel(self, run_id):
-        run=self.get(run_id)
+        run=self.cache.get(run_id) or self.get(run_id)
         if run is None: return None
         if run.status in TERMINAL: return run.model_copy(deep=True)
         if any(a.id=='artifact-brief' for a in run.artifacts):

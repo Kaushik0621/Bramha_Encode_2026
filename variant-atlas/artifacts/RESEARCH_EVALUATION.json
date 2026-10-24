@@ -1,0 +1,8 @@
+{
+  "deterministic_reference": "passed",
+  "heldout_rows": 32,
+  "heldout_numeric_contract": "passed",
+  "model_reference_case": "not_passed; full frozen case still requires live evaluation",
+  "independent_researcher_review": "pending",
+  "clinical_validation": false
+}

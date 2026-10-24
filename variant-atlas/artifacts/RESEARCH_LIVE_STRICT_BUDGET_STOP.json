@@ -1,0 +1,884 @@
+{
+  "run_id": "research-7d8c936e117e45178cc9a44ac0cdda27",
+  "status": "failed",
+  "provider": "openrouter",
+  "model": "x-ai/grok-4.3",
+  "dataset_version": "pten-transform-1.0-97b699d687c8",
+  "selected_ids": [
+    "PTEN:p.S10L",
+    "PTEN:p.A39D",
+    "PTEN:p.C124S",
+    "PTEN:p.G129E",
+    "PTEN:p.R130Q",
+    "PTEN:p.M1A"
+  ],
+  "budget": {
+    "model_requests": 20,
+    "tool_calls": 8,
+    "spawned_tasks": 3,
+    "max_model_requests": 20,
+    "max_tool_calls": 40,
+    "max_spawned_tasks": 12,
+    "cost_usd": 0.2187097,
+    "cost_status": "provider_reported",
+    "cost_enforcement": "No prepaid hard cap; request/time/tool ceilings enforced.",
+    "usage": [
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4355,
+          "completion_tokens": 830,
+          "total_tokens": 5185,
+          "cost": 0.00738435,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00738435,
+            "upstream_inference_prompt_cost": 0.00530935,
+            "upstream_inference_completions_cost": 0.002075
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 678,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00738435,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4079,
+          "completion_tokens": 664,
+          "total_tokens": 4743,
+          "cost": 0.00648995,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00648995,
+            "upstream_inference_prompt_cost": 0.00482995,
+            "upstream_inference_completions_cost": 0.00166
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 496,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00648995,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4749,
+          "completion_tokens": 695,
+          "total_tokens": 5444,
+          "cost": 0.00753935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00753935,
+            "upstream_inference_prompt_cost": 0.00580185,
+            "upstream_inference_completions_cost": 0.0017375
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 573,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00753935,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 5614,
+          "completion_tokens": 439,
+          "total_tokens": 6053,
+          "cost": 0.0079806,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0079806,
+            "upstream_inference_prompt_cost": 0.0068831,
+            "upstream_inference_completions_cost": 0.0010975
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 349,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0079806,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4543,
+          "completion_tokens": 495,
+          "total_tokens": 5038,
+          "cost": 0.00678185,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00678185,
+            "upstream_inference_prompt_cost": 0.00554435,
+            "upstream_inference_completions_cost": 0.0012375
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 396,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00678185,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4610,
+          "completion_tokens": 585,
+          "total_tokens": 5195,
+          "cost": 0.0070906,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0070906,
+            "upstream_inference_prompt_cost": 0.0056281,
+            "upstream_inference_completions_cost": 0.0014625
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 424,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0070906,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6639,
+          "completion_tokens": 369,
+          "total_tokens": 7008,
+          "cost": 0.00586125,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 3200,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00586125,
+            "upstream_inference_prompt_cost": 0.00493875,
+            "upstream_inference_completions_cost": 0.0009225
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 279,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00586125,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6027,
+          "completion_tokens": 609,
+          "total_tokens": 6636,
+          "cost": 0.00892185,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00892185,
+            "upstream_inference_prompt_cost": 0.00739935,
+            "upstream_inference_completions_cost": 0.0015225
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 411,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00892185,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 10178,
+          "completion_tokens": 294,
+          "total_tokens": 10472,
+          "cost": 0.0100975,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 3200,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0100975,
+            "upstream_inference_prompt_cost": 0.0093625,
+            "upstream_inference_completions_cost": 0.000735
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 207,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0100975,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6361,
+          "completion_tokens": 672,
+          "total_tokens": 7033,
+          "cost": 0.00949685,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00949685,
+            "upstream_inference_prompt_cost": 0.00781685,
+            "upstream_inference_completions_cost": 0.00168
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 457,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00949685,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 11363,
+          "completion_tokens": 568,
+          "total_tokens": 11931,
+          "cost": 0.01548935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.01548935,
+            "upstream_inference_prompt_cost": 0.01406935,
+            "upstream_inference_completions_cost": 0.00142
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 381,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.01548935,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6876,
+          "completion_tokens": 843,
+          "total_tokens": 7719,
+          "cost": 0.0105681,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0105681,
+            "upstream_inference_prompt_cost": 0.0084606,
+            "upstream_inference_completions_cost": 0.0021075
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 527,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0105681,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 8698,
+          "completion_tokens": 377,
+          "total_tokens": 9075,
+          "cost": 0.009127,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 2560,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.009127,
+            "upstream_inference_prompt_cost": 0.0081845,
+            "upstream_inference_completions_cost": 0.0009425
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 280,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.009127,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 12926,
+          "completion_tokens": 840,
+          "total_tokens": 13766,
+          "cost": 0.0179887,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0179887,
+            "upstream_inference_prompt_cost": 0.0158887,
+            "upstream_inference_completions_cost": 0.0021
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 694,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0179887,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 15074,
+          "completion_tokens": 253,
+          "total_tokens": 15327,
+          "cost": 0.016115,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 3200,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.016115,
+            "upstream_inference_prompt_cost": 0.0154825,
+            "upstream_inference_completions_cost": 0.0006325
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 223,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.016115,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 9754,
+          "completion_tokens": 804,
+          "total_tokens": 10558,
+          "cost": 0.0140681,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0140681,
+            "upstream_inference_prompt_cost": 0.0120581,
+            "upstream_inference_completions_cost": 0.00201
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 700,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0140681,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 10504,
+          "completion_tokens": 539,
+          "total_tokens": 11043,
+          "cost": 0.0140743,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 384,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0140743,
+            "upstream_inference_prompt_cost": 0.0127268,
+            "upstream_inference_completions_cost": 0.0013475
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 331,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0140743,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 10981,
+          "completion_tokens": 512,
+          "total_tokens": 11493,
+          "cost": 0.01231825,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 2560,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.01231825,
+            "upstream_inference_prompt_cost": 0.01103825,
+            "upstream_inference_completions_cost": 0.00128
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 467,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.01231825,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 11165,
+          "completion_tokens": 669,
+          "total_tokens": 11834,
+          "cost": 0.01535995,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.01535995,
+            "upstream_inference_prompt_cost": 0.01368745,
+            "upstream_inference_completions_cost": 0.0016725
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 465,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.01535995,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 11646,
+          "completion_tokens": 721,
+          "total_tokens": 12367,
+          "cost": 0.0159568,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 384,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0159568,
+            "upstream_inference_prompt_cost": 0.0141543,
+            "upstream_inference_completions_cost": 0.0018025
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 680,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0159568,
+        "background": false
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "coordinator",
+      "role": "coordinator",
+      "question": "Investigate preserved abundance with reduced activity among these PTEN substitutions. Delegate independent assay-context and structure reviews. Inspect identity, comparability, declared filtering and mapping. Record a revision when actual source or coordinate limitations narrow the plan, reconcile the branches, and finalize a brief with checked evidence. Stay within 20 model calls: use scoped workers with at most two tools each. Do not make causal or clinical claims.",
+      "allowed_tools": [
+        "fetch_source_snapshot",
+        "inspect_table_schema",
+        "resolve_reference_sequence",
+        "validate_variant_identity",
+        "inspect_assay",
+        "check_score_direction",
+        "assess_comparability",
+        "join_measurements",
+        "filter_measurements",
+        "summarize_measurement_coverage",
+        "compare_measurement_patterns",
+        "load_structure_metadata",
+        "align_structure_reference",
+        "map_variant_residues",
+        "calculate_residue_distances",
+        "find_spatial_neighbors",
+        "retrieve_functional_annotations",
+        "search_methods_text",
+        "retrieve_passage",
+        "validate_evidence_references",
+        "validate_numeric_claims",
+        "compare_analysis_scenarios",
+        "update_scene_selection",
+        "validate_shortlist",
+        "inspect_run_budget",
+        "export_reproducibility_package",
+        "save_research_brief",
+        "spawn_specialist",
+        "request_reconciliation"
+      ],
+      "depth": 0,
+      "status": "cancelled",
+      "input_artifact_ids": [],
+      "parent_task_id": null,
+      "started_at": "2026-10-24T02:07:37.938037+00:00",
+      "step": 7,
+      "finished_at": "2026-10-24T02:09:01.240775+00:00"
+    },
+    {
+      "id": "task-9e928f9b44",
+      "role": "assay",
+      "question": "Review assay context, identity, comparability, declared filtering and mapping for PTEN variants with preserved abundance reduced activity. Use at most two tools. Inspect required checks: assess_comparability, filter_measurements, validate_variant_identity.",
+      "input_artifact_ids": [],
+      "allowed_tools": [
+        "assess_comparability",
+        "filter_measurements",
+        "validate_variant_identity",
+        "inspect_assay",
+        "check_score_direction"
+      ],
+      "max_steps": 8,
+      "max_seconds": 180,
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "dedup_key": "2237a6dafcf9f0be88da8b49be89ee04110683f6fe5b73b53cc38039ce6ccd14",
+      "status": "completed",
+      "started_at": "2026-10-24T02:07:46.312177+00:00",
+      "step": 2,
+      "finished_at": "2026-10-24T02:08:08.656869+00:00"
+    },
+    {
+      "id": "task-135ab2af7e",
+      "role": "structure",
+      "question": "Review structure mapping, residues and spatial context for PTEN variants with preserved abundance reduced activity. Use at most two tools. Inspect required check: map_variant_residues.",
+      "input_artifact_ids": [],
+      "allowed_tools": [
+        "map_variant_residues",
+        "load_structure_metadata"
+      ],
+      "max_steps": 8,
+      "max_seconds": 180,
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "dedup_key": "71644fb925a34ce1c320a3a2880d16a4d96d59deef8abc5328e60c61a33d39af",
+      "status": "completed",
+      "started_at": "2026-10-24T02:07:54.332389+00:00",
+      "step": 2,
+      "finished_at": "2026-10-24T02:08:16.191531+00:00"
+    },
+    {
+      "id": "task-722bf62504",
+      "role": "reconciliation",
+      "question": "Reconcile numeric claim validation failures and reference checks across assay and structure branches for PTEN preserved abundance reduced activity variants.",
+      "input_artifact_ids": [
+        "artifact-ddcc9a037300464b89ce84116c7eb81c",
+        "artifact-2713015885674e77bd8a1fdf949409cf",
+        "artifact-06b07ec1f6ac4145bd90f95576740fe5"
+      ],
+      "allowed_tools": [
+        "validate_numeric_claims",
+        "validate_evidence_references"
+      ],
+      "max_steps": 8,
+      "max_seconds": 180,
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "dedup_key": "3ca9599779e426e2344da8aee09afd3c48233ecffdd46ed0af01ce29c31ea565",
+      "status": "failed",
+      "started_at": "2026-10-24T02:08:15.950248+00:00",
+      "step": 5,
+      "finished_at": "2026-10-24T02:09:01.042748+00:00",
+      "error": "RuntimeError"
+    }
+  ],
+  "event_types": [
+    "task.queued",
+    "task.started",
+    "model.action",
+    "handoff",
+    "task.progress",
+    "tool.started",
+    "artifact.created",
+    "tool.completed",
+    "verification.result",
+    "task.completed",
+    "task.deduplicated",
+    "hypothesis.revised",
+    "task.failed",
+    "run.failed",
+    "task.cancelled"
+  ],
+  "artifact_kinds": [
+    "assess_comparability",
+    "filter_measurements",
+    "map_variant_residues",
+    "filter_measurements",
+    "map_variant_residues",
+    "verification",
+    "revision_required",
+    "validate_variant_identity",
+    "verification",
+    "specialist_result",
+    "verification",
+    "specialist_result",
+    "validate_numeric_claims",
+    "validate_evidence_references",
+    "verification",
+    "revision_required",
+    "verification",
+    "revision_required"
+  ],
+  "findings": [
+    {
+      "id": "task-9e928f9b44:assay-finding-1",
+      "claim_type": "reported_observation",
+      "text": "filter_measurements returned 5 matching variants for preserved_abundance_reduced_activity criteria with both measurements required.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-0564a5af03e04e1eb8d5ddce6bb265d0"
+      ],
+      "limitations": [
+        "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "assay-finding-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [
+            {
+              "claim": {
+                "artifact_id": "artifact-0564a5af03e04e1eb8d5ddce6bb265d0",
+                "path": [
+                  "data",
+                  "matching_count"
+                ],
+                "value": 5.0,
+                "units": null
+              },
+              "actual": 5,
+              "passed": true,
+              "units_check": "Units require artifact context review."
+            }
+          ],
+          "undeclared_numeric_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    },
+    {
+      "id": "task-135ab2af7e:struct-map-1",
+      "claim_type": "reported_observation",
+      "text": "map_variant_residues on 1D5R: S10L missing coords; A39D/C124S/G129E/R130Q mapped with C-alpha; M1A outside coverage.",
+      "variant_ids": [],
+      "evidence_refs": [
+        "artifact-2713015885674e77bd8a1fdf949409cf"
+      ],
+      "limitations": [
+        "Research use only; no causality."
+      ],
+      "verifier_outcomes": {
+        "references": {
+          "passed": true,
+          "checks": [
+            {
+              "finding_id": "struct-map-1",
+              "references_exist": true,
+              "identities_valid": true,
+              "support_assessment": "Existence only; applicability and scientific truth require review."
+            }
+          ],
+          "scientific_truth_established": false
+        },
+        "numeric": {
+          "passed": true,
+          "checks": [
+            {
+              "claim": {
+                "artifact_id": "artifact-2713015885674e77bd8a1fdf949409cf",
+                "path": [
+                  "data",
+                  "mapped_count"
+                ],
+                "value": 4.0,
+                "units": null
+              },
+              "actual": 4,
+              "passed": true,
+              "units_check": "Units require artifact context review."
+            },
+            {
+              "claim": {
+                "artifact_id": "artifact-2713015885674e77bd8a1fdf949409cf",
+                "path": [
+                  "data",
+                  "missing_coordinates_count"
+                ],
+                "value": 1.0,
+                "units": null
+              },
+              "actual": 1,
+              "passed": true,
+              "units_check": "Units require artifact context review."
+            },
+            {
+              "claim": {
+                "artifact_id": "artifact-2713015885674e77bd8a1fdf949409cf",
+                "path": [
+                  "data",
+                  "outside_coverage_count"
+                ],
+                "value": 1.0,
+                "units": null
+              },
+              "actual": 1,
+              "passed": true,
+              "units_check": "Units require artifact context review."
+            }
+          ],
+          "undeclared_numeric_values": []
+        },
+        "scientific_truth_established": false
+      },
+      "reviewer_status": "pending"
+    }
+  ],
+  "error": "Model request budget exhausted.",
+  "challenge_qualifying": false,
+  "independent_researcher_review": "pending"
+}

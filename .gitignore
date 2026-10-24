@@ -22,3 +22,6 @@ playwright-report/
 
 # Separate published idea-atlas checkout (has its own Git remote)
 research-atlas/
+
+# Immutable scientific raw assets / derived binary analytical snapshots
+variant-atlas/data/assets/

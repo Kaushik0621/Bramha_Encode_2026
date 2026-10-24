@@ -1,3 +1,5 @@
+> The final real-data build is documented in [docs/REAL_DATA_BUILD.md](docs/REAL_DATA_BUILD.md). The default UI opens audited public PTEN data; the earlier synthetic demonstration is at `/?workspace=fixture`. See [implementation gates](docs/IMPLEMENTATION_STATUS.md) before treating any provider or scientific capability as verified.
+
 # Variant Atlas
 
 A runnable local research workspace built from `variant-atlas-codex-build-brief.md` , `variant-atlas-product-plan.md` and `variant-atlas-business-goal.md`. React/TypeScript frontend and Python/FastAPI backend are separate applications, communicating exclusively through HTTP.
@@ -162,3 +164,7 @@ Implemented: structure-led responsive workspace, deterministic synthetic scene, 
 Deferred by the brief: real PTEN/MaveDB ingestion and audited joins, real mmCIF/Mol* molecular rendering, validated assay calibration, Atlas text/vector/hybrid search, authentic Gemini/Argon invocation, bounded model-chosen scientific tools, shared reviews, a production job queue, authentication and expert evaluation. These are meaningful later milestones, not simulated working features.
 
 Before entering a competition, confirm build timing and current rules. This repository is prototype implementation; do not represent it as code written after a future kickoff. No pre-kickoff eligibility claim is made.
+
+The molecular hero includes an [agent research workbench](docs/AGENT_RESEARCH_WORKBENCH.md): model-prioritized, executable PTEN comparisons with verified before/after measurements, linked molecular selection, undo, export, and handoff to the research agent.
+
+New investigations also support [live scenario exploration](docs/LIVE_SCENARIO_EXPLORATION.md): up to ten ranked directions, scoped agents, discoverable tools, evidence-linked path changes and inspectable outcomes.

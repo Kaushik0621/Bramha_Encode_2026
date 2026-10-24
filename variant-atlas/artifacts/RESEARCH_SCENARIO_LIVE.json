@@ -1,0 +1,360 @@
+{
+  "proposal": {
+    "id": "scenario-412e1f70d2cd4f4286152f39513500e3",
+    "created_at": "2026-10-24T10:06:36.638632+00:00",
+    "context": {
+      "dataset_version": "pten-transform-1.0-97b699d687c8",
+      "selected_ids": [],
+      "anchor_id": "PTEN:p.C124S",
+      "criteria": {
+        "scenario": "preserved_abundance_reduced_activity",
+        "activity_cutoff": -1.11,
+        "abundance_cutoff": 0.6121866579147568,
+        "mapping": "all",
+        "require_both_measurements": true
+      },
+      "layer": "activity"
+    },
+    "fingerprint": "166e6af0f0ee6131d628c1b34d5da7b697e42a175cada2748992411803487bd2",
+    "candidates": [
+      {
+        "id": "add-discordant",
+        "title": "Add an informative discordant measurement",
+        "rationale": "Expand the cohort with a measured low-activity, preserved-abundance substitution under the current exploratory cutoffs. It is a candidate for follow-up, not a clinical classification.",
+        "after_ids": [
+          "PTEN:p.G129E"
+        ],
+        "added_ids": [
+          "PTEN:p.G129E"
+        ],
+        "removed_ids": [],
+        "focus_ids": [
+          "PTEN:p.G129E"
+        ],
+        "layer": "activity",
+        "question": "Evaluate the added low-activity, preserved-abundance substitution against the existing cohort. Explain what these separate measurements can and cannot establish.",
+        "observations": [
+          {
+            "id": "PTEN:p.G129E",
+            "activity": -5.409763516,
+            "abundance": 0.6380127329020711,
+            "mapping_status": "mapped"
+          }
+        ]
+      },
+      {
+        "id": "same-position",
+        "title": "Change the substitution, hold the position fixed",
+        "rationale": "Compare two separately measured substitutions at the same reference residue. Differences in the assays can motivate a substitution-specific hypothesis; a shared coordinate cannot explain their mechanism.",
+        "after_ids": [
+          "PTEN:p.C124S",
+          "PTEN:p.C124A"
+        ],
+        "added_ids": [
+          "PTEN:p.C124S",
+          "PTEN:p.C124A"
+        ],
+        "removed_ids": [],
+        "focus_ids": [
+          "PTEN:p.C124S",
+          "PTEN:p.C124A"
+        ],
+        "layer": "activity",
+        "question": "Compare these independently measured substitutions at the same position. Report both assay values and uncertainties; explain why their shared reference coordinate is not mutant geometry.",
+        "observations": [
+          {
+            "id": "PTEN:p.C124S",
+            "activity": -4.895642908999999,
+            "abundance": 1.04741806408857,
+            "mapping_status": "mapped"
+          },
+          {
+            "id": "PTEN:p.C124A",
+            "activity": -3.761583525,
+            "abundance": null,
+            "mapping_status": "mapped"
+          }
+        ]
+      },
+      {
+        "id": "assay-contrast",
+        "title": "Similar activity. Different abundance.",
+        "rationale": "Replace the cohort with an activity-matched contrast across the abundance boundary. This tests whether the research question should distinguish loss of activity from loss of measured abundance. Assays use different systems; this does not establish a mechanism.",
+        "after_ids": [
+          "PTEN:p.G165Y",
+          "PTEN:p.C105R"
+        ],
+        "added_ids": [
+          "PTEN:p.G165Y",
+          "PTEN:p.C105R"
+        ],
+        "removed_ids": [],
+        "focus_ids": [
+          "PTEN:p.G165Y",
+          "PTEN:p.C105R"
+        ],
+        "layer": "abundance",
+        "question": "Compare the activity-matched contrast. Distinguish measured abundance from activity, retain assay system differences and uncertainty, and suggest an experiment rather than asserting a mechanism.",
+        "observations": [
+          {
+            "id": "PTEN:p.G165Y",
+            "activity": -3.798693325,
+            "abundance": 0.658164581969582,
+            "mapping_status": "mapped"
+          },
+          {
+            "id": "PTEN:p.C105R",
+            "activity": -3.786342474,
+            "abundance": 0.158804645684737,
+            "mapping_status": "mapped"
+          }
+        ]
+      },
+      {
+        "id": "spatial-neighbor",
+        "title": "Bring a reference-space neighbor into the comparison",
+        "rationale": "Add a substitution at a different residue within the declared reference C-alpha radius. Proximity helps plan a spatial comparison; it does not prove interaction or a shared functional effect.",
+        "after_ids": [
+          "PTEN:p.C124S",
+          "PTEN:p.L70T"
+        ],
+        "added_ids": [
+          "PTEN:p.C124S",
+          "PTEN:p.L70T"
+        ],
+        "removed_ids": [],
+        "focus_ids": [
+          "PTEN:p.C124S",
+          "PTEN:p.L70T"
+        ],
+        "layer": "activity",
+        "question": "Compare the added reference-space neighbor with the anchor. Verify the C-alpha distance and independently compare assay measurements; do not infer a physical interaction.",
+        "observations": [
+          {
+            "id": "PTEN:p.C124S",
+            "activity": -4.895642908999999,
+            "abundance": 1.04741806408857,
+            "mapping_status": "mapped"
+          },
+          {
+            "id": "PTEN:p.L70T",
+            "activity": -1.290483186,
+            "abundance": null,
+            "mapping_status": "mapped"
+          }
+        ]
+      }
+    ],
+    "planner": {
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "usage": {
+        "prompt_tokens": 2009,
+        "completion_tokens": 514,
+        "total_tokens": 2523,
+        "cost": 0.00366185,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00366185,
+          "upstream_inference_prompt_cost": 0.00237685,
+          "upstream_inference_completions_cost": 0.001285
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 464,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "cost_usd": 0.00366185,
+      "background": false,
+      "status": "model ranked validated executable plans",
+      "summary": "Rank by direct match to preserved-abundance reduced-activity scenario and anchor relevance."
+    }
+  },
+  "execution": {
+    "id": "execution-c15caaf2c5fc41ebaed0c73f8eb78a1e",
+    "created_at": "2026-10-24T10:06:36.710817+00:00",
+    "proposal_id": "scenario-412e1f70d2cd4f4286152f39513500e3",
+    "dataset_version": "pten-transform-1.0-97b699d687c8",
+    "plan": {
+      "id": "add-discordant",
+      "title": "Add an informative discordant measurement",
+      "rationale": "Expand the cohort with a measured low-activity, preserved-abundance substitution under the current exploratory cutoffs. It is a candidate for follow-up, not a clinical classification.",
+      "after_ids": [
+        "PTEN:p.G129E"
+      ],
+      "added_ids": [
+        "PTEN:p.G129E"
+      ],
+      "removed_ids": [],
+      "focus_ids": [
+        "PTEN:p.G129E"
+      ],
+      "layer": "activity",
+      "question": "Evaluate the added low-activity, preserved-abundance substitution against the existing cohort. Explain what these separate measurements can and cannot establish.",
+      "observations": [
+        {
+          "id": "PTEN:p.G129E",
+          "activity": -5.409763516,
+          "abundance": 0.6380127329020711,
+          "mapping_status": "mapped"
+        }
+      ]
+    },
+    "before_ids": [],
+    "after_ids": [
+      "PTEN:p.G129E"
+    ],
+    "before": {
+      "count": 0,
+      "mapped": 0,
+      "complete_assays": 0,
+      "criteria_matches": 0
+    },
+    "after": {
+      "count": 1,
+      "mapped": 1,
+      "complete_assays": 1,
+      "criteria_matches": 1
+    },
+    "measurements": [
+      {
+        "id": "PTEN:p.G129E",
+        "status": "accepted",
+        "position": 129,
+        "ref": "G",
+        "alt": "E",
+        "protein_hgvs": "p.G129E",
+        "representation_level": "protein_substitution",
+        "dna_allele_status": "not_uniquely_inferred",
+        "organism_taxonomy_id": 9606,
+        "reference_accession": "P60484",
+        "reference_sequence_version": 1,
+        "reference_entry_version": 226,
+        "activity": -5.409763516,
+        "abundance": 0.6380127329020711,
+        "activity_se": 0.5785901720000001,
+        "abundance_se": 0.11659000641424799,
+        "activity_record": "urn:mavedb:00000054-a-1#5376",
+        "abundance_record": "urn:mavedb:00000102-0-1#3817",
+        "mapping": {
+          "label_seq_id": 123,
+          "amino_acid": "G",
+          "auth_seq_id": "129",
+          "insertion_code": ".",
+          "chain_id": "A",
+          "label_asym_id": "A",
+          "reference_position": 129,
+          "status": "mapped",
+          "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+          "coordinate": {
+            "x": 33.359,
+            "y": 88.072,
+            "z": 29.237
+          },
+          "mapping_id": "P60484:1D5R:A:129:123",
+          "units": "angstrom",
+          "coordinate_type": "experimental"
+        },
+        "synthetic": false,
+        "evidence_ids": [
+          "passage-activity-0",
+          "passage-activity-650",
+          "passage-abundance-0"
+        ]
+      }
+    ],
+    "criteria_results": [
+      {
+        "variant_id": "PTEN:p.G129E",
+        "matches": true,
+        "reasons": [
+          "Matches the explicit descriptive criteria."
+        ],
+        "activity": -5.409763516,
+        "abundance": 0.6380127329020711,
+        "mapping_status": "mapped"
+      }
+    ],
+    "distance": null,
+    "planner": {
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "usage": {
+        "prompt_tokens": 2009,
+        "completion_tokens": 514,
+        "total_tokens": 2523,
+        "cost": 0.00366185,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00366185,
+          "upstream_inference_prompt_cost": 0.00237685,
+          "upstream_inference_completions_cost": 0.001285
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 464,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "cost_usd": 0.00366185,
+      "background": false,
+      "status": "model ranked validated executable plans",
+      "summary": "Rank by direct match to preserved-abundance reduced-activity scenario and anchor relevance."
+    },
+    "checks": [
+      {
+        "name": "Identity and dataset version",
+        "status": "passed"
+      },
+      {
+        "name": "Recomputed assay criteria from pinned measurements",
+        "status": "passed"
+      },
+      {
+        "name": "Reference coordinate coverage",
+        "status": "passed"
+      }
+    ],
+    "steps": [
+      "Read pinned dataset and validate current context",
+      "Rebuild permitted cohort change",
+      "Recompute assay criteria and mapping coverage",
+      "Measure reference distance where available",
+      "Persist verified result and return scene command"
+    ],
+    "scene": {
+      "variant_ids": [
+        "PTEN:p.G129E"
+      ],
+      "layer": "activity"
+    },
+    "limitations": [
+      "Independent single-substitution measurements; no combined mutant is simulated.",
+      "Reference backbone remains unchanged. No mutant fold, rescue, pathogenicity or treatment effect is predicted.",
+      "Matching thresholds are exploratory; excluded variants remain available in the source table."
+    ],
+    "source_ids": [
+      "uniprot-P60484",
+      "pdb-1D5R",
+      "pdb-1D5R-metadata",
+      "mavedb-activity-metadata",
+      "mavedb-activity-scores",
+      "mavedb-abundance-metadata",
+      "mavedb-abundance-scores",
+      "mavedb-abundance-original-metadata"
+    ]
+  }
+}

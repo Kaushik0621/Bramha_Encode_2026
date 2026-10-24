@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {PerspectiveCamera,Vector3} from 'three';
 test('filter → select → investigate → persist → export',async({page})=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('/');
+  await page.goto('/?workspace=fixture');
   await expect(page.getByRole('heading',{name:'What deserves a closer look?'})).toBeVisible();
   await expect(page.getByText('5 included',{exact:true})).toBeVisible();
   await expect(page.locator('tbody tr')).toHaveCount(8);
@@ -56,7 +56,7 @@ test('filter → select → investigate → persist → export',async({page})=>{
 });
 
 test('keyboard selection, edited thresholds and empty shortlist remain usable',async({page})=>{
-  await page.goto('/');await expect(page.getByText('5 included',{exact:true})).toBeVisible();
+  await page.goto('/?workspace=fixture');await expect(page.getByText('5 included',{exact:true})).toBeVisible();
   const row=page.getByTestId('row-demo-v07');await row.getByRole('button').focus();await page.keyboard.press('Enter');
   const drawer=page.getByRole('complementary',{name:'Selected variant details'});
   await expect(drawer).toContainText('Not measured');await expect(drawer).toContainText('No linked evidence');
@@ -72,14 +72,14 @@ test('keyboard selection, edited thresholds and empty shortlist remain usable',a
 
 test('WebGL-unavailable fallback keeps core workflow available',async({page})=>{
   await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(this:HTMLCanvasElement,type:string,...args:unknown[]){if(type.startsWith('webgl'))return null;return (original as Function).apply(this,[type,...args]);} as typeof original;});
-  await page.goto('/');await expect(page.getByText('Structure viewer unavailable',{exact:true})).toBeVisible();
+  await page.goto('/?workspace=fixture');await expect(page.getByText('Structure viewer unavailable',{exact:true})).toBeVisible();
   await expect(page.getByText('5 included',{exact:true})).toBeVisible();
   await page.getByTestId('row-demo-v02').getByRole('button').click();
   await expect(page.getByRole('complementary',{name:'Selected variant details'})).toContainText('demo-v02');
 });
 
 test('narrow workspace stacks without page overflow and respects reduced motion',async({page})=>{
-  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');
+  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/?workspace=fixture');
   await expect(page.getByText('5 included',{exact:true})).toBeVisible();
   await expect(page.getByRole('button',{name:'Rotate slowly'})).toBeDisabled();
   await page.screenshot({path:'../artifacts/workspace-mobile.png',fullPage:true});

@@ -1,0 +1,49 @@
+{
+  "workspace_id": "pten-real",
+  "dataset_version": "pten-transform-1.0-97b699d687c8",
+  "raw_rows": {
+    "activity": 8681,
+    "abundance": 5477
+  },
+  "identity_status_counts": {
+    "rejected": 1418,
+    "accepted": 12740
+  },
+  "accepted_substitutions": {
+    "activity": 7657,
+    "abundance": 5083
+  },
+  "union_substitutions": 7657,
+  "intersection_substitutions": 5083,
+  "both_measurements_available": 4839,
+  "mapping_counts_full": {
+    "outside_structure_coverage": 1539,
+    "missing_coordinates": 285,
+    "mapped": 5833
+  },
+  "displayed_subset": 131,
+  "subset_policy": "Evenly spaced accepted substitution IDs, plus explicitly named reference-case substitutions when present. No universal importance ranking.",
+  "subset_requested_size": 128,
+  "synonymous_abundance_controls": 193,
+  "comparability": {
+    "status": "descriptive_only",
+    "shared_reference": true,
+    "endpoints_interchangeable": false,
+    "normalization_supported": false,
+    "limitations": [
+      "Activity is a humanized-yeast fitness proxy; abundance is a separate VAMP-seq endpoint.",
+      "Combining the two scores describes a pattern; it does not prove a causal mechanism.",
+      "Replicate scores are not automatically exchangeable raw biological replicates.",
+      "Protein-substitution measurements are not uniquely assigned DNA-allele measurements."
+    ]
+  },
+  "structure_construct_length": 324,
+  "mapping_statuses": {
+    "outside_structure_coverage": 81,
+    "missing_coordinates": 15,
+    "mapped": 307,
+    "unresolved": 2
+  },
+  "alignment_ambiguous": true,
+  "alignment_policy": "Per-residue exact alignment must agree with depositor UniProt segments; unanchored/engineered residues are unresolved."
+}

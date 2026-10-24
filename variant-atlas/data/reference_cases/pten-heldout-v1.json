@@ -1,0 +1,206 @@
+{
+  "id": "pten-heldout-v1",
+  "dataset_version": "pten-transform-1.0-97b699d687c8",
+  "criteria": {
+    "scenario": "preserved_abundance_reduced_activity",
+    "activity_cutoff": -1.11,
+    "abundance_cutoff": 0.6121866579147568,
+    "mapping": "all",
+    "require_both_measurements": true
+  },
+  "rows": [
+    {
+      "id": "PTEN:p.A120C",
+      "activity": -1.021032599,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.A34P",
+      "activity": -3.0247690510000003,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.C218K",
+      "activity": -1.084192034,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.D162C",
+      "activity": -0.746964548,
+      "abundance": 0.709367277895604,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.D310P",
+      "activity": -0.22486768,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.D393H",
+      "activity": 0.169919297,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.E157Y",
+      "activity": -0.551748394,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.E307P",
+      "activity": -0.526454863,
+      "abundance": 0.659247461744052,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.E73G",
+      "activity": 0.38055593,
+      "abundance": 0.84938034613012,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.F215W",
+      "activity": -0.31351706,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.F337P",
+      "activity": -2.903847459,
+      "abundance": 0.25595959704190696,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.G143E",
+      "activity": 0.236273303,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.G36W",
+      "activity": -3.844753069,
+      "abundance": 0.898663535939333,
+      "expected_match": true
+    },
+    {
+      "id": "PTEN:p.H61P",
+      "activity": -3.168614892,
+      "abundance": 0.379620052288267,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.I280F",
+      "activity": -0.348301498,
+      "abundance": 0.49177649118763,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.I5V",
+      "activity": 0.925817541,
+      "abundance": 1.05654790360979,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.K183M",
+      "activity": 0.385733877,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.K289E",
+      "activity": 0.13533695699999998,
+      "abundance": 0.891832998260911,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.K60T",
+      "activity": -0.012404684,
+      "abundance": 0.684313944581225,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.L152N",
+      "activity": -3.323123135,
+      "abundance": 0.24578143977954298,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.L295E",
+      "activity": 1.274715897,
+      "abundance": 1.00521768741007,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.M134V",
+      "activity": -1.608094929,
+      "abundance": 0.79383870816509,
+      "expected_match": true
+    },
+    {
+      "id": "PTEN:p.N184M",
+      "activity": 0.607380988,
+      "abundance": null,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.N340E",
+      "activity": null,
+      "abundance": 0.828825675121208,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.P103V",
+      "activity": -2.960195653,
+      "abundance": 0.8586447266563009,
+      "expected_match": true
+    },
+    {
+      "id": "PTEN:p.P30N",
+      "activity": 0.444219522,
+      "abundance": 0.79285600155924,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.P96F",
+      "activity": -2.785101645,
+      "abundance": 0.35168597264615303,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.Q396V",
+      "activity": -0.13360793199999998,
+      "abundance": 0.844151587486317,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.R172L",
+      "activity": -0.981013544,
+      "abundance": 0.903182635526987,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.R74C",
+      "activity": -1.929051208,
+      "abundance": 1.1859124833428,
+      "expected_match": true
+    },
+    {
+      "id": "PTEN:p.S287R",
+      "activity": 0.539017635,
+      "abundance": 0.89386619178863,
+      "expected_match": false
+    },
+    {
+      "id": "PTEN:p.S380I",
+      "activity": 0.15057922599999998,
+      "abundance": null,
+      "expected_match": false
+    }
+  ],
+  "scope": "Deterministic threshold generalization check; not an estimate of medical utility."
+}

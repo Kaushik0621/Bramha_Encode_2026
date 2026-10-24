@@ -51,7 +51,7 @@ class AtlasRepository:
         return Investigation.model_validate(doc) if doc else None
 
     def list(self):
-        return [Investigation.model_validate(d) for d in self.db.investigations.find({},{'_id':0}).sort('created_at',-1).limit(100)]
+        return [Investigation.model_validate(d) for d in self.db.investigations.find({'synthetic':True},{'_id':0}).sort('created_at',-1).limit(100)]
 
     def save_run(self, run: RunSnapshot):
         self.db.runs.replace_one({'run_id':run.run_id}, run.model_dump(mode='json'), upsert=True)

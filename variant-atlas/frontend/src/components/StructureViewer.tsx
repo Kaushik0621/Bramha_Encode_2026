@@ -5,7 +5,7 @@ import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import type { Analysis, Neighbors, Variant, Workspace } from '../types';
 
-export interface StructureViewerProps {workspace:Workspace;analysis:Analysis|null;selected:Variant;onSelect:(id:string)=>void;layer:'activity'|'abundance';neighbors:Neighbors|null;inspectNeighbors:boolean}
+export interface StructureViewerProps {workspace:Workspace;analysis:Analysis|null;selected:Variant;onSelect:(id:string)=>void;layer:'activity'|'abundance';neighbors:Neighbors|null;inspectNeighbors:boolean;onInspect?:()=>void}
 // Adapter boundary: replace SyntheticScene with a Mol* implementation after audited mmCIF mapping.
 const color=(value:number|null)=>value===null?'#778391':new THREE.Color('#efa96a').lerp(new THREE.Color('#51cecf'),value).getStyle();
 function hasWebGL(){try{const c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'));}catch{return false;}}
@@ -14,6 +14,7 @@ class ViewerBoundary extends Component<{children:ReactNode},{failed:boolean}>{
   state={failed:false};static getDerivedStateFromError(){return {failed:true};}render(){return this.state.failed?<div className="viewer-fallback" role="status"><b>Structure viewer unavailable</b><p>WebGL could not start. Use the linked table and evidence panel to continue.</p></div>:this.props.children;}
 }
 function SyntheticScene({workspace,analysis,selected,onSelect,layer,neighbors,inspectNeighbors,rotation,stopRotation,reset,reduced,hover,onHover,labelRef}:{rotation:boolean;stopRotation:()=>void;reset:number;reduced:boolean;hover:string|null;onHover:(id:string|null)=>void;labelRef:RefObject<HTMLDivElement|null>}&StructureViewerProps){
+  const mountedSelection=useRef(false);
   const controls=useRef<ComponentRef<typeof OrbitControls>>(null);
   const {camera,gl}=useThree();
   const target=useRef(new THREE.Vector3());const destination=useRef(new THREE.Vector3(45,24,65));const animating=useRef(false);
@@ -24,7 +25,7 @@ function SyntheticScene({workspace,analysis,selected,onSelect,layer,neighbors,in
     return segments.map(s=>new THREE.TubeGeometry(new THREE.CatmullRomCurve3(s),250,.23,10,false));
   },[workspace]);
   useEffect(()=>()=>{tubes.forEach(t=>t.dispose());},[tubes]);
-  useEffect(()=>{const p=points.get(selected.position);if(!p)return;target.current.copy(p);destination.current.copy(p).add(new THREE.Vector3(27,16,37));animating.current=true;},[selected.id,points]);
+  useEffect(()=>{if(!mountedSelection.current){mountedSelection.current=true;return;}const p=points.get(selected.position);if(!p)return;target.current.copy(p);destination.current.copy(p).add(new THREE.Vector3(27,16,37));animating.current=true;},[selected.id,points]);
   useEffect(()=>{if(!reset)return;target.current.set(0,0,0);destination.current.set(45,24,65);animating.current=true;},[reset]);
   useEffect(()=>{gl.domElement.style.cursor=hover?'pointer':'grab';return()=>{gl.domElement.style.cursor='';};},[hover,gl]);
   useFrame((_,dt)=>{
@@ -61,7 +62,7 @@ export default function StructureViewer(props:StructureViewerProps){
   const [hover,setHover]=useState<string|null>(null);const labelRef=useRef<HTMLDivElement>(null);
   const annotated=props.workspace.variants.find(v=>v.id===(hover||props.selected.id))||props.selected;
   const value=props.workspace.measurements.find(m=>m.variant_id===annotated.id&&m.assay_id===`assay-${props.layer}-demo`)?.value??null;
-  return <div className="structure-viewer">
+  return <div className="structure-viewer" onWheel={e=>{if(e.deltaY<0)props.onInspect?.();}}>
     <div className="canvas-heading"><div><span className="eyebrow">SPATIAL CONTEXT</span><h2>One sequence. Different profiles.</h2></div><span className="coordinate-chip">DEMO-PROT-001 <span>/ 120 positions</span></span></div>
     <div className="viewer-controls"><button onClick={()=>{setReset(x=>x+1);setRotation(false);}} disabled={!available||contextLost} title="Reset camera to the full illustrative structure">↺ <span>Reset view</span></button><button aria-pressed={rotation} onClick={()=>setRotation(x=>!x)} disabled={reduced||!available||contextLost} title={reduced?'Idle rotation disabled by reduced-motion preference':'Toggle idle camera rotation'}>{rotation?'Ⅱ':'↻'} <span>{rotation?'Pause rotation':'Rotate slowly'}</span></button></div>
     <ViewerBoundary>{available&&!contextLost?<Suspense fallback={<div className="viewer-fallback">Preparing geometry…</div>}><Canvas camera={{position:[45,24,65],fov:43,near:.1,far:400}} dpr={[1,2]} gl={{antialias:true,alpha:true}} onCreated={({gl})=>{gl.domElement.addEventListener('webglcontextlost',()=>setContextLost(true),{once:true});}} fallback={<div className="viewer-fallback">WebGL unavailable. Continue with the table.</div>}><SyntheticScene {...props} rotation={rotation} stopRotation={()=>setRotation(false)} reset={reset} reduced={reduced} hover={hover} onHover={setHover} labelRef={labelRef}/></Canvas></Suspense>:<div className="viewer-fallback" role="status"><span className="fallback-icon">◇</span><b>Structure viewer unavailable</b><p>WebGL is unavailable on this browser. All filtering, evidence, investigations and exports remain usable through the table.</p><button onClick={()=>{setContextLost(false);setAvailable(hasWebGL());}}>Retry viewer</button></div>}</ViewerBoundary>

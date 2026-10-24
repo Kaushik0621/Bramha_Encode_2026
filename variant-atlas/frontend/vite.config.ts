@@ -7,5 +7,5 @@ export default defineConfig(({mode}) => {
   const serverEnv = loadEnv(mode, fileURLToPath(new URL('../backend', import.meta.url)), ['BACKEND_PORT', 'FRONTEND_ORIGIN']);
   const origin = new URL(process.env.FRONTEND_ORIGIN || serverEnv.FRONTEND_ORIGIN || 'http://localhost:8500');
   const port = Number(process.env.BACKEND_PORT || serverEnv.BACKEND_PORT || 8000);
-  return { plugins: [react()], server: {port: Number(origin.port || 8500), strictPort: true, proxy: {'/api': `http://127.0.0.1:${port}`}}, preview: {port:4173} };
+  return { plugins: [react()], server: {port: Number(origin.port || 8500), strictPort: true, proxy: {'/api': {target:`http://127.0.0.1:${port}`,ws:true}}}, preview: {port:4173} };
 });
