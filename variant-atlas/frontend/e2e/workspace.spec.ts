@@ -11,7 +11,6 @@ test('filter → select → investigate → persist → export',async({page})=>{
   for(const id of ['demo-v01','demo-v02','demo-v05'])await expect(page.getByLabel(`Include ${id} in shortlist`,{exact:true})).toBeChecked();
   for(const id of ['demo-v06','demo-v08'])await expect(page.getByLabel(`Include ${id} in shortlist`,{exact:true})).not.toBeChecked();
   await page.getByTestId('row-demo-v05').getByRole('button').click();
-  await page.getByRole('button',{name:'Close synthetic research companion'}).click();
   await expect(page.getByRole('complementary',{name:'Selected variant details'})).toContainText('demo-v05');
   await expect(page.getByRole('complementary',{name:'Selected variant details'})).toContainText('0.74');
   // Verify a real canvas pointer selection using the fixture position and reset camera.
@@ -24,12 +23,10 @@ test('filter → select → investigate → persist → export',async({page})=>{
   const projected=new Vector3(point.x,point.y,point.z).project(camera);
   await page.mouse.click(rect!.x+(projected.x+1)*rect!.width/2,rect!.y+(-projected.y+1)*rect!.height/2);
   await expect(page.getByRole('complementary',{name:'Selected variant details'})).toContainText('demo-v02');
-  await page.getByRole('button',{name:'Close synthetic research companion'}).click();
   await page.screenshot({path:'../artifacts/workspace-desktop.png',fullPage:true});
   await page.getByRole('button',{name:'Abundance',exact:true}).click();
   await expect(page.getByRole('button',{name:'Abundance',exact:true})).toHaveAttribute('aria-pressed','true');
   await page.getByTestId('row-demo-v08').getByRole('button').click();
-  await page.getByRole('button',{name:'Close synthetic research companion'}).click();
   await expect(page.getByText(/Selected variant is outside the current filter/)).toBeVisible();
   await page.getByRole('tab',{name:'Neighbours'}).click();
   await expect(page.getByText('No coordinate: outside structure coverage.')).toBeVisible();
@@ -61,7 +58,6 @@ test('filter → select → investigate → persist → export',async({page})=>{
 test('keyboard selection, edited thresholds and empty shortlist remain usable',async({page})=>{
   await page.goto('/?workspace=fixture');await expect(page.getByText('5 included',{exact:true})).toBeVisible();
   const row=page.getByTestId('row-demo-v07');await row.getByRole('button').focus();await page.keyboard.press('Enter');
-  await page.getByRole('button',{name:'Close synthetic research companion'}).click();
   const drawer=page.getByRole('complementary',{name:'Selected variant details'});
   await expect(drawer).toContainText('Not measured');await expect(drawer).toContainText('No linked evidence');
   await page.getByLabel('Minimum abundance',{exact:true}).fill('1');
@@ -80,7 +76,6 @@ test('WebGL-unavailable fallback keeps core workflow available',async({page})=>{
   await expect(page.getByText('5 included',{exact:true})).toBeVisible();
   await page.getByTestId('row-demo-v02').getByRole('button').click();
   await expect(page.getByRole('complementary',{name:'Selected variant details'})).toContainText('demo-v02');
-  await page.getByRole('button',{name:'Close synthetic research companion'}).click();
 });
 
 test('narrow workspace stacks without page overflow and respects reduced motion',async({page})=>{

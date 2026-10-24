@@ -22,15 +22,15 @@ export default function Molecule({variants,selected,layer,picked,focusIds,focusV
   async function init(){try{
    const spec=DefaultPluginUISpec();spec.layout={initial:{isExpanded:false,showControls:false}};spec.components={controls:{top:'none',bottom:'none',left:'none',right:'none'}};
    spec.config=[[PluginConfig.Viewport.ShowExpand,false],[PluginConfig.Viewport.ShowSettings,false],[PluginConfig.Viewport.ShowControls,false]];
-   const p=await createPluginUI({target:target.current!,render:renderReact18,spec});instance=p;if(disposed){p.dispose();return;}plugin.current=p;p.canvas3d?.setProps({renderer:{backgroundColor:Color(0x0b1926)}});
+   const p=await createPluginUI({target:target.current!,render:renderReact18,spec});instance=p;if(disposed){p.dispose();return;}plugin.current=p;p.canvas3d?.setProps({renderer:{backgroundColor:Color(0x151c18)}});
    function theme(_ctx:unknown,props:{}):ColorTheme<{}>{return {factory:theme,granularity:'group',contextHash:[...current.current.selected+current.current.layer+current.current.picked.join()].reduce((a,c)=>(a*31+c.charCodeAt(0))|0,0),props,description:'Mean reported score across the visible subset substitutions at each mapped residue; selected substitution overrides its residue.',color:loc=>{
-     if(!StructureElement.Location.is(loc))return Color(0x596979);
+     if(!StructureElement.Location.is(loc))return Color(0x5f7d6e);
      const seq=StructureProperties.residue.label_seq_id(loc);const state=current.current;
      const rows=state.variants.filter(v=>v.mapping.status==='mapped'&&v.mapping.label_seq_id===seq&&(!state.picked.length||state.picked.includes(v.id)));
      const chosen=rows.find(v=>v.id===state.selected);const values=(chosen?[chosen]:rows).map(v=>v[state.layer]).filter((v):v is number=>v!==null);
-     if(!values.length)return Color(0x596979);const value=values.reduce((a,b)=>a+b,0)/values.length;
+     if(!values.length)return Color(0x5f7d6e);const value=values.reduce((a,b)=>a+b,0)/values.length;
      const t=state.layer==='activity'?Math.max(0,Math.min(1,(value+3)/4)):Math.max(0,Math.min(1,value/1.5));
-     return Color.interpolate(Color(0xd99358),Color(0x4ae2d2),t);
+     return Color.interpolate(Color(0xe5ad4c),Color(0x5cd09a),t);
    }};}
    p.representation.structure.themes.colorThemeRegistry.add({name:'pten-assay',label:'PTEN assay',category:ColorThemeCategory.Misc,factory:theme,getParams:()=>({}),defaultValues:{},isApplicable:()=>true});
    const response=await fetch('/api/structures/1D5R');if(!response.ok)throw Error('Pinned structure unavailable. Acquire and seed real data.');

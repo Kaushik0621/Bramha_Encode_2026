@@ -1,0 +1,231 @@
+/* Research theme layer: black, white and greys. Colour is reserved for data (turquoise = high/abundance, amber = low/activity) and warnings. Loaded after every other stylesheet; shared by both workspaces and the story page. */
+:root{
+  --bg:#030406;--panel:rgba(12,13,17,.72);--panel-2:rgba(15,16,21,.78);--line:#1e2026;--line-strong:#2c2f37;
+  --text:#ffffff;--muted:#bcc2cc;
+  --accent:#f2f3f5;--accent-strong:#ffffff;--accent-dim:rgba(255,255,255,.08);
+  --teal:#2dd4bf;--amber:#e0a33a;
+}
+body{background:var(--bg);color:var(--text)}
+.app-shell,.ra-app,.story-page{background:transparent;position:relative;z-index:1}
+/* Page-wide space background, same character as the 3D stage: black, faint blue haze, soft bokeh */
+body:before,body:after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0}
+body:before{background:
+  radial-gradient(ellipse 60% 50% at 15% 10%,rgba(12,40,110,.28),transparent 70%),
+  radial-gradient(ellipse 55% 50% at 90% 85%,rgba(10,50,120,.24),transparent 70%),
+  radial-gradient(ellipse 40% 40% at 85% 15%,rgba(8,30,80,.25),transparent 70%),
+  radial-gradient(circle at 8% 22%,rgba(240,248,255,.7) 0 1.5px,transparent 3px),
+  radial-gradient(circle at 27% 72%,rgba(219,234,254,.55) 0 1px,transparent 3px),
+  radial-gradient(circle at 44% 18%,rgba(240,248,255,.5) 0 1px,transparent 3px),
+  radial-gradient(circle at 63% 58%,rgba(219,234,254,.5) 0 1.5px,transparent 3px),
+  radial-gradient(circle at 78% 34%,rgba(240,248,255,.6) 0 1px,transparent 3px),
+  radial-gradient(circle at 92% 66%,rgba(96,165,250,.55) 0 1.5px,transparent 3px),
+  radial-gradient(circle at 36% 92%,rgba(240,248,255,.5) 0 1px,transparent 3px),
+  radial-gradient(circle at 55% 40%,rgba(96,165,250,.45) 0 1px,transparent 3px),
+  var(--bg)}
+body:after{filter:blur(10px);opacity:.7;background:
+  radial-gradient(circle at 6% 40%,rgba(96,165,250,.35) 0 22px,transparent 46px),
+  radial-gradient(circle at 88% 12%,rgba(219,234,254,.25) 0 28px,transparent 56px),
+  radial-gradient(circle at 94% 78%,rgba(191,219,254,.3) 0 24px,transparent 50px),
+  radial-gradient(circle at 20% 94%,rgba(59,130,246,.3) 0 30px,transparent 60px),
+  radial-gradient(circle at 60% 6%,rgba(191,219,254,.25) 0 16px,transparent 34px),
+  radial-gradient(circle at 48% 70%,rgba(96,165,250,.15) 0 20px,transparent 42px)}
+
+/* Headers: flat bar, hairline rule, brand centred and clickable (opens the story) */
+.topbar,.ra-header{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;
+  background:rgba(6,7,10,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+}
+.topbar>.brand,.ra-header>.ra-brand{grid-column:2;justify-self:center;text-decoration:none;color:var(--text);border-radius:6px;padding:4px 8px;transition:background .15s}
+.topbar>.brand:hover,.ra-header>.ra-brand:hover{background:rgba(255,255,255,.04)}
+.topbar>.header-status,.ra-badges-end{grid-column:3;justify-self:end;margin-left:0}
+.brand b{color:var(--text)}
+.brand b>span{color:var(--accent)}
+.brand small,.ra-brand small{color:var(--muted)}
+.ra-brand{color:var(--text)}
+.ra-brand span{color:var(--text)}
+.ra-badges span{border-color:var(--line-strong);color:var(--muted);background:transparent}
+.ra-badges span:first-child{border-color:#4a4f59;color:var(--text)}
+.synthetic-badge{border-color:var(--line-strong);background:transparent;color:var(--muted)}
+.status-dot{background:var(--teal)}
+.workspace-icon{display:none}
+.workspace-banner{background:rgba(6,7,10,.6);border-bottom:1px solid var(--line)}
+.workspace-banner>span:first-child{color:var(--amber)}
+
+/* Brand: large wordmark in the centre of every header */
+.topbar{height:104px}
+.brand b{font-size:38px;letter-spacing:-1.2px}
+.brand small{font-size:12px;letter-spacing:.24em;margin-top:2px}
+.brand-mark{transform:scale(1.45);margin-right:10px}
+.ra-brand{font-size:40px;gap:16px}
+.ra-brand span{font-size:30px;letter-spacing:.12em}
+.ra-brand small{font-size:12px;margin-top:6px}
+@media(max-width:650px){
+  .topbar{height:84px}
+  .brand b{font-size:28px}
+  .brand small{font-size:10px}
+  .brand-mark{transform:scale(1.15);margin-right:4px}
+  .ra-brand{font-size:30px}
+  .ra-brand span{font-size:21px}
+}
+
+/* Typography: solid colours, clear hierarchy */
+.filter-rail h1,.ra-intro h1,.startup-state h1{color:var(--text)}
+.ra-intro h1 em{color:var(--muted)}
+.eyebrow,.section-label,.tiny-label{color:#d4d8de}
+
+/* Panels: flat surfaces separated by hairlines */
+.filter-rail,.table-section{background:var(--panel)}
+.evidence-drawer,.run-section{background:var(--panel-2)}
+.ra-controls{background:var(--panel);border-color:var(--line-strong);border-radius:8px}
+.saved-item,.decision-card,.evidence-record,.ra-path-card{border-radius:6px}
+
+/* Buttons */
+.button{border-radius:6px}
+.button.primary,.run-button,.ra-app button.primary{background:var(--accent);border:1px solid var(--accent);color:#0a0b0d;font-weight:600;box-shadow:none;transition:background .15s}
+.button.primary:hover:not(:disabled),.run-button:hover:not(:disabled),.ra-app button.primary:hover:not(:disabled){background:var(--accent-strong)}
+.button.primary:disabled,.run-button:disabled{background:#141c2a;border-color:var(--line-strong);color:#586377}
+.ra-app button.selected{background:var(--accent-dim);border-color:var(--accent)}
+.ra-tabs button.active{border-color:var(--accent);color:var(--text)}
+
+/* Sliders: abundance in green, activity in amber (matches the data colour scale) */
+input[type=range]{height:4px;border-radius:4px;background:linear-gradient(90deg,#2c2f37,var(--teal))}
+input[type=range]::-webkit-slider-thumb{width:14px;height:14px;background:var(--text);border:2px solid var(--teal);box-shadow:none}
+input[type=range]::-moz-range-thumb{width:10px;height:10px;background:var(--text);border:2px solid var(--teal)}
+.amber-range{background:linear-gradient(90deg,#2c2f37,var(--amber))!important}
+.amber-range::-webkit-slider-thumb{background:var(--text)!important;border-color:var(--amber)!important;box-shadow:none!important}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* 3D viewer: deep-blue stage with soft bokeh, height follows the screen */
+.structure-viewer{
+  height:clamp(400px,64vh,720px);
+  background:
+    radial-gradient(ellipse 38% 42% at 52% 52%,rgba(0,0,0,.9),transparent 75%),
+    radial-gradient(ellipse 55% 60% at 0% 100%,rgba(12,40,110,.35),transparent 70%),
+    radial-gradient(ellipse 50% 55% at 100% 0%,rgba(10,50,120,.3),transparent 70%),
+    radial-gradient(ellipse 45% 50% at 100% 100%,rgba(8,30,80,.3),transparent 70%),
+    radial-gradient(ellipse 40% 40% at 0% 0%,rgba(6,24,70,.35),transparent 70%),
+    linear-gradient(115deg,transparent 30%,rgba(147,197,253,.025) 42%,transparent 50%,rgba(147,197,253,.02) 62%,transparent 70%),
+    radial-gradient(ellipse 35% 30% at 30% 35%,rgba(14,50,120,.14),transparent 70%),radial-gradient(ellipse 30% 35% at 75% 60%,rgba(10,40,100,.12),transparent 70%),linear-gradient(160deg,#02040a,#000000 45%,#000000);
+}
+/* Small sparkle particles */
+.structure-viewer:before{
+  content:'';position:absolute;inset:-40px;pointer-events:none;filter:blur(.8px);opacity:.9;
+  background:
+    radial-gradient(circle at 8% 22%,rgba(240,248,255,.75) 0 1.5px,transparent 4px),
+    radial-gradient(circle at 18% 64%,rgba(219,234,254,.6) 0 2px,transparent 5px),
+    radial-gradient(circle at 27% 12%,rgba(240,248,255,.55) 0 1px,transparent 3px),
+    radial-gradient(circle at 36% 78%,rgba(96,165,250,.6) 0 2px,transparent 5px),
+    radial-gradient(circle at 44% 30%,rgba(240,248,255,.4) 0 1px,transparent 3px),
+    radial-gradient(circle at 61% 90%,rgba(219,234,254,.6) 0 1.5px,transparent 4px),
+    radial-gradient(circle at 72% 18%,rgba(240,248,255,.7) 0 2px,transparent 5px),
+    radial-gradient(circle at 81% 46%,rgba(96,165,250,.55) 0 1.5px,transparent 4px),
+    radial-gradient(circle at 90% 74%,rgba(240,248,255,.6) 0 1px,transparent 3px),
+    radial-gradient(circle at 95% 30%,rgba(219,234,254,.5) 0 2px,transparent 5px),
+    radial-gradient(circle at 4% 88%,rgba(240,248,255,.55) 0 1.5px,transparent 4px),
+    radial-gradient(circle at 53% 6%,rgba(219,234,254,.5) 0 1px,transparent 3px);
+  animation:viewer-drift 38s ease-in-out infinite alternate;
+}
+/* Large out-of-focus bokeh */
+.structure-viewer:after{
+  inset:-60px;border:0;border-radius:0;filter:blur(9px);opacity:.8;
+  background:
+    radial-gradient(circle at 10% 30%,rgba(96,165,250,.35) 0 22px,transparent 46px),
+    radial-gradient(circle at 85% 20%,rgba(219,234,254,.3) 0 30px,transparent 60px),
+    radial-gradient(circle at 92% 80%,rgba(191,219,254,.35) 0 26px,transparent 52px),
+    radial-gradient(circle at 22% 90%,rgba(59,130,246,.3) 0 34px,transparent 64px),
+    radial-gradient(circle at 70% 70%,rgba(96,165,250,.18) 0 18px,transparent 38px),
+    radial-gradient(circle at 40% 12%,rgba(219,234,254,.2) 0 16px,transparent 34px),
+    radial-gradient(circle at 4% 60%,rgba(96,165,250,.55) 0 14px,transparent 26px),
+    radial-gradient(circle at 96% 45%,rgba(96,165,250,.5) 0 12px,transparent 24px),
+    radial-gradient(circle at 60% 4%,rgba(191,219,254,.45) 0 10px,transparent 20px),
+    radial-gradient(circle at 30% 96%,rgba(96,165,250,.5) 0 13px,transparent 25px),
+    radial-gradient(circle at 78% 96%,rgba(59,130,246,.45) 0 16px,transparent 30px),
+    radial-gradient(circle at 15% 8%,rgba(191,219,254,.4) 0 9px,transparent 18px),
+    radial-gradient(circle at 88% 8%,rgba(96,165,250,.45) 0 11px,transparent 22px);
+  animation:viewer-drift 52s ease-in-out infinite alternate-reverse;
+}
+.structure-viewer:before,.structure-viewer:after{z-index:0}
+.structure-viewer>div:not([class]){z-index:1}
+.sequence-legend{display:inline-flex;align-items:center;gap:6px}
+.sequence-legend i{display:inline-block;width:46px;height:6px;border-radius:3px;background:linear-gradient(90deg,#0e7490,#06b6d4,#22d3ee,#2dd4bf,#5eead4)}
+@keyframes viewer-drift{from{transform:translate3d(-14px,8px,0)}to{transform:translate3d(14px,-10px,0)}}
+@media(prefers-reduced-motion:reduce){.structure-viewer:before,.structure-viewer:after{animation:none}}
+.structure-viewer canvas{position:relative}
+@media(max-width:650px){.structure-viewer{height:clamp(360px,58vh,520px)}}
+
+/* Data keeps its colour: turquoise = abundance / high values, amber = activity / low values (matches the 3D markers) */
+.measurement-legend i{background:linear-gradient(90deg,#eabd6f,#2dd4bf)}
+.score-bar i{background:#2dd4bf}
+.activity .score-bar i{background:#e4a841}
+.score-cell{color:#5eead4}
+.activity.score-cell{color:#e7b35a}
+.measurement-pair b{color:#2dd4bf}
+
+.coordinate-chip{color:#e6e9ee}
+.coordinate-chip span{color:var(--muted)}
+
+/* Plain UI labels stay neutral; amber remains for unmapped/missing warnings */
+.text-button{color:var(--text)}
+.identity-meta .teal-text{color:var(--text)}
+
+/* Floating labels over the 3D view: frosted glass with a turquoise hairline */
+.viewer-annotation{background:rgba(10,11,13,.8);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);border-radius:8px;box-shadow:0 8px 24px -12px rgba(0,0,0,.8)}
+.viewer-annotation b{color:var(--text)}
+.viewer-annotation span{color:#dfe3e8}
+.viewer-controls button{background:rgba(8,13,22,.7);border-color:var(--line-strong);backdrop-filter:blur(6px)}
+.viewer-controls button:hover{border-color:var(--accent)}
+
+/* Viewer controls sit above the residue chips instead of underneath them */
+.viewer-controls{bottom:96px}
+.synthetic-residue-jumps{flex-wrap:nowrap;overflow-x:auto;justify-content:safe center;padding-bottom:4px;scrollbar-width:thin}
+.synthetic-residue-jumps button{flex:none;border-radius:4px;padding:6px 12px;border-color:var(--line-strong);background:rgba(10,14,12,.9);color:var(--text)}
+.synthetic-residue-jumps button[aria-pressed=true]{background:var(--accent);color:#0a0b0d;border-color:var(--accent)}
+
+/* Workspace switcher: lives in the bar under the header, visible on small screens */
+.workspace-switcher select{background:var(--panel);border:1px solid var(--line-strong);border-radius:6px;color:var(--text);padding:8px 30px 8px 12px;max-width:none;width:auto;font:inherit;cursor:pointer}
+.workspace-switcher select:hover{border-color:var(--accent)}
+.workspace-switcher option{background:var(--panel);color:var(--text)}
+.workspace-banner .workspace-name{flex:0 0 auto;margin-left:auto;border-left:0;padding-left:0;gap:10px}
+.workspace-bar{display:flex;justify-content:flex-end;padding:10px 4vw;border-bottom:1px solid var(--line)}
+@media(max-width:950px){.workspace-name{display:flex;flex:0 1 auto;border-left:0;padding-left:0}}
+@media(max-width:650px){.workspace-banner{flex-wrap:wrap}.workspace-banner .workspace-name{flex:1 1 100%;margin-left:0;justify-content:space-between}}
+@media(max-width:560px){.workspace-switcher select{max-width:none;padding:6px 26px 6px 8px}}
+
+/* Story page */
+.story-page{min-height:100vh;color:var(--text)}
+.story-header{display:flex;justify-content:center;padding:22px 16px;border-bottom:1px solid var(--line);background:#0a0b0d}
+.story-header .brand{text-decoration:none;color:inherit}
+.story-main{max-width:1080px;margin:0 auto;padding:56px 20px 72px}
+.story-hero h1{font-size:clamp(32px,5vw,56px);line-height:1.1;margin:14px 0 18px;font-weight:600}
+.story-hero h1 em{font-style:normal;color:var(--muted)}
+.story-hero p{max-width:680px;font-size:17px;line-height:1.7;color:#afb8c8}
+.story-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:48px 0}
+.story-step{background:var(--panel);border:1px solid var(--line);border-top:2px solid #3a3e47;border-radius:6px;padding:20px}
+.story-step-n{font:600 13px var(--mono);color:var(--muted)}
+.story-step h2{font-size:16px;margin:8px 0}
+.story-step p{font-size:14px;line-height:1.6;color:var(--muted);margin:0}
+.story-limits{border-left:2px solid var(--amber);padding:4px 0 4px 20px;margin-bottom:40px}
+.story-limits h2{font-size:17px;margin:0 0 8px}
+.story-limits li{color:#afb8c8;line-height:1.7}
+.story-cta{display:flex;flex-wrap:wrap;gap:12px}
+.story-cta .button{padding:12px 20px;font-size:14px}
+
+/* Tablet and phone */
+@media(max-width:650px){
+  .viewer-controls{bottom:92px}
+}
+@media(max-width:560px){
+  .filter-rail{display:flex;flex-direction:column}
+  .rail-intro{margin-top:12px}
+  .candidate-summary{flex-wrap:wrap;gap:8px}
+  .evidence-drawer{display:flex;flex-direction:column}
+  .ra-header{gap:10px;padding:16px}
+  .ra-brand{font-size:26px}
+  .ra-brand span{font-size:18px}
+  .topbar{gap:10px}
+}
+@media print{
+  body:before,body:after{display:none}
+  .app-shell,.ra-app,.topbar,.ra-header{background:white}
+  .brand b,.ra-brand span,.filter-rail h1,.ra-intro h1 em{color:black}
+}
