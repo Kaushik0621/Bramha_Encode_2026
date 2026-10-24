@@ -37,7 +37,7 @@ function SyntheticScene({workspace,analysis,selected,onSelect,layer,neighbors,in
   const near=new Set(inspectNeighbors?neighbors?.neighbors.map(n=>n.variant_id):[]);
   return <>
     <ambientLight intensity={1.1}/><directionalLight position={[20,40,30]} intensity={2.3}/><directionalLight position={[-30,-10,-20]} color="#4c9da7" intensity={2}/>
-    <group>{tubes.map((geometry,i)=><mesh key={i} geometry={geometry}><meshStandardMaterial color="#44727c" roughness={.5} metalness={.24}/></mesh>)}
+    <group>{tubes.map((geometry,i)=><mesh key={i} geometry={geometry}><meshStandardMaterial color="#63a5b0" roughness={.5} metalness={.24}/></mesh>)}
       {workspace.structure.points.filter(p=>p.position%5===0).map(p=><mesh key={p.position} position={[p.x,p.y,p.z]}><sphereGeometry args={[.32,12,12]}/><meshStandardMaterial color="#7a9b9f" roughness={.5}/></mesh>)}
       {workspace.variants.filter(v=>v.mapping_status==='mapped').map(v=>{
         const p=points.get(v.position);if(!p)return null;const active=v.id===selected.id;
@@ -45,7 +45,7 @@ function SyntheticScene({workspace,analysis,selected,onSelect,layer,neighbors,in
         const excluded=!matching.has(v.id);const neighbor=near.has(v.id);
         return <group key={v.id} position={p}>
           <mesh onClick={e=>{e.stopPropagation();stopRotation();onSelect(v.id);}} onPointerOver={e=>{e.stopPropagation();onHover(v.id);}} onPointerOut={()=>onHover(null)}>
-            <sphereGeometry args={[active?1.12:.85,32,24]}/><meshStandardMaterial color={color(measure)} emissive={color(measure)} emissiveIntensity={active?.3:.08} transparent opacity={excluded?.22:1} roughness={.28}/>
+            <sphereGeometry args={[active?1.12:.85,32,24]}/><meshStandardMaterial color={color(measure)} emissive={color(measure)} emissiveIntensity={active?.3:.08} transparent opacity={excluded?.55:1} roughness={.28}/>
           </mesh>
           {(active||neighbor)&&<mesh><sphereGeometry args={[active?1.55:1.25,24,16]}/><meshBasicMaterial color={active?'#d9f4ef':'#edbc76'} wireframe transparent opacity={active?.35:.4}/></mesh>}
 
@@ -67,6 +67,7 @@ export default function StructureViewer(props:StructureViewerProps){
     <div className="viewer-controls"><button onClick={()=>{setReset(x=>x+1);setRotation(false);}} disabled={!available||contextLost} title="Reset camera to the full illustrative structure">↺ <span>Reset view</span></button><button aria-pressed={rotation} onClick={()=>setRotation(x=>!x)} disabled={reduced||!available||contextLost} title={reduced?'Idle rotation disabled by reduced-motion preference':'Toggle idle camera rotation'}>{rotation?'Ⅱ':'↻'} <span>{rotation?'Pause rotation':'Rotate slowly'}</span></button></div>
     <ViewerBoundary>{available&&!contextLost?<Suspense fallback={<div className="viewer-fallback">Preparing geometry…</div>}><Canvas camera={{position:[45,24,65],fov:43,near:.1,far:400}} dpr={[1,2]} gl={{antialias:true,alpha:true}} onCreated={({gl})=>{gl.domElement.addEventListener('webglcontextlost',()=>setContextLost(true),{once:true});}} fallback={<div className="viewer-fallback">WebGL unavailable. Continue with the table.</div>}><SyntheticScene {...props} rotation={rotation} stopRotation={()=>setRotation(false)} reset={reset} reduced={reduced} hover={hover} onHover={setHover} labelRef={labelRef}/></Canvas></Suspense>:<div className="viewer-fallback" role="status"><span className="fallback-icon">◇</span><b>Structure viewer unavailable</b><p>WebGL is unavailable on this browser. All filtering, evidence, investigations and exports remain usable through the table.</p><button onClick={()=>{setContextLost(false);setAvailable(hasWebGL());}}>Retry viewer</button></div>}</ViewerBoundary>
     {available&&!contextLost&&<div className="viewer-annotation residue-label" ref={labelRef} role="tooltip"><b>{annotated.ref}{annotated.position}{annotated.alt}</b><span>{annotated.id} · {props.layer} {value===null?'missing':value.toFixed(2)}</span>{props.analysis&&!props.analysis.matching_ids.includes(annotated.id)&&<em>Outside current filter</em>}</div>}
+    <div className="synthetic-residue-jumps" role="group" aria-label="Jump to synthetic substitution">{props.workspace.variants.map(v=><button key={v.id} aria-pressed={v.id===props.selected.id} onClick={()=>props.onSelect(v.id)}>{v.ref}{v.position}{v.alt}<small>{v.mapping_status==='mapped'?'●':'○'}</small></button>)}</div>
     <div className="canvas-footnote"><span><i className="mini-dot"/> Illustrative geometry — not a biological structure.</span><span>Drag to orbit · scroll to zoom</span></div>
   </div>;
 }

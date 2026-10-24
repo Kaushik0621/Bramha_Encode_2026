@@ -1,0 +1,46 @@
+{
+  "anchor": "PTEN:p.C124S",
+  "dataset_version": "pten-transform-1.0-97b699d687c8",
+  "planner": {
+    "provider": "openrouter",
+    "model": "x-ai/grok-4.3",
+    "usage": {
+      "prompt_tokens": 2017,
+      "completion_tokens": 716,
+      "total_tokens": 2733,
+      "cost": 0.00417685,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00417685,
+        "upstream_inference_prompt_cost": 0.00238685,
+        "upstream_inference_completions_cost": 0.00179
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 661,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "cost_usd": 0.00417685,
+    "background": false,
+    "status": "model ranked validated executable plans",
+    "summary": "Rank plans by direct relevance to preserved-abundance reduced-activity criteria for anchor PTEN:p.C124S."
+  },
+  "ranked_plans": [
+    "add-discordant",
+    "assay-contrast",
+    "same-position",
+    "spatial-neighbor"
+  ],
+  "alternatives": 12,
+  "matching_prior_investigations": 6,
+  "same_position_alternatives": [
+    "PTEN:p.C124A"
+  ]
+}

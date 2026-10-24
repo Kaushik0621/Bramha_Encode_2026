@@ -39,3 +39,15 @@ See `docs/IMPLEMENTATION_STATUS.md` for the full gate matrix and `docs/REAL_DATA
 - Live Grok development run: **8 scenarios, 3 agents including coordinator, 8 actual tool calls, 20 model requests**. Request ceiling stopped the run. The stored record predates subsequent tracking/abstention-label fixes; it is not a strict reference pass or complete scientific conclusion.
 - Current executable catalog: **30 distinct capabilities**, not hundreds of duplicate names. Google Argon remains configurable but unverified without credentials.
 - Documentation: `docs/LIVE_SCENARIO_EXPLORATION.md`; actual development record: `RESEARCH_EXPLORATION_LIVE.json`; explicitly scripted UI screenshot: `research-scenario-paths.png`.
+
+## Visual contextual research — 2026-10-24
+
+- Added selection/zoom-aware residue companion with sequence neighborhood, native measurement plot, missing-data explanations, exact filter boundaries, separately labeled assay/coordinate readiness, measured alternatives, executable comparisons and prior investigations.
+- Added bounded automatic focus-aware model prioritization (four calls per mounted companion session, minimum thirty-second interval, once per context), manual prioritization and stale-response protection. Data-derived information is shown first; model-unavailable mode remains useful and explicit.
+- Replaced JSON-first tool checkpoints with experiment explanations, coverage charts (including older row-only mapping snapshots), native score plots, distance diagrams and observation cards. Technical records remain collapsed. Observation cards can open the real scientific residue in split view.
+- Added branching scenario visualization, contextual path inspectors, replay/pause/step controls, milestone navigation and checkpoint captions. Replay remains scoped to actual saved evidence.
+- Added synthetic profile companion, visible substitution navigation, brighter excluded markers, fictional profile comparison, explicit filter broadening and return links between workspaces.
+- Backend: **57 tests passed**. Final browser regression run: **17 passed**, with one older-mapping coverage test initially failing; after the row-derived coverage fix, its focused rerun **passed**. All **18 browser scenarios** have passed. Production TypeScript/Vite build and whitespace checks passed.
+- Live context endpoint: OpenRouter `x-ai/grok-4.3` ranked four valid C124S plans, returned twelve audited alternatives and six matching prior investigations. Details in `RESEARCH_CONTEXT_LIVE.json`.
+- Browser screenshots use credential-free test services; their provider-availability labels describe that test environment. Local development OpenRouter availability was independently verified.
+- Scientific scope remains independent single-substitution measurements and unchanged reference geometry. No combined-mutant simulation or treatment/causality claim is introduced.

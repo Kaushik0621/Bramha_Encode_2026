@@ -12,7 +12,7 @@ test('real PTEN workspace: authentic geometry, native scores, context and source
  expect(Number(await page.locator('.ra-mol-target').getAttribute('data-atom-count'))).toBeGreaterThan(300);
  expect(Number(await page.locator('.ra-mol-target').getAttribute('data-representations'))).toBeGreaterThan(0);
  await page.screenshot({path:'../artifacts/research-observatory-desktop.png',fullPage:true});
- await page.getByRole('button',{name:'p.C124S',exact:true}).click();await expect(page.locator('.ra-variant h2')).toHaveText('p.C124S');
+ await page.getByRole('button',{name:'p.C124S',exact:true}).click();await expect(page.locator('.ra-variant h2')).toHaveText('p.C124S');await page.getByRole('button',{name:'Close residue research assistant'}).click();
  await page.getByRole('button',{name:'abundance',exact:true}).click();await expect(page.getByText('VAMP-seq abundance score',{exact:true})).toBeVisible();
  await page.getByRole('button',{name:'Evidence & audit',exact:true}).click();await expect(page.getByRole('heading',{name:'Source-linked evidence'})).toBeVisible();
  await page.getByRole('button',{name:'Inspect full data and alignment audits'}).click();await expect(page.locator('.ra-evidence pre').last()).toContainText('alignment');
@@ -95,11 +95,83 @@ test('scripted exploration replay shows real path switches, scoped outputs, unvi
  await expect(page.locator('.ra-task-detail')).toContainText('inspect_assay');
  await expect(board).toContainText('Run ended with unvisited or unresolved paths.');
  await expect(page.getByText('Saved abstention',{exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Close research path explanation'}).click();
  await page.getByLabel('Replay scientific chamber').press('Home');
  await expect(board.locator('.ra-path-card')).toHaveCount(0);
  await expect(board).not.toContainText('Activity assay alone cannot establish a spatial mechanism.');
  await page.getByRole('button',{name:'Return to live state'}).click();
  await expect(board.locator('.ra-path-card')).toHaveCount(2);
+ await page.getByRole('button',{name:'Play recorded investigation'}).click();
+ await expect.poll(async()=>Number(await page.getByLabel('Replay scientific chamber').inputValue())).toBeLessThan(paths.events.length);
+ await page.getByRole('button',{name:'Pause replay'}).click();
+ await page.getByRole('button',{name:'Return to live state'}).click();
  await page.screenshot({path:'../artifacts/research-scenario-paths.png',fullPage:true});
  expect(errors).toEqual([]);
+});
+
+test('residue selection and zoom open grounded visual research with alternatives and history',async({page})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');
+ await page.getByRole('button',{name:'p.C124S',exact:true}).click();
+ const panel=page.getByRole('dialog',{name:'Residue research assistant'});
+ await expect(panel).toBeVisible();await expect(panel.getByRole('img',{name:'Activity and abundance measurement profiles'})).toBeVisible();
+ await expect(panel).toContainText('At position 124');await expect(panel).toContainText('Reference structure stays unchanged');
+ await panel.getByRole('button',{name:'Prior research',exact:false}).click();await expect(panel).toContainText('No saved investigation includes this exact substitution yet.');
+ await panel.getByRole('button',{name:'Explore paths',exact:true}).click();await expect(panel).toContainText('Which alternatives can we use?');
+ await expect(panel).toContainText('p.C124A');await expect(panel).toContainText('Same position; different substitution');
+ await panel.locator('.ra-alternative').filter({hasText:'p.C124A'}).getByRole('button',{name:'Inspect'}).click();
+ await expect(panel.getByRole('heading',{name:'p.C124A',exact:false})).toBeVisible();
+ await panel.getByRole('button',{name:'Understand',exact:true}).click();
+ await page.screenshot({path:'../artifacts/research-residue-companion.png',fullPage:false});
+ await page.getByRole('button',{name:'Close residue research assistant'}).click();
+ await expect(page.locator('.ra-mol-target')).toHaveAttribute('data-rendered','true',{timeout:45000});
+ await page.locator('.ra-mol-target canvas').first().hover();await page.mouse.wheel(0,-200);
+ await expect(panel).toBeVisible();await expect(panel).toContainText('FOCAL REGION');
+ await page.getByRole('button',{name:'Close residue research assistant'}).click();
+ await page.getByRole('link',{name:'← Variant Atlas · synthetic workspace'}).click();
+ await expect(page.getByRole('heading',{name:'One sequence. Different profiles.'})).toBeVisible();
+ expect(errors).toEqual([]);
+});
+
+test('synthetic companion explains excluded profiles, compares alternatives and returns to real research',async({page})=>{
+ await page.goto('/?workspace=fixture');
+ await expect(page.getByText('5 included',{exact:true})).toBeVisible();
+ await page.getByTestId('row-demo-v03').getByRole('button').click();
+ const panel=page.getByRole('dialog',{name:'Synthetic research companion'});
+ await expect(panel).toBeVisible();await expect(panel).toContainText('Outside your current filter');
+ await panel.getByLabel('Compare synthetic substitution').selectOption('demo-v02');
+ await expect(panel.getByRole('img',{name:'Activity and abundance measurement profiles'})).toBeVisible();
+ await panel.getByRole('button',{name:/Broaden filters to include/}).click();
+ await expect(panel).toContainText('Inside your current research filter');
+ await page.screenshot({path:'../artifacts/synthetic-research-companion.png',fullPage:false});
+ await panel.getByRole('link',{name:'Open authentic PTEN research workspace →'}).click();
+ await expect(page.getByText('REAL PUBLIC DATA',{exact:true})).toBeVisible();
+});
+
+test('scripted focus-aware prioritization is bounded and keeps real measurements visible',async({page})=>{
+ let modelCalls=0;
+ await page.route('**/api/capabilities',async route=>{const response=await route.fetch();const body=await response.json();body.openrouter={...body.openrouter,configured:true,model:'scripted-focus-test'};await route.fulfill({json:body});});
+ await page.route('**/api/research/context',async route=>{const body=route.request().postDataJSON();const response=await route.fetch({postData:JSON.stringify({...body,use_model:false})});const data=await response.json();if(body.use_model){modelCalls++;data.proposal.planner={model:'scripted-focus-test',status:'scripted prioritization; not a live model'};}await route.fulfill({json:data});});
+ await page.goto('/');await page.getByRole('button',{name:'p.C124S',exact:true}).click();
+ const panel=page.getByRole('dialog',{name:'Residue research assistant'});
+ await expect(panel.getByRole('img',{name:'Activity and abundance measurement profiles'})).toBeVisible();
+ await expect.poll(()=>modelCalls).toBe(1);
+ await panel.getByRole('button',{name:'Explore paths',exact:true}).click();await expect(panel).toContainText('scripted-focus-test');
+ await panel.locator('.ra-alternative').filter({hasText:'p.C124A'}).getByRole('button',{name:'Inspect'}).click();
+ await expect(panel.getByRole('heading',{name:'p.C124A',exact:false})).toBeVisible();await expect(panel).toContainText('Which alternatives can we use?');
+ expect(modelCalls).toBe(1);
+});
+
+test('visual mapping evidence opens its scientific residue instead of a JSON-only record',async({page})=>{
+ await page.route('**/api/research/investigations',route=>route.fulfill({json:[recorded]}));
+ await page.route('**/api/research/investigations/'+recorded.run_id,route=>route.fulfill({json:recorded}));
+ await page.goto('/');await page.locator('.ra-history button').nth(1).click();
+ await page.locator('.ra-tasks button').filter({hasText:'structure'}).click();
+ const mapping=page.locator('.ra-task-detail>details').filter({has:page.locator('summary').filter({hasText:'map_variant_residues'})});
+ await mapping.locator('summary').first().click();
+ await expect(mapping).toContainText('Find positions in the structure');
+ await expect(mapping.locator('.ra-coverage-chart')).toBeVisible();
+ await expect(mapping.locator('.ra-raw-data pre')).not.toBeVisible();
+ await mapping.getByRole('button',{name:/explore residue/}).first().click();
+ await expect(page.getByRole('dialog',{name:'Residue research assistant'})).toBeVisible();
+ await expect(page.getByRole('button',{name:'Split view',exact:true})).toHaveClass('active');
 });

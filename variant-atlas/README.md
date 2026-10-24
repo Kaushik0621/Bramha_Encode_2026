@@ -168,3 +168,5 @@ Before entering a competition, confirm build timing and current rules. This repo
 The molecular hero includes an [agent research workbench](docs/AGENT_RESEARCH_WORKBENCH.md): model-prioritized, executable PTEN comparisons with verified before/after measurements, linked molecular selection, undo, export, and handoff to the research agent.
 
 New investigations also support [live scenario exploration](docs/LIVE_SCENARIO_EXPLORATION.md): up to ten ranked directions, scoped agents, discoverable tools, evidence-linked path changes and inspectable outcomes.
+
+The [visual research companion](docs/VISUAL_RESEARCH_GUIDE.md) explains selected residues, suggests grounded comparison paths, connects prior investigations, and replaces JSON-first checkpoints with plots, coverage graphics and visual replay. Both authentic and synthetic workspaces have contextual exploration and return navigation.
