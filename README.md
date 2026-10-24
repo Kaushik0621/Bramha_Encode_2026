@@ -1,68 +1,28 @@
-# Variant Atlas · Encode 2026
+# Bramha Atlas · Encode 2026
 
-A research decision-support prototype for preparing an evidence-linked variant shortlist. It combines a linked 3D protein-like viewer, explicit assay criteria, per-variant decision notes and an inspectable investigation chamber.
+A local research workspace that keeps a question, its evidence, exploration and computational investigations together. The React/TypeScript frontend and Python/FastAPI backend remain separate applications under [`variant-atlas/`](variant-atlas/).
 
-**All current scientific inputs are synthetic. Geometry is illustrative, not a biological structure.** The prototype does not establish actual variant effects, clinical conclusions or validated experimental priorities.
+Supported project methods are **PTEN variant investigation** using audited public assays and experimental reference geometry, and **blood-group comparative evidence review** using reported ABO/RhD scenarios and an inspected malaria literature corpus. Neither establishes clinical conclusions, personal risk or a mutant protein fold.
 
-## Application
+Open **http://localhost:8500** after starting the servers. Home opens a molecular overview with immediate workspace/resume actions, followed by the project dashboard. Create a supported project, link sources, explore evidence, review exact investigation inputs, then inspect actual workflow events and findings or abstention. Blood-group work uses this same project journey.
 
-The frontend and backend are separate applications under [`variant-atlas/`](variant-atlas/):
-
-- **Frontend:** React, TypeScript, Vite, React Three Fiber and Drei.
-- **Backend:** Python, FastAPI, deterministic analysis, persisted workflow events and optional OpenRouter explanations.
-- **Storage:** durable local development files; an optional Atlas repository adapter is included but has not been verified with live credentials. Atlas Search and real PTEN integration are deferred.
-
-See the [full setup, seed and test instructions](variant-atlas/README.md) and the [investigation chamber guide](variant-atlas/CHAMBER.md).
+See the [molecular overview and asset provenance](variant-atlas/docs/MOLECULAR_OVERVIEW.md), [route map, feature migration, storage and screenshots](variant-atlas/docs/RESEARCH_WORKFLOW_ROUTES.md), [setup instructions](variant-atlas/README.md), [real-data build](variant-atlas/docs/REAL_DATA_BUILD.md) and [scientific acceptance gates](variant-atlas/docs/IMPLEMENTATION_STATUS.md).
 
 ## Run locally
 
-From this repository root:
+From `variant-atlas/`, install dependencies and prepare supported assets if needed:
 
 ```sh
-cd variant-atlas
 python3 -m venv backend/.venv
 backend/.venv/bin/python -m pip install -r backend/requirements.txt
-cp .env.example backend/.env
-backend/.venv/bin/python scripts/seed.py
+cp .env.example backend/.env  # Only for a new setup; preserve existing credentials.
+backend/.venv/bin/python scripts/acquire_pten.py
+backend/.venv/bin/python scripts/seed_research.py
+npm ci --prefix frontend
 ```
 
-Backend terminal:
+Start the backend with `cd backend && .venv/bin/python -m app.server` and the frontend in another terminal with `cd frontend && npm run dev`. Credentials belong only in the ignored backend `.env`. Provider execution requires configured access; navigation and deterministic exploration do not.
 
-```sh
-cd variant-atlas/backend
-.venv/bin/python -m app.server
-```
+Local project metadata references existing assets and saved runs. Migration preserves original snapshots, backs up existing metadata and leaves historical work explicitly Unassigned until linked. Atlas integration and successful Google generation remain unverified. Search in this local workspace is lexical. This is a single-user research prototype without public hosting or authentication.
 
-Frontend terminal:
-
-```sh
-cd variant-atlas/frontend
-npm ci
-npm run dev
-```
-
-Open **http://localhost:8500**. The default fixture explanation runs without external keys. Optional provider credentials belong exclusively in the ignored `variant-atlas/backend/.env`; they are not included in this repository.
-
-## Features
-
-- Editable activity/abundance criteria, explicit missing-value handling and researcher-curated candidate capacity.
-- Synchronized table/3D selection, coverage inspection and calculated spatial neighbours.
-- Research question, per-variant inclusion reasons, uncertainty and proposed follow-up approaches.
-- Live asynchronous investigation chamber with SSE events, worker/artifact inspection, cancellation and persisted provenance.
-- Clearly labelled simulated recording, recorded replay, linked protein view and accessible 2D fallback.
-- Saved evidence snapshots and Markdown decision-brief export.
-
-## Verification
-
-The latest local verification passed **33 backend checks** and **nine browser/reducer checks**, plus the frontend production build. A bounded live OpenRouter run using synthetic inputs also completed successfully. See [verification notes](variant-atlas/artifacts/VERIFICATION.md).
-
-## Planning documents
-
-- [Product plan](variant-atlas-product-plan.md)
-- [Business goal](variant-atlas-business-goal.md)
-- [Build brief](variant-atlas-codex-build-brief.md)
-- [Investigation chamber addendum](variant-atlas-investigation-chamber.md)
-- [Implementation/plan review](variant-atlas/PLAN_REVIEW.md)
-- [Earlier idea atlas](idea-map.html)
-
-This is a single-process local development prototype. Real data mapping, production job infrastructure and research-user validation remain subsequent milestones. Competition eligibility must be checked against the actual build timing and rules.
+The original synthetic regression demonstration remains explicitly available at `/developer/demo`; it is outside the primary research journey.

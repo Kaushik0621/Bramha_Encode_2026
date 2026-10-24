@@ -1,0 +1,17 @@
+{
+  "model": "gemini-4-argon",
+  "model_catalogue_access": true,
+  "model_listed": true,
+  "background_requested": true,
+  "thinking_level_requested": "medium",
+  "scientific_run": false,
+  "checked_at": "2026-10-24T16:29:23.692261+00:00",
+  "attempts": 2,
+  "previous_failure": "RateLimitError",
+  "verified": false,
+  "failure": "TimeoutError",
+  "http_code": null,
+  "error_status": null,
+  "quota_mentioned": false,
+  "billing_mentioned": false
+}

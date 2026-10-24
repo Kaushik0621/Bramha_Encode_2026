@@ -11,6 +11,9 @@ from .research_schemas import (
 from .orchestration.engine import TERMINAL, now
 from .tools.registry import Registry
 from .scenarios import ScenarioService, SuggestRequest, ApplyRequest
+from .agent_catalog import catalog
+from .papers import PaperLibrary, PaperUpload, PaperRead
+from .explorations import ExplorationJournal, CreateExploration, UpdateExploration
 
 
 def router(app, config):
@@ -29,6 +32,93 @@ def router(app, config):
         if not doc:
             raise HTTPException(404, "Research investigation not found.")
         return doc
+
+    @r.get("/research/papers")
+    def papers():
+        return PaperLibrary(config).list()
+
+    @r.post("/research/papers")
+    def upload_paper(body: PaperUpload):
+        try:
+            return PaperLibrary(config).upload(body)
+        except ValueError as exc:
+            raise HTTPException(422, str(exc)) from exc
+
+    @r.get("/research/papers/{pid}")
+    def paper(pid: str):
+        try:
+            return PaperLibrary(config).get(pid)
+        except (ValueError, KeyError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+
+    @r.get("/research/papers/{pid}/readings")
+    def paper_readings(pid: str):
+        library = PaperLibrary(config)
+        try:
+            library.get(pid)
+        except (ValueError, KeyError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+        return [
+            json.loads(p.read_text())
+            for p in sorted(library.root.glob(pid + "-reading-*.json"))
+        ]
+
+    @r.post("/research/papers/{pid}/read")
+    async def read_paper(pid: str, body: PaperRead):
+        try:
+            return await PaperLibrary(config).read(pid, body)
+        except KeyError as exc:
+            raise HTTPException(404, str(exc)) from exc
+        except (ValueError, RuntimeError) as exc:
+            raise HTTPException(422, str(exc)) from exc
+
+    @r.get("/research/agents")
+    def agents():
+        store, _, _ = services()
+        return catalog(config, store.list())
+
+    def journal():
+        store, data, _ = services()
+        return ExplorationJournal(store, data)
+
+    @r.get("/research/explorations")
+    def explorations():
+        return journal().list()
+
+    @r.post("/research/explorations")
+    def create_exploration(body: CreateExploration):
+        try:
+            return journal().create(body)
+        except (ValueError, KeyError) as exc:
+            raise HTTPException(409, str(exc)) from exc
+
+    @r.get("/research/explorations/{sid}")
+    def exploration(sid: str):
+        try:
+            return journal().get(sid)
+        except (KeyError, ValueError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+
+    @r.post("/research/explorations/{sid}/observations")
+    def update_exploration(sid: str, body: UpdateExploration):
+        try:
+            return journal().update(sid, body)
+        except KeyError as exc:
+            raise HTTPException(404, str(exc)) from exc
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+
+    @r.get("/research/explorations/{sid}/export")
+    def export_exploration(sid: str):
+        try:
+            doc = journal().export(sid)
+        except (KeyError, ValueError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+        return Response(
+            json.dumps(doc, indent=2),
+            media_type="application/json",
+            headers={"Content-Disposition": f'attachment; filename="{sid}.json"'},
+        )
 
     @r.post("/research/context")
     async def research_context(body: SuggestRequest):

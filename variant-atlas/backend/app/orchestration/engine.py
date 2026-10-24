@@ -62,7 +62,14 @@ class ResearchEngine:
             raise ValueError("Google credentials unavailable.")
         if provider == "openrouter" and not self.settings.openrouter_api_key:
             raise ValueError("OpenRouter credentials unavailable.")
+        from ..papers import PaperLibrary
+
+        try:
+            papers = [PaperLibrary(self.settings).get(pid) for pid in request.paper_ids]
+        except KeyError as exc:
+            raise ValueError("Linked paper not found in the local library.") from exc
         run = {
+            "paper_sources": papers,
             "run_id": "research-" + uuid4().hex,
             "workspace_id": w["id"],
             "dataset_version": w["dataset_version"],
@@ -372,6 +379,11 @@ class ResearchEngine:
                         if state["request"].get("require_independent_reviews", True)
                         else []
                     )
+                    review_roles = list(
+                        dict.fromkeys(
+                            review_roles + state["request"].get("requested_roles", [])
+                        )
+                    )
                     unspawned = [
                         role
                         for role in review_roles
@@ -379,6 +391,18 @@ class ResearchEngine:
                         and not any(t["role"] == role for t in state["tasks"])
                     ]
                     context = {
+                        "uploaded_paper_passages": [
+                            {
+                                "source_sha256": p["id"],
+                                "filename": p["filename"],
+                                "coverage": "first 6 passages only; full original archived",
+                                "passages": [
+                                    {**c, "citation_id": p["id"] + "#" + c["id"]}
+                                    for c in p["chunks"][:6]
+                                ],
+                            }
+                            for p in state.get("paper_sources", [])
+                        ],
                         "required_checks_remaining": missing,
                         "independent_review_roles_not_yet_spawned": unspawned,
                         "task": task,
@@ -926,18 +950,28 @@ class ResearchEngine:
                         )
                         continue
                     if tid == "coordinator" and action.action == "finalize":
-                        missing_roles = (
-                            [
-                                role
-                                for role in ["assay", "structure"]
-                                if not any(
-                                    t["role"] == role and t["status"] == "completed"
-                                    for t in fresh["tasks"]
+                        expected_roles = list(
+                            dict.fromkeys(
+                                (
+                                    ["assay", "structure"]
+                                    if fresh["request"].get(
+                                        "require_independent_reviews", True
+                                    )
+                                    else []
                                 )
-                            ]
-                            if fresh["request"].get("require_independent_reviews", True)
-                            else []
+                                + fresh["request"].get("requested_roles", [])
+                            )
                         )
+                        missing_roles = [
+                            role
+                            for role in expected_roles
+                            if not any(
+                                t["role"] == role
+                                and t["status"] == "completed"
+                                and not t.get("abstained")
+                                for t in fresh["tasks"]
+                            )
+                        ]
                         if missing_roles:
                             self.artifact(
                                 rid,

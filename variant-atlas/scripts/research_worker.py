@@ -18,11 +18,18 @@ async def main():
 
         data.retrieval = HybridRetrieval(store, s)
     engine = ResearchEngine(store, data, s)
+    from app.blood.engine import BloodEngine
+
+    blood_store = ResearchStore(s, workspace_id="blood-group")
+    blood = BloodEngine(blood_store, s)
     try:
         data.workspace()
         await engine.launch()
-        await engine.loop
+        await blood.launch()
+        await asyncio.gather(engine.loop, blood.loop)
     finally:
+        await blood.shutdown()
+        blood_store.close()
         await engine.shutdown()
         store.close()
 

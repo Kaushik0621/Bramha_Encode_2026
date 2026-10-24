@@ -1,0 +1,143 @@
+[
+  {
+    "id": "abo-reference",
+    "title": "The ABO blood group",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK2267/?report=classic",
+    "canonical_url": "https://www.ncbi.nlm.nih.gov/books/NBK2267/",
+    "system": "ABO",
+    "context": "reference",
+    "design": "Reference chapter",
+    "population": "Established reference biology; no participant testing",
+    "endpoint": "Antigen biochemistry",
+    "location": "Basic biochemistry / Molecular information",
+    "passage": "ABO antigens are surface carbohydrates. A and B glycosyltransferases modify the H precursor differently; typical group O lacks A and B modifications. ABO phenotype does not uniquely identify an individual genotype.",
+    "limitations": [
+      "Reference biology is not a malaria effect estimate.",
+      "Rare and weak phenotypes require separate characterization."
+    ],
+    "retrieved_at": "2026-10-24",
+    "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+    "passage_id": "abo-reference#summary",
+    "statistics": [],
+    "download_status": "unavailable",
+    "download_checked_at": "2026-10-24T14:52:13.801867+00:00"
+  },
+  {
+    "id": "rhd-reference",
+    "title": "The Rh blood group",
+    "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK2269/?report=reader",
+    "canonical_url": "https://www.ncbi.nlm.nih.gov/books/NBK2269/",
+    "system": "RhD",
+    "context": "reference",
+    "design": "Reference chapter",
+    "population": "Established reference biology; no participant testing",
+    "endpoint": "Rh antigen protein system",
+    "location": "Antigens of the Rh blood group / Molecular information, Protein",
+    "passage": "RhD is a transmembrane protein bearing the D antigen. Rh is a separate protein antigen system from ABO carbohydrates. Reported RhD status does not resolve a participant RHD sequence or genotype.",
+    "limitations": [
+      "This chapter does not establish a RhD-specific malaria association.",
+      "RhD variants and typing complexities are outside this schematic."
+    ],
+    "retrieved_at": "2026-10-24",
+    "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+    "passage_id": "rhd-reference#summary",
+    "statistics": [],
+    "download_status": "unavailable",
+    "download_checked_at": "2026-10-24T14:52:14.458112+00:00"
+  },
+  {
+    "id": "rowe-2007",
+    "title": "Blood group O protects against severe Plasmodium falciparum malaria through the mechanism of reduced rosetting",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2077280/",
+    "system": "ABO",
+    "context": "malaria",
+    "design": "Matched case-control study and parasite rosetting assays",
+    "population": "Malian children; severe cases compared with uncomplicated malaria and healthy controls",
+    "endpoint": "Severe P. falciparum malaria and rosetting",
+    "location": "Abstract / Results and Discussion",
+    "passage": "In Malian children, group O was associated with lower odds of severe falciparum malaria compared with pooled non-O groups. Parasite rosetting observations supported a possible mechanistic link. The pooled comparison is not an O-versus-B-specific effect estimate, and severity is not infection susceptibility.",
+    "statistics": [
+      {
+        "value": 0.34,
+        "measure": "odds ratio",
+        "lower": 0.19,
+        "upper": 0.61,
+        "uncertainty": "95% confidence interval",
+        "contrast": "O versus pooled non-O",
+        "endpoint": "Severe versus uncomplicated falciparum malaria",
+        "population": "Malian children"
+      }
+    ],
+    "limitations": [
+      "Observational association is not proof of causality or individual protection.",
+      "Pooled non-O findings cannot be converted to a pairwise B effect.",
+      "Rosetting is adhesion between infected and uninfected erythrocytes, not parasite invasion."
+    ],
+    "retrieved_at": "2026-10-24",
+    "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+    "passage_id": "rowe-2007#summary",
+    "download_status": "unavailable",
+    "download_checked_at": "2026-10-24T14:52:14.854086+00:00"
+  },
+  {
+    "id": "kenya-2023",
+    "title": "Non-O ABO blood group genotypes differ in their associations with Plasmodium falciparum rosetting and severe malaria",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10522014/",
+    "system": "ABO",
+    "context": "malaria",
+    "design": "Case-control study and in vitro adhesion assays",
+    "population": "Kenyan children and donor erythrocytes in laboratory rosetting assays",
+    "endpoint": "Severe malaria by ABO genotype and rosette size",
+    "location": "Abstract / Results / Discussion",
+    "passage": "A Kenyan study examined specific ABO genotypes rather than assuming all non-O groups were equivalent. In assays using A-preferring parasites, rosettes involving AO and BO cells were indistinguishable from OO, whereas AA and AB formed larger rosettes. Most genotype contrasts lacked statistical significance; low-frequency genotypes limited power.",
+    "limitations": [
+      "Parasite preference and laboratory conditions constrain generalization.",
+      "Reported B phenotype does not identify BO or BB genotype.",
+      "Neither genotype associations nor in vitro rosettes predict an individual outcome.",
+      "These findings qualify a simple O-versus-all-non-O schematic."
+    ],
+    "retrieved_at": "2026-10-24",
+    "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+    "passage_id": "kenya-2023#summary",
+    "statistics": [],
+    "download_status": "cached",
+    "download_checked_at": "2026-10-24T14:52:15.507913+00:00",
+    "asset": {
+      "sha256": "f7d6808bf7882d6734f2f079ebbfb9a615abb1331a1b62a472ad85d3bf0ef2fd",
+      "path": "data/assets/blood/f7d6808bf7882d6734f2f079ebbfb9a615abb1331a1b62a472ad85d3bf0ef2fd.xml",
+      "bytes": 283655,
+      "format": "XML",
+      "retrieval_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10522014/fullTextXML"
+    }
+  },
+  {
+    "id": "india-2011",
+    "title": "Association of ABO blood group with severe falciparum malaria in adults: case control study and meta-analysis",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3215225/",
+    "system": "ABO",
+    "context": "malaria",
+    "design": "Adult case-control study with meta-analysis",
+    "population": "Adults in Odisha, India; severe and uncomplicated falciparum malaria groups",
+    "endpoint": "Severe falciparum malaria",
+    "location": "Results / Discussion",
+    "passage": "An adult Indian case-control study reported an association of group B with severe falciparum malaria. The authors contrasted this with reports emphasizing A or AB in other populations and discussed differences in populations and infective strains. Its population-specific finding does not establish a universal B-versus-O effect.",
+    "limitations": [
+      "Geography, age, study design and parasite populations affect applicability.",
+      "Observational associations are not personal risk estimates.",
+      "No RhD-specific malaria distinction is established by this source."
+    ],
+    "retrieved_at": "2026-10-24",
+    "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+    "passage_id": "india-2011#summary",
+    "statistics": [],
+    "download_status": "cached",
+    "download_checked_at": "2026-10-24T14:52:16.288910+00:00",
+    "asset": {
+      "sha256": "221c184012832e13fcb55101aca437add992ef785817910c794f2fea9639dd16",
+      "path": "data/assets/blood/221c184012832e13fcb55101aca437add992ef785817910c794f2fea9639dd16.xml",
+      "bytes": 83405,
+      "format": "XML",
+      "retrieval_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3215225/fullTextXML"
+    }
+  }
+]

@@ -1,10 +1,12 @@
-> The final real-data build is documented in [docs/REAL_DATA_BUILD.md](docs/REAL_DATA_BUILD.md). The default UI opens audited public PTEN data; the earlier synthetic demonstration is at `/?workspace=fixture`. See [implementation gates](docs/IMPLEMENTATION_STATUS.md) before treating any provider or scientific capability as verified.
+> The current project-centred UI is documented in [Research workflow and route map](docs/RESEARCH_WORKFLOW_ROUTES.md). Home opens the molecular overview and research dashboard; PTEN and blood-group evidence review are supported project methods. Scientific data and verification details remain in [REAL_DATA_BUILD.md](docs/REAL_DATA_BUILD.md). The synthetic demonstration lives at `/developer/demo`.
 
-# Variant Atlas
+# Bramha Atlas
 
 A runnable local research workspace built from `variant-atlas-codex-build-brief.md` , `variant-atlas-product-plan.md` and `variant-atlas-business-goal.md`. React/TypeScript frontend and Python/FastAPI backend are separate applications, communicating exclusively through HTTP.
 
-**Synthetic data. Illustrative geometry — not a biological structure.** All eight variants, the sequence, two assays, scores and four evidence records are fictional. This is a deterministic investigation workflow with optional explanation, not an autonomous scientific discovery agent or clinical tool.
+PTEN projects use audited public PTEN measurements and an unchanged experimental reference structure. The separate synthetic workspace contains eight fictional variants and illustrative geometry. Both support evidence-led exploration; neither predicts cures or a validated mutant fold.
+
+See [the molecular overview, screenshots and asset provenance](docs/MOLECULAR_OVERVIEW.md), and [Bramha product context, agent roles, and storage](docs/BRAMHA_PRODUCT_AND_STORAGE.md) for the current exploration flow and migration boundaries.
 
 ## Quick start (no external keys)
 
@@ -16,7 +18,8 @@ From `variant-atlas/`:
 python3 -m venv backend/.venv
 backend/.venv/bin/python -m pip install -r backend/requirements.txt
 cp .env.example backend/.env
-backend/.venv/bin/python scripts/seed.py
+backend/.venv/bin/python scripts/acquire_pten.py
+backend/.venv/bin/python scripts/seed_research.py
 ```
 
 Terminal 1 — **backend**, port 8000:
@@ -42,13 +45,15 @@ No MongoDB or LLM credentials are needed. Local mode also seeds a fresh store au
 backend/.venv/bin/python scripts/seed.py --write-fixture
 ```
 
-This development milestone has no authentication, authorization or multi-user isolation. Server binding follows `BACKEND_HOST` (currently `0.0.0.0`, as requested); the frontend development server is local. This is not a production hosting setup.
+This development milestone has no authentication, authorization or multi-user isolation. The implemented local profile requires a loopback `BACKEND_HOST` such as `127.0.0.1`; the frontend development server is also local. This is not a production hosting setup.
 
 ## Live investigation chamber
 
 The **Start investigation** action now opens the glass execution chamber with real backend events, worker inspection, source docks, output tray, cancellation and recorded replay. Use **Preview simulated chamber** for a labelled, key-free recording. [Chamber guide and API contracts](CHAMBER.md). The original synchronous API remains available.
 
-## Workspace walkthrough
+## Historical synthetic demonstration walkthrough
+
+The following walkthrough describes `/developer/demo`, not the production Home page. For project creation, central Sources, method-specific exploration and canonical investigation detail, follow the [current workflow guide](docs/RESEARCH_WORKFLOW_ROUTES.md).
 
 1. Default arbitrary criteria: abundance **≥ 0.70**, activity **≤ 0.35**. Five IDs qualify: `demo-v01`, `demo-v02`, `demo-v05`, `demo-v06`, `demo-v08`.
 2. Select **Mapped only**. Exactly `demo-v01`, `demo-v02`, `demo-v05` qualify. All eight table rows remain visible; excluded markers are dimmed.
@@ -87,9 +92,9 @@ The frontend does not access MongoDB or OpenRouter. Vite proxies `/api` to `127.
 
 Copy `.env.example` to `backend/.env`. Environment files are ignored. Configuration precedence is process environment > `backend/.env` > root `.env` > defaults. Reading configuration does not mutate process environment; tests can explicitly override the provider to mock. The supplied live credential is stored only in the private, git-ignored `backend/.env` with file permissions `0600`. Do not create frontend variables for provider credentials.
 
-- `BACKEND_HOST=0.0.0.0`, `BACKEND_PORT=8000`: consumed by `python -m app.server`.
+- `BACKEND_HOST=127.0.0.1`, `BACKEND_PORT=8000`: consumed by `python -m app.server`.
 - `FRONTEND_ORIGIN=http://localhost:8500`: sets the allowed browser origin (with the matching localhost/127.0.0.1 alias). Vite reads only the non-secret server/origin settings to use frontend port 8500 and proxy API calls to backend port 8000. `CORS_ORIGINS` can explicitly override the origin allowlist.
-- `DATA_BACKEND=local`: fixtures plus durable JSON files under `var/`, or `LOCAL_DATA_DIR` if specified. Uses temporary files, `fsync` and atomic replacement. **Development, single process only**; no interprocess locks or cross-file transactions. Do not run multiple workers against this store.
+- `DATA_BACKEND=local`: fixtures plus durable JSON files under `var/`, or `LOCAL_DATA_DIR` if specified. Uses temporary files, `fsync` and atomic replacement. **Local development only**; research/portfolio stores use locks and atomic snapshots, with no cross-file transaction. Do not run multiple workers against this store.
 - `DATA_BACKEND=atlas`: uses PyMongo for core workspace entities and investigations. Requires `MONGODB_URI` and `MONGODB_DATABASE`. A connection/seed failure returns 503, with no local fallback.
 - `LLM_PROVIDER=mock`: deterministic extractive fixture explanation, explicitly labelled **not AI**.
 - `LLM_PROVIDER=openrouter`: requires `OPENROUTER_API_KEY` and an explicit `OPENROUTER_MODEL`. The model is configurable, not assumed to be available.

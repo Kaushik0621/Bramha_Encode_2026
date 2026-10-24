@@ -1,6 +1,6 @@
 # Real-data Variant Atlas
 
-The final specification replaces the old synthetic-only mission. The frontend and backend remain separate. The default frontend now opens the real PTEN observatory; `/?workspace=fixture` preserves the eight-variant demonstration and its fixed workflow.
+The final specification replaces the old synthetic-only mission. The frontend and backend remain separate. The frontend now opens the project dashboard; PTEN projects contain the real observatory. See [the current workflow route map](RESEARCH_WORKFLOW_ROUTES.md). `/developer/demo` preserves the eight-variant demonstration and its fixed workflow.
 
 ## Run locally
 

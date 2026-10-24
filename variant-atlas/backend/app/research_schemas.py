@@ -14,6 +14,8 @@ class ResearchCriteria(Model):
 
 
 class ResearchRequest(Model):
+    project_id: str | None = Field(default=None, pattern=r"^project-[a-f0-9]{32}$")
+    paper_ids: list[str] = Field(default_factory=list, max_length=3)
     workspace_id: Literal["pten-real"] = "pten-real"
     title: str = Field(
         default="PTEN evidence investigation", min_length=1, max_length=120
@@ -23,6 +25,11 @@ class ResearchRequest(Model):
     selected_ids: list[str] = Field(min_length=1, max_length=200)
     capacity: int = Field(default=10, ge=1, le=200, strict=True)
     provider: Literal["configured", "google", "openrouter", "fixture"] = "configured"
+    requested_roles: list[
+        Literal[
+            "identity", "assay", "structure", "evidence", "verifier", "reconciliation"
+        ]
+    ] = Field(default_factory=list, max_length=6)
     explore_paths: bool = False
     require_independent_reviews: bool = True
     max_seconds: int = Field(default=600, ge=10, le=600)

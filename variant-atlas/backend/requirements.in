@@ -10,3 +10,4 @@ duckdb>=1.2,<2
 pyarrow>=19,<24
 google-genai>=2.3,<3
 websockets>=14,<17
+pypdf>=6,<7

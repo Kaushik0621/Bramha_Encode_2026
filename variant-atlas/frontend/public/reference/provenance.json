@@ -1,0 +1,12 @@
+{
+  "asset": "pten-1d5r-trace.svg",
+  "kind": "derived orthographic C-alpha trace",
+  "source": "1D5R experimental structure, audited canonical mappings",
+  "dataset_version": "pten-transform-1.0-97b699d687c8",
+  "mapping_audit_sha256": "d888188efda307268aa62423754df293510b47da21fd010acec4e6042137e1ee",
+  "accepted_coordinates": 307,
+  "projection": "x + 0.25*y; -z + 0.28*y; uniform display scale",
+  "gap_policy": "connect consecutive accepted canonical positions only",
+  "replacement": "python scripts/build_reference_fallback.py; live renderer loads /api/structures/1D5R",
+  "placeholder": false
+}

@@ -35,7 +35,8 @@ COLLECTIONS = [
 
 
 class ResearchStore:
-    def __init__(self, settings):
+    def __init__(self, settings, workspace_id="pten-real"):
+        self.workspace_id = workspace_id
         self.settings = settings
         self.root = settings.local_data_dir / "research"
         self.client = None
@@ -108,9 +109,16 @@ class ResearchStore:
         if not re.fullmatch(r"research-[a-f0-9]{32}", run_id):
             return None
         if self.db is not None:
-            return self.db.investigations.find_one({"run_id": run_id}, {"_id": 0})
+            return self.db.investigations.find_one(
+                {"run_id": run_id, "workspace_id": self.workspace_id}, {"_id": 0}
+            )
         path = self.root / (run_id + ".json")
-        return json.loads(path.read_text()) if path.exists() else None
+        doc = json.loads(path.read_text()) if path.exists() else None
+        return (
+            doc
+            if doc and doc.get("workspace_id", "pten-real") == self.workspace_id
+            else None
+        )
 
     def create(self, run):
         doc = copy.deepcopy(run)
@@ -153,14 +161,19 @@ class ResearchStore:
         if self.db is not None:
             return list(
                 self.db.investigations.find(
-                    {"run_id": {"$exists": True}, "workspace_id": "pten-real"},
+                    {"run_id": {"$exists": True}, "workspace_id": self.workspace_id},
                     {"_id": 0},
                 )
                 .sort("created_at", -1)
                 .limit(100)
             )
         return sorted(
-            [json.loads(p.read_text()) for p in self.root.glob("research-*.json")],
+            [
+                doc
+                for p in self.root.glob("research-*.json")
+                if (doc := json.loads(p.read_text())).get("workspace_id", "pten-real")
+                == self.workspace_id
+            ],
             key=lambda x: x["created_at"],
             reverse=True,
         )[:100]
@@ -168,7 +181,7 @@ class ResearchStore:
     def claim(self, worker_id, lease_seconds=30):
         if self.db is not None:
             return self.db.investigations.find_one_and_update(
-                {"workspace_id": "pten-real", "status": "queued"},
+                {"workspace_id": self.workspace_id, "status": "queued"},
                 {
                     "$set": {
                         "status": "running",
@@ -262,7 +275,7 @@ class ResearchStore:
     def workspace(self):
         if self.db is not None:
             record = self.db.workspaces.find_one(
-                {"workspace_id": "pten-real", "id": "pten-real"}
+                {"workspace_id": self.workspace_id, "id": "pten-real"}
             )
             if not record:
                 raise RepositoryError(

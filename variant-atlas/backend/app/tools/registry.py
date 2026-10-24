@@ -380,6 +380,11 @@ class Registry:
             | {p["id"] for p in w["evidence"]}
             | {a["id"] for a in run["artifacts"]}
         )
+        valid |= {
+            p["id"] + "#" + c["id"]
+            for p in run.get("paper_sources", [])
+            for c in p["chunks"][:6]
+        }
         variants = {v["id"] for v in w["variants"]}
         checks = [
             {

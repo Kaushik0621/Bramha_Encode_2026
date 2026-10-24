@@ -1,0 +1,23 @@
+import {test,expect} from '@playwright/test';
+test('molecular position offers measured comparisons and saves unmeasured experiment proposals',async({page})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/developer/pten');
+ await page.getByLabel('Find draggable substitution').fill('C124S');await page.locator('.ba-object-list').getByRole('button',{name:'p.C124S',exact:true}).click();
+ await expect(page.locator('.ra-mol-target')).toHaveAttribute('data-rendered','true',{timeout:45000});
+ await page.locator('.ba-object-list>div').first().dragTo(page.locator('.ba-scene-caption'));await expect(page.getByRole('region',{name:'Position experiment options'})).toBeVisible();await page.getByRole('button',{name:'Close residue research assistant'}).click();await page.locator('.ra-molecular-focus-chip').click();
+ const panel=page.getByRole('dialog',{name:'Residue research assistant'});await expect(panel.getByRole('region',{name:'Position experiment options'})).toBeVisible();
+ await expect(panel).toContainText('You are inspecting an amino-acid position');
+ const card=panel.locator('.ba-experiment-choice').filter({hasText:'p.C124A'});await expect(card).toContainText('Missing');
+ await card.getByRole('button',{name:'Compare p.C124A',exact:true}).click();
+ await expect(page.locator('.ba-comparison-strip')).toContainText('p.C124S');await expect(page.locator('.ba-comparison-strip')).toContainText('p.C124A');
+ const w=await (await page.request.get('/api/workspaces/pten-real')).json();
+ const aa='ADEFGHIKLMNPQRSTVWY'.split('').find(a=>!w.variants.some((v:{protein_hgvs:string})=>v.protein_hgvs===`p.C124${a}`))!;
+ await panel.getByLabel('Candidate amino acid').selectOption(aa);await expect(panel).toContainText('Unmeasured proposal in this workspace.');
+ await panel.getByLabel('Experiment research objective').fill('Assess whether the replacement could alter the measured activity profile.');await panel.getByRole('button',{name:'Save experiment proposal',exact:true}).click();
+ await expect(panel).toContainText('Proposal added to the research question');
+ await expect.poll(async()=>{const sid=await page.evaluate(()=>localStorage.getItem('bramha-atlas-current-exploration'));const doc=await (await page.request.get('/api/research/explorations/'+sid)).json();return doc.state.question;}).toContain('This replacement is unmeasured');
+ await page.screenshot({path:'../artifacts/bramha-position-experiment-options.png',fullPage:true});
+ await panel.getByLabel('Research task',{exact:true}).selectOption('protein');await expect(panel).toContainText('Only the PTEN dataset is currently supported.');
+ await panel.getByLabel('Protein research objective').fill('Study a second protein using its own reference sequence and assay evidence.');await panel.getByRole('button',{name:'Save research-planning note',exact:true}).click();
+ await expect(panel).toContainText('No protein was added to the scene.');
+ expect(errors).toEqual([]);
+});

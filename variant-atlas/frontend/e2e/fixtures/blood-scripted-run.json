@@ -1,0 +1,1562 @@
+{
+  "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+  "workspace_id": "blood-group",
+  "dataset_version": "265728349d0be76c",
+  "mapping_version": "265728349d0be76c",
+  "data_mode": "real",
+  "execution_mode": "live",
+  "playback_mode": "live",
+  "provider": "scripted-test",
+  "model": "scripted-test-actions",
+  "storage_mode": "local",
+  "status": "completed_with_limitations",
+  "created_at": "2026-10-24T14:55:34.490279+00:00",
+  "request": {
+    "question": "Compare these reported blood groups in severe falciparum malaria.",
+    "scenario_a": "O+",
+    "scenario_b": "B-",
+    "context": "severe P. falciparum malaria",
+    "focus": "molecular mechanism",
+    "max_seconds": 300,
+    "selected_ids": [],
+    "capacity": 2,
+    "criteria": {}
+  },
+  "interpretation": {
+    "a": {
+      "abo": "O",
+      "rhd": "positive",
+      "provenance": "self-reported"
+    },
+    "b": {
+      "abo": "B",
+      "rhd": "negative",
+      "provenance": "self-reported"
+    },
+    "abo_differs": true,
+    "rhd_differs": true,
+    "context": "severe P. falciparum malaria",
+    "question": "Compare these reported blood groups in severe falciparum malaria.",
+    "focus": "molecular mechanism",
+    "scope": "Literature-grounded comparison of reported phenotypes; no participant testing or individual predictions."
+  },
+  "source_manifest": [
+    {
+      "id": "abo-reference",
+      "title": "The ABO blood group",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK2267/?report=classic",
+      "canonical_url": "https://www.ncbi.nlm.nih.gov/books/NBK2267/",
+      "system": "ABO",
+      "context": "reference",
+      "design": "Reference chapter",
+      "population": "Established reference biology; no participant testing",
+      "endpoint": "Antigen biochemistry",
+      "location": "Basic biochemistry / Molecular information",
+      "passage": "ABO antigens are surface carbohydrates. A and B glycosyltransferases modify the H precursor differently; typical group O lacks A and B modifications. ABO phenotype does not uniquely identify an individual genotype.",
+      "limitations": [
+        "Reference biology is not a malaria effect estimate.",
+        "Rare and weak phenotypes require separate characterization."
+      ],
+      "retrieved_at": "2026-10-24",
+      "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+      "passage_id": "abo-reference#summary",
+      "statistics": [],
+      "download_status": "unavailable",
+      "download_checked_at": "2026-10-24T14:52:13.801867+00:00",
+      "asset": null
+    },
+    {
+      "id": "rhd-reference",
+      "title": "The Rh blood group",
+      "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK2269/?report=reader",
+      "canonical_url": "https://www.ncbi.nlm.nih.gov/books/NBK2269/",
+      "system": "RhD",
+      "context": "reference",
+      "design": "Reference chapter",
+      "population": "Established reference biology; no participant testing",
+      "endpoint": "Rh antigen protein system",
+      "location": "Antigens of the Rh blood group / Molecular information, Protein",
+      "passage": "RhD is a transmembrane protein bearing the D antigen. Rh is a separate protein antigen system from ABO carbohydrates. Reported RhD status does not resolve a participant RHD sequence or genotype.",
+      "limitations": [
+        "This chapter does not establish a RhD-specific malaria association.",
+        "RhD variants and typing complexities are outside this schematic."
+      ],
+      "retrieved_at": "2026-10-24",
+      "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+      "passage_id": "rhd-reference#summary",
+      "statistics": [],
+      "download_status": "unavailable",
+      "download_checked_at": "2026-10-24T14:52:14.458112+00:00",
+      "asset": null
+    },
+    {
+      "id": "rowe-2007",
+      "title": "Blood group O protects against severe Plasmodium falciparum malaria through the mechanism of reduced rosetting",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2077280/",
+      "canonical_url": null,
+      "system": "ABO",
+      "context": "malaria",
+      "design": "Matched case-control study and parasite rosetting assays",
+      "population": "Malian children; severe cases compared with uncomplicated malaria and healthy controls",
+      "endpoint": "Severe P. falciparum malaria and rosetting",
+      "location": "Abstract / Results and Discussion",
+      "passage": "In Malian children, group O was associated with lower odds of severe falciparum malaria compared with pooled non-O groups. Parasite rosetting observations supported a possible mechanistic link. The pooled comparison is not an O-versus-B-specific effect estimate, and severity is not infection susceptibility.",
+      "limitations": [
+        "Observational association is not proof of causality or individual protection.",
+        "Pooled non-O findings cannot be converted to a pairwise B effect.",
+        "Rosetting is adhesion between infected and uninfected erythrocytes, not parasite invasion."
+      ],
+      "retrieved_at": "2026-10-24",
+      "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+      "passage_id": "rowe-2007#summary",
+      "statistics": [
+        {
+          "value": 0.34,
+          "measure": "odds ratio",
+          "lower": 0.19,
+          "upper": 0.61,
+          "uncertainty": "95% confidence interval",
+          "contrast": "O versus pooled non-O",
+          "endpoint": "Severe versus uncomplicated falciparum malaria",
+          "population": "Malian children"
+        }
+      ],
+      "download_status": "unavailable",
+      "download_checked_at": "2026-10-24T14:52:14.854086+00:00",
+      "asset": null
+    },
+    {
+      "id": "kenya-2023",
+      "title": "Non-O ABO blood group genotypes differ in their associations with Plasmodium falciparum rosetting and severe malaria",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10522014/",
+      "canonical_url": null,
+      "system": "ABO",
+      "context": "malaria",
+      "design": "Case-control study and in vitro adhesion assays",
+      "population": "Kenyan children and donor erythrocytes in laboratory rosetting assays",
+      "endpoint": "Severe malaria by ABO genotype and rosette size",
+      "location": "Abstract / Results / Discussion",
+      "passage": "A Kenyan study examined specific ABO genotypes rather than assuming all non-O groups were equivalent. In assays using A-preferring parasites, rosettes involving AO and BO cells were indistinguishable from OO, whereas AA and AB formed larger rosettes. Most genotype contrasts lacked statistical significance; low-frequency genotypes limited power.",
+      "limitations": [
+        "Parasite preference and laboratory conditions constrain generalization.",
+        "Reported B phenotype does not identify BO or BB genotype.",
+        "Neither genotype associations nor in vitro rosettes predict an individual outcome.",
+        "These findings qualify a simple O-versus-all-non-O schematic."
+      ],
+      "retrieved_at": "2026-10-24",
+      "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+      "passage_id": "kenya-2023#summary",
+      "statistics": [],
+      "download_status": "cached",
+      "download_checked_at": "2026-10-24T14:52:15.507913+00:00",
+      "asset": {
+        "sha256": "f7d6808bf7882d6734f2f079ebbfb9a615abb1331a1b62a472ad85d3bf0ef2fd",
+        "path": "data/assets/blood/f7d6808bf7882d6734f2f079ebbfb9a615abb1331a1b62a472ad85d3bf0ef2fd.xml",
+        "bytes": 283655,
+        "format": "XML",
+        "retrieval_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10522014/fullTextXML"
+      }
+    },
+    {
+      "id": "india-2011",
+      "title": "Association of ABO blood group with severe falciparum malaria in adults: case control study and meta-analysis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3215225/",
+      "canonical_url": null,
+      "system": "ABO",
+      "context": "malaria",
+      "design": "Adult case-control study with meta-analysis",
+      "population": "Adults in Odisha, India; severe and uncomplicated falciparum malaria groups",
+      "endpoint": "Severe falciparum malaria",
+      "location": "Results / Discussion",
+      "passage": "An adult Indian case-control study reported an association of group B with severe falciparum malaria. The authors contrasted this with reports emphasizing A or AB in other populations and discussed differences in populations and infective strains. Its population-specific finding does not establish a universal B-versus-O effect.",
+      "limitations": [
+        "Geography, age, study design and parasite populations affect applicability.",
+        "Observational associations are not personal risk estimates.",
+        "No RhD-specific malaria distinction is established by this source."
+      ],
+      "retrieved_at": "2026-10-24",
+      "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+      "passage_id": "india-2011#summary",
+      "statistics": [],
+      "download_status": "cached",
+      "download_checked_at": "2026-10-24T14:52:16.288910+00:00",
+      "asset": {
+        "sha256": "221c184012832e13fcb55101aca437add992ef785817910c794f2fea9639dd16",
+        "path": "data/assets/blood/221c184012832e13fcb55101aca437add992ef785817910c794f2fea9639dd16.xml",
+        "bytes": 83405,
+        "format": "XML",
+        "retrieval_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3215225/fullTextXML"
+      }
+    }
+  ],
+  "source_versions": [
+    {
+      "id": "abo-reference",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "rhd-reference",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "rowe-2007",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "kenya-2023",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "india-2011",
+      "retrieved_at": "2026-10-24"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "coordinator",
+      "role": "coordinator",
+      "question": "Compare these reported blood groups in severe falciparum malaria.",
+      "allowed_tools": [
+        "search_evidence",
+        "read_shared_evidence",
+        "spawn_scoped_workers",
+        "validate_claims"
+      ],
+      "depth": 0,
+      "status": "completed",
+      "input_artifact_ids": [],
+      "parent_task_id": null,
+      "started_at": "2026-10-24T14:55:34.493207+00:00",
+      "finished_at": "2026-10-24T14:55:34.625898+00:00"
+    },
+    {
+      "id": "task-2685711ddbd2",
+      "role": "applicability",
+      "question": "Inspect evidence applicability for this scoped comparison.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "started_at": "2026-10-24T14:55:34.505224+00:00",
+      "finished_at": "2026-10-24T14:55:34.533103+00:00"
+    },
+    {
+      "id": "task-e419ce98466c",
+      "role": "mechanism",
+      "question": "Inspect evidence applicability for this scoped comparison.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "started_at": "2026-10-24T14:55:34.511376+00:00",
+      "finished_at": "2026-10-24T14:55:34.540083+00:00"
+    },
+    {
+      "id": "task-17fced2d69c1",
+      "role": "scenario_a",
+      "question": "Inspect evidence applicability for this scoped comparison.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "started_at": "2026-10-24T14:55:34.517896+00:00",
+      "finished_at": "2026-10-24T14:55:34.548311+00:00"
+    },
+    {
+      "id": "task-060fbe87ac99",
+      "role": "scenario_b",
+      "question": "Inspect evidence applicability for this scoped comparison.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "started_at": "2026-10-24T14:55:34.524356+00:00",
+      "finished_at": "2026-10-24T14:55:34.555963+00:00"
+    },
+    {
+      "id": "task-859a4b9b9918",
+      "role": "verifier",
+      "question": "Verify citations and reject unsupported RhD disease distinctions.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994",
+        "artifact-72d98c2d271642e1925c40d7526b790a",
+        "artifact-39797b8a54a444d5a3de42453abb2299",
+        "artifact-90c5002517a74b468cd8b5accc056941",
+        "artifact-b85a57b6ef6f44ea82502308d74f66d4"
+      ],
+      "started_at": "2026-10-24T14:55:34.568414+00:00",
+      "finished_at": "2026-10-24T14:55:34.579675+00:00"
+    },
+    {
+      "id": "task-79a8e88f9928",
+      "role": "reconciliation",
+      "question": "Reconcile the source-limited branch findings and uncertainties.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994",
+        "artifact-72d98c2d271642e1925c40d7526b790a",
+        "artifact-39797b8a54a444d5a3de42453abb2299",
+        "artifact-90c5002517a74b468cd8b5accc056941",
+        "artifact-b85a57b6ef6f44ea82502308d74f66d4",
+        "artifact-68d3ed0d167f47b7bd4c3f5dda419d12"
+      ],
+      "started_at": "2026-10-24T14:55:34.593505+00:00",
+      "finished_at": "2026-10-24T14:55:34.605056+00:00"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:1",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 1,
+      "timestamp": "2026-10-24T14:55:34.491470+00:00",
+      "type": "task.queued",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Interpreted comparison durably queued; no participant testing performed.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:2",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 2,
+      "timestamp": "2026-10-24T14:55:34.494030+00:00",
+      "type": "task.started",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Lead started the comparative evidence investigation.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:3",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 3,
+      "timestamp": "2026-10-24T14:55:34.496323+00:00",
+      "type": "artifact.created",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "read_shared_evidence",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:4",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 4,
+      "timestamp": "2026-10-24T14:55:34.497250+00:00",
+      "type": "tool.completed",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Shared inspected passages retrieved from the source cache.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:5",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 5,
+      "timestamp": "2026-10-24T14:55:34.501982+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Scripted test action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:6",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 6,
+      "timestamp": "2026-10-24T14:55:34.504516+00:00",
+      "type": "handoff",
+      "task_id": "task-2685711ddbd2",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Scoped applicability reviewer received shared source artifacts.",
+      "input_refs": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:7",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 7,
+      "timestamp": "2026-10-24T14:55:34.506572+00:00",
+      "type": "task.started",
+      "task_id": "task-2685711ddbd2",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting scoped evidence review.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:8",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 8,
+      "timestamp": "2026-10-24T14:55:34.510630+00:00",
+      "type": "handoff",
+      "task_id": "task-e419ce98466c",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Scoped mechanism reviewer received shared source artifacts.",
+      "input_refs": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:9",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 9,
+      "timestamp": "2026-10-24T14:55:34.512699+00:00",
+      "type": "task.started",
+      "task_id": "task-e419ce98466c",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting scoped evidence review.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:10",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 10,
+      "timestamp": "2026-10-24T14:55:34.517099+00:00",
+      "type": "handoff",
+      "task_id": "task-17fced2d69c1",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Scoped scenario_a reviewer received shared source artifacts.",
+      "input_refs": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:11",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 11,
+      "timestamp": "2026-10-24T14:55:34.519259+00:00",
+      "type": "task.started",
+      "task_id": "task-17fced2d69c1",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting scoped evidence review.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:12",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 12,
+      "timestamp": "2026-10-24T14:55:34.523392+00:00",
+      "type": "handoff",
+      "task_id": "task-060fbe87ac99",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Scoped scenario_b reviewer received shared source artifacts.",
+      "input_refs": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994"
+      ],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:13",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 13,
+      "timestamp": "2026-10-24T14:55:34.525773+00:00",
+      "type": "task.started",
+      "task_id": "task-060fbe87ac99",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting scoped evidence review.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:14",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 14,
+      "timestamp": "2026-10-24T14:55:34.532227+00:00",
+      "type": "artifact.created",
+      "task_id": "task-2685711ddbd2",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "blood_worker_report",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-72d98c2d271642e1925c40d7526b790a"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:15",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 15,
+      "timestamp": "2026-10-24T14:55:34.534637+00:00",
+      "type": "task.completed",
+      "task_id": "task-2685711ddbd2",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Scoped review saved with source references and limitations.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-72d98c2d271642e1925c40d7526b790a"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:16",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 16,
+      "timestamp": "2026-10-24T14:55:34.539046+00:00",
+      "type": "artifact.created",
+      "task_id": "task-e419ce98466c",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "blood_worker_report",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-39797b8a54a444d5a3de42453abb2299"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:17",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 17,
+      "timestamp": "2026-10-24T14:55:34.542088+00:00",
+      "type": "task.completed",
+      "task_id": "task-e419ce98466c",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Scoped review saved with source references and limitations.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-39797b8a54a444d5a3de42453abb2299"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:18",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 18,
+      "timestamp": "2026-10-24T14:55:34.547113+00:00",
+      "type": "artifact.created",
+      "task_id": "task-17fced2d69c1",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "blood_worker_report",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-90c5002517a74b468cd8b5accc056941"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:19",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 19,
+      "timestamp": "2026-10-24T14:55:34.550225+00:00",
+      "type": "task.completed",
+      "task_id": "task-17fced2d69c1",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Scoped review saved with source references and limitations.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-90c5002517a74b468cd8b5accc056941"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:20",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 20,
+      "timestamp": "2026-10-24T14:55:34.554925+00:00",
+      "type": "artifact.created",
+      "task_id": "task-060fbe87ac99",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "blood_worker_report",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-b85a57b6ef6f44ea82502308d74f66d4"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:21",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 21,
+      "timestamp": "2026-10-24T14:55:34.557928+00:00",
+      "type": "task.completed",
+      "task_id": "task-060fbe87ac99",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Scoped review saved with source references and limitations.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-b85a57b6ef6f44ea82502308d74f66d4"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:22",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 22,
+      "timestamp": "2026-10-24T14:55:34.563824+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Scripted test action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:23",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 23,
+      "timestamp": "2026-10-24T14:55:34.567217+00:00",
+      "type": "handoff",
+      "task_id": "task-859a4b9b9918",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Scoped verifier reviewer received shared source artifacts.",
+      "input_refs": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994",
+        "artifact-72d98c2d271642e1925c40d7526b790a",
+        "artifact-39797b8a54a444d5a3de42453abb2299",
+        "artifact-90c5002517a74b468cd8b5accc056941",
+        "artifact-b85a57b6ef6f44ea82502308d74f66d4"
+      ],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:24",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 24,
+      "timestamp": "2026-10-24T14:55:34.570692+00:00",
+      "type": "task.started",
+      "task_id": "task-859a4b9b9918",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting scoped evidence review.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:25",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 25,
+      "timestamp": "2026-10-24T14:55:34.578537+00:00",
+      "type": "artifact.created",
+      "task_id": "task-859a4b9b9918",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "blood_worker_report",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-68d3ed0d167f47b7bd4c3f5dda419d12"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:26",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 26,
+      "timestamp": "2026-10-24T14:55:34.581791+00:00",
+      "type": "task.completed",
+      "task_id": "task-859a4b9b9918",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Scoped review saved with source references and limitations.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-68d3ed0d167f47b7bd4c3f5dda419d12"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:27",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 27,
+      "timestamp": "2026-10-24T14:55:34.588239+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Scripted test action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:28",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 28,
+      "timestamp": "2026-10-24T14:55:34.592220+00:00",
+      "type": "handoff",
+      "task_id": "task-79a8e88f9928",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "queued",
+      "summary": "Scoped reconciliation reviewer received shared source artifacts.",
+      "input_refs": [
+        "artifact-63ef34939f9a4195aabd6e3b26121994",
+        "artifact-72d98c2d271642e1925c40d7526b790a",
+        "artifact-39797b8a54a444d5a3de42453abb2299",
+        "artifact-90c5002517a74b468cd8b5accc056941",
+        "artifact-b85a57b6ef6f44ea82502308d74f66d4",
+        "artifact-68d3ed0d167f47b7bd4c3f5dda419d12"
+      ],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:29",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 29,
+      "timestamp": "2026-10-24T14:55:34.595651+00:00",
+      "type": "task.started",
+      "task_id": "task-79a8e88f9928",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Requesting scoped evidence review.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:30",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 30,
+      "timestamp": "2026-10-24T14:55:34.603756+00:00",
+      "type": "artifact.created",
+      "task_id": "task-79a8e88f9928",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "blood_worker_report",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-efedd26084154c81b9ca1cff5afebf23"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:31",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 31,
+      "timestamp": "2026-10-24T14:55:34.607335+00:00",
+      "type": "task.completed",
+      "task_id": "task-79a8e88f9928",
+      "parent_task_id": "coordinator",
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Scoped review saved with source references and limitations.",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-efedd26084154c81b9ca1cff5afebf23"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:32",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 32,
+      "timestamp": "2026-10-24T14:55:34.614432+00:00",
+      "type": "model.action",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "Scripted test action.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:33",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 33,
+      "timestamp": "2026-10-24T14:55:34.618290+00:00",
+      "type": "artifact.created",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "validate_claims",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-8a63e2b7c43c486d844c5cfd0b383827"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:34",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 34,
+      "timestamp": "2026-10-24T14:55:34.622043+00:00",
+      "type": "artifact.created",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "running",
+      "summary": "research_brief",
+      "input_refs": [],
+      "output_refs": [
+        "artifact-ae84eeb44bb64f62a6d8c33e0f08f9cf"
+      ],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:35",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 35,
+      "timestamp": "2026-10-24T14:55:34.628666+00:00",
+      "type": "task.completed",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed",
+      "summary": "Verified reference links and reconciled the comparison.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    },
+    {
+      "event_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef:36",
+      "run_id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+      "sequence": 36,
+      "timestamp": "2026-10-24T14:55:34.631092+00:00",
+      "type": "run.completed_with_limitations",
+      "task_id": "coordinator",
+      "parent_task_id": null,
+      "path_id": null,
+      "worker_kind": "llm_agent",
+      "status": "completed_with_limitations",
+      "summary": "Comparison saved; population evidence does not predict individual outcomes.",
+      "input_refs": [],
+      "output_refs": [],
+      "data_mode": "real",
+      "execution_mode": "live"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact-63ef34939f9a4195aabd6e3b26121994",
+      "task_id": "coordinator",
+      "kind": "read_shared_evidence",
+      "created_at": "2026-10-24T14:55:34.495408+00:00",
+      "dataset_version": "265728349d0be76c",
+      "data": {
+        "outcome": "ok",
+        "query": "",
+        "filters": {
+          "disease": "all",
+          "blood_group_system": "all"
+        },
+        "retrieval": "bounded local inspected-source corpus; lexical ranking, not vector retrieval",
+        "passage_ids": [
+          "abo-reference#summary",
+          "rhd-reference#summary",
+          "rowe-2007#summary",
+          "kenya-2023#summary",
+          "india-2011#summary"
+        ],
+        "sources": [
+          {
+            "id": "abo-reference",
+            "title": "The ABO blood group",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK2267/?report=classic",
+            "canonical_url": "https://www.ncbi.nlm.nih.gov/books/NBK2267/",
+            "system": "ABO",
+            "context": "reference",
+            "design": "Reference chapter",
+            "population": "Established reference biology; no participant testing",
+            "endpoint": "Antigen biochemistry",
+            "location": "Basic biochemistry / Molecular information",
+            "passage": "ABO antigens are surface carbohydrates. A and B glycosyltransferases modify the H precursor differently; typical group O lacks A and B modifications. ABO phenotype does not uniquely identify an individual genotype.",
+            "limitations": [
+              "Reference biology is not a malaria effect estimate.",
+              "Rare and weak phenotypes require separate characterization."
+            ],
+            "retrieved_at": "2026-10-24",
+            "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+            "passage_id": "abo-reference#summary",
+            "statistics": [],
+            "download_status": "unavailable",
+            "download_checked_at": "2026-10-24T14:52:13.801867+00:00",
+            "asset": null
+          },
+          {
+            "id": "rhd-reference",
+            "title": "The Rh blood group",
+            "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK2269/?report=reader",
+            "canonical_url": "https://www.ncbi.nlm.nih.gov/books/NBK2269/",
+            "system": "RhD",
+            "context": "reference",
+            "design": "Reference chapter",
+            "population": "Established reference biology; no participant testing",
+            "endpoint": "Rh antigen protein system",
+            "location": "Antigens of the Rh blood group / Molecular information, Protein",
+            "passage": "RhD is a transmembrane protein bearing the D antigen. Rh is a separate protein antigen system from ABO carbohydrates. Reported RhD status does not resolve a participant RHD sequence or genotype.",
+            "limitations": [
+              "This chapter does not establish a RhD-specific malaria association.",
+              "RhD variants and typing complexities are outside this schematic."
+            ],
+            "retrieved_at": "2026-10-24",
+            "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+            "passage_id": "rhd-reference#summary",
+            "statistics": [],
+            "download_status": "unavailable",
+            "download_checked_at": "2026-10-24T14:52:14.458112+00:00",
+            "asset": null
+          },
+          {
+            "id": "rowe-2007",
+            "title": "Blood group O protects against severe Plasmodium falciparum malaria through the mechanism of reduced rosetting",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2077280/",
+            "canonical_url": null,
+            "system": "ABO",
+            "context": "malaria",
+            "design": "Matched case-control study and parasite rosetting assays",
+            "population": "Malian children; severe cases compared with uncomplicated malaria and healthy controls",
+            "endpoint": "Severe P. falciparum malaria and rosetting",
+            "location": "Abstract / Results and Discussion",
+            "passage": "In Malian children, group O was associated with lower odds of severe falciparum malaria compared with pooled non-O groups. Parasite rosetting observations supported a possible mechanistic link. The pooled comparison is not an O-versus-B-specific effect estimate, and severity is not infection susceptibility.",
+            "limitations": [
+              "Observational association is not proof of causality or individual protection.",
+              "Pooled non-O findings cannot be converted to a pairwise B effect.",
+              "Rosetting is adhesion between infected and uninfected erythrocytes, not parasite invasion."
+            ],
+            "retrieved_at": "2026-10-24",
+            "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+            "passage_id": "rowe-2007#summary",
+            "statistics": [
+              {
+                "value": 0.34,
+                "measure": "odds ratio",
+                "lower": 0.19,
+                "upper": 0.61,
+                "uncertainty": "95% confidence interval",
+                "contrast": "O versus pooled non-O",
+                "endpoint": "Severe versus uncomplicated falciparum malaria",
+                "population": "Malian children"
+              }
+            ],
+            "download_status": "unavailable",
+            "download_checked_at": "2026-10-24T14:52:14.854086+00:00",
+            "asset": null
+          },
+          {
+            "id": "kenya-2023",
+            "title": "Non-O ABO blood group genotypes differ in their associations with Plasmodium falciparum rosetting and severe malaria",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10522014/",
+            "canonical_url": null,
+            "system": "ABO",
+            "context": "malaria",
+            "design": "Case-control study and in vitro adhesion assays",
+            "population": "Kenyan children and donor erythrocytes in laboratory rosetting assays",
+            "endpoint": "Severe malaria by ABO genotype and rosette size",
+            "location": "Abstract / Results / Discussion",
+            "passage": "A Kenyan study examined specific ABO genotypes rather than assuming all non-O groups were equivalent. In assays using A-preferring parasites, rosettes involving AO and BO cells were indistinguishable from OO, whereas AA and AB formed larger rosettes. Most genotype contrasts lacked statistical significance; low-frequency genotypes limited power.",
+            "limitations": [
+              "Parasite preference and laboratory conditions constrain generalization.",
+              "Reported B phenotype does not identify BO or BB genotype.",
+              "Neither genotype associations nor in vitro rosettes predict an individual outcome.",
+              "These findings qualify a simple O-versus-all-non-O schematic."
+            ],
+            "retrieved_at": "2026-10-24",
+            "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+            "passage_id": "kenya-2023#summary",
+            "statistics": [],
+            "download_status": "cached",
+            "download_checked_at": "2026-10-24T14:52:15.507913+00:00",
+            "asset": {
+              "sha256": "f7d6808bf7882d6734f2f079ebbfb9a615abb1331a1b62a472ad85d3bf0ef2fd",
+              "path": "data/assets/blood/f7d6808bf7882d6734f2f079ebbfb9a615abb1331a1b62a472ad85d3bf0ef2fd.xml",
+              "bytes": 283655,
+              "format": "XML",
+              "retrieval_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10522014/fullTextXML"
+            }
+          },
+          {
+            "id": "india-2011",
+            "title": "Association of ABO blood group with severe falciparum malaria in adults: case control study and meta-analysis",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3215225/",
+            "canonical_url": null,
+            "system": "ABO",
+            "context": "malaria",
+            "design": "Adult case-control study with meta-analysis",
+            "population": "Adults in Odisha, India; severe and uncomplicated falciparum malaria groups",
+            "endpoint": "Severe falciparum malaria",
+            "location": "Results / Discussion",
+            "passage": "An adult Indian case-control study reported an association of group B with severe falciparum malaria. The authors contrasted this with reports emphasizing A or AB in other populations and discussed differences in populations and infective strains. Its population-specific finding does not establish a universal B-versus-O effect.",
+            "limitations": [
+              "Geography, age, study design and parasite populations affect applicability.",
+              "Observational associations are not personal risk estimates.",
+              "No RhD-specific malaria distinction is established by this source."
+            ],
+            "retrieved_at": "2026-10-24",
+            "passage_kind": "curator paraphrase of inspected source, not a verbatim quotation",
+            "passage_id": "india-2011#summary",
+            "statistics": [],
+            "download_status": "cached",
+            "download_checked_at": "2026-10-24T14:52:16.288910+00:00",
+            "asset": {
+              "sha256": "221c184012832e13fcb55101aca437add992ef785817910c794f2fea9639dd16",
+              "path": "data/assets/blood/221c184012832e13fcb55101aca437add992ef785817910c794f2fea9639dd16.xml",
+              "bytes": 83405,
+              "format": "XML",
+              "retrieval_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3215225/fullTextXML"
+            }
+          }
+        ]
+      },
+      "path_id": null
+    },
+    {
+      "id": "artifact-72d98c2d271642e1925c40d7526b790a",
+      "task_id": "task-2685711ddbd2",
+      "kind": "blood_worker_report",
+      "created_at": "2026-10-24T14:55:34.531015+00:00",
+      "dataset_version": "265728349d0be76c",
+      "data": {
+        "outcome": "ok",
+        "role": "applicability",
+        "observations": [
+          {
+            "text": "The inspected evidence has population and assay applicability limits.",
+            "refs": [
+              "rowe-2007#summary"
+            ],
+            "system": "ABO",
+            "domain": "uncertainty",
+            "applicability": "This is population evidence rather than an individual prediction.",
+            "competing_explanations": [],
+            "missing_evidence": []
+          }
+        ],
+        "limitations": [
+          "Self-reported phenotypes do not establish genotypes."
+        ],
+        "next_retrieval": "Check population-specific contrasting evidence."
+      },
+      "path_id": null
+    },
+    {
+      "id": "artifact-39797b8a54a444d5a3de42453abb2299",
+      "task_id": "task-e419ce98466c",
+      "kind": "blood_worker_report",
+      "created_at": "2026-10-24T14:55:34.537661+00:00",
+      "dataset_version": "265728349d0be76c",
+      "data": {
+        "outcome": "ok",
+        "role": "mechanism",
+        "observations": [
+          {
+            "text": "The inspected evidence has population and assay applicability limits.",
+            "refs": [
+              "rowe-2007#summary"
+            ],
+            "system": "ABO",
+            "domain": "uncertainty",
+            "applicability": "This is population evidence rather than an individual prediction.",
+            "competing_explanations": [],
+            "missing_evidence": []
+          }
+        ],
+        "limitations": [
+          "Self-reported phenotypes do not establish genotypes."
+        ],
+        "next_retrieval": "Check population-specific contrasting evidence."
+      },
+      "path_id": null
+    },
+    {
+      "id": "artifact-90c5002517a74b468cd8b5accc056941",
+      "task_id": "task-17fced2d69c1",
+      "kind": "blood_worker_report",
+      "created_at": "2026-10-24T14:55:34.545592+00:00",
+      "dataset_version": "265728349d0be76c",
+      "data": {
+        "outcome": "ok",
+        "role": "scenario_a",
+        "observations": [
+          {
+            "text": "The inspected evidence has population and assay applicability limits.",
+            "refs": [
+              "rowe-2007#summary"
+            ],
+            "system": "ABO",
+            "domain": "uncertainty",
+            "applicability": "This is population evidence rather than an individual prediction.",
+            "competing_explanations": [],
+            "missing_evidence": []
+          }
+        ],
+        "limitations": [
+          "Self-reported phenotypes do not establish genotypes."
+        ],
+        "next_retrieval": "Check population-specific contrasting evidence."
+      },
+      "path_id": null
+    },
+    {
+      "id": "artifact-b85a57b6ef6f44ea82502308d74f66d4",
+      "task_id": "task-060fbe87ac99",
+      "kind": "blood_worker_report",
+      "created_at": "2026-10-24T14:55:34.553484+00:00",
+      "dataset_version": "265728349d0be76c",
+      "data": {
+        "outcome": "ok",
+        "role": "scenario_b",
+        "observations": [
+          {
+            "text": "The inspected evidence has population and assay applicability limits.",
+            "refs": [
+              "rowe-2007#summary"
+            ],
+            "system": "ABO",
+            "domain": "uncertainty",
+            "applicability": "This is population evidence rather than an individual prediction.",
+            "competing_explanations": [],
+            "missing_evidence": []
+          }
+        ],
+        "limitations": [
+          "Self-reported phenotypes do not establish genotypes."
+        ],
+        "next_retrieval": "Check population-specific contrasting evidence."
+      },
+      "path_id": null
+    },
+    {
+      "id": "artifact-68d3ed0d167f47b7bd4c3f5dda419d12",
+      "task_id": "task-859a4b9b9918",
+      "kind": "blood_worker_report",
+      "created_at": "2026-10-24T14:55:34.576983+00:00",
+      "dataset_version": "265728349d0be76c",
+      "data": {
+        "outcome": "ok",
+        "role": "verifier",
+        "observations": [
+          {
+            "text": "The inspected evidence has population and assay applicability limits.",
+            "refs": [
+              "rowe-2007#summary"
+            ],
+            "system": "ABO",
+            "domain": "uncertainty",
+            "applicability": "This is population evidence rather than an individual prediction.",
+            "competing_explanations": [],
+            "missing_evidence": []
+          }
+        ],
+        "limitations": [
+          "Self-reported phenotypes do not establish genotypes."
+        ],
+        "next_retrieval": "Check population-specific contrasting evidence."
+      },
+      "path_id": null
+    },
+    {
+      "id": "artifact-efedd26084154c81b9ca1cff5afebf23",
+      "task_id": "task-79a8e88f9928",
+      "kind": "blood_worker_report",
+      "created_at": "2026-10-24T14:55:34.602026+00:00",
+      "dataset_version": "265728349d0be76c",
+      "data": {
+        "outcome": "ok",
+        "role": "reconciliation",
+        "observations": [
+          {
+            "text": "The inspected evidence has population and assay applicability limits.",
+            "refs": [
+              "rowe-2007#summary"
+            ],
+            "system": "ABO",
+            "domain": "uncertainty",
+            "applicability": "This is population evidence rather than an individual prediction.",
+            "competing_explanations": [],
+            "missing_evidence": []
+          }
+        ],
+        "limitations": [
+          "Self-reported phenotypes do not establish genotypes."
+        ],
+        "next_retrieval": "Check population-specific contrasting evidence."
+      },
+      "path_id": null
+    },
+    {
+      "id": "artifact-8a63e2b7c43c486d844c5cfd0b383827",
+      "task_id": "coordinator",
+      "kind": "validate_claims",
+      "created_at": "2026-10-24T14:55:34.616476+00:00",
+      "dataset_version": "265728349d0be76c",
+      "data": {
+        "outcome": "ok",
+        "source_references": "inspected passage IDs checked",
+        "numeric_assertions": "qualitative findings only; structured source statistics retained",
+        "scientific_truth": "requires independent review"
+      },
+      "path_id": null
+    },
+    {
+      "id": "artifact-ae84eeb44bb64f62a6d8c33e0f08f9cf",
+      "task_id": "coordinator",
+      "kind": "research_brief",
+      "created_at": "2026-10-24T14:55:34.620114+00:00",
+      "dataset_version": "265728349d0be76c",
+      "data": {
+        "outcome": "ok",
+        "findings": [
+          {
+            "text": "The current evidence supports reference biology but leaves disease attribution uncertain.",
+            "refs": [
+              "abo-reference#summary"
+            ],
+            "system": "ABO",
+            "domain": "reference biology",
+            "applicability": "This comparison requires source-specific interpretation.",
+            "competing_explanations": [],
+            "missing_evidence": [],
+            "section": "supported differences"
+          },
+          {
+            "text": "The current evidence supports reference biology but leaves disease attribution uncertain.",
+            "refs": [
+              "abo-reference#summary"
+            ],
+            "system": "ABO",
+            "domain": "reference biology",
+            "applicability": "This comparison requires source-specific interpretation.",
+            "competing_explanations": [],
+            "missing_evidence": [],
+            "section": "shared features"
+          },
+          {
+            "text": "The current evidence supports reference biology but leaves disease attribution uncertain.",
+            "refs": [
+              "abo-reference#summary"
+            ],
+            "system": "ABO",
+            "domain": "reference biology",
+            "applicability": "This comparison requires source-specific interpretation.",
+            "competing_explanations": [],
+            "missing_evidence": [],
+            "section": "unknown or unsupported distinctions"
+          },
+          {
+            "text": "The current evidence supports reference biology but leaves disease attribution uncertain.",
+            "refs": [
+              "abo-reference#summary"
+            ],
+            "system": "ABO",
+            "domain": "reference biology",
+            "applicability": "This comparison requires source-specific interpretation.",
+            "competing_explanations": [],
+            "missing_evidence": [],
+            "section": "additional evidence needed"
+          }
+        ],
+        "presenter_summary": "We reviewed reported phenotypes and population evidence, without measuring participants; important distinctions remain uncertain.",
+        "limitations": [
+          "Mechanically checked citations; independent scientific review pending."
+        ]
+      },
+      "path_id": null
+    }
+  ],
+  "findings": [],
+  "reviews": [],
+  "hypotheses": [],
+  "paths": [],
+  "cancel_requested": false,
+  "result": {
+    "findings": [
+      {
+        "text": "The current evidence supports reference biology but leaves disease attribution uncertain.",
+        "refs": [
+          "abo-reference#summary"
+        ],
+        "system": "ABO",
+        "domain": "reference biology",
+        "applicability": "This comparison requires source-specific interpretation.",
+        "competing_explanations": [],
+        "missing_evidence": [],
+        "section": "supported differences"
+      },
+      {
+        "text": "The current evidence supports reference biology but leaves disease attribution uncertain.",
+        "refs": [
+          "abo-reference#summary"
+        ],
+        "system": "ABO",
+        "domain": "reference biology",
+        "applicability": "This comparison requires source-specific interpretation.",
+        "competing_explanations": [],
+        "missing_evidence": [],
+        "section": "shared features"
+      },
+      {
+        "text": "The current evidence supports reference biology but leaves disease attribution uncertain.",
+        "refs": [
+          "abo-reference#summary"
+        ],
+        "system": "ABO",
+        "domain": "reference biology",
+        "applicability": "This comparison requires source-specific interpretation.",
+        "competing_explanations": [],
+        "missing_evidence": [],
+        "section": "unknown or unsupported distinctions"
+      },
+      {
+        "text": "The current evidence supports reference biology but leaves disease attribution uncertain.",
+        "refs": [
+          "abo-reference#summary"
+        ],
+        "system": "ABO",
+        "domain": "reference biology",
+        "applicability": "This comparison requires source-specific interpretation.",
+        "competing_explanations": [],
+        "missing_evidence": [],
+        "section": "additional evidence needed"
+      }
+    ],
+    "presenter_summary": "We reviewed reported phenotypes and population evidence, without measuring participants; important distinctions remain uncertain."
+  },
+  "visual": {
+    "rosetting_supported": true,
+    "different_behavior_supported": false
+  },
+  "budget": {
+    "model_requests": 10,
+    "tool_calls": 1,
+    "spawned_tasks": 6,
+    "max_model_requests": 20,
+    "max_tool_calls": 40,
+    "max_spawned_tasks": 12,
+    "cost_usd": 0,
+    "cost_status": "provider_reported",
+    "usage": [
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      },
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      },
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      },
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      },
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      },
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      },
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      },
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      },
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      },
+      {
+        "provider": "test",
+        "model": "scripted",
+        "cost_usd": 0
+      }
+    ]
+  },
+  "id": "research-a3fd7e4ab1984a7a8a6f3943eab037ef",
+  "revision": 88,
+  "lease_owner": "worker-84fa199d07c0423dae233885ec7da822",
+  "lease_until": 1792853764.4923918,
+  "finished_at": "2026-10-24T14:55:34.631091+00:00"
+}

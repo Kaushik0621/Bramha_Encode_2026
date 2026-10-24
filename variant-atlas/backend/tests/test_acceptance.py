@@ -259,3 +259,18 @@ def test_new_frontend_origin_allowed_by_cors(client):
     response=client.options('/api/investigations',headers={'Origin':'http://localhost:8500','Access-Control-Request-Method':'POST','Access-Control-Request-Headers':'content-type'})
     assert response.status_code==200
     assert response.headers['access-control-allow-origin']=='http://localhost:8500'
+
+
+def test_google_health_reports_configured_model_without_calling_provider(tmp_path, monkeypatch):
+    def forbidden(*args, **kwargs):
+        raise AssertionError('Health inspection must not invoke a model')
+    monkeypatch.setattr('app.providers.actions.ActionProvider.generate_action', forbidden)
+    configured = Settings(local_data_dir=tmp_path, llm_provider='google', google_api_key='private-google-test-key', worker_mode='external')
+    with TestClient(create_app(configured)) as c:
+        response = c.get('/api/health')
+        assert response.status_code == 200
+        assert response.json()['llm_configured'] is True
+        assert response.json()['llm_provider'] == 'google'
+        assert response.json()['llm_model'] == 'gemini-4-argon'
+        assert 'private-google-test-key' not in response.text
+        assert c.get('/api/capabilities').json()['argon']['verified'] is False

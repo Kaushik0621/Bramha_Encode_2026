@@ -1,0 +1,10 @@
+.bramha-brand{display:inline-flex;flex-direction:column;align-items:center;gap:10px;max-width:100%;width:199px;line-height:1}
+.bramha-brand .bramha-logo-panel{display:block;width:100%;padding:10px 9px;background:#f7f3eb;border:1px solid #d8cbb9;border-radius:8px;line-height:0;box-shadow:0 3px 15px #0001}
+.bramha-logo-panel svg{display:block;width:100%;height:auto;aspect-ratio:1869/765}
+.bramha-brand .bramha-logo-caption{display:block;font:8px/1.4 ui-monospace,SFMono-Regular,monospace;letter-spacing:.16em;color:#9fb6bf;white-space:normal;text-align:center;margin:0}
+.bramha-brand-compact{width:165px;gap:7px}.bramha-brand-compact .bramha-logo-panel{padding:7px 8px;border-radius:6px}.bramha-brand-compact .bramha-logo-caption{font-size:7px;letter-spacing:.1em}
+.pw-app .pw-brand{display:flex;justify-content:center;gap:0;font-size:inherit;text-decoration:none}.pw-app .pw-brand .bramha-brand{width:100%}.pw-app .pw-brand .bramha-logo-caption{font-size:8px;letter-spacing:.14em;line-height:1.5;margin:0}
+.ra-app .ra-brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}.ra-app .ra-brand .bramha-logo-caption{font-size:7px;letter-spacing:.08em;margin:0}
+.app-shell>.topbar .brand{min-width:165px;display:flex;text-decoration:none;justify-content:center}
+@media(max-width:1250px){.pw-app .pw-brand .bramha-logo-caption{font-size:7px}}
+@media(max-width:650px){.bramha-brand-compact{width:143px}.app-shell>.topbar .brand{min-width:143px}.bramha-brand-compact .bramha-logo-caption{font-size:6px}.ra-app .ra-header{gap:12px;flex-wrap:wrap;height:auto;min-height:85px}.ra-app .ra-brand .bramha-logo-caption{font-size:6px}.pw-sidebar .bramha-brand{width:199px}}

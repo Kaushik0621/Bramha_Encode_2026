@@ -1,0 +1,545 @@
+{
+  "run_id": "research-4b57327c54fa4103a4532fa1a2dbe3ea",
+  "status": "completed_with_limitations",
+  "provider": "openrouter",
+  "model": "x-ai/grok-4.3",
+  "interpretation": {
+    "a": {
+      "abo": "O",
+      "rhd": "positive",
+      "provenance": "self-reported"
+    },
+    "b": {
+      "abo": "B",
+      "rhd": "negative",
+      "provenance": "self-reported"
+    },
+    "abo_differs": true,
+    "rhd_differs": true,
+    "context": "severe P. falciparum malaria",
+    "question": "Compare O positive and B negative in severe Plasmodium falciparum malaria. Investigate ABO and RhD separately, distinguish rosetting from invasion, reconcile contrasting evidence and retain unsupported distinctions.",
+    "focus": "molecular mechanism",
+    "scope": "Literature-grounded comparison of reported phenotypes; no participant testing or individual predictions."
+  },
+  "budget": {
+    "model_requests": 11,
+    "tool_calls": 1,
+    "spawned_tasks": 6,
+    "max_model_requests": 20,
+    "max_tool_calls": 40,
+    "max_spawned_tasks": 12,
+    "cost_usd": 0.094795,
+    "cost_status": "provider_reported",
+    "usage": [
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 3640,
+          "completion_tokens": 747,
+          "total_tokens": 4387,
+          "cost": 0.0062831,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0062831,
+            "upstream_inference_prompt_cost": 0.0044156,
+            "upstream_inference_completions_cost": 0.0018675
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 525,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0062831,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 3025,
+          "completion_tokens": 947,
+          "total_tokens": 3972,
+          "cost": 0.00574555,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 384,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00574555,
+            "upstream_inference_prompt_cost": 0.00337805,
+            "upstream_inference_completions_cost": 0.0023675
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 430,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00574555,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 3020,
+          "completion_tokens": 999,
+          "total_tokens": 4019,
+          "cost": 0.0061381,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0061381,
+            "upstream_inference_prompt_cost": 0.0036406,
+            "upstream_inference_completions_cost": 0.0024975
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 464,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0061381,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 3025,
+          "completion_tokens": 1220,
+          "total_tokens": 4245,
+          "cost": 0.00669685,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00669685,
+            "upstream_inference_prompt_cost": 0.00364685,
+            "upstream_inference_completions_cost": 0.00305
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 785,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00669685,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 3021,
+          "completion_tokens": 1196,
+          "total_tokens": 4217,
+          "cost": 0.00663185,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00663185,
+            "upstream_inference_prompt_cost": 0.00364185,
+            "upstream_inference_completions_cost": 0.00299
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 516,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00663185,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6851,
+          "completion_tokens": 448,
+          "total_tokens": 7299,
+          "cost": 0.00954935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00954935,
+            "upstream_inference_prompt_cost": 0.00842935,
+            "upstream_inference_completions_cost": 0.00112
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 321,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00954935,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 5600,
+          "completion_tokens": 775,
+          "total_tokens": 6375,
+          "cost": 0.0088031,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0088031,
+            "upstream_inference_prompt_cost": 0.0068656,
+            "upstream_inference_completions_cost": 0.0019375
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 364,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0088031,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 7624,
+          "completion_tokens": 496,
+          "total_tokens": 8120,
+          "cost": 0.0106356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0106356,
+            "upstream_inference_prompt_cost": 0.0093956,
+            "upstream_inference_completions_cost": 0.00124
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 386,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0106356,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 6157,
+          "completion_tokens": 1047,
+          "total_tokens": 7204,
+          "cost": 0.01017935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.01017935,
+            "upstream_inference_prompt_cost": 0.00756185,
+            "upstream_inference_completions_cost": 0.0026175
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 392,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.01017935,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 8583,
+          "completion_tokens": 834,
+          "total_tokens": 9417,
+          "cost": 0.01120095,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1536,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.01120095,
+            "upstream_inference_prompt_cost": 0.00911595,
+            "upstream_inference_completions_cost": 0.002085
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 362,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.01120095,
+        "background": false
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 8696,
+          "completion_tokens": 932,
+          "total_tokens": 9628,
+          "cost": 0.0129312,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0129312,
+            "upstream_inference_prompt_cost": 0.0106012,
+            "upstream_inference_completions_cost": 0.00233
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 346,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0129312,
+        "background": false
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "coordinator",
+      "role": "coordinator",
+      "question": "Compare O positive and B negative in severe Plasmodium falciparum malaria. Investigate ABO and RhD separately, distinguish rosetting from invasion, reconcile contrasting evidence and retain unsupported distinctions.",
+      "allowed_tools": [
+        "search_evidence",
+        "read_shared_evidence",
+        "spawn_scoped_workers",
+        "validate_claims"
+      ],
+      "depth": 0,
+      "status": "completed",
+      "input_artifact_ids": [],
+      "parent_task_id": null,
+      "started_at": "2026-10-24T15:02:53.356906+00:00",
+      "finished_at": "2026-10-24T15:03:56.985810+00:00"
+    },
+    {
+      "id": "task-3fe717e29b18",
+      "role": "scenario_a",
+      "question": "Evaluate reported O positive phenotype associations with severe P. falciparum malaria using the provided passages, separating ABO carbohydrate effects from RhD protein effects and noting rosetting distinctions.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-95fad1bd333448d394103160ff35b84f"
+      ],
+      "started_at": "2026-10-24T15:03:02.014607+00:00",
+      "finished_at": "2026-10-24T15:03:12.844257+00:00"
+    },
+    {
+      "id": "task-266f4f5c6738",
+      "role": "scenario_b",
+      "question": "Evaluate reported B negative phenotype associations with severe P. falciparum malaria using the provided passages, separating ABO carbohydrate effects from RhD protein effects and noting rosetting distinctions.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-95fad1bd333448d394103160ff35b84f"
+      ],
+      "started_at": "2026-10-24T15:03:02.033807+00:00",
+      "finished_at": "2026-10-24T15:03:10.730538+00:00"
+    },
+    {
+      "id": "task-f9e10d1d99f9",
+      "role": "mechanism",
+      "question": "Examine molecular mechanisms in the corpus for ABO and RhD in malaria context, distinguishing rosetting from invasion and reference biology from disease associations.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-95fad1bd333448d394103160ff35b84f"
+      ],
+      "started_at": "2026-10-24T15:03:02.043089+00:00",
+      "finished_at": "2026-10-24T15:03:13.337763+00:00"
+    },
+    {
+      "id": "task-085901fbd819",
+      "role": "applicability",
+      "question": "Assess applicability of the evidence to O positive versus B negative comparison in severe malaria, identifying supported versus unsupported distinctions and missing evidence.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-95fad1bd333448d394103160ff35b84f"
+      ],
+      "started_at": "2026-10-24T15:03:02.052215+00:00",
+      "finished_at": "2026-10-24T15:03:11.318713+00:00"
+    },
+    {
+      "id": "task-2db98ab449c2",
+      "role": "verifier",
+      "question": "Verify consistency of scenario_a, scenario_b, mechanism and applicability observations against exact passage_ids and retained unsupported distinctions.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-95fad1bd333448d394103160ff35b84f",
+        "artifact-066c8f2da19b41cfb1fc518001f36967",
+        "artifact-c9282229f3124e6db8af7b8eb98107cb",
+        "artifact-1bd2dcbd285d419daba8289e0e39a4a8",
+        "artifact-5ed6a501013442ea99c9be235e5c3053"
+      ],
+      "started_at": "2026-10-24T15:03:18.094869+00:00",
+      "finished_at": "2026-10-24T15:03:25.634824+00:00"
+    },
+    {
+      "id": "task-d46fac9b4ede",
+      "role": "reconciliation",
+      "question": "Reconcile scenario_a, scenario_b, mechanism and applicability observations against exact passage_ids, retaining unsupported distinctions between ABO carbohydrate and RhD protein effects and between populations for O positive versus B negative in severe P. falciparum malaria.",
+      "status": "completed",
+      "parent_task_id": "coordinator",
+      "depth": 1,
+      "allowed_tools": [
+        "read_shared_evidence"
+      ],
+      "input_artifact_ids": [
+        "artifact-95fad1bd333448d394103160ff35b84f",
+        "artifact-066c8f2da19b41cfb1fc518001f36967",
+        "artifact-c9282229f3124e6db8af7b8eb98107cb",
+        "artifact-1bd2dcbd285d419daba8289e0e39a4a8",
+        "artifact-5ed6a501013442ea99c9be235e5c3053",
+        "artifact-2e3792c10775438e839dd38ae91f04b4",
+        "artifact-fa4fe7dbd48440f788f4dfe10248cd06"
+      ],
+      "started_at": "2026-10-24T15:03:31.387908+00:00",
+      "finished_at": "2026-10-24T15:03:41.209395+00:00"
+    }
+  ],
+  "result": {
+    "findings": [
+      {
+        "text": "ABO carbohydrates are surface modifications distinct from RhD transmembrane protein; reported O positive versus B negative labels differ in both without resolving genotypes.",
+        "refs": [
+          "abo-reference#summary",
+          "rhd-reference#summary"
+        ],
+        "system": "shared",
+        "domain": "reference biology",
+        "applicability": "Applies to separation of ABO from RhD in phenotype comparisons for severe P. falciparum malaria.",
+        "competing_explanations": [],
+        "missing_evidence": [],
+        "section": "supported differences"
+      },
+      {
+        "text": "Group O shows association with lower odds of severe malaria versus pooled non-O via reduced rosetting; rosetting is adhesion not invasion.",
+        "refs": [
+          "rowe-2007#summary"
+        ],
+        "system": "ABO",
+        "domain": "malaria",
+        "applicability": "Applies to O versus pooled non-O contrast only.",
+        "competing_explanations": [],
+        "missing_evidence": [],
+        "section": "shared features"
+      },
+      {
+        "text": "No between-scenario difference is established for O positive versus B negative; Kenyan genotype assays qualify interchangeability of non-O groups; Indian study shows population-specific B association; no RhD malaria association established.",
+        "refs": [
+          "kenya-2023#summary",
+          "india-2011#summary",
+          "rhd-reference#summary"
+        ],
+        "system": "ABO",
+        "domain": "malaria",
+        "applicability": "Retains unsupported distinctions between ABO carbohydrate and RhD protein effects and between populations.",
+        "competing_explanations": [],
+        "missing_evidence": [],
+        "section": "unknown or unsupported distinctions"
+      },
+      {
+        "text": "No pairwise O versus B malaria outcome data or RhD-specific malaria passages supplied in corpus.",
+        "refs": [
+          "rowe-2007#summary",
+          "india-2011#summary"
+        ],
+        "system": "ABO",
+        "domain": "uncertainty",
+        "applicability": "Applies to all phenotype comparisons; revise or abstain if further distinction required.",
+        "competing_explanations": [],
+        "missing_evidence": [
+          "RhD malaria data",
+          "O versus B pairwise contrast"
+        ],
+        "section": "additional evidence needed"
+      }
+    ],
+    "presenter_summary": "All reviews complete. Supported distinctions limited to reference biology separation of ABO and RhD; malaria associations remain pooled or population-specific with no supported pairwise or RhD effects. All four sections populated from supplied passages."
+  },
+  "error": null,
+  "visual": {
+    "rosetting_supported": true,
+    "different_behavior_supported": false
+  }
+}

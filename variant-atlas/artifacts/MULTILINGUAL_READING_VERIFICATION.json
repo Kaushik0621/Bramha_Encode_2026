@@ -1,0 +1,12 @@
+{
+  "paper_id": "3af4b85b239f325c3f864b47444cb4e0fd7b071776b4de055bc7af39a1fc9f32",
+  "reading_id": "bf255f078e69b22795079e08",
+  "language": "English",
+  "provider": "openrouter",
+  "model": "x-ai/grok-4.3",
+  "verified_original_quotes": 2,
+  "covered_chunks": 1,
+  "total_chunks": 1,
+  "summary": "This is a synthetic test note, not a published paper. A weak PTEN activity may be observed with preserved abundance. These observations do not demonstrate causality. Results must be validated experimentally.",
+  "synthetic_verification_note": true
+}

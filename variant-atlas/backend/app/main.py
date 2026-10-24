@@ -60,12 +60,25 @@ def create_app(settings: Settings | None = None, repository_override=None):
             if config.worker_mode=='embedded':await app.state.research_engine.launch()
         except Exception as exc:
             app.state.research_error=str(exc) if isinstance(exc,(RepositoryError,FileNotFoundError,ValueError)) else 'Real-data setup failed; acquire and seed audited data.'
+        app.state.blood_engine=None
+        app.state.blood_store=None
+        app.state.blood_error=None
+        try:
+            from .blood.engine import BloodEngine
+            from .repositories.research import ResearchStore
+            app.state.blood_store=ResearchStore(config,workspace_id='blood-group')
+            app.state.blood_engine=BloodEngine(app.state.blood_store,config)
+            if config.worker_mode=='embedded':await app.state.blood_engine.launch()
+        except Exception as exc:
+            app.state.blood_error=str(exc)
         yield
+        if app.state.blood_engine:await app.state.blood_engine.shutdown()
+        if app.state.blood_store:app.state.blood_store.close()
         if app.state.research_engine:await app.state.research_engine.shutdown()
         if app.state.research_store:app.state.research_store.close()
         if app.state.runs: await app.state.runs.shutdown()
         if app.state.repository: app.state.repository.close()
-    app=FastAPI(title='Variant Atlas API',version='0.1.0',lifespan=lifespan)
+    app=FastAPI(title='Bramha Atlas API',version='0.1.0',lifespan=lifespan)
     @app.middleware('http')
     async def local_only(request,call_next):
         if request.client and request.client.host not in ('127.0.0.1','::1','testclient'):
@@ -97,9 +110,9 @@ def create_app(settings: Settings | None = None, repository_override=None):
                 else:repo().workspace()
             except Exception: error='Configured storage cannot be read. No fallback was used.'
         if error: response.status_code=503
-        configured=config.llm_provider=='mock' or (config.llm_provider=='openrouter' and bool(config.openrouter_api_key and config.openrouter_model))
+        configured=config.llm_provider=='mock' or (config.llm_provider=='openrouter' and bool(config.openrouter_api_key and config.openrouter_model)) or (config.llm_provider in ('google','gemini') and bool(config.google_api_key))
         return Health(status='error' if error else 'ok',storage=config.data_backend,storage_ready=not bool(error),storage_error=error,
-            llm_provider=config.llm_provider,llm_model=config.openrouter_model if config.llm_provider=='openrouter' else 'fixture-extractive-v1' if config.llm_provider=='mock' else None,llm_configured=configured)
+            llm_provider=config.llm_provider,llm_model=config.openrouter_model if config.llm_provider=='openrouter' else 'fixture-extractive-v1' if config.llm_provider=='mock' else config.argon_model if config.llm_provider in ('google','gemini') else None,llm_configured=configured)
     @app.get('/api/workspace',response_model=Workspace)
     def workspace(): return repo().workspace()
     @app.post('/api/analyze',response_model=Analysis)
@@ -194,6 +207,10 @@ def create_app(settings: Settings | None = None, repository_override=None):
     from .research_api import router
     research_router=router(app,config)
     app.include_router(research_router)
+    from .blood.api import router as blood_router
+    app.include_router(blood_router(app))
+    from .portfolio import router as portfolio_router
+    app.include_router(portfolio_router(app,config))
     def research_endpoint(path,method):
         return next(route.endpoint for route in research_router.routes if route.path==path and method in getattr(route,'methods',set()))
     return app
