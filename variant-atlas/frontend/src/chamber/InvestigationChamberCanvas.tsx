@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import type {ExecutionState,RunSnapshot} from './types';
 import {kindLabel,terminal} from './types';
 const POS:Record<string,[number,number,number]>={coordinator:[0,3.3,-.5],'data-retrieval':[-4.8,1,.2],'assay-analysis':[-1.6,1,-.4],'structure-mapping':[1.6,1,.4],'evidence-review':[4.8,1,-.2],'brief-synthesis':[-2.5,-1.45,.5],verification:[2.5,-1.45,-.3],'dock-store':[-7.7,-1.2,-.3],'dock-provider':[7.7,-1.2,-.3],'output-tray':[0,-3.5,.7]};
-const COLORS:Record<string,string>={queued:'#557183',running:'#8cdbeb',completed:'#75cebd',failed:'#da8c80',cancelled:'#8b929a',skipped:'#7d8f9e',needs_review:'#dfb273'};
+const COLORS:Record<string,string>={queued:'#606c82',running:'#92e5dd',completed:'#68dbd0',failed:'#ebbd70',cancelled:'#7f8da6',skipped:'#7988a2',needs_review:'#e9ba69'};
 const symbol=(status:string)=>({queued:'○',running:'◉',completed:'✓',failed:'!',cancelled:'■',skipped:'–',needs_review:'△'}[status]||'○');
 class Boundary extends Component<{children:ReactNode;onFail:()=>void},{failed:boolean}>{state={failed:false};static getDerivedStateFromError(){return {failed:true};}componentDidCatch(){this.props.onFail();}render(){return this.state.failed?null:this.props.children;}}
 function supportsWebGL(){try{return !!document.createElement('canvas').getContext('webgl2');}catch{return false;}}
@@ -24,15 +24,15 @@ function Scene({run,state,selected,onSelect,motion,reduced,reset,labels}:{reset:
   });
   const edges=useMemo(()=>run.workers.flatMap(w=>w.depends_on.map(d=>({from:d,to:w.id}))),[run.workers]);
   return <>
-    <ambientLight intensity={1.1}/><directionalLight position={[0,12,8]} intensity={2}/><directionalLight position={[-10,0,0]} color="#6fe3e2" intensity={.8}/>
-    <mesh position={[0,0,-1.8]}><boxGeometry args={[18.7,9.2,5.8]}/><meshBasicMaterial color="#2c6876" transparent opacity={.035} depthWrite={false} side={THREE.BackSide}/><Edges color="#416f81" transparent opacity={.4}/></mesh>
-    <mesh position={[0,-4.65,-.4]} rotation={[-Math.PI/2,0,0]}><planeGeometry args={[18.7,7.8]}/><meshStandardMaterial color="#12343e" transparent opacity={.3}/></mesh>
-    <gridHelper args={[18,18,'#335965','#203e4b']} position={[0,-4.64,-.4]}/>
-    {edges.map(e=><Line key={e.from+e.to} points={[POS[e.from],POS[e.to]]} color={selected===e.from||selected===e.to?'#86c5c3':'#355461'} lineWidth={selected===e.from||selected===e.to?1.3:.7} onClick={event=>{const handoff=state.handoffs.filter(h=>h.sender===e.from&&h.recipient===e.to).at(-1);if(handoff){event.stopPropagation();onSelect(handoff.event_id);}}} transparent opacity={selected===e.from||selected===e.to?.7:.38}/>)}
-    <Line points={[POS.coordinator,POS['data-retrieval']]} color="#456f7c" lineWidth={.7} transparent opacity={.4}/>
-    <Line points={[POS.verification,POS['output-tray']]} color="#486963" lineWidth={1}/>
-    {Object.entries(POS).map(([id,position])=>{const ws=state.workers[id];const status=ws?.warnings.length&&ws.status==='completed'?'needs_review':ws?.status||'queued';const color=COLORS[status]||COLORS.queued;return <group key={id} position={position}><mesh ref={m=>{if(m)meshes.current.set(id,m);else meshes.current.delete(id);}} onClick={e=>{e.stopPropagation();onSelect(id);}}><boxGeometry args={[id.startsWith('dock')?1.55:id==='output-tray'?4.2:2.35,.65,.9]}/><meshStandardMaterial color={id==='output-tray'?'#194942':'#15333f'} emissive={color} emissiveIntensity={.12} metalness={.3} roughness={.45} transparent opacity={.85}/><Edges color={selected===id?'#c6f7ee':color}/></mesh><mesh position={[0,-.42,0]}><boxGeometry args={[id==='output-tray'?4.7:2.8,.06,1.25]}/><meshBasicMaterial color={color} transparent opacity={selected===id?.22:.09}/></mesh></group>;})}
-    <mesh ref={packet} visible={false}><sphereGeometry args={[.095,12,8]}/><meshBasicMaterial color="#adeee1"/></mesh>
+    <ambientLight intensity={1.1}/><directionalLight position={[0,12,8]} intensity={2}/><directionalLight position={[-10,0,0]} color="#74ded4" intensity={.8}/>
+    <mesh position={[0,0,-1.8]}><boxGeometry args={[18.7,9.2,5.8]}/><meshBasicMaterial color="#1f8379" transparent opacity={.035} depthWrite={false} side={THREE.BackSide}/><Edges color="#259d91" transparent opacity={.4}/></mesh>
+    <mesh position={[0,-4.65,-.4]} rotation={[-Math.PI/2,0,0]}><planeGeometry args={[18.7,7.8]}/><meshStandardMaterial color="#1a2436" transparent opacity={.3}/></mesh>
+    <gridHelper args={[18,18,'#1d7b72','#145750']} position={[0,-4.64,-.4]}/>
+    {edges.map(e=><Line key={e.from+e.to} points={[POS[e.from],POS[e.to]]} color={selected===e.from||selected===e.to?'#6eddd2':'#1c7a70'} lineWidth={selected===e.from||selected===e.to?1.3:.7} onClick={event=>{const handoff=state.handoffs.filter(h=>h.sender===e.from&&h.recipient===e.to).at(-1);if(handoff){event.stopPropagation();onSelect(handoff.event_id);}}} transparent opacity={selected===e.from||selected===e.to?.7:.38}/>)}
+    <Line points={[POS.coordinator,POS['data-retrieval']]} color="#259c90" lineWidth={.7} transparent opacity={.4}/>
+    <Line points={[POS.verification,POS['output-tray']]} color="#4f596b" lineWidth={1}/>
+    {Object.entries(POS).map(([id,position])=>{const ws=state.workers[id];const status=ws?.warnings.length&&ws.status==='completed'?'needs_review':ws?.status||'queued';const color=COLORS[status]||COLORS.queued;return <group key={id} position={position}><mesh ref={m=>{if(m)meshes.current.set(id,m);else meshes.current.delete(id);}} onClick={e=>{e.stopPropagation();onSelect(id);}}><boxGeometry args={[id.startsWith('dock')?1.55:id==='output-tray'?4.2:2.35,.65,.9]}/><meshStandardMaterial color={id==='output-tray'?'#2c313b':'#1b2639'} emissive={color} emissiveIntensity={.12} metalness={.3} roughness={.45} transparent opacity={.85}/><Edges color={selected===id?'#acece5':color}/></mesh><mesh position={[0,-.42,0]}><boxGeometry args={[id==='output-tray'?4.7:2.8,.06,1.25]}/><meshBasicMaterial color={color} transparent opacity={selected===id?.22:.09}/></mesh></group>;})}
+    <mesh ref={packet} visible={false}><sphereGeometry args={[.095,12,8]}/><meshBasicMaterial color="#acece5"/></mesh>
     <OrbitControls ref={controls} makeDefault enablePan={false} minDistance={18} maxDistance={30} minAzimuthAngle={-.2} maxAzimuthAngle={.2} minPolarAngle={1.2} maxPolarAngle={1.56} enableDamping={!reduced}/>
   </>;
 }

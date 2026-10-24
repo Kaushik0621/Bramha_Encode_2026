@@ -4,14 +4,38 @@ The same revision-controlled state is used by HTTP and an independent leased job
 worker. Process memory is never used as the scientific run's source of truth.
 """
 import copy
-import fcntl
 import json
+import os
 import re
 import time
 from contextlib import contextmanager
 from pymongo import MongoClient, ASCENDING, ReturnDocument
 from .local import LocalRepository
 from . import RepositoryError
+
+if os.name == "nt":
+    import msvcrt
+
+    def _lock(f):
+        f.seek(0)
+        while True:
+            try:
+                msvcrt.locking(f.fileno(), msvcrt.LK_LOCK, 1)
+                return
+            except OSError:
+                time.sleep(0.05)
+
+    def _unlock(f):
+        f.seek(0)
+        msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+else:
+    import fcntl
+
+    def _lock(f):
+        fcntl.flock(f, fcntl.LOCK_EX)
+
+    def _unlock(f):
+        fcntl.flock(f, fcntl.LOCK_UN)
 
 COLLECTIONS = [
     "workspaces",
@@ -98,11 +122,11 @@ class ResearchStore:
     def locked(self, name):
         self.root.mkdir(parents=True, exist_ok=True)
         with open(self.root / (name + ".lock"), "a") as f:
-            fcntl.flock(f, fcntl.LOCK_EX)
+            _lock(f)
             try:
                 yield
             finally:
-                fcntl.flock(f, fcntl.LOCK_UN)
+                _unlock(f)
 
     def get(self, run_id):
         if not re.fullmatch(r"research-[a-f0-9]{32}", run_id):

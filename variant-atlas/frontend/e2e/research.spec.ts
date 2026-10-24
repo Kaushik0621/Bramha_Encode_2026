@@ -127,7 +127,7 @@ test('residue selection and zoom open grounded visual research with alternatives
  await page.locator('.ra-mol-target canvas').first().hover();await page.mouse.wheel(0,-200);
  await expect(panel).toBeVisible();await expect(panel).toContainText('FOCAL REGION');
  await page.getByRole('button',{name:'Close residue research assistant'}).click();
- await page.getByRole('link',{name:'← Variant Atlas · synthetic workspace'}).click();
+ await page.getByRole('combobox',{name:'Workspace'}).selectOption('fixture');
  await expect(page.getByRole('heading',{name:'One sequence. Different profiles.'})).toBeVisible();
  expect(errors).toEqual([]);
 });
@@ -136,6 +136,7 @@ test('synthetic companion explains excluded profiles, compares alternatives and 
  await page.goto('/?workspace=fixture');
  await expect(page.getByText('5 included',{exact:true})).toBeVisible();
  await page.getByTestId('row-demo-v03').getByRole('button').click();
+ await page.getByRole('button',{name:/with the research companion/}).click();
  const panel=page.getByRole('dialog',{name:'Synthetic research companion'});
  await expect(panel).toBeVisible();await expect(panel).toContainText('Outside your current filter');
  await panel.getByLabel('Compare synthetic substitution').selectOption('demo-v02');
