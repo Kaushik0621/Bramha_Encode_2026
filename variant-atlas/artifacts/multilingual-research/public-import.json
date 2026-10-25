@@ -1,0 +1,129 @@
+{
+  "kind": "multilingual_import",
+  "revision": 10,
+  "status": "completed",
+  "created_at": "2026-10-25T07:07:24.082425+00:00",
+  "query": "cancer OR genetic OR mutation",
+  "languages": [
+    "zh",
+    "ja",
+    "ru",
+    "es",
+    "pt",
+    "fr",
+    "de",
+    "ko"
+  ],
+  "per_language": 3,
+  "save_to_library": true,
+  "topics": [
+    "zh",
+    "ja",
+    "ru",
+    "es",
+    "pt",
+    "fr",
+    "de",
+    "ko"
+  ],
+  "completed_topics": [
+    "Chinese",
+    "Japanese",
+    "Russian",
+    "Spanish",
+    "Portuguese",
+    "French",
+    "German",
+    "Korean"
+  ],
+  "results": [
+    {
+      "language": "zh",
+      "indexed": 3,
+      "native": [
+        "study-c9e9cab499f0333500a77235",
+        "study-2ac08d1e99b7b1ac1de92412",
+        "study-db200c68dd3d8f3d6abe433a"
+      ],
+      "missing_native": []
+    },
+    {
+      "language": "ja",
+      "indexed": 2,
+      "native": [
+        "study-4905e9ec454df25aac0f1cca",
+        "study-a6a93d410aceab020655b19c"
+      ],
+      "missing_native": [
+        "https://www.jstage.jst.go.jp/article/happyokai/2/0/2_44/_article/-char/ja/"
+      ]
+    },
+    {
+      "language": "ru",
+      "indexed": 3,
+      "native": [
+        "study-0986c37b8773dbbb58711a17",
+        "study-7bca28351860772ae6995283",
+        "study-a3203264434ffab695118217"
+      ],
+      "missing_native": []
+    },
+    {
+      "language": "es",
+      "indexed": 3,
+      "native": [
+        "study-6e4297e2a9bc85aca39b0e72",
+        "study-6f9fe917a7617f8e1b7928be",
+        "study-8bb44b35123286635420231b"
+      ],
+      "missing_native": []
+    },
+    {
+      "language": "pt",
+      "indexed": 3,
+      "native": [
+        "study-0ab24191c32c2e810b604fa9",
+        "study-92ff087048fa3acde2614d47",
+        "study-6c148f6d81e50633495f7bb3"
+      ],
+      "missing_native": []
+    },
+    {
+      "language": "fr",
+      "indexed": 3,
+      "native": [
+        "study-845a3df42192bd3ce3c91434"
+      ],
+      "missing_native": [
+        "study-879e7e3cdb96f318d88fbfe7",
+        "study-cff578b9945e72a3943799a2"
+      ]
+    },
+    {
+      "language": "de",
+      "indexed": 3,
+      "native": [
+        "study-578aaa14012ffc488754ecfd",
+        "study-6d804801f7cb2020a5dca62a",
+        "study-d52216b98a6afb230f17b01c"
+      ],
+      "missing_native": []
+    },
+    {
+      "language": "ko",
+      "indexed": 3,
+      "native": [
+        "study-5062ebaf05414bf50afb0174",
+        "study-7a516de3c22bd2471a7da91c"
+      ],
+      "missing_native": [
+        "study-baef3d9042828220263a29c1"
+      ]
+    }
+  ],
+  "last_action": "Acquired publisher-labelled original-language abstracts; no model called.",
+  "id": "multilingual-701bac09d99d412e86acd65a9dd392d2",
+  "updated_at": "2026-10-25T07:08:09.454241+00:00",
+  "finished_at": "2026-10-25T07:08:09.567553+00:00",
+  "native_studies": 20
+}

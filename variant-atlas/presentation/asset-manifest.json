@@ -1,0 +1,316 @@
+{
+  "files": [
+    {
+      "path": "3D-diagrams-preview.png",
+      "bytes": 323787,
+      "sha256": "793a35a29b14109d53bb80e0ab6accb82cccf654913f4e54bb704a00c328b8b2"
+    },
+    {
+      "path": "Bramha-Atlas-Pitch.pdf",
+      "bytes": 2968904,
+      "sha256": "edcc6db4c377d9be88c613daa055a2459b28a6cd6806c4f7d52687a31eab059b"
+    },
+    {
+      "path": "Bramha-Atlas-Pitch.pptx",
+      "bytes": 1267829,
+      "sha256": "38090019358b44c1dfbc545a1da6eb4d8344c56f443bc5383a81d71ae8852f32"
+    },
+    {
+      "path": "DEMO.md",
+      "bytes": 4689,
+      "sha256": "87859cb90472ec81bf5c74cf4a1530917f8989ece1d9ed383c737d57343cfdd7"
+    },
+    {
+      "path": "HANDOFF.txt",
+      "bytes": 5206,
+      "sha256": "4e0d42e95ab5d73252b41c5758e108bcde095dc70b470df7f472b6b6f37353bb"
+    },
+    {
+      "path": "Market-Value-Model.xlsx",
+      "bytes": 9307,
+      "sha256": "57762d63c5fe90b5b204cf4ec60c22dba47b60a92206de4caf1d801bbff83774"
+    },
+    {
+      "path": "assets/agent-network.png",
+      "bytes": 78754,
+      "sha256": "a7e0fd251c6d29d386b774e86b99c2dd5c32813e3e5fb82494012b3119a3a166"
+    },
+    {
+      "path": "assets/demo-baseline-controls.png",
+      "bytes": 184516,
+      "sha256": "851977c9399dc647d46df52eec60b128dcb5d50d73324a830c169187bb247e94"
+    },
+    {
+      "path": "assets/demo-baseline-result.png",
+      "bytes": 235377,
+      "sha256": "05d76b6ec990d604f09f24b02d772ec161f7ab5599f58b3129b1481e78bb077f"
+    },
+    {
+      "path": "assets/demo-entry-mobile-dark.png",
+      "bytes": 37003,
+      "sha256": "22b4e7e4333fc768e5dd9a680979ed67ffd6b3137d79725f14bc43906a63af2c"
+    },
+    {
+      "path": "assets/demo-entry-mobile.png",
+      "bytes": 38288,
+      "sha256": "d2d8fde51ee077fff9195e302b934c44cdfab5876481fc2905f164fc21803595"
+    },
+    {
+      "path": "assets/demo-entry.png",
+      "bytes": 41902,
+      "sha256": "7a01877b73397b302eb2e350f32ac0a43a2d1270414c8675a13fdcaf3591eae9"
+    },
+    {
+      "path": "assets/demo-followup-result.png",
+      "bytes": 222547,
+      "sha256": "3ce97cb37f9cdc1e6f1b57605b20d351f1616aeb78eb16f0b0a5926143b1af64"
+    },
+    {
+      "path": "assets/emblem.png",
+      "bytes": 784511,
+      "sha256": "44e539215693dd34adbd91ba626e5fe4b3b06447bbd74825cd40efd3106fe46b"
+    },
+    {
+      "path": "assets/linked-structure-results.png",
+      "bytes": 235917,
+      "sha256": "63a13a250a5c4b30e30ed1b491a9bcc20a2be70465f3f83e052df84e9498e131"
+    },
+    {
+      "path": "assets/world-evidence.png",
+      "bytes": 107206,
+      "sha256": "f70e040a22565b7f808830d985acbf1217848bfbc123978b6460590fc1a32711"
+    },
+    {
+      "path": "claim-source-ledger.json",
+      "bytes": 6971,
+      "sha256": "3bd0759fb89fdf65c69791a8659b45de5ff5e7c647243822a044a263c9a9d6d6"
+    },
+    {
+      "path": "demo-browser-check.json",
+      "bytes": 469,
+      "sha256": "89767a7353822256cbdb3ed9737c8c48cb729c120a108e41238f4c873d70757b"
+    },
+    {
+      "path": "slide-contact-sheet.png",
+      "bytes": 649472,
+      "sha256": "79f3ba9e1927ad9dc4ec8a5a0602de36c0e59fda721e659212c6e1e62fa59c7b"
+    },
+    {
+      "path": "source/3d-diagram-manifest.json",
+      "bytes": 444,
+      "sha256": "737aea6bb1fc9968507f07b9503c8a8caa9e615851591aeb8ff89d93659f6f07"
+    },
+    {
+      "path": "source/agent-run.json",
+      "bytes": 21097,
+      "sha256": "770fbaead1467d73ccefb6bbbf482e03f1774a587ae5c769ac970724295c60fd"
+    },
+    {
+      "path": "source/argon-check.json",
+      "bytes": 451,
+      "sha256": "8ffb0059eacc223d93278d490c2f4232f75841724bdf95db930e8d8cf068d4b9"
+    },
+    {
+      "path": "source/assay-dictionary.json",
+      "bytes": 5014,
+      "sha256": "449b4094b928b95957de46b8c164827ae1c5d198290b369054731a856ad2e8f9"
+    },
+    {
+      "path": "source/asset-usage.json",
+      "bytes": 421,
+      "sha256": "03230be21b00c098842d5c09376e9987c0d670da7464af71184579fcac43bcef"
+    },
+    {
+      "path": "source/build-deck.py",
+      "bytes": 38054,
+      "sha256": "96991c93e25919425a7524ed079fa1e4a878a3b9d4e7672d250ebb1186dd2c8e"
+    },
+    {
+      "path": "source/build-market-model.py",
+      "bytes": 6671,
+      "sha256": "d70963bb2b0fb3180fc2821a61551694c5b063cea1ce224b6216a8ce21c08faa"
+    },
+    {
+      "path": "source/capture-demo.cjs",
+      "bytes": 3395,
+      "sha256": "47c8ea4ae036e87b94539c1e8827225727e003f395318a4a5b1f3dd75eb84745"
+    },
+    {
+      "path": "source/diagrams_3d.py",
+      "bytes": 9823,
+      "sha256": "15855f55bb7fd49e92652ab5e5aaff36e6d1a3b6ec77eb13930f3e3eac81e62a"
+    },
+    {
+      "path": "source/export-pdf.applescript",
+      "bytes": 361,
+      "sha256": "b95253a8b1307bf9d37926f7e1c9ea2d2c4866f1f14866b2da1973e16c893204"
+    },
+    {
+      "path": "source/mapping-audit.json",
+      "bytes": 231929,
+      "sha256": "d888188efda307268aa62423754df293510b47da21fd010acec4e6042137e1ee"
+    },
+    {
+      "path": "source/market-model.json",
+      "bytes": 1905,
+      "sha256": "d4aaf990926c2b3a1cfbd9e3ef1fdb9b1c5b73ebc1036a834bb68d9920e3b509"
+    },
+    {
+      "path": "source/market-slides.py.inc",
+      "bytes": 6657,
+      "sha256": "8793664b9492b6e443603cdafe85e468bb8a1255b3331fb612117d7ce9aa2260"
+    },
+    {
+      "path": "source/package-delivery.py",
+      "bytes": 506,
+      "sha256": "5316d2b2534eb54bad3681d9f9ecd12a1066f31679e20fd2fe00c0e9e053855c"
+    },
+    {
+      "path": "source/reference-check.json",
+      "bytes": 5769,
+      "sha256": "31106f4c66e436a25aa0e6dfe7cceb8352f0d4af4779ab2303d5bcf14827640a"
+    },
+    {
+      "path": "source/render-preview.py",
+      "bytes": 1203,
+      "sha256": "61b233f5cc142a5c4ed14920ea9ad1957471a1a1b2bf22997d332a91366d786a"
+    },
+    {
+      "path": "source/rendered-text.json",
+      "bytes": 8542,
+      "sha256": "9fbbab29f6308b2bb846f214d7302a4b56bbe34d7a2e69a1cafb42699e805bf8"
+    },
+    {
+      "path": "source/requirements.txt",
+      "bytes": 65,
+      "sha256": "c7475970a34b88022a9b9424f689e73303a45de22cf8cf0eb1f499ad362860b4"
+    },
+    {
+      "path": "source/scene.json",
+      "bytes": 151193,
+      "sha256": "53b6f980cb97affefe4f018a5a06c9e45b030602bc4a9ab10b63e5a8adaab500"
+    },
+    {
+      "path": "source/source-manifest.json",
+      "bytes": 9002,
+      "sha256": "bf43147b1be4110821562972eb53038662264a19b37e8e0a30c32abb17165163"
+    },
+    {
+      "path": "source/storage-check.json",
+      "bytes": 2447,
+      "sha256": "03d224678902cd9834334fe9f1e123fcc43eda0f01ad4561f5b0457de8e88f73"
+    },
+    {
+      "path": "source/verify-delivery.py",
+      "bytes": 3971,
+      "sha256": "93e13803c672d992b491f3a1b7948988ff235585d60f0c3a51f00098e325b3a7"
+    },
+    {
+      "path": "speaker-notes.txt",
+      "bytes": 21342,
+      "sha256": "36e363127d18a61b5703b37a72f45fdd9d3aacaef2cf584311084448b1338760"
+    },
+    {
+      "path": "thumbnails/slide-01.png",
+      "bytes": 250660,
+      "sha256": "c0b3e2ede68f03e8f3860f9785d474575c4e858062214a19958ba82b2c9a8423"
+    },
+    {
+      "path": "thumbnails/slide-02.png",
+      "bytes": 77584,
+      "sha256": "a9a63dcd7395930d15ea27eeb195238184042152c25153b004a2a7787e56fd20"
+    },
+    {
+      "path": "thumbnails/slide-03.png",
+      "bytes": 84018,
+      "sha256": "99bca4866b2d6d9541e825611505467e508031fc23a24e729dc58afc4a8952cc"
+    },
+    {
+      "path": "thumbnails/slide-04.png",
+      "bytes": 112361,
+      "sha256": "5078d0b8ee1179f1a6b89e54ec8d51840b0af9315ac8f0e53e877ce0469c2b99"
+    },
+    {
+      "path": "thumbnails/slide-05.png",
+      "bytes": 79980,
+      "sha256": "40205c6d8ff2d2c2c1065a3148d37b0267762c16cfaa3fe2e4571736efa92bd9"
+    },
+    {
+      "path": "thumbnails/slide-06.png",
+      "bytes": 176585,
+      "sha256": "71308cb72fe35235f64a946632058d2a2ef8c5b8c750051c45ad596802757b69"
+    },
+    {
+      "path": "thumbnails/slide-07.png",
+      "bytes": 60241,
+      "sha256": "69cef907ac0eb162d069b93ec64ed12c138677a75387d73e2a17f3c3f8e197e0"
+    },
+    {
+      "path": "thumbnails/slide-08.png",
+      "bytes": 87843,
+      "sha256": "6ea4022fb31ecd4226ba103c9cfaced9ede808c2274a50fd02095009f0a9f108"
+    },
+    {
+      "path": "thumbnails/slide-09.png",
+      "bytes": 88605,
+      "sha256": "7935eac474ce101883c6e23763d0e95985fa6f7403f0c70ae7a586ead0da282f"
+    },
+    {
+      "path": "thumbnails/slide-10.png",
+      "bytes": 92713,
+      "sha256": "7431b4cd43e11667fd0e41494b3dbcb43eeca06fd1dee407f698a72c2edf5c4a"
+    },
+    {
+      "path": "thumbnails/slide-11.png",
+      "bytes": 88353,
+      "sha256": "9354286a65482ebe346e34c33172a4e31a0038972c04bd1d0518cccc75da76d3"
+    },
+    {
+      "path": "thumbnails/slide-12.png",
+      "bytes": 72160,
+      "sha256": "515ece324fc97f2ea5fba3bcaa00f058dd32af58ed77cfc3a83631cb2e991f69"
+    },
+    {
+      "path": "thumbnails/slide-13.png",
+      "bytes": 97702,
+      "sha256": "cf8746a3da778e2999af066e1eda92afa3a420f6aeadc7ac221ea6e6669dc150"
+    },
+    {
+      "path": "thumbnails/slide-14.png",
+      "bytes": 78536,
+      "sha256": "a0eca07141761829288af8b4a271a5112e9c521d7919b59959b31cdf381ab92c"
+    },
+    {
+      "path": "thumbnails/slide-15.png",
+      "bytes": 87262,
+      "sha256": "29dc7ce9ffaad793f1b1aafcc42b976f2e27975aecbbca522bb7f60f3f4b43f4"
+    },
+    {
+      "path": "thumbnails/slide-16.png",
+      "bytes": 72618,
+      "sha256": "6c2b5e6b58cc98751e2e077efe5a675ef678df8e8873b15a603574b3736f6046"
+    },
+    {
+      "path": "thumbnails/slide-17.png",
+      "bytes": 73646,
+      "sha256": "f82169d53f4b1a82859fdbc66eda09c1f6a1d41fa0961f252521099bae283e14"
+    },
+    {
+      "path": "thumbnails/slide-18.png",
+      "bytes": 72573,
+      "sha256": "3867b8fd6f87f878af2208fba1fa3907a015ac40e994634f006ccae8ba03dabf"
+    },
+    {
+      "path": "thumbnails/slide-19.png",
+      "bytes": 90104,
+      "sha256": "2d999940fbd4909c92f3cb1895196ba5a94c1a10961dfb63db520e9ddf5d59e5"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1612,
+      "sha256": "434682e2480c155d92ff40beaa7f79d8277cc0704317b56effa47abf0056560c"
+    }
+  ],
+  "image_usage": "source/asset-usage.json",
+  "claim_sources": "claim-source-ledger.json"
+}

@@ -43,6 +43,46 @@ class ResearchEngine:
         self.loop = None
         self.active = None
 
+    def bind_provider_fallback(self, rid, provider, deadline, task_id="coordinator"):
+        if not isinstance(provider, ActionProvider):
+            return
+
+        def failed_attempt(usage):
+            def save(d):
+                d["budget"]["usage"].append({**usage,"task_id":task_id})
+                d["budget"]["cost_usd"] = None
+                d["budget"]["cost_status"] = "unknown_or_in_flight"
+                return d
+            self.edit(rid, save)
+
+        def reserve_fallback(failed):
+            def reserve(d):
+                if d["cancel_requested"]:
+                    raise asyncio.CancelledError()
+                if time.monotonic() >= deadline:
+                    raise TimeoutError("Investigation time limit reached before fallback.")
+                if d["budget"]["model_requests"] >= d["budget"]["max_model_requests"]:
+                    raise RuntimeError("Model request budget exhausted.")
+                d["budget"]["model_requests"] += 1
+                return d
+            self.edit(rid, reserve)
+            self.event(rid, "model.fallback", task_id,
+                       "Google/Argon unavailable (" + failed["failure_type"]
+                       + "). Switching to OpenRouter / " + self.settings.openrouter_model
+                       + "; this attempt counts toward the request budget.")
+
+        provider.on_attempt = failed_attempt
+        provider.before_fallback = reserve_fallback
+
+    @staticmethod
+    def record_actual_provider(d, usage):
+        if usage.get("provider") in ("google", "openrouter"):
+            d.setdefault("requested_provider", d["provider"])
+            d.setdefault("requested_model", d["model"])
+            d["provider"] = usage["provider"]
+            d["model"] = usage["model"]
+        return d
+
     def start(self, request: ResearchRequest):
         w = self.data.workspace()
         for vid in request.selected_ids:
@@ -54,11 +94,15 @@ class ResearchEngine:
             provider = (
                 "google" if self.settings.google_api_key else self.settings.llm_provider
             )
+        if provider == "gemini":
+            provider = "google"
         if provider not in ("google", "openrouter"):
             raise ValueError(
                 "A live Google or OpenRouter provider is required; mock does not impersonate adaptive investigation."
             )
-        if provider == "google" and not self.settings.google_api_key:
+        fallback_ready = (self.settings.llm_fallback_provider == "openrouter"
+                          and self.settings.openrouter_api_key and self.settings.openrouter_model)
+        if provider == "google" and not self.settings.google_api_key and not fallback_ready:
             raise ValueError("Google credentials unavailable.")
         if provider == "openrouter" and not self.settings.openrouter_api_key:
             raise ValueError("OpenRouter credentials unavailable.")
@@ -220,7 +264,7 @@ class ResearchEngine:
 
         self.edit(rid, change)
 
-    def artifact(self, rid, tid, kind, data):
+    def artifact(self, rid, tid, kind, data, parameters=None):
         aid = "artifact-" + uuid4().hex
 
         def change(d):
@@ -238,6 +282,9 @@ class ResearchEngine:
                     ),
                 }
             )
+            from ..analysis_results import instrument
+            analysis=instrument(d,d["artifacts"][-1],parameters)
+            if analysis:d.setdefault("analysis_results",[]).append(analysis)
             return d
 
         self.edit(rid, change)
@@ -286,6 +333,8 @@ class ResearchEngine:
             r["request"]["max_seconds"], self.settings.max_run_seconds
         )
         provider = self.factory(self.settings, r["provider"])
+        self.bind_provider_fallback(rid, provider, deadline)
+        providers = {"coordinator":provider}
         children = {}
         semaphore = asyncio.Semaphore(self.settings.max_concurrent_workers)
 
@@ -316,6 +365,10 @@ class ResearchEngine:
                         pass
 
         async def worker(tid):
+            if tid not in providers:
+                providers[tid]=self.factory(self.settings,r['provider'])
+                self.bind_provider_fallback(rid,providers[tid],deadline,tid)
+            client=providers[tid]
             for step in range(
                 next(t for t in self.store.get(rid)["tasks"] if t["id"] == tid).get(
                     "max_steps", 12
@@ -412,6 +465,7 @@ class ResearchEngine:
                         "artifacts": visible,
                         "findings": state["findings"],
                         "paths": state.get("paths", []),
+                        "agent_messages": state.get("agent_messages",[])[-20:],
                         "assigned_path": next(
                             (
                                 p
@@ -420,6 +474,12 @@ class ResearchEngine:
                             ),
                             None,
                         ),
+                        "finalization_contract": {
+                            "policy": "Use qualitative observations with artifact references. Do not repeat thresholds, ranges, counts, resolutions, coordinates or numeric residue positions in prose. The UI displays exact numeric artifacts separately. If a numerical fact is indispensable, include a numeric_claim with the exact stored value, artifact_id and full data path; rounded values are rejected.",
+                            "qualitative_example": "The selected substitutions have accepted reference mappings. Reference geometry alone does not establish a changed fold or mutation mechanism.",
+                            "last_failed_verification": next((a["data"] for a in reversed(visible) if a["kind"] == "verification" and (not a["data"].get("numbers", {}).get("passed", True) or not a["data"].get("references", {}).get("passed", True))), None),
+                            "numeric_claim_example": {"artifact_id":"use-an-exact-visible-artifact-id","path":["data","matching_count"],"value":"use-the-exact-stored-number","units":"count"},
+                        },
                         "defaults": self.data.workspace()["defaults"],
                     }
                     prompt = (
@@ -428,7 +488,7 @@ class ResearchEngine:
                         "Only the coordinator declares and updates global scenario paths. Specialists work on task.path_id and execute their scoped tools, then finalize or abstain; they must not re-plan the global tree. The first ranked path is automatically activated when a new plan has no active direction. Later direction changes use update_path. "
                         "When request.explore_paths is true, coordinator first uses plan_paths to propose up to ten ranked, distinct, data-answerable scenario paths (do not pad redundant paths). Use update_path to select an exploring direction before tools, record why evidence causes a park/rejection or switch, then follow another direction. Proposed is not explored. Completing a path needs a successful tool artifact reference; outcomes are model judgments. Delegate specialists with path_id to bind work to the scenario. Do not claim all paths explored if budget stops you. Use discover_tools to search capabilities; tool names are not independent agents. "
                         "Use tools to inspect actual data. If required_checks_remaining is nonempty, invoke one of those tools now or delegate it; revising text cannot perform a missing check. After one limitation revision, move to a concrete tool or reconciliation/finalization. Do not repeat revisions without new evidence. Branch into scoped independent specialists when useful. Spawn arguments match SpawnRequest. "
-                        "Spawn independent branches before waiting when their inputs do not depend on each other. max_steps counts every model action, including finalization; two tools plus finalization need at least three steps. request_reconciliation arguments must match SpawnRequest with role reconciliation and input_artifact_ids. Wait for pending tasks before using their outputs. Cite exact artifact/passages/source IDs. Do not invent values or causality. "
+                        "When request.autonomous_team is true, your declared plan is dispatched by the server into independent identity, assay and structural teams with artifact handoffs; do not spawn duplicates. After their results arrive, reconcile and finalize or explicitly abstain on missing evidence. Each specialist has its own provider context. Specialists must finalize qualitative, artifact-cited scoped observations once their assigned computations are present; a lack of causal proof belongs in limitations. Spawn independent branches before waiting when their inputs do not depend on each other. max_steps counts every model action, including finalization; two tools plus finalization need at least three steps. request_reconciliation arguments must match SpawnRequest with role reconciliation and input_artifact_ids. Wait for pending tasks before using their outputs. Cite exact artifact/passages/source IDs. Do not invent values or causality. "
                         "Record a revise_hypothesis action when a real limitation narrows the plan. Reconcile disagreements, check references and numeric claims. "
                         "Prefer qualitative prose linked to quantitative artifacts; the UI renders exact values directly. Omit counts/coordinates unless needed. All numeric facts including integer counts in findings and summaries require corresponding numeric_claims linked to exact numeric artifact paths. Prefer concise mapping statuses over repeating coordinates. Finalize only after assay comparability, identity, mapping and eligibility checks. All outputs retain uncertainty. "
                         "When independent_review_roles_not_yet_spawned is nonempty, spawn those branches before finalization. A short public summary must be at most 500 characters; put findings in findings. Specialists finalize scoped findings; coordinator finalizes research brief. Never run tools outside allowed_tools. "
@@ -468,7 +528,7 @@ class ResearchEngine:
                             self.edit(rid, count)
                         try:
                             action, usage = await guard(
-                                provider.generate_action(
+                                client.generate_action(
                                     prompt,
                                     lambda remote: self.task_status(
                                         rid,
@@ -512,7 +572,8 @@ class ResearchEngine:
                                 await asyncio.sleep(0.5)
 
                     def record(d):
-                        d["budget"]["usage"].append(usage)
+                        self.record_actual_provider(d, usage)
+                        d["budget"]["usage"].append({**usage,"task_id":tid})
                         costs = [u.get("cost_usd") for u in d["budget"]["usage"]]
                         if len(costs) == d["budget"]["model_requests"] and all(
                             isinstance(c, (float, int)) for c in costs
@@ -522,6 +583,7 @@ class ResearchEngine:
                         return d
 
                     self.edit(rid, record)
+                    self.task_status(rid,tid,"running",provider=usage.get("provider"),model=usage.get("model"))
                     cost = self.store.get(rid)["budget"]["cost_usd"]
                     if self.settings.max_run_cost_usd is not None and (
                         cost is None or cost >= self.settings.max_run_cost_usd
@@ -609,9 +671,10 @@ class ResearchEngine:
                             outputs=[aid],
                         )
                     except ValueError as exc:
-                        self.artifact(
-                            rid, tid, "action_rejected", {"reason": str(exc)[:1000]}
-                        )
+                        self.artifact(rid,tid,"action_rejected",{"reason":str(exc)[:1000]})
+                    if tid=="coordinator" and action.action=="plan_paths" and self.store.get(rid)["request"].get("autonomous_team") and self.store.get(rid).get("paths"):
+                        from .agent_network import dispatch
+                        await dispatch(self,rid,worker,guard,children,semaphore)
                     continue
                 if action.action == "invoke_tool":
                     current_task = next(
@@ -672,7 +735,7 @@ class ResearchEngine:
                                 "_allowed_tools": task["allowed_tools"],
                             },
                         )
-                    aid = self.artifact(rid, tid, action.tool, result.model_dump())
+                    aid = self.artifact(rid, tid, action.tool, result.model_dump(),parameters=action.arguments)
                     self.event(
                         rid, "tool.completed", tid, result.summary, outputs=[aid]
                     )
@@ -886,6 +949,9 @@ class ResearchEngine:
                     if tid == "coordinator" and pending:
                         await guard(asyncio.gather(*pending))
                     fresh = self.store.get(rid)
+                    if tid=="coordinator" and fresh["request"].get("autonomous_team") and any(t["role"] in ("assay","structure") and t["status"] in ("failed","needs_review") for t in fresh["tasks"]):
+                        action=action.model_copy(update={"action":"abstain"})
+                        self.artifact(rid,tid,"unresolved_team_review",{"reason":"A required independent review did not finish; no complete scientific brief is asserted."})
                     w = self.data.workspace()
                     refs = self.registry.check_references(action.findings, fresh, w)
                     numbers = self.registry.check_numbers(action.numeric_claims, fresh)
@@ -1130,7 +1196,7 @@ class ResearchEngine:
                 "coordinator",
                 "Budget reached; unresolved paths and checkpoints retained. No unchecked conclusion asserted."
                 if budget_stop
-                else "Execution failed; inspect checkpoints and configured provider. No fallback was used.",
+                else "Execution failed; inspect checkpoints and recorded provider attempts. No successful result was substituted.",
                 status=status,
             )
         finally:
@@ -1141,7 +1207,6 @@ class ResearchEngine:
                 await asyncio.gather(*children.values(), return_exceptions=True)
             pulse.cancel()
             await asyncio.gather(pulse, return_exceptions=True)
-            try:
-                await provider.close()
-            except Exception:
-                pass
+            for client in providers.values():
+                try:await client.close()
+                except Exception:pass

@@ -31,6 +31,8 @@ class ResearchRequest(Model):
         ]
     ] = Field(default_factory=list, max_length=6)
     explore_paths: bool = False
+    neighbor_radius: float = Field(default=10,gt=0,le=100,allow_inf_nan=False)
+    autonomous_team: bool = False  # Explicit UI opt-in; legacy API action loops retain their contract.
     require_independent_reviews: bool = True
     max_seconds: int = Field(default=600, ge=10, le=600)
 

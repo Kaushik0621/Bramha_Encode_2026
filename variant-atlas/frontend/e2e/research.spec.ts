@@ -144,7 +144,7 @@ test('synthetic companion explains excluded profiles, compares alternatives and 
  await expect(panel).toContainText('Inside your current research filter');
  await page.screenshot({path:'../artifacts/synthetic-research-companion.png',fullPage:false});
  await panel.getByRole('link',{name:'Open authentic PTEN research workspace →'}).click();
- await expect(page.getByRole('heading',{name:'Research projects',exact:true})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'My Research',exact:true})).toBeVisible();
 });
 
 test('scripted focus-aware prioritization is bounded and keeps real measurements visible',async({page})=>{

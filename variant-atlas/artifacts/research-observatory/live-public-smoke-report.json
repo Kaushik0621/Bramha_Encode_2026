@@ -1,0 +1,959 @@
+{
+  "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59",
+  "status": "completed_with_limitations",
+  "question": "What does the published PTEN crystal-structure study report about molecular function, and what cannot be concluded about mutation effects from its structural reference?",
+  "study_ids": [
+    "study-bab42a510430ae7ce52659ad"
+  ],
+  "tasks": [
+    {
+      "id": "lead",
+      "status": "completed",
+      "role": "Research lead",
+      "engine": "language model",
+      "parent": null,
+      "started_at": "2026-10-25T04:41:15.373715+00:00",
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "finished_at": "2026-10-25T04:41:36.984465+00:00",
+      "summary": "Saved ranked directions and bounded source queries."
+    },
+    {
+      "id": "evidence",
+      "status": "completed",
+      "role": "Evidence scout",
+      "engine": "deterministic tools",
+      "parent": "lead",
+      "started_at": "2026-10-25T04:41:37.297377+00:00",
+      "finished_at": "2026-10-25T04:41:38.394874+00:00",
+      "summary": "Publication identities, original text coverage and affiliations retained."
+    },
+    {
+      "id": "structure",
+      "status": "completed",
+      "role": "Structural scout",
+      "engine": "deterministic tools",
+      "parent": "evidence",
+      "started_at": "2026-10-25T04:41:39.324870+00:00",
+      "finished_at": "2026-10-25T04:41:42.435563+00:00",
+      "summary": "Publication-linked models are distinguished from related reference structures."
+    },
+    {
+      "id": "methods",
+      "status": "completed",
+      "role": "Methods reviewer",
+      "engine": "language model",
+      "parent": "evidence",
+      "started_at": "2026-10-25T04:41:42.929486+00:00",
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "finished_at": "2026-10-25T04:42:03.064857+00:00",
+      "claims": [
+        {
+          "id": "claim-b6d2905d06884527837fca4b1633325a",
+          "text": "The supplied passage describes a crystal-structure study of PTEN reporting a phosphatase domain similar to protein phosphatases yet with an enlarged active site for phosphoinositide accommodation together with a C2 domain shown to bind phospholipid membranes in vitro.",
+          "study_id": "study-bab42a510430ae7ce52659ad",
+          "passage_id": "passage-68419c025e4941c55bb987d6",
+          "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+          "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+          "worker": "methods",
+          "reviewer_status": "unreviewed",
+          "claim_type": "reported study observation"
+        },
+        {
+          "id": "claim-0aea16d9965f42b0b18126b4aa06ceee",
+          "text": "From the structural reference alone it cannot be concluded what effects mutations may produce on molecular function or membrane affinity.",
+          "study_id": "study-bab42a510430ae7ce52659ad",
+          "passage_id": "passage-68419c025e4941c55bb987d6",
+          "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+          "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+          "worker": "methods",
+          "reviewer_status": "unreviewed",
+          "claim_type": "reported study observation"
+        }
+      ],
+      "limitations": [
+        "Passage text is truncated and provides no further experimental details on methods or biological systems"
+      ],
+      "summary": "2 source-linked observations retained for verification."
+    },
+    {
+      "id": "outcomes",
+      "status": "completed",
+      "role": "Outcome reviewer",
+      "engine": "language model",
+      "parent": "evidence",
+      "started_at": "2026-10-25T04:41:43.487723+00:00",
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "finished_at": "2026-10-25T04:42:08.394671+00:00",
+      "claims": [
+        {
+          "id": "claim-20db0456658044ca898bb1d03ffaa6e5",
+          "text": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes.",
+          "study_id": "study-bab42a510430ae7ce52659ad",
+          "passage_id": "passage-68419c025e4941c55bb987d6",
+          "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+          "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+          "worker": "outcomes",
+          "reviewer_status": "unreviewed",
+          "claim_type": "reported study observation"
+        },
+        {
+          "id": "claim-f3f03e1fb30e44c68fa9113e001e4bf4",
+          "text": "PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro.",
+          "study_id": "study-bab42a510430ae7ce52659ad",
+          "passage_id": "passage-68419c025e4941c55bb987d6",
+          "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+          "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+          "worker": "outcomes",
+          "reviewer_status": "unreviewed",
+          "claim_type": "reported study observation"
+        },
+        {
+          "id": "claim-5d2be622cd084544ab605abaf67b930f",
+          "text": "The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate.",
+          "study_id": "study-bab42a510430ae7ce52659ad",
+          "passage_id": "passage-68419c025e4941c55bb987d6",
+          "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+          "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+          "worker": "outcomes",
+          "reviewer_status": "unreviewed",
+          "claim_type": "reported study observation"
+        },
+        {
+          "id": "claim-25f9fc73d60649538369e3b7cefda083",
+          "text": "The structure also reveals that PTEN has a C2 domain that binds phospholipid membranes in vitro.",
+          "study_id": "study-bab42a510430ae7ce52659ad",
+          "passage_id": "passage-68419c025e4941c55bb987d6",
+          "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+          "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+          "worker": "outcomes",
+          "reviewer_status": "unreviewed",
+          "claim_type": "reported study observation"
+        }
+      ],
+      "limitations": [
+        "Passage text is truncated and incomplete",
+        "No variant-specific data or mutation effects reported"
+      ],
+      "summary": "4 source-linked observations retained for verification."
+    },
+    {
+      "id": "lead-review",
+      "status": "completed",
+      "role": "Research lead \u00b7 route review",
+      "engine": "language model",
+      "parent": "evidence",
+      "started_at": "2026-10-25T04:42:09.070072+00:00",
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "finished_at": "2026-10-25T04:42:32.126859+00:00",
+      "summary": "The acquired study reports the phosphatase domain similarity and enlarged active site plus C2 domain membrane binding from its crystal structure, but the provided evidence states that mutation effects cannot be concluded from the structural reference alone, with no variant data present."
+    },
+    {
+      "id": "verifier",
+      "status": "completed",
+      "role": "Evidence verifier",
+      "engine": "deterministic tools",
+      "parent": "evidence",
+      "started_at": "2026-10-25T04:42:32.349503+00:00",
+      "finished_at": "2026-10-25T04:42:33.855096+00:00",
+      "summary": "Reference and quotation consistency checked; scientific truth remains unreviewed."
+    },
+    {
+      "id": "synthesis",
+      "status": "completed",
+      "role": "Research lead \u00b7 synthesis",
+      "engine": "language model",
+      "parent": "verifier",
+      "started_at": "2026-10-25T04:42:34.287504+00:00",
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "finished_at": "2026-10-25T04:43:01.896617+00:00",
+      "summary": "Checked reports reconciled; limitations retained."
+    }
+  ],
+  "events": [
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-1",
+      "sequence": 1,
+      "at": "2026-10-25T04:41:14.980790+00:00",
+      "type": "queued",
+      "summary": "Research question saved. The lead will plan bounded public-evidence work.",
+      "task_id": null,
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-2",
+      "sequence": 2,
+      "at": "2026-10-25T04:41:15.555755+00:00",
+      "type": "task.started",
+      "summary": "The research lead is choosing paths and source searches.",
+      "task_id": "lead",
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-3",
+      "sequence": 3,
+      "at": "2026-10-25T04:41:22.785183+00:00",
+      "type": "model.fallback",
+      "summary": "Argon was unavailable; this worker switched to the configured OpenRouter fallback.",
+      "task_id": "lead",
+      "refs": [],
+      "provider": "openrouter",
+      "failure_type": "RuntimeError"
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-4",
+      "sequence": 4,
+      "at": "2026-10-25T04:41:37.178339+00:00",
+      "type": "plan.ready",
+      "summary": "Ranked research paths are saved. The evidence scout is entering the publication-search path.",
+      "task_id": "lead",
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-5",
+      "sequence": 5,
+      "at": "2026-10-25T04:41:37.575721+00:00",
+      "type": "task.started",
+      "summary": "Evidence scout is finding relevant published studies.",
+      "task_id": "evidence",
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-6",
+      "sequence": 6,
+      "at": "2026-10-25T04:41:37.932409+00:00",
+      "type": "source.acquired",
+      "summary": "Public source archived: Crystal structure of the PTEN tumor suppressor: implications for its phosphoinositide phosphatase activity and membrane association.",
+      "task_id": "evidence",
+      "refs": [
+        "study-bab42a510430ae7ce52659ad"
+      ]
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-7",
+      "sequence": 7,
+      "at": "2026-10-25T04:41:38.279833+00:00",
+      "type": "tool.completed",
+      "summary": "1 public study records acquired with explicit text coverage.",
+      "task_id": "evidence",
+      "refs": [
+        "study-bab42a510430ae7ce52659ad"
+      ],
+      "tool": "search_public_studies"
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-8",
+      "sequence": 8,
+      "at": "2026-10-25T04:41:39.582648+00:00",
+      "type": "task.started",
+      "summary": "Structural scout is tracing exact molecular mentions and public geometry.",
+      "task_id": "structure",
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-9",
+      "sequence": 9,
+      "at": "2026-10-25T04:41:41.961875+00:00",
+      "type": "structure.checked",
+      "summary": "A structural relationship was checked against the publication and reference metadata.",
+      "task_id": "structure",
+      "refs": [
+        "study-bab42a510430ae7ce52659ad"
+      ]
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-10",
+      "sequence": 10,
+      "at": "2026-10-25T04:41:42.307582+00:00",
+      "type": "tool.completed",
+      "summary": "1 coordinate references and 1 exact molecular mentions inspected.",
+      "task_id": "structure",
+      "refs": [
+        "study-bab42a510430ae7ce52659ad"
+      ],
+      "tool": "trace_structures"
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-11",
+      "sequence": 11,
+      "at": "2026-10-25T04:41:43.143293+00:00",
+      "type": "task.started",
+      "summary": "Methods reviewer is inspecting the original source passages.",
+      "task_id": "methods",
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-12",
+      "sequence": 12,
+      "at": "2026-10-25T04:41:43.699461+00:00",
+      "type": "task.started",
+      "summary": "Outcome reviewer is inspecting the original source passages.",
+      "task_id": "outcomes",
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-13",
+      "sequence": 13,
+      "at": "2026-10-25T04:41:50.263201+00:00",
+      "type": "model.fallback",
+      "summary": "Argon was unavailable; this worker switched to the configured OpenRouter fallback.",
+      "task_id": "methods",
+      "refs": [],
+      "provider": "openrouter",
+      "failure_type": "RuntimeError"
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-14",
+      "sequence": 14,
+      "at": "2026-10-25T04:41:51.181106+00:00",
+      "type": "model.fallback",
+      "summary": "Argon was unavailable; this worker switched to the configured OpenRouter fallback.",
+      "task_id": "outcomes",
+      "refs": [],
+      "provider": "openrouter",
+      "failure_type": "RuntimeError"
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-15",
+      "sequence": 15,
+      "at": "2026-10-25T04:42:03.346658+00:00",
+      "type": "task.completed",
+      "summary": "Methods reviewer saved its source-linked output.",
+      "task_id": "methods",
+      "refs": [
+        "passage-68419c025e4941c55bb987d6",
+        "passage-68419c025e4941c55bb987d6"
+      ]
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-16",
+      "sequence": 16,
+      "at": "2026-10-25T04:42:08.780142+00:00",
+      "type": "task.completed",
+      "summary": "Outcome reviewer saved its source-linked output.",
+      "task_id": "outcomes",
+      "refs": [
+        "passage-68419c025e4941c55bb987d6",
+        "passage-68419c025e4941c55bb987d6",
+        "passage-68419c025e4941c55bb987d6",
+        "passage-68419c025e4941c55bb987d6"
+      ]
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-17",
+      "sequence": 17,
+      "at": "2026-10-25T04:42:09.385387+00:00",
+      "type": "task.started",
+      "summary": "The lead is reviewing actual worker outputs to decide whether to follow a different path.",
+      "task_id": "lead-review",
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-18",
+      "sequence": 18,
+      "at": "2026-10-25T04:42:16.627901+00:00",
+      "type": "model.fallback",
+      "summary": "Argon was unavailable; this worker switched to the configured OpenRouter fallback.",
+      "task_id": "lead-review",
+      "refs": [],
+      "provider": "openrouter",
+      "failure_type": "RuntimeError"
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-19",
+      "sequence": 19,
+      "at": "2026-10-25T04:42:31.957176+00:00",
+      "type": "path.revised",
+      "summary": "The acquired study reports the phosphatase domain similarity and enlarged active site plus C2 domain membrane binding from its crystal structure, but the provided evidence states that mutation effects cannot be concluded from the structural reference alone, with no variant data present.",
+      "task_id": "lead-review",
+      "refs": [],
+      "decision": "finish"
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-20",
+      "sequence": 20,
+      "at": "2026-10-25T04:42:32.674083+00:00",
+      "type": "task.started",
+      "summary": "Verifier is checking saved source versions and literal quotations.",
+      "task_id": "verifier",
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-21",
+      "sequence": 21,
+      "at": "2026-10-25T04:42:33.716211+00:00",
+      "type": "tool.completed",
+      "summary": "6 source-linked observations passed exact passage and version checks.",
+      "task_id": "verifier",
+      "refs": [],
+      "tool": "verify_source_quotes"
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-22",
+      "sequence": 22,
+      "at": "2026-10-25T04:42:34.547547+00:00",
+      "type": "task.started",
+      "summary": "Research lead is reconciling the checked worker reports.",
+      "task_id": "synthesis",
+      "refs": []
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-23",
+      "sequence": 23,
+      "at": "2026-10-25T04:42:42.772173+00:00",
+      "type": "model.fallback",
+      "summary": "Argon was unavailable; this worker switched to the configured OpenRouter fallback.",
+      "task_id": "synthesis",
+      "refs": [],
+      "provider": "openrouter",
+      "failure_type": "RuntimeError"
+    },
+    {
+      "id": "expedition-2013dfb4cccf4b3da3a3850292e0aa59-24",
+      "sequence": 24,
+      "at": "2026-10-25T04:43:04.709810+00:00",
+      "type": "completed",
+      "summary": "Research record saved. Inspect the source-linked findings, paths and structural provenance.",
+      "task_id": null,
+      "refs": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-7e99e03058174db29a334289448608f1",
+      "text": "The PTEN crystal-structure study reports a phosphatase domain similar to protein phosphatases with an enlarged active site for phosphoinositide accommodation, plus a C2 domain that binds phospholipid membranes in vitro.",
+      "study_id": "study-bab42a510430ae7ce52659ad",
+      "passage_id": "passage-68419c025e4941c55bb987d6",
+      "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+      "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+      "worker": "synthesis",
+      "reviewer_status": "unreviewed",
+      "claim_type": "reported study observation"
+    },
+    {
+      "id": "claim-9c12d16d63b64b6bac71c2e66c508897",
+      "text": "From the structural reference alone it cannot be concluded what effects mutations may produce on molecular function or membrane affinity.",
+      "study_id": "study-bab42a510430ae7ce52659ad",
+      "passage_id": "passage-68419c025e4941c55bb987d6",
+      "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+      "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+      "worker": "synthesis",
+      "reviewer_status": "unreviewed",
+      "claim_type": "reported study observation"
+    },
+    {
+      "id": "claim-f4e4cae4083140b8ab100e5845cd0e50",
+      "text": "The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate.",
+      "study_id": "study-bab42a510430ae7ce52659ad",
+      "passage_id": "passage-68419c025e4941c55bb987d6",
+      "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+      "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+      "worker": "synthesis",
+      "reviewer_status": "unreviewed",
+      "claim_type": "reported study observation"
+    },
+    {
+      "id": "claim-216987b2827b46728a90fe5485941b22",
+      "text": "The structure also reveals that PTEN has a C2 domain that binds phospholipid membranes in vitro.",
+      "study_id": "study-bab42a510430ae7ce52659ad",
+      "passage_id": "passage-68419c025e4941c55bb987d6",
+      "source_version": "17255b3185e9a123bc63e813f766b6084e9736db7f525f37577e7c3d495accd0",
+      "quote": "The PTEN tumor suppressor is mutated in diverse human cancers and in hereditary cancer predisposition syndromes. PTEN is a phosphatase that can act on both polypeptide and phosphoinositide substrates in vitro. The PTEN structure reveals a phosphatase domain that is similar to protein phosphatases but has an enlarged active site important for the accommodation of the phosphoinositide substrate. The structure also reveals that PTEN has a C2 domain. The PTEN C2 domain binds phospholipid membranes in vitro, and mutation of basic residues that could mediate this reduces PTEN's membrane affinity and its ability to suppress the growth of",
+      "worker": "synthesis",
+      "reviewer_status": "unreviewed",
+      "claim_type": "reported study observation"
+    }
+  ],
+  "structures": [
+    {
+      "id": "pdb-1D5R",
+      "pdb_id": "1D5R",
+      "title": "Crystal Structure of the PTEN Tumor Suppressor",
+      "method": [
+        "X-RAY DIFFRACTION"
+      ],
+      "resolution": [
+        2.1
+      ],
+      "atom_count": 2968,
+      "asset": {
+        "asset_id": "ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3",
+        "key": "ea/ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3.cif",
+        "sha256": "ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3",
+        "size_bytes": 346885
+      },
+      "study_ids": [
+        "study-bab42a510430ae7ce52659ad"
+      ],
+      "primary_citation": {
+        "country": "US",
+        "id": "primary",
+        "journal_abbrev": "Cell(Cambridge,Mass.)",
+        "journal_id_ASTM": "CELLB5",
+        "journal_id_CSD": "0998",
+        "journal_id_ISSN": "0092-8674",
+        "journal_volume": "99",
+        "page_first": "323",
+        "page_last": "334",
+        "pdbx_database_id_DOI": "10.1016/S0092-8674(00)81663-3",
+        "pdbx_database_id_PubMed": 10555148,
+        "rcsb_ORCID_identifiers": [
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "rcsb_authors": [
+          "Lee, J.O.",
+          "Yang, H.",
+          "Georgescu, M.M.",
+          "Di Cristofano, A.",
+          "Maehama, T.",
+          "Shi, Y.",
+          "Dixon, J.E.",
+          "Pandolfi, P.",
+          "Pavletich, N.P."
+        ],
+        "rcsb_journal_abbrev": "Cell",
+        "title": "Crystal structure of the PTEN tumor suppressor: implications for its phosphoinositide phosphatase activity and membrane association.",
+        "year": 1999
+      },
+      "source_url": "https://www.rcsb.org/structure/1D5R",
+      "synthetic": false,
+      "acquired_at": "2026-10-25T04:33:21.462598+00:00",
+      "relationship": "publication-linked structure",
+      "citation_matches": true,
+      "pdb_mentioned": false
+    }
+  ],
+  "budget": {
+    "model_requests": 10,
+    "max_model_requests": 12,
+    "tool_calls": 3,
+    "usage": [
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 1362,
+          "completion_tokens": 1013,
+          "total_tokens": 2375,
+          "cost": 0.0041006,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0041006,
+            "upstream_inference_prompt_cost": 0.0015681,
+            "upstream_inference_completions_cost": 0.0025325
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 724,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0041006,
+        "background": false,
+        "fallback": {
+          "from_provider": "google",
+          "from_model": "gemini-4-argon",
+          "to_provider": "openrouter",
+          "to_model": "x-ai/grok-4.3",
+          "failure_type": "RuntimeError"
+        },
+        "attempts": [
+          {
+            "provider": "google",
+            "model": "gemini-4-argon",
+            "status": "failed_attempt",
+            "cost_usd": null,
+            "failure_type": "RuntimeError"
+          },
+          {
+            "provider": "openrouter",
+            "model": "x-ai/grok-4.3",
+            "usage": {
+              "prompt_tokens": 1362,
+              "completion_tokens": 1013,
+              "total_tokens": 2375,
+              "cost": 0.0041006,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 128,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0041006,
+                "upstream_inference_prompt_cost": 0.0015681,
+                "upstream_inference_completions_cost": 0.0025325
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 724,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "cost_usd": 0.0041006,
+            "background": false
+          }
+        ]
+      },
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      },
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 1554,
+          "completion_tokens": 1046,
+          "total_tokens": 2600,
+          "cost": 0.0044231,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0044231,
+            "upstream_inference_prompt_cost": 0.0018081,
+            "upstream_inference_completions_cost": 0.002615
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 816,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0044231,
+        "background": false,
+        "fallback": {
+          "from_provider": "google",
+          "from_model": "gemini-4-argon",
+          "to_provider": "openrouter",
+          "to_model": "x-ai/grok-4.3",
+          "failure_type": "RuntimeError"
+        },
+        "attempts": [
+          {
+            "provider": "google",
+            "model": "gemini-4-argon",
+            "status": "failed_attempt",
+            "cost_usd": null,
+            "failure_type": "RuntimeError"
+          },
+          {
+            "provider": "openrouter",
+            "model": "x-ai/grok-4.3",
+            "usage": {
+              "prompt_tokens": 1554,
+              "completion_tokens": 1046,
+              "total_tokens": 2600,
+              "cost": 0.0044231,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 128,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0044231,
+                "upstream_inference_prompt_cost": 0.0018081,
+                "upstream_inference_completions_cost": 0.002615
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 816,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "cost_usd": 0.0044231,
+            "background": false
+          }
+        ]
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 1554,
+          "completion_tokens": 1026,
+          "total_tokens": 2580,
+          "cost": 0.0043731,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0043731,
+            "upstream_inference_prompt_cost": 0.0018081,
+            "upstream_inference_completions_cost": 0.002565
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 667,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0043731,
+        "background": false,
+        "fallback": {
+          "from_provider": "google",
+          "from_model": "gemini-4-argon",
+          "to_provider": "openrouter",
+          "to_model": "x-ai/grok-4.3",
+          "failure_type": "RuntimeError"
+        },
+        "attempts": [
+          {
+            "provider": "google",
+            "model": "gemini-4-argon",
+            "status": "failed_attempt",
+            "cost_usd": null,
+            "failure_type": "RuntimeError"
+          },
+          {
+            "provider": "openrouter",
+            "model": "x-ai/grok-4.3",
+            "usage": {
+              "prompt_tokens": 1554,
+              "completion_tokens": 1026,
+              "total_tokens": 2580,
+              "cost": 0.0043731,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 128,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0043731,
+                "upstream_inference_prompt_cost": 0.0018081,
+                "upstream_inference_completions_cost": 0.002565
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 667,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "cost_usd": 0.0043731,
+            "background": false
+          }
+        ]
+      },
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 3001,
+          "completion_tokens": 760,
+          "total_tokens": 3761,
+          "cost": 0.00551685,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00551685,
+            "upstream_inference_prompt_cost": 0.00361685,
+            "upstream_inference_completions_cost": 0.0019
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 634,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.00551685,
+        "background": false,
+        "fallback": {
+          "from_provider": "google",
+          "from_model": "gemini-4-argon",
+          "to_provider": "openrouter",
+          "to_model": "x-ai/grok-4.3",
+          "failure_type": "RuntimeError"
+        },
+        "attempts": [
+          {
+            "provider": "google",
+            "model": "gemini-4-argon",
+            "status": "failed_attempt",
+            "cost_usd": null,
+            "failure_type": "RuntimeError"
+          },
+          {
+            "provider": "openrouter",
+            "model": "x-ai/grok-4.3",
+            "usage": {
+              "prompt_tokens": 3001,
+              "completion_tokens": 760,
+              "total_tokens": 3761,
+              "cost": 0.00551685,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 128,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00551685,
+                "upstream_inference_prompt_cost": 0.00361685,
+                "upstream_inference_completions_cost": 0.0019
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 634,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "cost_usd": 0.00551685,
+            "background": false
+          }
+        ]
+      },
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 2406,
+          "completion_tokens": 1159,
+          "total_tokens": 3565,
+          "cost": 0.0057706,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0057706,
+            "upstream_inference_prompt_cost": 0.0028731,
+            "upstream_inference_completions_cost": 0.0028975
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 803,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0057706,
+        "background": false,
+        "fallback": {
+          "from_provider": "google",
+          "from_model": "gemini-4-argon",
+          "to_provider": "openrouter",
+          "to_model": "x-ai/grok-4.3",
+          "failure_type": "RuntimeError"
+        },
+        "attempts": [
+          {
+            "provider": "google",
+            "model": "gemini-4-argon",
+            "status": "failed_attempt",
+            "cost_usd": null,
+            "failure_type": "RuntimeError"
+          },
+          {
+            "provider": "openrouter",
+            "model": "x-ai/grok-4.3",
+            "usage": {
+              "prompt_tokens": 2406,
+              "completion_tokens": 1159,
+              "total_tokens": 3565,
+              "cost": 0.0057706,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 128,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0057706,
+                "upstream_inference_prompt_cost": 0.0028731,
+                "upstream_inference_completions_cost": 0.0028975
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 803,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "cost_usd": 0.0057706,
+            "background": false
+          }
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Passage text is truncated and provides no further experimental details on methods or biological systems",
+    "Passage text is truncated and incomplete",
+    "No variant-specific data or mutation effects reported",
+    "A source-linked reconstruction is not an independent experimental reproduction.",
+    "Related reference structures do not establish a mutant fold, binding or causal mechanism."
+  ],
+  "summary": "Acquired 1 public studies and 1 structural references. 6 reported observations passed source-identity checks.",
+  "error": null
+}

@@ -1,0 +1,9 @@
+{
+  "status": "completed_with_limitations",
+  "observations": 5,
+  "structures": 3,
+  "projection_status": 200,
+  "writes": 0,
+  "errors": [],
+  "scope": "Read-only live application check; no model, publication or mail was started."
+}

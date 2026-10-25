@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "src/workspace/MolecularOverview.tsx": {
+      "unchanged": false
+    },
+    "src/workspace/molecular-overview.css": {
+      "unchanged": true
+    },
+    "src/workspace/ReferenceScene.tsx": {
+      "unchanged": true
+    },
+    "src/components/BrandLogo.tsx": {
+      "unchanged": true
+    },
+    "public/branding/bramha-atlas-logo.png": {
+      "unchanged": true
+    }
+  },
+  "homepageChange": "MolecularOverview.tsx changes action destinations only; shared navigation uses the final information architecture.",
+  "heading": "See the structure.\nInvestigate\nthe uncertainty."
+}

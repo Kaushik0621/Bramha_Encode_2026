@@ -1,0 +1,78 @@
+[
+  {
+    "slide": 1,
+    "text": "EVIDENCE THAT LEADS SOMEWHERE\nBramha Atlas\nBRAMHA ATLAS  /  25 OCTOBER 2026\n01\nWhich mutation should\nwe investigate next,\nand why?\nReviewable research, connected to evidence.\nOPEN THE PTEN DEMO  \u2192\nACTUAL REFERENCE WORKSPACE  /  PTEN \u00b7 1D5R\n"
+  },
+  {
+    "slide": 2,
+    "text": "THE PROBLEM\nThe next experiment starts with an evidence decision\nBRAMHA ATLAS  /  25 OCTOBER 2026\n02\nOne researcher.\nCompeting explanations.\nLimited lab capacity.\nMEASUREMENTS\nWhat did each assay measure?\nSTRUCTURE\nCan this position be mapped?\nLITERATURE\nDoes the cited passage apply?\nThe proposed job: assemble a research decision with evidence and explicit unknowns.\n"
+  },
+  {
+    "slide": 3,
+    "text": "THE PRODUCT\nFrom a question to a brief you can check\nBRAMHA ATLAS  /  25 OCTOBER 2026\n03\n01\nAsk\nDeclare the question\n02\nInspect\nCheck the evidence\n03\nInvestigate\nRun scoped work\n04\nReview\nChoose the next step\nA checked research brief, with reproducible artifacts and explicit unknowns.\n3D WORKFLOW SCHEMATIC\n"
+  },
+  {
+    "slide": 4,
+    "text": "THE PTEN DEMONSTRATION\nThree real substitutions. One bounded question.\nBRAMHA ATLAS  /  25 OCTOBER 2026\n04\nC124S\nPaired measurements\nActivity and abundance\nare both available.\nR172H\nA missing observation\nActivity is available;\nabundance is missing.\nY16T\nA different profile\nPaired measurements;\nexcluded by baseline rule.\nWhich profiles meet our \nrule?\nWhat remains unresolved?\n"
+  },
+  {
+    "slide": 5,
+    "text": "MEASUREMENTS, WITH THEIR MEANING\nTwo assays answer different questions\nBRAMHA ATLAS  /  25 OCTOBER 2026\n05\n0.4\n0.6\n0.8\n1\n1.2\n-5.5\n-4.5\n-3.5\n-2.5\n-1.5\n-0.5\n0.5\nAbundance \u00b7 native VAMP-seq\nActivity \u00b7 native yeast enrichment\nC124S\nY16T\nVariant\nActivity\nAbundance\nC124S\n-4.896\n1.047\nR172H\n-0.090\nMissing\nY16T\n-0.282\n0.879\n2 of 3 have both values.\nMissing stays unknown.\nPublic MaveDB measurements \u00b7 pinned PTEN snapshot \u00b7 no cross-assay normalization\n"
+  },
+  {
+    "slide": 6,
+    "text": "REFERENCE STRUCTURE\nA mapped position gives context, not causation\nBRAMHA ATLAS  /  25 OCTOBER 2026\n06\nPTEN \u00b7 1D5R \u00b7 chain A\nY16T\nC124S\nR172H\nExperimental C\u03b1 trace \u00b7 rigid 3D projection \u00b7 reference only\nIdentity checked\nAccepted reference-to-chain \nmapping.\nContext preserved\nAll three positions are mapped.\nThe mutant fold was not \ncomputed.\n"
+  },
+  {
+    "slide": 7,
+    "text": "A REPRODUCIBLE FOLLOW-UP\nChange one rule. See exactly what changes.\nBRAMHA ATLAS  /  25 OCTOBER 2026\n07\nBASELINE\nC124S\nActivity ceiling \u22121.11\nFOLLOW-UP\nC124S + Y16T\nActivity ceiling 10\n\u2192\nENTERED\nY16T\nLEFT\nNone\nUNCHANGED\nC124S\nEXPLORATORY CRITERION CHANGE \u00b7 0 MODEL REQUESTS\n"
+  },
+  {
+    "slide": 8,
+    "text": "RECORDED AGENT INVESTIGATION\nScoped reviews, inspectable handoffs\nBRAMHA ATLAS  /  25 OCTOBER 2026\n08\nRECORDED TASK DEPENDENCIES\nResearch lead\nModel orchestrator\nIdentity\nDeterministic\nAssay\nModel + tools\nStructure\nModel + tools\nVerifier\nMechanical checks\n5\nmodel requests\n10\ndeterministic tool calls\nRecorded run\nArgon unverified\n"
+  },
+  {
+    "slide": 9,
+    "text": "THE RESEARCH OUTCOME\nThe useful result includes the unknowns\nBRAMHA ATLAS  /  25 OCTOBER 2026\n09\nSUPPORTED BY THE BASELINE\nC124S meets the declared\npaired-measurement rule.\nA descriptive shortlist for scientific review.\nStill unresolved\nR172H: abundance is missing.\nMechanism and disease \nrelevance\nare not established here.\nNEXT QUESTION\nWhat additional applicable evidence could distinguish the \ncompeting explanations?\n"
+  },
+  {
+    "slide": 10,
+    "text": "SYSTEM ARCHITECTURE\nConnected evidence, explicit storage boundaries\nBRAMHA ATLAS  /  25 OCTOBER 2026\n10\nMongoDB Atlas\nPublic corpus\nLocal store\nProject state\nPython tools + scoped model reviews\nResearcher review\nREVIEW\nInspect evidence. Decide \nfollow-up.\nCOMPUTE\nNumerical tools + bounded \nreview.\nPERSIST\nPublic corpus / local projects:\nseparate stores.\n3D architecture schematic \u00b7 responsibilities and storage boundaries\n"
+  },
+  {
+    "slide": 11,
+    "text": "DEMONSTRATED SCOPE\nA prototype with evidence you can inspect\nBRAMHA ATLAS  /  25 OCTOBER 2026\n11\nCapability\nEvidence in hand\nStatus\nPTEN analysis\nPinned baseline + one-factor follow-up\nDemonstrated\nIndependent reviews\nSaved model-backed team run\nRecorded; with limits\nPublic corpus\nAtlas connection + stored records\nSnapshot verified\nArgon scientific run\nConnectivity attempt timed out\nUnverified\nClinical or causal validity\nNo qualifying validation in this case\nNot established\n480 studies  /  4,784 passages\nRecorded Atlas snapshot \u00b7 25 Oct 2026, 05:47 UTC\n"
+  },
+  {
+    "slide": 12,
+    "text": "INITIAL CUSTOMER\nStart with teams making variant research decisions\nBRAMHA ATLAS  /  25 OCTOBER 2026\n12\n01\nAcademic genomics labs\nReview variant evidence before\nchoosing a follow-up experiment.\n02\nSmall biotech teams\nConnect measurements, structure\nand source review in one record.\nFIRST PILOT JOB\nA reviewed shortlist and a traceable next research \nquestion.\n"
+  },
+  {
+    "slide": 13,
+    "text": "COMPETITIVE CONTEXT\nA focused workflow in an established ecosystem\nBRAMHA ATLAS  /  25 OCTOBER 2026\n13\nExisting tool\nEstablished focus\nBenchling\nR&D workflows, context and agents\nGalaxy\nReproducible computational workflows\nMaveDB\nVariant-effect datasets and interpretation\nEurope PMC\nLife-science literature discovery\n$3.65B\n2024 global drug-discovery\ninformatics estimate\nBroad category context\nGrand View Research\nNot our addressable market\nOur proposed focus: one inspectable decision, from declared criteria to unresolved evidence.\n"
+  },
+  {
+    "slide": 14,
+    "text": "MARKET GAP TO VALIDATE\nThe gap is the decision handoff\nBRAMHA ATLAS  /  25 OCTOBER 2026\n14\nEvidence exists\nAssay records, structures\nand relevant passages.\n\u2192\nThe proposed gap\nA scientist still needs a\ndefensible next decision.\n\u2192\nBramha\u2019s wedge\nA checked shortlist,\nchanged inputs and \nunknowns.\nWhy pay when capable free tools exist?\nOnly if this specific handoff becomes measurably easier and still withstands \nexpert review.\n"
+  },
+  {
+    "slide": 15,
+    "text": "CUSTOMER VALUE \u2014 ILLUSTRATIVE\nWhat is closing that gap worth to one lab?\nBRAMHA ATLAS  /  25 OCTOBER 2026\n15\n8 cases/month \u00d7 2 net hours \u00d7 $60/hour\n= $11,520/year\nILLUSTRATIVE RESEARCH CAPACITY VALUE\n5 net hours/month\nto cover a $300/month fee\nat $60 per researcher hour.\nAnnual lab fee\n$3,600 \u00b7 proposed\nValue after fee\n$7,920 \u00b7 scenario\nLow use can fail\n2 cases/month: below fee\nAssumed net time recovered; capacity value is not measured cash savings.\n"
+  },
+  {
+    "slide": 16,
+    "text": "BOTTOM-UP OPPORTUNITY \u2014 SCENARIO\nA testable US entry segment: $0.72\u20132.16M/year\nBRAMHA ATLAS  /  25 OCTOBER 2026\n16\nREFERENCE POOL\n2,000\nUS biotech firms \u00b7 rounded\nASSUMED FIT\n10\u201330%\n200\u2013600 eligible firms\nPROPOSED PRICE\n$3,600\nper account per year\n20% fit case: 2,000 \u00d7 20% \u00d7 1 account \u00d7 $3,600 = $1.44M/year\nConditional segment value, not forecast revenue. Academic and international expansion excluded.\n"
+  },
+  {
+    "slide": 17,
+    "text": "BUSINESS MODEL HYPOTHESIS\nCharge for a bounded research workspace\nBRAMHA ATLAS  /  25 OCTOBER 2026\n17\nIndividual researcher\nUS$30 / month \u00b7 proposed\nBounded usage; validate with pilots.\nSmall laboratory\nUS$300 / month \u00b7 proposed\nShared review workflow; bounded usage.\n20 labs \u00d7 $300 / month \u00d7 12\n= $72,000 / year\nILLUSTRATIVE \u00b7 NOT TRACTION\n"
+  },
+  {
+    "slide": 18,
+    "text": "ADOPTION AND EVALUATION\nPilot the decision, then earn expansion\nBRAMHA ATLAS  /  25 OCTOBER 2026\n18\n01  Partner\nRecruit 3\u20135 labs.\nAgree on a bounded question.\n02  Evaluate\nExpert review + task success.\nMeasure time and errors.\n03  Expand\nValidate the next gene.\nTest repeat use and lab fit.\nWhat earns the next stage?\nTraceable results. Useful unknowns.\nResearchers who return.\n"
+  },
+  {
+    "slide": 19,
+    "text": "THE ASK\nHelp shape a research decision worth trusting\nBRAMHA ATLAS  /  25 OCTOBER 2026\n19\nBring one research question.\nSeeking pilot labs and scientific advisers.\n01\nVerify Argon execution\n02\nEvaluate with researchers\n03\nValidate gene expansion\n"
+  }
+]

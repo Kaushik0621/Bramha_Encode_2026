@@ -1,0 +1,26 @@
+{
+  "guidance_id": "focus-7494a9acf8e0e9384020c42c750ff1b0",
+  "provider": "openrouter",
+  "model": "x-ai/grok-4.3",
+  "fallback": true,
+  "completed_workers": 4,
+  "project_id": "project-143de51a33bf4c1db0367b44e3d76191",
+  "selected_reference": "PTEN:p.C124S",
+  "geometry": {
+    "id": "geometry-251a471fc3454c48a0a171d27724a487",
+    "substitution": "p.C124A",
+    "reference_sidechain_atoms": [
+      "CB",
+      "SG"
+    ],
+    "proposal_sidechain_atoms": [
+      "CB"
+    ],
+    "clash_count": 0,
+    "method": "Rigid N–CA–C least-squares alignment of an RCSB CCD ideal amino-acid template; reference backbone coordinates retained."
+  },
+  "mobileFits": true,
+  "errors": [],
+  "overlay_render_verified": true,
+  "renderer_lifecycle": "Fresh renderer host when input models change; small fragments rendered atomically."
+}

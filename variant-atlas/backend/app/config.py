@@ -35,7 +35,11 @@ class Settings:
     local_data_dir: Path = ROOT / 'var'
     mongodb_uri: str = field(default='', repr=False)
     mongodb_database: str = 'variant_atlas'
+    corpus_backend: str = 'local'
+    corpus_embeddings: str = 'disabled'
+    corpus_embedding_model: str = 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'
     llm_provider: str = 'mock'
+    llm_fallback_provider: str = 'openrouter'
     openrouter_api_key: str = field(default='', repr=False)
     openrouter_model: str = ''
     openrouter_base_url: str = 'https://openrouter.ai/api/v1'
@@ -81,7 +85,11 @@ class Settings:
             local_data_dir=Path(env.get('LOCAL_DATA_DIR') or ROOT / 'var'),
             mongodb_uri=str(env.get('MONGODB_URI') or ''),
             mongodb_database=str(env.get('MONGODB_DATABASE') or 'variant_atlas'),
+            corpus_backend=str(env.get('CORPUS_BACKEND') or 'local'),
+            corpus_embeddings=str(env.get('CORPUS_EMBEDDINGS') or 'disabled'),
+            corpus_embedding_model=str(env.get('CORPUS_EMBEDDING_MODEL') or 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'),
             llm_provider=str(env.get('LLM_PROVIDER') or 'mock'),
+            llm_fallback_provider=str(env.get('LLM_FALLBACK_PROVIDER', 'openrouter')).lower(),
             openrouter_api_key=str(env.get('OPENROUTER_API_KEY') or ''),
             openrouter_model=str(env.get('OPENROUTER_MODEL') or ''),
             openrouter_base_url=str(env.get('OPENROUTER_BASE_URL') or 'https://openrouter.ai/api/v1').rstrip('/'),

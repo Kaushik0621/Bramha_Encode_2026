@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-25T07:36:45.251Z",
+  "errors": [],
+  "mutating_requests": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8500/api/portfolio/projects/project-c5786c930ae040d693910c78a4a548eb/visit"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8500/api/portfolio/projects/project-c5786c930ae040d693910c78a4a548eb/visit"
+    }
+  ],
+  "model_start_requests": [],
+  "mobile_overflow": false,
+  "saved_links_verified": true
+}

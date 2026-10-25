@@ -1,0 +1,108 @@
+SLIDE 01 — Bramha Atlas
+OPEN (20 seconds). Which mutation should we investigate next, and why? Bramha Atlas connects existing measurements, source evidence and reference structure into a research decision a scientist can inspect and reproduce. This is a computational research prototype. The frame is an actual saved PTEN workspace, not an animated simulation.
+Opening demo: use the button to My Research and select “Inspect saved baseline”. Walk through the 90-second script in DEMO.md. Recorded evidence is the reliable default; do not call it a live Argon run. If the local app is unavailable, use the supplied frames and continue on slide 4.
+
+Sources: Production emblem: frontend/public/branding/bramha-emblem.png; source/reference-check.json; assets/linked-structure-results.png.
+
+SLIDE 02 — The next experiment starts with an evidence decision
+25 seconds. Imagine a small functional-genomics team with several variant explanations and limited experimental capacity. A public activity score, an abundance observation, a structure and a paper each tell only part of the story. The working hypothesis is that the expensive handoff is connecting those sources to a defensible next question. We have not measured the frequency or cost of this pain with customers yet.
+
+Sources: Customer scenario is an illustrative workflow hypothesis; no measured time savings or customer traction claimed.
+
+SLIDE 03 — From a question to a brief you can check
+25 seconds. The unit of value is a reviewable investigation, rather than an isolated chat response. Data and numerical operations retain inputs and versions. The researcher checks the result and chooses a follow-up. The diagram describes the supported investigation workflow; it does not mean every step invokes a model. The quantitative mission runs deterministic Python without an LLM.
+
+3D DIAGRAM: Conceptual dimensional schematic built from editable native PowerPoint faces, spheres and connectors. Spatial placement is a presentation choice, not measured geometry, runtime motion or a physical simulation.
+
+Sources: docs/EXPERIMENT_EXECUTION_AUDIT.md; docs/EXPERIMENT_ANALYSIS_DELIVERY.md; backend/app/analysis_execution.py; backend/app/analysis_results.py.
+
+SLIDE 04 — Three real substitutions. One bounded question.
+40 seconds. Open the saved baseline, not the model execution screen. The three selected substitutions are C124S, R172H and Y16T. These are human PTEN protein substitutions against canonical P60484, not uniquely inferred DNA alleles. The snapshot combines two distinct public MaveDB score sets and accepted reference mappings. All three selected positions map; this case does not demonstrate missing coordinates. The missingness is R172H abundance. Ask: which selected variants meet the assay-specific criteria, what structural context is available, and what remains unresolved? Show the saved inputs and the missing row.
+Local baseline: http://localhost:8500/research/project-c5786c930ae040d693910c78a4a548eb/workspace?view=analysis&analysis_run=research-4df547659b0949898f8ec40e00ee071c
+
+Sources: source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8.
+
+SLIDE 05 — Two assays answer different questions
+40 seconds. The x axis is published enrichment/fitness in a humanized yeast model; it is not a direct clinical activity score. The y axis is the native VAMP-seq abundance score, not a probability and not clamped to 0–1. The chart contains only the two paired profiles. R172H remains visible in the accompanying table, but is not plotted with an invented y value. Values on the slide are rounded for readability; the workbook and reference JSON preserve full precision. The displayed boundaries are exploratory analytical rules. Native activity/abundance values cannot be subtracted or treated as a common scale. Reported uncertainty metadata is retained in the source; no inferential conclusion is drawn here.
+
+Sources: source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8.
+
+SLIDE 06 — A mapped position gives context, not causation
+30 seconds. These are experimental reference coordinates from 1D5R. The mapping checks sequence identity and observed C-alpha correspondence. It is a precomputed audited reference-to-construct alignment, not a new alignment every time the viewer opens. All three chosen substitutions are mapped in this saved report. A selected side chain or colored residue is a substitution annotation; it does not compute a mutant fold. Distances are reference-coordinate Euclidean distances when coordinates are available; proximity alone does not establish a shared mechanism.
+
+3D DIAGRAM: Scientific orthographic projection of actual experimental C-alpha coordinates from source/mapping-audit.json. Rigid view transform only; missing regions are not connected. Side-chain/mutant geometry is not generated.
+
+Sources: source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8. Reference coordinates: https://www.rcsb.org/structure/1D5R ; UniProt: https://www.uniprot.org/uniprotkb/P60484/entry .
+
+SLIDE 07 — Change one rule. See exactly what changes.
+40 seconds. This is a saved analytical sensitivity check, separate from the model-backed investigation. The activity ceiling changes from -1.11 to 10. The abundance boundary remains 0.6121866579147568. Selection, source versions, mapping policy and the paired-measurement requirement remain fixed. A ceiling of 10 is deliberately permissive, not an established biological threshold. C124S remains selected and Y16T enters. R172H stays unresolved because its abundance value is absent. This changed analytical set does not demonstrate a new biological effect, a causal mechanism or an agent-generated hypothesis revision. Baseline and follow-up made zero model requests.
+Saved follow-up: http://localhost:8500/research/project-c5786c930ae040d693910c78a4a548eb/workspace?view=analysis&analysis_run=research-6be0a905e61a40eda99c4bcce147da1d
+
+Sources: source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8. Baseline research-4df547659b0949898f8ec40e00ee071c; follow-up research-6be0a905e61a40eda99c4bcce147da1d.
+
+SLIDE 08 — Scoped reviews, inspectable handoffs
+45 seconds. This diagram reflects one actual saved completed-with-limitations run. There is one model research lead and four delegated workers: a deterministic identity validator, an independent model assay reviewer, an independent model structure reviewer, and a deterministic artifact verifier. Both independent model reviews began after identity validation and their saved intervals overlap. There were five model requests, ten deterministic tool calls and eleven saved messages. This proves this saved task network and artifact handoffs, not external A2A protocol interoperability or unrestricted replication. It used OpenRouter / x-ai/grok-4.3; do not attribute this run to Argon. Argon is the intended integration and remains unverified. No private reasoning traces are displayed.
+Open saved recorded result: http://localhost:8500/research/project-c5786c930ae040d693910c78a4a548eb/investigations/research-00f7ec8b7690404db6f033a509507c8c
+
+3D DIAGRAM: Conceptual dimensional schematic built from editable native PowerPoint faces, spheres and connectors. Spatial placement is a presentation choice, not measured geometry, runtime motion or a physical simulation.
+
+Sources: source/agent-run.json; backend/app/orchestration/agent_network.py; assets/agent-network.png. Actual provider: OpenRouter / x-ai/grok-4.3. Argon remains unverified; source/argon-check.json.
+
+SLIDE 09 — The useful result includes the unknowns
+35 seconds. The baseline supports a descriptive statement: C124S meets this declared paired rule. It does not establish the biological reason. R172H cannot be evaluated with that paired rule because abundance is missing. The follow-up adds Y16T only after the criterion is changed. The next research question is whether additional applicable evidence can distinguish functional loss from abundance-related explanations. That is a research proposal, not a reported result or causal conclusion. A genuine autonomous limitation-driven revision is not established by this artifact set; the deterministic criterion change must not be sold as that behavior.
+
+Sources: source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8. source/agent-run.json. Adaptive limitation-driven model revision is not verified by this threshold comparison.
+
+SLIDE 10 — Connected evidence, explicit storage boundaries
+35 seconds. The public corpus is persisted in MongoDB Atlas; project questions, investigations and operation results remain in the configured local store. Deterministic Python tools execute numerical analysis. The lead and scoped model reviewers interpret bounded evidence, with artifact checks. The contextual Bramha Assistant is distinct from investigation agents. The stored passage vectors use a local pretrained multilingual embedding model. A recorded ready Atlas vector index does not by itself certify a full hybrid retrieval query; that integration must be separately verified. This is a conceptual architecture diagram, not a claim that every source is always queried for every run.
+
+3D DIAGRAM: Conceptual dimensional schematic built from editable native PowerPoint faces, spheres and connectors. Spatial placement is a presentation choice, not measured geometry, runtime motion or a physical simulation.
+
+Sources: docs/MONGODB_DATA_CONSOLE.md; source/storage-check.json; backend/app/analysis_execution.py; backend/app/corpus_store.py; backend/app/research_hub.py; frontend/src/workspace/ResearchHub.tsx.
+
+SLIDE 11 — A prototype with evidence you can inspect
+35 seconds. These rows distinguish demonstrated and pending work. The numerical mission has an audited saved baseline and follow-up. The independent agent team has a successful saved fallback-provider run, completed with limitations. Atlas has a connected public-corpus snapshot with 480 studies and 4,784 passages, distinct from project-state persistence. Supplied-model alignment also exists but is not the core pitch demonstration. Argon scientific execution, a verified end-to-end hybrid retrieval claim, autonomous limitation-driven revision in this case, and clinical validation are not established by these artifacts. Repository software checks do not validate biology.
+
+Sources: source/reference-check.json; source/agent-run.json; source/storage-check.json; source/argon-check.json; docs/EXPERIMENT_ANALYSIS_DELIVERY.md. Counts are the recorded 25 October 2026 snapshot.
+
+SLIDE 12 — Start with teams making variant research decisions
+30 seconds. Start with academic functional-genomics labs and small biotech research teams already interpreting public or internally reviewed variant evidence. The first job is a reviewable computational shortlist and an explicit list of missing evidence. The proposal is a small design-partner pilot using scoped, nonclinical research questions. We have not established customer demand, procurement fit or willingness to pay. Use expert feedback to narrow the workflow before expanding genes or organization-wide use.
+
+Sources: Proposed customer segmentation and pilot design are hypotheses; no signed pilots or validated willingness to pay claimed.
+
+SLIDE 13 — A focused workflow in an established ecosystem
+40 seconds. These products overlap with parts of the workflow and should be treated fairly. Benchling describes agentic R&D workflows and scientific context, so do not claim that competitors lack agents. Galaxy provides reproducible computational workflows. MaveDB provides variant-effect data; its related interfaces already expose multi-assay and structural interpretation. Europe PMC enables life-science literature discovery and reading. Our proposed distinction is a narrowly scoped investigation record that connects declared criteria, actual tool artifacts, source coverage and explicit unknowns; uniqueness and superiority are not established. Grand View Research estimates the broad global drug-discovery-informatics category at $3.65 billion in 2024. That is market context, not Bramha Atlas TAM, valuation, attainable revenue or a primary-source measurement. We do not sum overlapping markets.
+
+Sources: Official pages checked 25 October 2026: Benchling https://www.benchling.com/ ; Galaxy https://galaxyproject.org/ ; MaveDB https://mavedb.org/docs/mavedb/index.html and https://www.mavedb.org/docs/mavedb/mavemd/variant-page.html ; Europe PMC https://europepmc.org/about . Market context: Grand View Research https://www.grandviewresearch.com/horizon/outlook/drug-discovery-informatics-market-size/global .
+
+SLIDE 14 — The gap is the decision handoff
+35 seconds. The proposed gap is the work between finding evidence and approving a research decision: checking that records refer to the same substitution, respecting distinct assay meanings, linking structural coverage, explaining a changed shortlist, and preserving unresolved evidence. Existing tools overlap substantially. Benchling already has academic tools, AI and source-linked insights; Galaxy has reproducible workflows; MaveDB has assay and variant interpretation. We cannot claim those tools cannot solve the problem or that Bramha is unique. Our wedge is a preconfigured, bounded variant investigation with inspectable calculations and a reviewable outcome. Customer interviews and a task-level comparison must establish whether this handoff still costs enough time and whether the prototype reduces it. Start with small research teams that lack a dedicated bioinformatics workflow; that segment is a hypothesis. No signed pilots or validated demand are implied.
+
+3D DIAGRAM: Conceptual dimensional schematic built from editable native PowerPoint faces, spheres and connectors. Spatial placement is a presentation choice, not measured geometry, runtime motion or a physical simulation.
+
+Sources: Official sources checked 25 October 2026: Benchling academic plan and AI https://www.benchling.com/academic ; Galaxy https://galaxyproject.org/ ; MaveDB variant interface https://mavedb.org/docs/mavedb/mavemd/variant-page.html . Competitor coverage does not prove unmet demand. Market opportunity and value assumptions: source/market-model.json; Market-Value-Model.xlsx.
+
+SLIDE 15 — What is closing that gap worth to one lab?
+40 seconds. All inputs here are assumptions, not measured savings. Suppose a lab handles eight applicable investigations per month and Bramha recovers two net researcher hours per investigation after additional review, onboarding and correction time. At an assumed loaded research-capacity value of sixty US dollars per hour, annual capacity value is 8 times 2 times 60 times 12, or $11,520. At the proposed $300 monthly lab fee, the annual fee is $3,600, leaving $7,920 of illustrative capacity value after the subscription alone. This is released capacity, not guaranteed payroll savings, profit, or a measured ROI. Benefits are 3.2 times the fee before any other unmodelled costs. Break-even is five net hours recovered per month at this hourly value. A low-use lab with only two investigations monthly at two hours per case produces $2,880 annual capacity value, below the fee; it should not buy on this assumption. Do not attach a monetary value to avoided wet-lab failures or better scientific decisions without evidence. The pilot must measure end-to-end time, reviewer effort, errors and repeated usage against the current workflow.
+
+Sources: Official sources checked 25 October 2026: Benchling academic plan and AI https://www.benchling.com/academic ; Galaxy https://galaxyproject.org/ ; MaveDB variant interface https://mavedb.org/docs/mavedb/mavemd/variant-page.html . Competitor coverage does not prove unmet demand. Market opportunity and value assumptions: source/market-model.json; Market-Value-Model.xlsx.
+
+SLIDE 16 — A testable US entry segment: $0.72–2.16M/year
+45 seconds. BIO’s January 2026 industry brief describes more than two thousand biotech companies in the United States. We use a rounded two-thousand-company reference pool, not an exact census or a list of addressable buyers. Assume ten to thirty percent eventually fit the supported variant workflow and can buy, after technical readiness and source coverage are established. That means two hundred to six hundred hypothetical eligible firms. At one paid lab account per eligible firm and $300 monthly, the conditional full-coverage annual subscription pool is $720,000 to $2,160,000; the twenty-percent fit case is $1,440,000. This is a scoped, assumed serviceable segment, not a measured market gap, near-term revenue forecast or obtainable share. The present PTEN-only prototype may qualify far fewer accounts; the fit rate is not measured and commercial readiness is not established. Actual revenue must further multiply by conversion and retention. The first twenty hypothetical lab accounts would represent $72,000 annualized subscriptions, already shown as a commercial scenario; no customers are claimed. Universities and other countries are excluded rather than mixed into this denominator. Global TAM is not established. Pilot evidence and a deduplicated prospect list must replace the assumed fit rate before this is used for fundraising forecasts.
+
+Sources: BIO, America’s Innovation Engine: The Power of Small and Mid-Sized Biotechs, January 2026: https://www.bio.org/sites/default/files/2026-01/the_power_of_small_and_mid-size_biotechs.pdf . BIO states more than 2,000 US biotech companies. This model uses a rounded 2,000-company reference pool, not a count of qualified buyers. All fit, account and price inputs are assumptions: source/market-model.json; Market-Value-Model.xlsx.
+
+SLIDE 17 — Charge for a bounded research workspace
+30 seconds. Pricing is a hypothesis to test with the pilot participants. A research individual tier could start around $30 per month and a small-lab tier around $300 per month, with explicit execution budgets and usage limits. These prices are not current commercial offers. The illustrative calculation uses only lab subscriptions: twenty hypothetical labs at three hundred dollars monthly produce seventy-two thousand dollars of annual subscription revenue before costs, churn, discounts or taxes. It is not booked ARR or a financial forecast. The one recorded model-run cost is not enough to infer unit economics; measure support, compute, storage and model usage during pilots.
+
+Sources: All prices, customer counts and revenue values on this slide are proposed assumptions. Arithmetic only: 20 labs × US$300/month × 12 = US$72,000/year; no traction, forecast, profit or valuation claim.
+
+SLIDE 18 — Pilot the decision, then earn expansion
+30 seconds. Propose three to five design-partner labs, starting with agreed public or permissioned nonclinical questions. Freeze the questions and evaluation rubric before the trial. Have a domain expert score applicability, source support and error handling, while a researcher records completion time and time spent checking. Compare against each lab’s current process; do not publish an efficiency gain without the measurements and context. Expand to another gene only after source acquisition, assay interpretation and mapping checks pass. Department adoption should follow evidence of repeat use, exportability and acceptable support costs.
+
+Sources: Proposed evaluation plan; pilot counts, durations and success criteria are design hypotheses, not completed customer research.
+
+SLIDE 19 — Help shape a research decision worth trusting
+25 seconds. The next milestones are a verified Argon scientific run, independent researcher evaluation of this bounded workflow, and validated expansion beyond the initial PTEN mission. We are seeking pilot laboratories and scientific advisers who can bring a scoped research question and challenge the evidence, assumptions and next-step usefulness. Longer-term, portable research packages and permissioned collaboration may extend the workflow, but are not required for this initial demonstration. Close on one request: bring one research question and help us test whether the resulting decision record is useful.
+
+Sources: Roadmap and partner request are prospective. Argon status: source/argon-check.json. Gene expansion and independent scientific evaluation remain future milestones.

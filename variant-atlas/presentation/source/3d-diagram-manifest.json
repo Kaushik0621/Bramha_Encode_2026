@@ -1,0 +1,27 @@
+{
+  "slides": [
+    3,
+    6,
+    8,
+    10,
+    14
+  ],
+  "geometry": "editable native PowerPoint polygons, spheres and connectors",
+  "molecule": {
+    "coordinate_source": "source/mapping-audit.json",
+    "projection": "rigid rotation + orthographic",
+    "atoms": 307,
+    "gaps": "not connected",
+    "highlighted_reference_positions": [
+      16,
+      124,
+      172
+    ]
+  },
+  "conceptual_slides": [
+    3,
+    8,
+    10,
+    14
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source_id": "source-0203a062c04753d97740e906",
+  "project_id": "project-c5786c930ae040d693910c78a4a548eb",
+  "run_id": "research-6be0a905e61a40eda99c4bcce147da1d",
+  "failed_run_id": "research-711d8a7d67a74f36b69f4a8605015d38",
+  "errors": [],
+  "post_requests": 0,
+  "structure_loads": 1,
+  "scene_reused": true,
+  "mobile_fits": true,
+  "focused_units": 1,
+  "focused_position": "124",
+  "focus_check_errors": [],
+  "initial_structure_loads": 1
+}

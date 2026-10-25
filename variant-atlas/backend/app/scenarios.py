@@ -24,11 +24,19 @@ class ScenarioContext(Model):
 
 class SuggestRequest(ScenarioContext):
     use_model: bool = False
+    project_id: str | None = None
+    question: str = Field(default="", max_length=1800)
+    run_id: str | None = None
 
 
 class ApplyRequest(ScenarioContext):
     proposal_id: str
     candidate_id: str
+    # Accepted for compatibility with clients carrying suggestion metadata.
+    # Deterministic edits still use only the audited ScenarioContext fields.
+    project_id: str | None = None
+    question: str = Field(default="", max_length=1800)
+    run_id: str | None = None
 
 
 def stamp():
@@ -206,7 +214,7 @@ class ScenarioService:
             ]
         return out
 
-    async def suggest(self, request, provider_factory=ActionProvider):
+    async def suggest(self, request, provider_factory=ActionProvider, session_context=None):
         candidates = self.catalog(request)
         planner = {
             "provider": "deterministic",
@@ -226,6 +234,7 @@ class ScenarioService:
                         "task": "Rank the supplied executable research plans by usefulness for this context. Return AgentAction action=invoke_tool, tool=rank_scenarios, arguments={candidate_ids:[all candidate IDs, best first]}, summary a short explanation. Do not supply measurements, new actions, or findings.",
                         "schema": AgentAction.model_json_schema(),
                         "context": request.model_dump(),
+                        "research_session": session_context,
                         "candidates": candidates,
                     }
                 )
@@ -258,6 +267,7 @@ class ScenarioService:
             "fingerprint": fingerprint(request),
             "candidates": candidates,
             "planner": planner,
+            "session_context": session_context,
         }
         LocalRepository.atomic_write(self.root / (doc["id"] + ".json"), doc)
         return doc

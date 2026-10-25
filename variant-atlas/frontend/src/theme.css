@@ -1,0 +1,31 @@
+/* Shared semantic colors: lazy-loaded scientific components use the same palette. */
+:root{--atlas-brand:#f2e9d7;--atlas-copper:#dda476;--atlas-muted:#a6bdc6}
+:root[data-theme=dark]{color-scheme:dark;background:#0b1923;color:#e0ecee}
+:root[data-theme=light]{color-scheme:light;background:#f6f3eb;color:#213b3d;--atlas-bg:#f6f3eb;--atlas-surface:#fffdf8;--atlas-raised:#edf1e9;--atlas-surface-translucent:#fffdf8f2;--atlas-ink:#213b3d;--atlas-muted:#536b6d;--atlas-accent:#226b60;--atlas-line:#ccd6cd;--atlas-accent-line:#4b887b;--atlas-warn-line:#b28b59;--atlas-brand:#193b3b;--atlas-copper:#9e5837;--atlas-accent-surface:#e7efe7;--atlas-warn-surface:#f7eddb;--atlas-danger-surface:#f5e7e3;--atlas-warn-ink:#81551e;--atlas-danger-ink:#a24035;--bg:#f6f3eb;--panel:#fffdf8;--line:#ccd6cd;--muted:#536b6d;--teal:#226b60;--amber:#81551e}
+html[data-theme=light] body{background:var(--atlas-bg);color:var(--atlas-ink)}
+html[data-theme=light] .pw-app{--pw-line:var(--atlas-line);--pw-accent:var(--atlas-accent);--pw-muted:var(--atlas-muted)}
+html[data-theme=light] .pw-app.experience{--ex-bg:var(--atlas-bg);--ex-surface:var(--atlas-surface);--ex-raised:var(--atlas-raised);--ex-line:var(--atlas-line);--ex-text:var(--atlas-ink);--ex-muted:var(--atlas-muted);--ex-accent:var(--atlas-accent);--ex-warn:var(--atlas-warn-ink)}
+html[data-theme=light] .ra-app{--line:var(--atlas-line);--cyan:var(--atlas-accent)}
+html[data-theme=light] .pw-app .pw-primary,html[data-theme=light] .pw-app button.pw-primary,html[data-theme=light] .pw-app .mo-primary,html[data-theme=light] .pw-app .ra-primary{background:#245e55!important;border-color:#245e55!important;color:#fffdf8!important}
+html[data-theme=light] .pw-app .pw-primary:hover,html[data-theme=light] .pw-app .mo-primary:hover{background:#194b43!important}
+html[data-theme=light] .pw-app :focus-visible{outline-color:#226b60}
+html[data-theme=light] .pw-app input::placeholder,html[data-theme=light] .pw-app textarea::placeholder{color:#6a7d7b;opacity:1}
+html[data-theme=light] .pw-app .ex-draft-status,html[data-theme=light] .pw-app .ex-selected-chips button{color:#285b4e!important}
+html[data-theme=light] .pw-app .pw-muted{color:#536b6d!important}
+html[data-theme=light] .pw-app .pw-check input[type=checkbox]{accent-color:#226b60}
+html[data-theme=light] .mo-experience{background:radial-gradient(ellipse at 65% 27%,#bbd5c938,transparent 58%)}
+html[data-theme=light] .pw-sidebar{box-shadow:1px 0 0 #ffffff60}
+/* Molecular atom colors and viewport contrast stay consistent between themes. */
+html[data-theme=light] .ra-mol-target,html[data-theme=light] .ra-mol-target .msp-plugin{color-scheme:dark}
+html[data-theme=light] .pw-app .ra-molecule .ra-reset{background:#102b38;color:#dcebe8;border-color:#668c95}
+html[data-theme=light] .pw-app .ra-molecule .ra-residue-focus{background:#102b38ed;color:#dcebe8;border-color:#668c95}
+html[data-theme=light] .pw-app .ra-molecule .ra-residue-focus :is(b,small,span){color:#dcebe8}
+/* Chart annotations follow the UI; scientific data marks retain source colors. */
+html[data-theme=light] .pw-app svg text{fill:#405c5d}
+html[data-theme=light] .pw-app .ra-scenario-map rect{fill:var(--atlas-surface)}
+html[data-theme=light] .pw-app .ra-scenario-map>rect{fill:var(--atlas-accent-surface)}
+.pw-app .atlas-theme-toggle{display:flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;padding:8px 10px;min-height:36px;font-size:11px;line-height:1;border:1px solid var(--atlas-line,#35535f);background:transparent;color:var(--atlas-brand);border-radius:7px}
+.pw-app .atlas-theme-toggle:hover{background:var(--atlas-raised,#19363e)}
+.atlas-appearance>div{display:flex;gap:8px;margin:20px 0}.atlas-appearance>div>button{min-width:85px}.pw-app .atlas-appearance button[aria-pressed=true]{border-color:var(--atlas-accent-line,#a5dfd0);background:var(--atlas-accent-surface,#21414a);box-shadow:inset 0 0 0 1px var(--atlas-accent-line,#a5dfd0)}
+.pw-footer{display:flex;align-items:center;gap:12px}.pw-footer .bramha-brand-symbol{width:24px}.pw-footer .bramha-brand-symbol .bramha-emblem{flex-basis:24px;width:24px;height:23px;opacity:.8}
+@media(max-width:850px){.pw-topbar{gap:10px}.pw-app .atlas-theme-toggle{padding:8px;width:35px}.atlas-theme-toggle>span{display:none}.ex-save-state{max-width:88px}.pw-topbar .pw-global-search{min-width:0}.pw-footer{font-size:9px}.pw-footer .bramha-brand-symbol{flex-shrink:0}}

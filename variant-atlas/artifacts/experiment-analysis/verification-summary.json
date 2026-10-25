@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-25",
+  "backend": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 143,
+    "warnings": [
+      "Existing Starlette httpx TestClient deprecation"
+    ]
+  },
+  "production_build": {
+    "command": "npm run build",
+    "status": "passed",
+    "advisory": "Large molecular library chunks remain"
+  },
+  "browser": {
+    "unique_cases_passed": 11,
+    "analysis_results_final_run": {
+      "passed": 2,
+      "seconds": 47.9,
+      "includes": [
+        "real baseline and one-factor follow-up",
+        "linked plot/reference selection",
+        "CSV export",
+        "reload and selected-state restoration",
+        "saved result task click",
+        "actual supplied-model import, alignment and superposition"
+      ]
+    },
+    "other_cases": {
+      "passed": 9,
+      "files": [
+        "final-experience.spec.ts",
+        "brand-theme.spec.ts",
+        "observatory.spec.ts"
+      ],
+      "scope": "Paper reading, follow-up persistence, unsupported questions, scientific workspace, theme/mobile, country map selection, expedition replay"
+    }
+  },
+  "live_reference": "live-team-verified-report.json",
+  "deterministic_reference": "real-reference-check.json",
+  "structure_reference": "real-supplied-model-check.json",
+  "actual_browser_checks": [
+    "actual-browser-verification.json",
+    "actual-saved-result-browser-check.json",
+    "network-layout-check.json"
+  ],
+  "git_diff_check": "passed",
+  "clinical_validation": false
+}

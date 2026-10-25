@@ -1,0 +1,82 @@
+{
+  "verified_at": "2026-10-25T04:47:20.365475+00:00",
+  "stats": {
+    "backend": "atlas",
+    "database": "variant_atlas",
+    "collections": {
+      "studies": 480,
+      "passages": 4553,
+      "entities": 2356,
+      "structures": 21,
+      "relations": 38,
+      "scenarios": 240,
+      "ingestion_jobs": 1,
+      "expeditions": 1,
+      "events": 24,
+      "tasks": 8,
+      "searches": 0,
+      "metadata": 2,
+      "workspace_snapshots": 223,
+      "measurements": 7657
+    },
+    "assets": 347
+  },
+  "embedding_update": {
+    "embedded": 1533,
+    "dimension": 384,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "execution": "Local pretrained model; no external text transmission or new training."
+  },
+  "vector_index": {
+    "ready": true,
+    "name": "bramha_passages_multilingual_v1",
+    "status": "READY",
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "dimension": 384
+  },
+  "vector_passages": 4533,
+  "open_text_studies": 48,
+  "countries": [
+    "Australia",
+    "Austria",
+    "Belgium",
+    "Brazil",
+    "Canada",
+    "China",
+    "Denmark",
+    "Egypt",
+    "Finland",
+    "France",
+    "Germany",
+    "India",
+    "Iran",
+    "Israel",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "New Zealand",
+    "Norway",
+    "Poland",
+    "Saudi Arabia",
+    "Singapore",
+    "South Africa",
+    "South Korea",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "Taiwan",
+    "Turkey",
+    "United Kingdom",
+    "United States"
+  ],
+  "backup": {
+    "approved_files": 223,
+    "verified_backups": 223,
+    "verified_bytes": 6017894,
+    "skipped": [],
+    "database": "variant_atlas",
+    "completed_at": "2026-10-25T04:29:13.810902+00:00",
+    "id": "approved-local-backup"
+  },
+  "primary_citation_structure_links": 9
+}

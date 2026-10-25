@@ -1,0 +1,113 @@
+{
+  "language": "ru",
+  "status_code": 200,
+  "study_id": "study-a3203264434ffab695118217",
+  "library_source_id": "source-4c5a98f4c0684be1cf15ff1d",
+  "result": {
+    "kind": "study_translation",
+    "status": "completed",
+    "study_id": "study-a3203264434ffab695118217",
+    "source_version": "8d873f996100a6621d067eafcd60e51efc0283dd74ca24ef215385a6ab5fca40",
+    "target_language": "en",
+    "passage_ids": [
+      "passage-e1515f3a5e6fc9161683d2d1"
+    ],
+    "passages": [
+      {
+        "passage_id": "passage-e1515f3a5e6fc9161683d2d1",
+        "original": "Атипическая гиперплазия эндометрия и эндометриальная аденокарцинома представляют собой последовательные этапы злокачественного перерождения эпителия тела матки. В процессе канцерогенеза геномная нестабильность и мутационная нагрузка прогредиентно нарастают, однако в случае рака эндометрия наличие мутации в экзонуклеазном домене гена POLE и/или дефицита системы репарации ошибочно спаренных нуклеотидов ДНК (dMMR) приводит к геномной нестабильности на ранних этапах развития опухоли. В данной работе описывается клиническое наблюдение пациентки 49 лет, в гистологическом материале которой были выявлены одновременно 3 стадии злокачественной",
+        "translation": "Atypical endometrial hyperplasia and endometrial adenocarcinoma represent successive stages of malignant transformation of the uterine body epithelium. In the process of carcinogenesis, genomic instability and mutational load progressively increase, however in the case of endometrial cancer the presence of a mutation in the exonuclease domain of the POLE gene and/or deficiency of the DNA mismatch repair system (dMMR) leads to genomic instability at early stages of tumor development. This work describes a clinical observation of a 49-year-old patient in whose histological material 3 stages of malignant",
+        "source_language": "ru",
+        "source_version": "8d873f996100a6621d067eafcd60e51efc0283dd74ca24ef215385a6ab5fca40",
+        "section": "Publisher abstract · Russian"
+      }
+    ],
+    "limitations": [],
+    "provider": {
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "usage": {
+        "prompt_tokens": 1467,
+        "completion_tokens": 1235,
+        "total_tokens": 2702,
+        "cost": 0.00478685,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00478685,
+          "upstream_inference_prompt_cost": 0.00169935,
+          "upstream_inference_completions_cost": 0.0030875
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1040,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "cost_usd": 0.00478685,
+      "background": false,
+      "fallback": {
+        "from_provider": "google",
+        "from_model": "gemini-4-argon",
+        "to_provider": "openrouter",
+        "to_model": "x-ai/grok-4.3",
+        "failure_type": "RuntimeError"
+      },
+      "attempts": [
+        {
+          "provider": "google",
+          "model": "gemini-4-argon",
+          "status": "failed_attempt",
+          "cost_usd": null,
+          "failure_type": "RuntimeError"
+        },
+        {
+          "provider": "openrouter",
+          "model": "x-ai/grok-4.3",
+          "usage": {
+            "prompt_tokens": 1467,
+            "completion_tokens": 1235,
+            "total_tokens": 2702,
+            "cost": 0.00478685,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00478685,
+              "upstream_inference_prompt_cost": 0.00169935,
+              "upstream_inference_completions_cost": 0.0030875
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1040,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.00478685,
+          "background": false
+        }
+      ]
+    },
+    "attempts": [
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      }
+    ],
+    "at": "2026-10-25T07:09:05.735291+00:00",
+    "scope": "Model translation of selected source passages; not an original quotation or scientific validation.",
+    "id": "translation-ef397d885ab44fb7bd46a637b4732c4c"
+  }
+}

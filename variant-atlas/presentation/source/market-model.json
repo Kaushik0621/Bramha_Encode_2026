@@ -1,0 +1,52 @@
+{
+  "reviewed_on": "2026-10-25",
+  "evidence": {
+    "us_biotech_company_pool": {
+      "reported": "more than 2,000",
+      "model_reference": 2000,
+      "publisher": "Biotechnology Innovation Organization (BIO)",
+      "source_url": "https://www.bio.org/sites/default/files/2026-01/the_power_of_small_and_mid-size_biotechs.pdf",
+      "page": 1,
+      "status": "industry-association estimate; rounded model reference, not qualified prospects"
+    }
+  },
+  "customer_value_assumptions": {
+    "applicable_investigations_per_month": 8,
+    "net_hours_recovered_per_investigation": 2,
+    "research_capacity_value_usd_per_hour": 60,
+    "lab_subscription_usd_per_month": 300,
+    "net_means": "after additional review, onboarding and correction effort; no measured time saving"
+  },
+  "opportunity_assumptions": {
+    "geography": "United States",
+    "model_company_reference_pool": 2000,
+    "eligible_fit_rates": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "paid_accounts_per_eligible_company": 1,
+    "lab_subscription_usd_per_month": 300,
+    "conversion_and_retention": "not measured; conditional full-coverage pool assumes 100%, not a revenue forecast",
+    "scope": "academics and other geographies excluded; current PTEN-only product may qualify far fewer firms"
+  },
+  "derived": {
+    "customer_capacity_value_usd_year": 11520,
+    "fee_usd_year": 3600,
+    "capacity_value_after_fee_usd_year": 7920,
+    "capacity_value_to_fee_ratio": 3.2,
+    "breakeven_net_hours_month": 5,
+    "low_use_capacity_value_usd_year": 2880,
+    "subscription_pool_usd_year": [
+      720000,
+      1440000,
+      2160000
+    ]
+  },
+  "gap_status": "A specific workflow gap hypothesis, not demonstrated unmet demand or a measured global TAM.",
+  "competitor_sources": [
+    "https://www.benchling.com/academic",
+    "https://galaxyproject.org/",
+    "https://mavedb.org/docs/mavedb/mavemd/variant-page.html"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "study_id": "study-f069fb43fe811371c1cb92fc",
+  "source_version": "2eff221b32ce8b66ced97e510b199a7acfe8dbd200c9b39c614be2fea9dbc4e2",
+  "report_id": "proposals-e7a9a9b5dd9c4474be965ba9a5cff913",
+  "provider": {
+    "provider": "openrouter",
+    "model": "x-ai/grok-4.3",
+    "usage": {
+      "prompt_tokens": 4496,
+      "completion_tokens": 1083,
+      "total_tokens": 5579,
+      "cost": 0.0081931,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0081931,
+        "upstream_inference_prompt_cost": 0.0054856,
+        "upstream_inference_completions_cost": 0.0027075
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 592,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "cost_usd": 0.0081931,
+    "background": false,
+    "fallback": {
+      "from_provider": "google",
+      "from_model": "gemini-4-argon",
+      "to_provider": "openrouter",
+      "to_model": "x-ai/grok-4.3",
+      "failure_type": "RuntimeError"
+    },
+    "attempts": [
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 4496,
+          "completion_tokens": 1083,
+          "total_tokens": 5579,
+          "cost": 0.0081931,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0081931,
+            "upstream_inference_prompt_cost": 0.0054856,
+            "upstream_inference_completions_cost": 0.0027075
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 592,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0081931,
+        "background": false
+      }
+    ]
+  },
+  "attempts": [
+    {
+      "provider": "google",
+      "model": "gemini-4-argon",
+      "status": "failed_attempt",
+      "cost_usd": null,
+      "failure_type": "RuntimeError"
+    }
+  ],
+  "elapsed_seconds": 16.8,
+  "proposals": [
+    {
+      "id": "proposal-f04948d22d364fa1abd4a861b5c63a8b",
+      "title": "Audit reported methods gaps in clinical translation",
+      "examination": "methods audit",
+      "passage_ids": [
+        "passage-b8a3b80303a8b4dc32f5c170",
+        "passage-95e4396ebe43da3359052426"
+      ]
+    },
+    {
+      "id": "proposal-5fad6bbd49f74cd882636aa253f211e1",
+      "title": "Compare evidence on pharmacological limitations across sections",
+      "examination": "evidence comparison",
+      "passage_ids": [
+        "passage-95e4396ebe43da3359052426",
+        "passage-42df018cd9a31ff33f5050a8",
+        "passage-8c620efc823891a63fdc4507"
+      ]
+    }
+  ]
+}

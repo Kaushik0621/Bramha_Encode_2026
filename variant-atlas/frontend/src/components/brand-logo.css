@@ -1,10 +1,16 @@
-.bramha-brand{display:inline-flex;flex-direction:column;align-items:center;gap:10px;max-width:100%;width:199px;line-height:1}
-.bramha-brand .bramha-logo-panel{display:block;width:100%;padding:10px 9px;background:#f7f3eb;border:1px solid #d8cbb9;border-radius:8px;line-height:0;box-shadow:0 3px 15px #0001}
-.bramha-logo-panel svg{display:block;width:100%;height:auto;aspect-ratio:1869/765}
-.bramha-brand .bramha-logo-caption{display:block;font:8px/1.4 ui-monospace,SFMono-Regular,monospace;letter-spacing:.16em;color:#9fb6bf;white-space:normal;text-align:center;margin:0}
-.bramha-brand-compact{width:165px;gap:7px}.bramha-brand-compact .bramha-logo-panel{padding:7px 8px;border-radius:6px}.bramha-brand-compact .bramha-logo-caption{font-size:7px;letter-spacing:.1em}
-.pw-app .pw-brand{display:flex;justify-content:center;gap:0;font-size:inherit;text-decoration:none}.pw-app .pw-brand .bramha-brand{width:100%}.pw-app .pw-brand .bramha-logo-caption{font-size:8px;letter-spacing:.14em;line-height:1.5;margin:0}
-.ra-app .ra-brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}.ra-app .ra-brand .bramha-logo-caption{font-size:7px;letter-spacing:.08em;margin:0}
-.app-shell>.topbar .brand{min-width:165px;display:flex;text-decoration:none;justify-content:center}
-@media(max-width:1250px){.pw-app .pw-brand .bramha-logo-caption{font-size:7px}}
-@media(max-width:650px){.bramha-brand-compact{width:143px}.app-shell>.topbar .brand{min-width:143px}.bramha-brand-compact .bramha-logo-caption{font-size:6px}.ra-app .ra-header{gap:12px;flex-wrap:wrap;height:auto;min-height:85px}.ra-app .ra-brand .bramha-logo-caption{font-size:6px}.pw-sidebar .bramha-brand{width:199px}}
+.bramha-brand{display:inline-flex;align-items:center;gap:12px;max-width:100%;width:199px;line-height:1;color:var(--atlas-brand,#f2e9d7)}
+.bramha-emblem{display:block;flex:0 0 62px;width:62px;height:85px;overflow:visible}
+.bramha-wordmark{min-width:0;display:flex;flex-direction:column;gap:9px}
+.bramha-brand .bramha-wordmark-name{font:500 20px/1.12 'Avenir Next',Inter,system-ui,sans-serif;letter-spacing:-.055em;white-space:nowrap;color:var(--atlas-brand,#f2e9d7)}
+.bramha-wordmark-name>span{color:var(--atlas-copper,#dda476);font:inherit;letter-spacing:inherit}
+.bramha-brand .bramha-logo-caption{display:block;font:7px/1.6 ui-monospace,SFMono-Regular,monospace;letter-spacing:.12em;color:var(--atlas-muted,#a6bdc6);white-space:normal;margin:0}
+.bramha-brand-compact{width:177px;gap:10px}.bramha-brand-compact .bramha-emblem{flex-basis:40px;width:40px;height:38px}.bramha-brand-compact .bramha-wordmark-name{font-size:20px}.bramha-brand-compact .bramha-logo-caption{font-size:6px;letter-spacing:.08em}
+.bramha-brand-symbol{width:44px}.bramha-brand-symbol .bramha-emblem{flex-basis:44px;width:44px;height:44px}
+.pw-app .pw-brand,.ra-app .ra-brand,.app-shell>.topbar .brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;gap:0}
+.pw-app .pw-brand .bramha-brand{width:100%}.pw-app .pw-brand .bramha-logo-caption{font-size:7px;letter-spacing:.12em;margin:0;line-height:1.6}.ra-app .ra-brand .bramha-logo-caption{font-size:6px;letter-spacing:.08em;margin:0}.app-shell>.topbar .brand{min-width:177px}
+@media(max-width:1250px) and (min-width:851px){.pw-sidebar .bramha-emblem{width:53px;flex-basis:53px;height:74px}.pw-sidebar .bramha-brand{gap:9px}.pw-sidebar .bramha-wordmark-name{font-size:19px}.pw-app .pw-brand .bramha-logo-caption{font-size:6px}}
+@media(max-width:650px){.bramha-brand-compact{width:161px}.bramha-brand-compact .bramha-wordmark-name{font-size:18px}.app-shell>.topbar .brand{min-width:161px}.ra-app .ra-header{gap:12px;flex-wrap:wrap;height:auto;min-height:85px}}
+.bramha-brand .bramha-wordmark-name>span{font:inherit;letter-spacing:inherit;color:var(--atlas-copper,#dda476)}
+.bramha-brand-compact .bramha-emblem{overflow:hidden}
+/* Keep the fixed navigation lockup painted independently of WebGL viewports. */
+.pw-app .pw-brand{transform:translateZ(0)}

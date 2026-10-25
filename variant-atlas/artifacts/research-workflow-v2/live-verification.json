@@ -1,0 +1,183 @@
+{
+  "geometry": {
+    "project_id": "project-6b2d6037455145c69b62f25edc76c51e",
+    "created_at": "2026-10-24T23:00:46.685307+00:00",
+    "substitution": "p.C124S",
+    "position": 124,
+    "reference_amino_acid": "C",
+    "target_amino_acid": "S",
+    "reference_variant_id": "PTEN:p.C124S",
+    "reference_accession": "P60484",
+    "reference_structure": "1D5R",
+    "reference_version": "pten-transform-1.0-97b699d687c8",
+    "label_seq_id": 118,
+    "reference_asset": {
+      "asset_id": "7fce9890cd5f0d5202a21c748985a8b2a6724772a8124eeadc9b39835aa8f986",
+      "key": "7f/7fce9890cd5f0d5202a21c748985a8b2a6724772a8124eeadc9b39835aa8f986.pdb",
+      "sha256": "7fce9890cd5f0d5202a21c748985a8b2a6724772a8124eeadc9b39835aa8f986",
+      "size_bytes": 203512
+    },
+    "proposal_asset": {
+      "asset_id": "4674bda9286f73cc3250d6084dfbc3286d4a900d2a8b08c2802a3eda2446975c",
+      "key": "46/4674bda9286f73cc3250d6084dfbc3286d4a900d2a8b08c2802a3eda2446975c.pdb",
+      "sha256": "4674bda9286f73cc3250d6084dfbc3286d4a900d2a8b08c2802a3eda2446975c",
+      "size_bytes": 203512
+    },
+    "method": "Rigid N–CA–C least-squares alignment of an RCSB CCD ideal amino-acid template; reference backbone coordinates retained.",
+    "template_source": "https://files.rcsb.org/ligands/download/SER.cif",
+    "backbone_fit_rmsd_angstrom": 0.04744,
+    "reference_sidechain_atoms": [
+      "CB",
+      "SG"
+    ],
+    "proposal_sidechain_atoms": [
+      "CB",
+      "OG"
+    ],
+    "closest_other_atom_angstrom": 2.659,
+    "clash_threshold_angstrom": 1.8,
+    "clashes": [],
+    "known_measurements": {
+      "activity": -4.895642908999999,
+      "abundance": 1.04741806408857,
+      "variant_id": "PTEN:p.C124S"
+    },
+    "possible_dna_codons": [
+      "AGC",
+      "AGT",
+      "TCA",
+      "TCC",
+      "TCG",
+      "TCT"
+    ],
+    "codon_scope": "Genetic-code possibilities only. No transcript or genomic locus is loaded, so these are not inferred DNA edits.",
+    "status": "unrelaxed geometry proposal",
+    "limitations": [
+      "No energy minimization, molecular dynamics, docking or folding model was run.",
+      "Atom-distance screening is not an energy or functional prediction.",
+      "Observed activity/abundance are displayed only when the exact substitution exists in the loaded assay data."
+    ],
+    "id": "geometry-98e3faaace8744eeaa654ff69da8f1fd",
+    "kind": "geometry"
+  },
+  "literature": {
+    "query": "\"pten\" AND \"cancer\" AND \"mutations\"",
+    "hit_count": 73118,
+    "selected_title": "Co-mutation patterns and survival associations in lung cancer: a comparative analysis of Swedish and global cohorts.",
+    "source_url": "https://europepmc.org/article/MED/42852590",
+    "coverage": "open-access full text",
+    "included": true
+  },
+  "structure": {
+    "pdb_id": "9CKJ",
+    "atom_count": 5979,
+    "source_url": "https://www.rcsb.org/structure/9CKJ"
+  },
+  "scope": "Isolated temporary local archive; no user project was modified.",
+  "provider_format_recheck": {
+    "provider": "openrouter",
+    "model": "x-ai/grok-4.3",
+    "valid_envelope": true,
+    "checked_claims": 1,
+    "quotes_valid": true,
+    "scope": "Small controlled source passage; not a study interpretation quality test."
+  },
+  "assistant_initial_failure": {
+    "status": 502,
+    "provider": null,
+    "verified_claims": 0,
+    "retrieval": null,
+    "error": "Research service failed (FallbackExhaustedError). Saved evidence is retained."
+  },
+  "rejected_quote_attempt": {
+    "status": 422,
+    "provider": null,
+    "verified_claims": 0,
+    "retrieval": null,
+    "error": "The answer was rejected because a source quote could not be verified."
+  },
+  "assistant": {
+    "status": 200,
+    "provider": {
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "usage": {
+        "prompt_tokens": 10502,
+        "completion_tokens": 845,
+        "total_tokens": 11347,
+        "cost": 0.0151056,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0151056,
+          "upstream_inference_prompt_cost": 0.0129931,
+          "upstream_inference_completions_cost": 0.0021125
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 538,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "cost_usd": 0.0151056,
+      "background": false,
+      "fallback": {
+        "from_provider": "google",
+        "from_model": "gemini-4-argon",
+        "to_provider": "openrouter",
+        "to_model": "x-ai/grok-4.3",
+        "failure_type": "RuntimeError"
+      },
+      "attempts": [
+        {
+          "provider": "google",
+          "model": "gemini-4-argon",
+          "status": "failed_attempt",
+          "cost_usd": null,
+          "failure_type": "RuntimeError"
+        },
+        {
+          "provider": "openrouter",
+          "model": "x-ai/grok-4.3",
+          "usage": {
+            "prompt_tokens": 10502,
+            "completion_tokens": 845,
+            "total_tokens": 11347,
+            "cost": 0.0151056,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0151056,
+              "upstream_inference_prompt_cost": 0.0129931,
+              "upstream_inference_completions_cost": 0.0021125
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 538,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0151056,
+          "background": false
+        }
+      ]
+    },
+    "verified_claims": 4,
+    "retrieval": {
+      "method": "local BM25 over saved document chunks and previous findings",
+      "count": 8,
+      "scope": "project"
+    },
+    "error": null
+  }
+}

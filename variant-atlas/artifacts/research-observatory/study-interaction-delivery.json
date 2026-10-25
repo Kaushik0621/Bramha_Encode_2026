@@ -1,0 +1,15 @@
+{
+  "backend_tests_passed": 154,
+  "browser_regressions_passed": 5,
+  "production_build": "passed",
+  "live_adviser_provider": "openrouter / x-ai/grok-4.3",
+  "google_fallback": "used after Argon was unavailable",
+  "live_branch_status": "completed_with_limitations",
+  "live_completed_workers": 6,
+  "live_source_linked_observations": 6,
+  "live_tool_operations": 3,
+  "live_agent_handoffs": 6,
+  "study_id": "study-f069fb43fe811371c1cb92fc",
+  "project_id": "project-e6e7b2caca744e888d0dcfc5d9ad6bc4",
+  "expedition_id": "expedition-a5865c65a5f3483bac13b2b8facfad62"
+}

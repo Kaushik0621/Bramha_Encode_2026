@@ -1,0 +1,113 @@
+{
+  "language": "ja",
+  "status_code": 200,
+  "study_id": "study-a6a93d410aceab020655b19c",
+  "library_source_id": "source-212a166bbbc507c99c7daa2b",
+  "result": {
+    "kind": "study_translation",
+    "status": "completed",
+    "study_id": "study-a6a93d410aceab020655b19c",
+    "source_version": "c08a995865ab69bf9589c11bae6dc092094472aa4754df4417270533db00f780",
+    "target_language": "en",
+    "passage_ids": [
+      "passage-f3c6462874bd09b2d7f1639f"
+    ],
+    "passages": [
+      {
+        "passage_id": "passage-f3c6462874bd09b2d7f1639f",
+        "original": "遺伝性乳癌卵巣癌症候群（HBOC）は乳癌の約５～10％の症例を占め， BRCA1 および BRCA2 遺伝子が責任遺伝子である。当院における2020年４月から2022年12月までの BRCA1/2 遺伝学的検査（BRCA検査）の実施状況について，BRCA検査に至る患者の割合，BRCA検査を提案・実施するタイミングを解析したところ，当院はBRCA検査実施率が比較的高率であった。HBOCに関する適切で正確な情報提供は非常に重要であり，診療体制・役割分担・院内連携・情報提供方法のtipsについて述べた。近年は周術期コンパニオン診断としてのBRCA検査も重要になり，BRCA検査が予防的意義から予後改善への意義をもつようになっているので，検査の適切な実施が求められる。患者の自律的な意思決定支援には，医師を含めた医療スタッフのHBOCについての十分な理解と，多職種によるチーム医療のシステム化が不可欠である。",
+        "translation": "Hereditary breast and ovarian cancer syndrome (HBOC) accounts for approximately 5-10% of breast cancer cases, with BRCA1 and BRCA2 genes being the responsible genes. Analysis of the implementation status of BRCA1/2 genetic testing (BRCA testing) at our hospital from 2020 year 4 month to 2022 year 12 month, the proportion of patients reaching BRCA testing, and the timing of proposing and performing BRCA testing showed that our hospital had a comparatively high BRCA testing implementation rate. Providing appropriate and accurate information regarding HBOC is extremely important, and tips on the medical care system, role division, in-hospital collaboration, and information provision methods were described. In recent years BRCA testing as a perioperative companion diagnosis has also become important, and since BRCA testing has come to hold significance for prognosis improvement in addition to preventive significance, appropriate implementation of testing is required. Support for patients' autonomous decision-making requires sufficient understanding of HBOC by medical staff including physicians and the systematization of team medicine by multiple professions.",
+        "source_language": "ja",
+        "source_version": "c08a995865ab69bf9589c11bae6dc092094472aa4754df4417270533db00f780",
+        "section": "Publisher abstract · Japanese"
+      }
+    ],
+    "limitations": [],
+    "provider": {
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "usage": {
+        "prompt_tokens": 1636,
+        "completion_tokens": 1502,
+        "total_tokens": 3138,
+        "cost": 0.0041872,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 1536,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0041872,
+          "upstream_inference_prompt_cost": 0.0004322,
+          "upstream_inference_completions_cost": 0.003755
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1206,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "cost_usd": 0.0041872,
+      "background": false,
+      "fallback": {
+        "from_provider": "google",
+        "from_model": "gemini-4-argon",
+        "to_provider": "openrouter",
+        "to_model": "x-ai/grok-4.3",
+        "failure_type": "RuntimeError"
+      },
+      "attempts": [
+        {
+          "provider": "google",
+          "model": "gemini-4-argon",
+          "status": "failed_attempt",
+          "cost_usd": null,
+          "failure_type": "RuntimeError"
+        },
+        {
+          "provider": "openrouter",
+          "model": "x-ai/grok-4.3",
+          "usage": {
+            "prompt_tokens": 1636,
+            "completion_tokens": 1502,
+            "total_tokens": 3138,
+            "cost": 0.0041872,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 1536,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0041872,
+              "upstream_inference_prompt_cost": 0.0004322,
+              "upstream_inference_completions_cost": 0.003755
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1206,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.0041872,
+          "background": false
+        }
+      ]
+    },
+    "attempts": [
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      }
+    ],
+    "at": "2026-10-25T07:16:25.097072+00:00",
+    "scope": "Model translation of selected source passages; not an original quotation or scientific validation.",
+    "id": "translation-939def888a0f4473b2bd0bf7650bcbd7"
+  }
+}

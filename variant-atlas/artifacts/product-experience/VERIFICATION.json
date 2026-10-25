@@ -1,0 +1,40 @@
+{
+  "backend": {
+    "passed": 96,
+    "command": "backend/.venv/bin/python -m pytest backend/tests -q"
+  },
+  "frontend_build": "passed",
+  "browser": {
+    "full_suite": {
+      "total": 40,
+      "passed": 38,
+      "failed": 2
+    },
+    "corrected_legacy_checks": [
+      "Scroll canvas into view before pointer drag",
+      "Assert final My Research heading"
+    ],
+    "targeted_final": {
+      "passed": 14,
+      "failed": 0
+    },
+    "all_case_ids_have_passing_results_across_runs": true
+  },
+  "live_argon_generation_verified": false,
+  "live_translation_quality_verified": false,
+  "test_providers": "scripted fixtures; no live provider keys in test servers",
+  "sizes": [
+    [
+      1512,
+      1050
+    ],
+    [
+      1280,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ]
+}

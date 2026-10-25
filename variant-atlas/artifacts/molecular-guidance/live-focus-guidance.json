@@ -1,0 +1,1034 @@
+{
+  "kind": "molecular_guidance",
+  "status": "completed_with_limitations",
+  "created_at": "2026-10-25T07:49:04.182116+00:00",
+  "revision": 11,
+  "context": {
+    "source_id": "source-0203a062c04753d97740e906",
+    "source_version": "ce9cfc0f52e88052839e8d178be693f1434ac6abdd2ca6822c042604394c6a16",
+    "dataset_version": "pten-transform-1.0-97b699d687c8",
+    "position": 124,
+    "site": {
+      "position": 124,
+      "residue": "C",
+      "status": "mapped",
+      "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+      "auth_seq_id": 124
+    },
+    "variants": [
+      {
+        "id": "PTEN:p.C124A",
+        "status": "accepted",
+        "position": 124,
+        "ref": "C",
+        "alt": "A",
+        "protein_hgvs": "p.C124A",
+        "representation_level": "protein_substitution",
+        "dna_allele_status": "not_uniquely_inferred",
+        "organism_taxonomy_id": 9606,
+        "reference_accession": "P60484",
+        "reference_sequence_version": 1,
+        "reference_entry_version": 226,
+        "activity": -3.761583525,
+        "abundance": null,
+        "activity_se": 0.335454894,
+        "abundance_se": null,
+        "activity_record": "urn:mavedb:00000054-a-1#6445",
+        "abundance_record": null,
+        "mapping": {
+          "label_seq_id": 118,
+          "amino_acid": "C",
+          "auth_seq_id": "124",
+          "insertion_code": ".",
+          "chain_id": "A",
+          "label_asym_id": "A",
+          "reference_position": 124,
+          "status": "mapped",
+          "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+          "coordinate": {
+            "x": 39.5,
+            "y": 92.465,
+            "z": 25.288
+          },
+          "mapping_id": "P60484:1D5R:A:124:118",
+          "units": "angstrom",
+          "coordinate_type": "experimental"
+        },
+        "synthetic": false,
+        "evidence_ids": [
+          "passage-activity-0",
+          "passage-activity-650"
+        ]
+      },
+      {
+        "id": "PTEN:p.C124S",
+        "status": "accepted",
+        "position": 124,
+        "ref": "C",
+        "alt": "S",
+        "protein_hgvs": "p.C124S",
+        "representation_level": "protein_substitution",
+        "dna_allele_status": "not_uniquely_inferred",
+        "organism_taxonomy_id": 9606,
+        "reference_accession": "P60484",
+        "reference_sequence_version": 1,
+        "reference_entry_version": 226,
+        "activity": -4.895642908999999,
+        "abundance": 1.04741806408857,
+        "activity_se": 0.410233897,
+        "abundance_se": 0.10589328183116199,
+        "activity_record": "urn:mavedb:00000054-a-1#5684",
+        "abundance_record": "urn:mavedb:00000102-0-1#5175",
+        "mapping": {
+          "label_seq_id": 118,
+          "amino_acid": "C",
+          "auth_seq_id": "124",
+          "insertion_code": ".",
+          "chain_id": "A",
+          "label_asym_id": "A",
+          "reference_position": 124,
+          "status": "mapped",
+          "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+          "coordinate": {
+            "x": 39.5,
+            "y": 92.465,
+            "z": 25.288
+          },
+          "mapping_id": "P60484:1D5R:A:124:118",
+          "units": "angstrom",
+          "coordinate_type": "experimental"
+        },
+        "synthetic": false,
+        "evidence_ids": [
+          "passage-activity-0",
+          "passage-activity-650",
+          "passage-abundance-0"
+        ]
+      }
+    ],
+    "assays": [
+      {
+        "id": "activity",
+        "title": "PTEN lipid phosphatase scores",
+        "urn": "urn:mavedb:00000054-a-1",
+        "endpoint": "lipid phosphatase-associated yeast fitness",
+        "system": "humanized yeast model",
+        "organism_of_target": "Homo sapiens",
+        "target_taxonomy_id": 9606,
+        "model_system_is_target_organism": false,
+        "scale": "published enrichment/fitness score; original scale",
+        "direction": "higher indicates more assay-associated activity",
+        "construct": "Translated target matches canonical P60484 sequence version 1",
+        "controls": "Synonymous distribution: metadata describes wild-type-like interval [-1.11, 0.89].",
+        "replicate_availability": "Biological A/B and technical subreplicate aggregate scores are supplied; not treated as independent raw observations.",
+        "uncertainty_availability": "Reported standard errors retained.",
+        "source_ids": [
+          "mavedb-activity-metadata",
+          "mavedb-activity-scores"
+        ],
+        "limitations": [
+          "Scale and endpoint differ across assays; no shared normalization is performed.",
+          "Descriptive cross-assay patterns do not establish mechanism or disease effect."
+        ],
+        "methods": "Pair-ended reads were merged with PEAR. Custom Python scripts were used to identify and count sequence variants. Variant count files were then analysed with Enrich2 v.1.2.0. Scores and standard errors were calculated for each variant. A variant was considered high-confidence if the 95% confidence interval of the fitness score was <= 1, or if measurements from each biological replicate were both lower or both higher than the 95% bound of the synonymous distribution.\r\n\r\nVariants were considered wild-type like if they achieved a fitness score between the lower and upper 95th percentile (two-tailed) of synonymous variants, -1.11 and 0.89.\r\n\r\nThe score and SE columns are combined across all replicates as applicable. Scores and SE for each biological replicate (A and B) and technical replicate (A1, A2, etc.) are also provided.",
+        "original_methods": null,
+        "target_audit": {
+          "status": "accepted",
+          "targets": [
+            {
+              "name": "PTEN",
+              "organism_taxonomy_id": 9606,
+              "representation_level": "dna",
+              "translated_length": 403,
+              "reference_match": true,
+              "status": "accepted",
+              "reason": "Exact translated target/reference identity."
+            }
+          ]
+        }
+      },
+      {
+        "id": "abundance",
+        "title": "PTEN VAMP-seq Combined",
+        "urn": "urn:mavedb:00000102-0-1",
+        "endpoint": "relative intracellular abundance",
+        "system": "VAMP-seq abundance measurements; composite of original/fill-in datasets",
+        "organism_of_target": "Homo sapiens",
+        "target_taxonomy_id": 9606,
+        "model_system_is_target_organism": null,
+        "scale": "published VAMP-seq abundance score; original scale (not clamped to 0–1)",
+        "direction": "higher indicates greater relative abundance",
+        "construct": "Translated target matches canonical P60484 sequence version 1",
+        "controls": "Original method describes WT score 1 and average nonsense score 0; composite dataset averages available replicate scores.",
+        "replicate_availability": "Up to 15 per-replicate scores with missingness; exchangeability is not established.",
+        "uncertainty_availability": "Reported SE and confidence intervals retained.",
+        "source_ids": [
+          "mavedb-abundance-metadata",
+          "mavedb-abundance-scores",
+          "mavedb-abundance-original-metadata"
+        ],
+        "limitations": [
+          "Scale and endpoint differ across assays; no shared normalization is performed.",
+          "Descriptive cross-assay patterns do not establish mechanism or disease effect."
+        ],
+        "methods": "Abundance scores from the original and fill-in datasets were aggregated and a composite score was calculated by taking the mean of all 15 replicate scores (8 from the original, 7 for the fill-in).",
+        "original_methods": "Barcodes for each bin were counted and associated with variant sequences using Enrich2. Scores were calculated based on the frequency of each variant in each bin using a weighted average such that increased abundance in high-signal bins gives a higher score. Abundance scores were calculated based on a min-max normalization using wild type (score of 1) and the average nonsense variant score (score of 0). The scores reported are the average of the eight replicate scores. Confidence intervals and variance estimates are based on the replicate scores.\r\n\r\nMetadata contains the mapping between abundance classes and the integer values found in the database.",
+        "target_audit": {
+          "status": "accepted",
+          "targets": [
+            {
+              "name": "PTEN",
+              "organism_taxonomy_id": 9606,
+              "representation_level": "dna",
+              "translated_length": 403,
+              "reference_match": true,
+              "status": "accepted",
+              "reason": "Exact translated target/reference identity."
+            }
+          ]
+        }
+      }
+    ],
+    "references": [
+      {
+        "source_id": "source-0203a062c04753d97740e906",
+        "title": "UniProtKB human PTEN P60484",
+        "version": "ce9cfc0f52e88052839e8d178be693f1434ac6abdd2ca6822c042604394c6a16"
+      },
+      {
+        "source_id": "source-55d84e9edb64be49caef563a",
+        "title": "pdb-1D5R",
+        "version": "fbc00c9e7538d8d017fb238d51fa9af5e2aef78f568e417c9af4ee9980c30f75"
+      }
+    ],
+    "structure": {
+      "structure_id": "1D5R",
+      "chain_id": "A",
+      "reference_accession": "P60484",
+      "reference_length": 403,
+      "construct_length": 324,
+      "alignment_score": 939.0,
+      "alignment_ambiguous": true,
+      "depositor_cross_check": true,
+      "method": "X-RAY DIFFRACTION",
+      "resolution_angstrom": 2.1,
+      "source_type": "experimental",
+      "coordinate_metric": "C-alpha Euclidean distance",
+      "units": "angstrom",
+      "limitations": [
+        "Reference structure, not a mutant conformation.",
+        "Unresolved residues and deleted construct segments are not interpolated."
+      ]
+    },
+    "selected_variant_id": "PTEN:p.C124S",
+    "protein": "P60484"
+  },
+  "tasks": [
+    {
+      "id": "measurements",
+      "role": "Measurement analyst",
+      "engine": "public-data tool worker",
+      "status": "completed",
+      "started_at": "2026-10-25T07:49:04.452472+00:00",
+      "finished_at": "2026-10-25T07:49:04.890558+00:00",
+      "summary": "2 loaded substitutions at this exact canonical position. Missing measurements remain missing.",
+      "output": {
+        "rows": [
+          {
+            "id": "PTEN:p.C124A",
+            "protein_hgvs": "p.C124A",
+            "ref": "C",
+            "alt": "A",
+            "position": 124,
+            "activity": -3.761583525,
+            "abundance": null,
+            "activity_se": 0.335454894,
+            "abundance_se": null
+          },
+          {
+            "id": "PTEN:p.C124S",
+            "protein_hgvs": "p.C124S",
+            "ref": "C",
+            "alt": "S",
+            "position": 124,
+            "activity": -4.895642908999999,
+            "abundance": 1.04741806408857,
+            "activity_se": 0.410233897,
+            "abundance_se": 0.10589328183116199
+          }
+        ],
+        "assays": [
+          {
+            "id": "activity",
+            "title": "PTEN lipid phosphatase scores",
+            "urn": "urn:mavedb:00000054-a-1",
+            "endpoint": "lipid phosphatase-associated yeast fitness",
+            "system": "humanized yeast model",
+            "organism_of_target": "Homo sapiens",
+            "target_taxonomy_id": 9606,
+            "model_system_is_target_organism": false,
+            "scale": "published enrichment/fitness score; original scale",
+            "direction": "higher indicates more assay-associated activity",
+            "construct": "Translated target matches canonical P60484 sequence version 1",
+            "controls": "Synonymous distribution: metadata describes wild-type-like interval [-1.11, 0.89].",
+            "replicate_availability": "Biological A/B and technical subreplicate aggregate scores are supplied; not treated as independent raw observations.",
+            "uncertainty_availability": "Reported standard errors retained.",
+            "source_ids": [
+              "mavedb-activity-metadata",
+              "mavedb-activity-scores"
+            ],
+            "limitations": [
+              "Scale and endpoint differ across assays; no shared normalization is performed.",
+              "Descriptive cross-assay patterns do not establish mechanism or disease effect."
+            ],
+            "methods": "Pair-ended reads were merged with PEAR. Custom Python scripts were used to identify and count sequence variants. Variant count files were then analysed with Enrich2 v.1.2.0. Scores and standard errors were calculated for each variant. A variant was considered high-confidence if the 95% confidence interval of the fitness score was <= 1, or if measurements from each biological replicate were both lower or both higher than the 95% bound of the synonymous distribution.\r\n\r\nVariants were considered wild-type like if they achieved a fitness score between the lower and upper 95th percentile (two-tailed) of synonymous variants, -1.11 and 0.89.\r\n\r\nThe score and SE columns are combined across all replicates as applicable. Scores and SE for each biological replicate (A and B) and technical replicate (A1, A2, etc.) are also provided.",
+            "original_methods": null,
+            "target_audit": {
+              "status": "accepted",
+              "targets": [
+                {
+                  "name": "PTEN",
+                  "organism_taxonomy_id": 9606,
+                  "representation_level": "dna",
+                  "translated_length": 403,
+                  "reference_match": true,
+                  "status": "accepted",
+                  "reason": "Exact translated target/reference identity."
+                }
+              ]
+            }
+          },
+          {
+            "id": "abundance",
+            "title": "PTEN VAMP-seq Combined",
+            "urn": "urn:mavedb:00000102-0-1",
+            "endpoint": "relative intracellular abundance",
+            "system": "VAMP-seq abundance measurements; composite of original/fill-in datasets",
+            "organism_of_target": "Homo sapiens",
+            "target_taxonomy_id": 9606,
+            "model_system_is_target_organism": null,
+            "scale": "published VAMP-seq abundance score; original scale (not clamped to 0–1)",
+            "direction": "higher indicates greater relative abundance",
+            "construct": "Translated target matches canonical P60484 sequence version 1",
+            "controls": "Original method describes WT score 1 and average nonsense score 0; composite dataset averages available replicate scores.",
+            "replicate_availability": "Up to 15 per-replicate scores with missingness; exchangeability is not established.",
+            "uncertainty_availability": "Reported SE and confidence intervals retained.",
+            "source_ids": [
+              "mavedb-abundance-metadata",
+              "mavedb-abundance-scores",
+              "mavedb-abundance-original-metadata"
+            ],
+            "limitations": [
+              "Scale and endpoint differ across assays; no shared normalization is performed.",
+              "Descriptive cross-assay patterns do not establish mechanism or disease effect."
+            ],
+            "methods": "Abundance scores from the original and fill-in datasets were aggregated and a composite score was calculated by taking the mean of all 15 replicate scores (8 from the original, 7 for the fill-in).",
+            "original_methods": "Barcodes for each bin were counted and associated with variant sequences using Enrich2. Scores were calculated based on the frequency of each variant in each bin using a weighted average such that increased abundance in high-signal bins gives a higher score. Abundance scores were calculated based on a min-max normalization using wild type (score of 1) and the average nonsense variant score (score of 0). The scores reported are the average of the eight replicate scores. Confidence intervals and variance estimates are based on the replicate scores.\r\n\r\nMetadata contains the mapping between abundance classes and the integer values found in the database.",
+            "target_audit": {
+              "status": "accepted",
+              "targets": [
+                {
+                  "name": "PTEN",
+                  "organism_taxonomy_id": 9606,
+                  "representation_level": "dna",
+                  "translated_length": 403,
+                  "reference_match": true,
+                  "status": "accepted",
+                  "reason": "Exact translated target/reference identity."
+                }
+              ]
+            }
+          }
+        ],
+        "summary": "2 loaded substitutions at this exact canonical position. Missing measurements remain missing."
+      }
+    },
+    {
+      "id": "geometry",
+      "role": "Geometry scout",
+      "engine": "public-data tool worker",
+      "status": "completed",
+      "started_at": "2026-10-25T07:49:04.572082+00:00",
+      "finished_at": "2026-10-25T07:49:05.420268+00:00",
+      "summary": "Accepted reference coordinates; 14 mapped reference positions within the chosen radius.",
+      "output": {
+        "mapping": {
+          "position": 124,
+          "residue": "C",
+          "status": "mapped",
+          "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+          "auth_seq_id": 124
+        },
+        "neighbors": [
+          {
+            "position": 123,
+            "residue": "H",
+            "distance_angstrom": 3.7761
+          },
+          {
+            "position": 125,
+            "residue": "K",
+            "distance_angstrom": 3.8004
+          },
+          {
+            "position": 70,
+            "residue": "L",
+            "distance_angstrom": 5.0237
+          },
+          {
+            "position": 71,
+            "residue": "C",
+            "distance_angstrom": 5.0808
+          },
+          {
+            "position": 127,
+            "residue": "G",
+            "distance_angstrom": 5.1891
+          },
+          {
+            "position": 37,
+            "residue": "F",
+            "distance_angstrom": 5.7448
+          },
+          {
+            "position": 36,
+            "residue": "G",
+            "distance_angstrom": 5.9007
+          },
+          {
+            "position": 126,
+            "residue": "A",
+            "distance_angstrom": 5.986
+          },
+          {
+            "position": 131,
+            "residue": "T",
+            "distance_angstrom": 6.0613
+          },
+          {
+            "position": 69,
+            "residue": "N",
+            "distance_angstrom": 6.1018
+          },
+          {
+            "position": 130,
+            "residue": "R",
+            "distance_angstrom": 6.3427
+          },
+          {
+            "position": 122,
+            "residue": "I",
+            "distance_angstrom": 7.2074
+          },
+          {
+            "position": 35,
+            "residue": "M",
+            "distance_angstrom": 7.3306
+          },
+          {
+            "position": 128,
+            "residue": "K",
+            "distance_angstrom": 7.5883
+          }
+        ],
+        "radius_angstrom": 8,
+        "metric": "Reference C-alpha Euclidean distance; not a bond or mutant interaction",
+        "summary": "Accepted reference coordinates; 14 mapped reference positions within the chosen radius.",
+        "limitations": [
+          "Canonical sequence and engineered experimental construct can differ.",
+          "No folding, energy calculation or physical mutation was performed."
+        ]
+      }
+    },
+    {
+      "id": "literature",
+      "role": "Literature scout",
+      "engine": "public-data tool worker",
+      "status": "completed",
+      "started_at": "2026-10-25T07:49:04.701133+00:00",
+      "finished_at": "2026-10-25T07:49:07.651796+00:00",
+      "summary": "4 stored PTEN publications checked. Topical matches are reading candidates, not proof of this substitution’s effect.",
+      "output": {
+        "studies": [
+          {
+            "id": "study-2ab34e0234c68def1a91a4e5",
+            "title": "Detachment-induced ETS1 drives anoikis resistance and metastasis through STX3-mediated PTEN ubiquitination in gastric cancer.",
+            "version": "0530bd845e3ab2020e7c9b1263316db326e67eba256bece16d0bf131fdebfd7a",
+            "coverage": "indexed abstract",
+            "url": "https://europepmc.org/article/MED/42735835"
+          },
+          {
+            "id": "study-6d804801f7cb2020a5dca62a",
+            "title": "[Hereditary cancer predisposition syndromes-significance of gynecological cancers].",
+            "version": "88f641aae4c595b4d2277662607af8be56d2416399842a5b8239593647d80ad4",
+            "coverage": "publisher abstracts · original-language text acquired",
+            "url": "https://europepmc.org/article/MED/42410002"
+          },
+          {
+            "id": "study-578aaa14012ffc488754ecfd",
+            "title": "[Hereditary breast cancer : Syndromes, pathology, clinical aspects].",
+            "version": "c0742501a6ee306132238ca6f24f8861a5210d94613ae4cc99637dd7d8c7a29f",
+            "coverage": "publisher abstracts · original-language text acquired",
+            "url": "https://europepmc.org/article/MED/42201356"
+          },
+          {
+            "id": "study-cff578b9945e72a3943799a2",
+            "title": "[Summary of second-line treatment of stage IV NSCLC without oncogenic addiction].",
+            "version": "9d865db287ef82e2e0db8208a7aa94717173f6caa061262708f02880ccc16f63",
+            "coverage": "indexed abstract",
+            "url": "https://europepmc.org/article/MED/41862326"
+          }
+        ],
+        "passages": [
+          {
+            "id": "passage-52a33221bef6a4a87fe9f068",
+            "study_id": "study-2ab34e0234c68def1a91a4e5",
+            "version": "0530bd845e3ab2020e7c9b1263316db326e67eba256bece16d0bf131fdebfd7a",
+            "section": "abstract",
+            "text": "Background Anoikis resistance enables detached gastric cancer cells to survive during metastasis. However, the transcriptional mechanisms that sustain survival signaling under detachment stress remain incompletely understood. Methods Public transcriptomic and single-cell datasets, patient-derived gastric cancer tissues, and non-adherent culture models were used to evaluate detachment-associated molecular changes. Loss- and gain-of-function assays, apoptosis analysis, JC-1 staining, RNA-seq, CHX/MG132 assays, ubiquitination assays, CUT&Tag, luciferase reporter assays, IP-MS, rescue experiments, and lung colonization and peritoneal"
+          },
+          {
+            "id": "passage-be2da9c47836d32c256f186c",
+            "study_id": "study-2ab34e0234c68def1a91a4e5",
+            "version": "0530bd845e3ab2020e7c9b1263316db326e67eba256bece16d0bf131fdebfd7a",
+            "section": "abstract",
+            "text": "dissemination models were performed to define the underlying mechanism. Results Multi-omics analyses revealed that ETS1 was highly expressed in gastric cancer metastases and was induced by detachment stress. ETS1 promoted anoikis resistance and metastasis through PTEN ubiquitination, with PTEN knockdown restoring anoikis resistance and lung colonization after ETS1 depletion. Further mechanistic analysis showed that ETS1 bound to and activated the STX3 promoter. STX3 facilitated PTEN ubiquitination and destabilization, and this effect was markedly attenuated by depletion of the E3 ubiquitin ligase TRIM21. STX3 knockdown blocked ETS1-driven"
+          },
+          {
+            "id": "passage-c98e4f508865981b0c3a5121",
+            "study_id": "study-6d804801f7cb2020a5dca62a",
+            "version": "88f641aae4c595b4d2277662607af8be56d2416399842a5b8239593647d80ad4",
+            "section": "Indexed abstract",
+            "text": "A number of gynecologic cancers are associated with hereditary cancer syndromes (HCS). These neoplasms may represent the sentinel lesion for HCS within the affected individual/family. Many of these tumors exhibit distinctive histologic and immunohistochemical features that are associated with HCS tumors. By recognizing these features, pathologists may help in identifying HCS which is important regarding primary prevention efforts and personalized care for affected patients. This review summarizes morphologic features for HCS, such as BRCA, Lynch, Peutz-Jeghers, DICER1, rhabdoid tumor predisposition syndrome 2 (SMARCA4-deficiency), tuberous"
+          },
+          {
+            "id": "passage-35ef7c2d5c8f21d3cfc7f273",
+            "study_id": "study-6d804801f7cb2020a5dca62a",
+            "version": "88f641aae4c595b4d2277662607af8be56d2416399842a5b8239593647d80ad4",
+            "section": "Indexed abstract",
+            "text": "sclerosis, PTEN hamartoma tumor syndrome (Cowden), familiar adenomatous polyposis, and nevoid basal cell carcinoma syndrome."
+          },
+          {
+            "id": "passage-3ade372685438275c8b794f0",
+            "study_id": "study-578aaa14012ffc488754ecfd",
+            "version": "c0742501a6ee306132238ca6f24f8861a5210d94613ae4cc99637dd7d8c7a29f",
+            "section": "Indexed abstract",
+            "text": "Approximately 5-10% of all breast cancers arise from a hereditary predisposition. In addition to the high-risk genes BRCA1 and BRCA2, other genes involved in homologous recombination repair (including PALB2, ATM, CHEK2, RAD51C/D, BARD1) and genes associated with classic tumor predisposition syndromes (TP53, PTEN, STK11, CDH1, NF1) are associated with an increased risk of breast cancer. In addition, polygenic risk contributes to the individual probability of developing the disease through the additive effect of numerous low-penetrance variants.Pathology can contribute significantly to the identification of patients with possible hereditary"
+          },
+          {
+            "id": "passage-efd7f40359c096c72034e333",
+            "study_id": "study-578aaa14012ffc488754ecfd",
+            "version": "c0742501a6ee306132238ca6f24f8861a5210d94613ae4cc99637dd7d8c7a29f",
+            "section": "Indexed abstract",
+            "text": "tumorigenesis. Certain morphological and immunohistochemical features may indicate a genetic background-for example, a lymphocyte-rich, triple-negative phenotype, G3, with medullary features may indicate a BRCA1 mutation, or an invasive lobular carcinoma may indicate a CDH1 mutation. Clinical constellations such as early age of onset, bilateral tumors, associated tumors, or familial clustering are also important indicators.The identification of a germline mutation has far-reaching consequences for the affected individual and the entire family. Intensive follow-up care programs are offered to those affected; risk-reducing surgery may be"
+          },
+          {
+            "id": "passage-ac7460770d92a9bbe5e8eab4",
+            "study_id": "study-cff578b9945e72a3943799a2",
+            "version": "9d865db287ef82e2e0db8208a7aa94717173f6caa061262708f02880ccc16f63",
+            "section": "abstract",
+            "text": "Stage IV non-small cell lung cancer (NSCLC) without actionable mutations remains a major therapeutic challenge, especially following immunotherapy failure. The introduction of immune checkpoint inhibitors (anti-PD-1/PD-L1) has revolutionized first-line treatment, but second-line options remain largely dependent on older chemotherapies such as docetaxel or pemetrexed. A significant number of patients experience disease progression despite immunotherapy, highlighting tumor resistance mechanisms, whether primary (rapid failure) or acquired (after initial response). Resistance mechanisms include low CD8+ T-cell infiltration, genetic mutations"
+          },
+          {
+            "id": "passage-718f7d9fca1fb0419e270da8",
+            "study_id": "study-cff578b9945e72a3943799a2",
+            "version": "9d865db287ef82e2e0db8208a7aa94717173f6caa061262708f02880ccc16f63",
+            "section": "abstract",
+            "text": "(PTEN, JAK), loss of neoantigens, and tumor-induced immunosuppression. Innovative strategies are under investigation: antibody-drug conjugates (anti-TROP-2, anti-CEACAM-5), cancer vaccines (TEDOPI), external electric fields (TTFields), oncolytic viruses, and PROTACs. While some of these show promise in progression-free survival, global survival benefit remains modest. The identification of robust predictive biomarkers is essential for tailoring future therapies."
+          }
+        ],
+        "summary": "4 stored PTEN publications checked. Topical matches are reading candidates, not proof of this substitution’s effect."
+      }
+    },
+    {
+      "id": "lead",
+      "role": "Bramha research guide",
+      "engine": "language model interpretation",
+      "status": "completed",
+      "started_at": "2026-10-25T07:49:09.285973+00:00",
+      "finished_at": "2026-10-25T07:49:25.652578+00:00",
+      "summary": "Model interpretation of the recorded public checks.",
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3"
+    }
+  ],
+  "events": [
+    {
+      "task": "measurements",
+      "status": "running",
+      "at": "2026-10-25T07:49:04.504162+00:00"
+    },
+    {
+      "task": "geometry",
+      "status": "running",
+      "at": "2026-10-25T07:49:04.642447+00:00"
+    },
+    {
+      "task": "literature",
+      "status": "running",
+      "at": "2026-10-25T07:49:04.747046+00:00"
+    },
+    {
+      "task": "measurements",
+      "status": "completed",
+      "at": "2026-10-25T07:49:05.344895+00:00"
+    },
+    {
+      "task": "geometry",
+      "status": "completed",
+      "at": "2026-10-25T07:49:05.513891+00:00"
+    },
+    {
+      "task": "literature",
+      "status": "completed",
+      "at": "2026-10-25T07:49:08.531127+00:00"
+    },
+    {
+      "task": "lead",
+      "status": "running",
+      "at": "2026-10-25T07:49:09.410056+00:00"
+    },
+    {
+      "task": "lead",
+      "status": "completed",
+      "at": "2026-10-25T07:49:25.962872+00:00"
+    }
+  ],
+  "actions": [
+    {
+      "id": "compare-PTEN:p.C124A",
+      "kind": "measured_comparison",
+      "title": "Inspect p.C124A",
+      "question": "What do the separate measured activity and abundance records for PTEN p.C124A support, and which measurements are missing?",
+      "explanation": "Compare the loaded assay observations on their original scales. Selecting a record does not alter the reference fold.",
+      "variant_id": "PTEN:p.C124A",
+      "target_amino_acid": "A",
+      "evidence_label": "Loaded assay evidence"
+    },
+    {
+      "id": "compare-PTEN:p.C124S",
+      "kind": "measured_comparison",
+      "title": "Inspect p.C124S",
+      "question": "What do the separate measured activity and abundance records for PTEN p.C124S support, and which measurements are missing?",
+      "explanation": "Compare the loaded assay observations on their original scales. Selecting a record does not alter the reference fold.",
+      "variant_id": "PTEN:p.C124S",
+      "target_amino_acid": "S",
+      "evidence_label": "Loaded assay evidence"
+    },
+    {
+      "id": "geometry",
+      "kind": "geometry_proposal",
+      "title": "Try an amino-acid replacement",
+      "question": "How would an ideal side-chain proposal at PTEN C124 differ geometrically from the reference, and what measurements would be needed to assess it?",
+      "explanation": "Choose a replacement, then build a coloured side-chain template and distance screen in the geometry lab. The proposal is unrelaxed; it does not predict function.",
+      "variant_id": "PTEN:p.C124S",
+      "target_amino_acid": "S",
+      "evidence_label": "Untested geometry proposal"
+    },
+    {
+      "id": "papers",
+      "kind": "literature_review",
+      "title": "Examine published PTEN evidence",
+      "question": "What published methods and measurements bear on PTEN C124, and which claims remain unsupported?",
+      "explanation": "Open the stored public evidence and plan a source-linked investigation. Related papers may not measure this exact substitution.",
+      "evidence_label": "Related published work"
+    }
+  ],
+  "use_model": true,
+  "scope": "Public molecular evidence and research suggestions. Guidance does not execute an experiment or predict a mutant fold.",
+  "id": "focus-7494a9acf8e0e9384020c42c750ff1b0",
+  "explanation": "You are inspecting canonical PTEN C124. Zoom changes the camera, not the molecule. 2 loaded substitutions at this exact canonical position. Missing measurements remain missing. Accepted reference coordinates; 14 mapped reference positions within the chosen radius.",
+  "measurements": {
+    "rows": [
+      {
+        "id": "PTEN:p.C124A",
+        "protein_hgvs": "p.C124A",
+        "ref": "C",
+        "alt": "A",
+        "position": 124,
+        "activity": -3.761583525,
+        "abundance": null,
+        "activity_se": 0.335454894,
+        "abundance_se": null
+      },
+      {
+        "id": "PTEN:p.C124S",
+        "protein_hgvs": "p.C124S",
+        "ref": "C",
+        "alt": "S",
+        "position": 124,
+        "activity": -4.895642908999999,
+        "abundance": 1.04741806408857,
+        "activity_se": 0.410233897,
+        "abundance_se": 0.10589328183116199
+      }
+    ],
+    "assays": [
+      {
+        "id": "activity",
+        "title": "PTEN lipid phosphatase scores",
+        "urn": "urn:mavedb:00000054-a-1",
+        "endpoint": "lipid phosphatase-associated yeast fitness",
+        "system": "humanized yeast model",
+        "organism_of_target": "Homo sapiens",
+        "target_taxonomy_id": 9606,
+        "model_system_is_target_organism": false,
+        "scale": "published enrichment/fitness score; original scale",
+        "direction": "higher indicates more assay-associated activity",
+        "construct": "Translated target matches canonical P60484 sequence version 1",
+        "controls": "Synonymous distribution: metadata describes wild-type-like interval [-1.11, 0.89].",
+        "replicate_availability": "Biological A/B and technical subreplicate aggregate scores are supplied; not treated as independent raw observations.",
+        "uncertainty_availability": "Reported standard errors retained.",
+        "source_ids": [
+          "mavedb-activity-metadata",
+          "mavedb-activity-scores"
+        ],
+        "limitations": [
+          "Scale and endpoint differ across assays; no shared normalization is performed.",
+          "Descriptive cross-assay patterns do not establish mechanism or disease effect."
+        ],
+        "methods": "Pair-ended reads were merged with PEAR. Custom Python scripts were used to identify and count sequence variants. Variant count files were then analysed with Enrich2 v.1.2.0. Scores and standard errors were calculated for each variant. A variant was considered high-confidence if the 95% confidence interval of the fitness score was <= 1, or if measurements from each biological replicate were both lower or both higher than the 95% bound of the synonymous distribution.\r\n\r\nVariants were considered wild-type like if they achieved a fitness score between the lower and upper 95th percentile (two-tailed) of synonymous variants, -1.11 and 0.89.\r\n\r\nThe score and SE columns are combined across all replicates as applicable. Scores and SE for each biological replicate (A and B) and technical replicate (A1, A2, etc.) are also provided.",
+        "original_methods": null,
+        "target_audit": {
+          "status": "accepted",
+          "targets": [
+            {
+              "name": "PTEN",
+              "organism_taxonomy_id": 9606,
+              "representation_level": "dna",
+              "translated_length": 403,
+              "reference_match": true,
+              "status": "accepted",
+              "reason": "Exact translated target/reference identity."
+            }
+          ]
+        }
+      },
+      {
+        "id": "abundance",
+        "title": "PTEN VAMP-seq Combined",
+        "urn": "urn:mavedb:00000102-0-1",
+        "endpoint": "relative intracellular abundance",
+        "system": "VAMP-seq abundance measurements; composite of original/fill-in datasets",
+        "organism_of_target": "Homo sapiens",
+        "target_taxonomy_id": 9606,
+        "model_system_is_target_organism": null,
+        "scale": "published VAMP-seq abundance score; original scale (not clamped to 0–1)",
+        "direction": "higher indicates greater relative abundance",
+        "construct": "Translated target matches canonical P60484 sequence version 1",
+        "controls": "Original method describes WT score 1 and average nonsense score 0; composite dataset averages available replicate scores.",
+        "replicate_availability": "Up to 15 per-replicate scores with missingness; exchangeability is not established.",
+        "uncertainty_availability": "Reported SE and confidence intervals retained.",
+        "source_ids": [
+          "mavedb-abundance-metadata",
+          "mavedb-abundance-scores",
+          "mavedb-abundance-original-metadata"
+        ],
+        "limitations": [
+          "Scale and endpoint differ across assays; no shared normalization is performed.",
+          "Descriptive cross-assay patterns do not establish mechanism or disease effect."
+        ],
+        "methods": "Abundance scores from the original and fill-in datasets were aggregated and a composite score was calculated by taking the mean of all 15 replicate scores (8 from the original, 7 for the fill-in).",
+        "original_methods": "Barcodes for each bin were counted and associated with variant sequences using Enrich2. Scores were calculated based on the frequency of each variant in each bin using a weighted average such that increased abundance in high-signal bins gives a higher score. Abundance scores were calculated based on a min-max normalization using wild type (score of 1) and the average nonsense variant score (score of 0). The scores reported are the average of the eight replicate scores. Confidence intervals and variance estimates are based on the replicate scores.\r\n\r\nMetadata contains the mapping between abundance classes and the integer values found in the database.",
+        "target_audit": {
+          "status": "accepted",
+          "targets": [
+            {
+              "name": "PTEN",
+              "organism_taxonomy_id": 9606,
+              "representation_level": "dna",
+              "translated_length": 403,
+              "reference_match": true,
+              "status": "accepted",
+              "reason": "Exact translated target/reference identity."
+            }
+          ]
+        }
+      }
+    ],
+    "summary": "2 loaded substitutions at this exact canonical position. Missing measurements remain missing."
+  },
+  "geometry": {
+    "mapping": {
+      "position": 124,
+      "residue": "C",
+      "status": "mapped",
+      "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+      "auth_seq_id": 124
+    },
+    "neighbors": [
+      {
+        "position": 123,
+        "residue": "H",
+        "distance_angstrom": 3.7761
+      },
+      {
+        "position": 125,
+        "residue": "K",
+        "distance_angstrom": 3.8004
+      },
+      {
+        "position": 70,
+        "residue": "L",
+        "distance_angstrom": 5.0237
+      },
+      {
+        "position": 71,
+        "residue": "C",
+        "distance_angstrom": 5.0808
+      },
+      {
+        "position": 127,
+        "residue": "G",
+        "distance_angstrom": 5.1891
+      },
+      {
+        "position": 37,
+        "residue": "F",
+        "distance_angstrom": 5.7448
+      },
+      {
+        "position": 36,
+        "residue": "G",
+        "distance_angstrom": 5.9007
+      },
+      {
+        "position": 126,
+        "residue": "A",
+        "distance_angstrom": 5.986
+      },
+      {
+        "position": 131,
+        "residue": "T",
+        "distance_angstrom": 6.0613
+      },
+      {
+        "position": 69,
+        "residue": "N",
+        "distance_angstrom": 6.1018
+      },
+      {
+        "position": 130,
+        "residue": "R",
+        "distance_angstrom": 6.3427
+      },
+      {
+        "position": 122,
+        "residue": "I",
+        "distance_angstrom": 7.2074
+      },
+      {
+        "position": 35,
+        "residue": "M",
+        "distance_angstrom": 7.3306
+      },
+      {
+        "position": 128,
+        "residue": "K",
+        "distance_angstrom": 7.5883
+      }
+    ],
+    "radius_angstrom": 8,
+    "metric": "Reference C-alpha Euclidean distance; not a bond or mutant interaction",
+    "summary": "Accepted reference coordinates; 14 mapped reference positions within the chosen radius.",
+    "limitations": [
+      "Canonical sequence and engineered experimental construct can differ.",
+      "No folding, energy calculation or physical mutation was performed."
+    ]
+  },
+  "literature": {
+    "studies": [
+      {
+        "id": "study-2ab34e0234c68def1a91a4e5",
+        "title": "Detachment-induced ETS1 drives anoikis resistance and metastasis through STX3-mediated PTEN ubiquitination in gastric cancer.",
+        "version": "0530bd845e3ab2020e7c9b1263316db326e67eba256bece16d0bf131fdebfd7a",
+        "coverage": "indexed abstract",
+        "url": "https://europepmc.org/article/MED/42735835"
+      },
+      {
+        "id": "study-6d804801f7cb2020a5dca62a",
+        "title": "[Hereditary cancer predisposition syndromes-significance of gynecological cancers].",
+        "version": "88f641aae4c595b4d2277662607af8be56d2416399842a5b8239593647d80ad4",
+        "coverage": "publisher abstracts · original-language text acquired",
+        "url": "https://europepmc.org/article/MED/42410002"
+      },
+      {
+        "id": "study-578aaa14012ffc488754ecfd",
+        "title": "[Hereditary breast cancer : Syndromes, pathology, clinical aspects].",
+        "version": "c0742501a6ee306132238ca6f24f8861a5210d94613ae4cc99637dd7d8c7a29f",
+        "coverage": "publisher abstracts · original-language text acquired",
+        "url": "https://europepmc.org/article/MED/42201356"
+      },
+      {
+        "id": "study-cff578b9945e72a3943799a2",
+        "title": "[Summary of second-line treatment of stage IV NSCLC without oncogenic addiction].",
+        "version": "9d865db287ef82e2e0db8208a7aa94717173f6caa061262708f02880ccc16f63",
+        "coverage": "indexed abstract",
+        "url": "https://europepmc.org/article/MED/41862326"
+      }
+    ],
+    "passages": [
+      {
+        "id": "passage-52a33221bef6a4a87fe9f068",
+        "study_id": "study-2ab34e0234c68def1a91a4e5",
+        "version": "0530bd845e3ab2020e7c9b1263316db326e67eba256bece16d0bf131fdebfd7a",
+        "section": "abstract",
+        "text": "Background Anoikis resistance enables detached gastric cancer cells to survive during metastasis. However, the transcriptional mechanisms that sustain survival signaling under detachment stress remain incompletely understood. Methods Public transcriptomic and single-cell datasets, patient-derived gastric cancer tissues, and non-adherent culture models were used to evaluate detachment-associated molecular changes. Loss- and gain-of-function assays, apoptosis analysis, JC-1 staining, RNA-seq, CHX/MG132 assays, ubiquitination assays, CUT&Tag, luciferase reporter assays, IP-MS, rescue experiments, and lung colonization and peritoneal"
+      },
+      {
+        "id": "passage-be2da9c47836d32c256f186c",
+        "study_id": "study-2ab34e0234c68def1a91a4e5",
+        "version": "0530bd845e3ab2020e7c9b1263316db326e67eba256bece16d0bf131fdebfd7a",
+        "section": "abstract",
+        "text": "dissemination models were performed to define the underlying mechanism. Results Multi-omics analyses revealed that ETS1 was highly expressed in gastric cancer metastases and was induced by detachment stress. ETS1 promoted anoikis resistance and metastasis through PTEN ubiquitination, with PTEN knockdown restoring anoikis resistance and lung colonization after ETS1 depletion. Further mechanistic analysis showed that ETS1 bound to and activated the STX3 promoter. STX3 facilitated PTEN ubiquitination and destabilization, and this effect was markedly attenuated by depletion of the E3 ubiquitin ligase TRIM21. STX3 knockdown blocked ETS1-driven"
+      },
+      {
+        "id": "passage-c98e4f508865981b0c3a5121",
+        "study_id": "study-6d804801f7cb2020a5dca62a",
+        "version": "88f641aae4c595b4d2277662607af8be56d2416399842a5b8239593647d80ad4",
+        "section": "Indexed abstract",
+        "text": "A number of gynecologic cancers are associated with hereditary cancer syndromes (HCS). These neoplasms may represent the sentinel lesion for HCS within the affected individual/family. Many of these tumors exhibit distinctive histologic and immunohistochemical features that are associated with HCS tumors. By recognizing these features, pathologists may help in identifying HCS which is important regarding primary prevention efforts and personalized care for affected patients. This review summarizes morphologic features for HCS, such as BRCA, Lynch, Peutz-Jeghers, DICER1, rhabdoid tumor predisposition syndrome 2 (SMARCA4-deficiency), tuberous"
+      },
+      {
+        "id": "passage-35ef7c2d5c8f21d3cfc7f273",
+        "study_id": "study-6d804801f7cb2020a5dca62a",
+        "version": "88f641aae4c595b4d2277662607af8be56d2416399842a5b8239593647d80ad4",
+        "section": "Indexed abstract",
+        "text": "sclerosis, PTEN hamartoma tumor syndrome (Cowden), familiar adenomatous polyposis, and nevoid basal cell carcinoma syndrome."
+      },
+      {
+        "id": "passage-3ade372685438275c8b794f0",
+        "study_id": "study-578aaa14012ffc488754ecfd",
+        "version": "c0742501a6ee306132238ca6f24f8861a5210d94613ae4cc99637dd7d8c7a29f",
+        "section": "Indexed abstract",
+        "text": "Approximately 5-10% of all breast cancers arise from a hereditary predisposition. In addition to the high-risk genes BRCA1 and BRCA2, other genes involved in homologous recombination repair (including PALB2, ATM, CHEK2, RAD51C/D, BARD1) and genes associated with classic tumor predisposition syndromes (TP53, PTEN, STK11, CDH1, NF1) are associated with an increased risk of breast cancer. In addition, polygenic risk contributes to the individual probability of developing the disease through the additive effect of numerous low-penetrance variants.Pathology can contribute significantly to the identification of patients with possible hereditary"
+      },
+      {
+        "id": "passage-efd7f40359c096c72034e333",
+        "study_id": "study-578aaa14012ffc488754ecfd",
+        "version": "c0742501a6ee306132238ca6f24f8861a5210d94613ae4cc99637dd7d8c7a29f",
+        "section": "Indexed abstract",
+        "text": "tumorigenesis. Certain morphological and immunohistochemical features may indicate a genetic background-for example, a lymphocyte-rich, triple-negative phenotype, G3, with medullary features may indicate a BRCA1 mutation, or an invasive lobular carcinoma may indicate a CDH1 mutation. Clinical constellations such as early age of onset, bilateral tumors, associated tumors, or familial clustering are also important indicators.The identification of a germline mutation has far-reaching consequences for the affected individual and the entire family. Intensive follow-up care programs are offered to those affected; risk-reducing surgery may be"
+      },
+      {
+        "id": "passage-ac7460770d92a9bbe5e8eab4",
+        "study_id": "study-cff578b9945e72a3943799a2",
+        "version": "9d865db287ef82e2e0db8208a7aa94717173f6caa061262708f02880ccc16f63",
+        "section": "abstract",
+        "text": "Stage IV non-small cell lung cancer (NSCLC) without actionable mutations remains a major therapeutic challenge, especially following immunotherapy failure. The introduction of immune checkpoint inhibitors (anti-PD-1/PD-L1) has revolutionized first-line treatment, but second-line options remain largely dependent on older chemotherapies such as docetaxel or pemetrexed. A significant number of patients experience disease progression despite immunotherapy, highlighting tumor resistance mechanisms, whether primary (rapid failure) or acquired (after initial response). Resistance mechanisms include low CD8+ T-cell infiltration, genetic mutations"
+      },
+      {
+        "id": "passage-718f7d9fca1fb0419e270da8",
+        "study_id": "study-cff578b9945e72a3943799a2",
+        "version": "9d865db287ef82e2e0db8208a7aa94717173f6caa061262708f02880ccc16f63",
+        "section": "abstract",
+        "text": "(PTEN, JAK), loss of neoantigens, and tumor-induced immunosuppression. Innovative strategies are under investigation: antibody-drug conjugates (anti-TROP-2, anti-CEACAM-5), cancer vaccines (TEDOPI), external electric fields (TTFields), oncolytic viruses, and PROTACs. While some of these show promise in progression-free survival, global survival benefit remains modest. The identification of robust predictive biomarkers is essential for tailoring future therapies."
+      }
+    ],
+    "summary": "4 stored PTEN publications checked. Topical matches are reading candidates, not proof of this substitution’s effect."
+  },
+  "finished_at": "2026-10-25T07:49:26.700458+00:00",
+  "interpretation": {
+    "explanation": "The selected public molecular context centers on PTEN position 124 in the reference structure with two mapped substitutions having assay records on separate scales. One substitution lacks an abundance record while the other supplies both activity and abundance values. Nearby residues are shown via reference C-alpha distances. Stored literature passages mention PTEN in cancer settings but supply no direct measurements for these exact substitutions.",
+    "suggestions": [
+      {
+        "action_id": "compare-PTEN:p.C124S",
+        "explanation": "The selected variant supplies records across both available assays on their original scales with reported uncertainty.",
+        "question": "What do the separate measured activity and abundance records for PTEN p.C124S support, and which measurements are missing?"
+      },
+      {
+        "action_id": "geometry",
+        "explanation": "The reference coordinates allow a side-chain proposal at this site to be compared against the supplied distance screen.",
+        "question": "How would an ideal side-chain proposal at PTEN C124 differ geometrically from the reference, and what measurements would be needed to assess it?"
+      }
+    ],
+    "limitations": [
+      "Scale and endpoint differ across assays with no shared normalization performed.",
+      "Related literature passages do not measure the exact substitutions under discussion."
+    ]
+  },
+  "provider": {
+    "provider": "openrouter",
+    "model": "x-ai/grok-4.3",
+    "usage": {
+      "prompt_tokens": 7638,
+      "completion_tokens": 735,
+      "total_tokens": 8373,
+      "cost": 0.0112506,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0112506,
+        "upstream_inference_prompt_cost": 0.0094131,
+        "upstream_inference_completions_cost": 0.0018375
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 431,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "cost_usd": 0.0112506,
+    "background": false,
+    "fallback": {
+      "from_provider": "google",
+      "from_model": "gemini-4-argon",
+      "to_provider": "openrouter",
+      "to_model": "x-ai/grok-4.3",
+      "failure_type": "RuntimeError"
+    },
+    "attempts": [
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      },
+      {
+        "provider": "openrouter",
+        "model": "x-ai/grok-4.3",
+        "usage": {
+          "prompt_tokens": 7638,
+          "completion_tokens": 735,
+          "total_tokens": 8373,
+          "cost": 0.0112506,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0112506,
+            "upstream_inference_prompt_cost": 0.0094131,
+            "upstream_inference_completions_cost": 0.0018375
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 431,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "cost_usd": 0.0112506,
+        "background": false
+      }
+    ]
+  },
+  "attempts": [
+    {
+      "provider": "google",
+      "model": "gemini-4-argon",
+      "status": "failed_attempt",
+      "cost_usd": null,
+      "failure_type": "RuntimeError"
+    }
+  ],
+  "model_status": "completed"
+}

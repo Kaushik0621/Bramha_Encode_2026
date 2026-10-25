@@ -3,7 +3,7 @@ import type {CSSProperties} from 'react';
 import {Link} from 'react-router';
 import {api} from '../research/types';
 import type {Workspace, Variant} from '../research/types';
-import {usePortfolio} from './model';
+import {usePortfolio,projectPath} from './model';
 import './molecular-overview.css';
 
 const ReferenceScene = lazy(() => import('./ReferenceScene'));
@@ -29,7 +29,7 @@ export default function MolecularOverview() {
   const source = data?.sources.find(s => s.origin_id === 'mavedb-activity-scores');
   const structure = data?.sources.find(s => s.origin_id === 'pdb-1D5R');
   const intent = variant && workspace ? new URLSearchParams({variant:variant.id, reference:workspace.protein.id, dataset:workspace.dataset_version, mapping:workspace.dataset_version}).toString() : '';
-  const inspect = project ? `/projects/${project.id}/explore?${intent}` : `/projects?${intent}`;
+  const inspect = project ? `/research/${project.id}/workspace?${intent}` : `/research?${intent}`;
 
   useEffect(() => {
     let alive = true;
@@ -108,16 +108,16 @@ export default function MolecularOverview() {
             </Suspense> : <ReferenceFallback status={error || 'Loading audited reference and measurements…'}/>}
           </div>
         </div>
-        <div className="mo-structure-caption"><span>01 / PTEN · 1D5R</span><p>Experimental reference structure.<br/>Visual highlighting does not predict mutant behaviour.<br/>Amber identifies the mapped reference position C124.</p>{structure && <Link to={'/sources/'+structure.id}>Structure provenance ↗</Link>}</div>
+        <div className="mo-structure-caption"><span>01 / PTEN · 1D5R</span><p>Experimental reference structure.<br/>Visual highlighting does not predict mutant behaviour.<br/>Amber identifies the mapped reference position C124.</p>{structure && <Link to={'/library/'+structure.id}>Structure provenance ↗</Link>}</div>
       </div>
     </div>
     <section className="mo-intro" aria-label="The molecule">
-      <div className="mo-session"><span><i/> RESEARCH, WITH A RECORD</span>{recent ? <Link to={`/projects/${recent.id}/overview`}>Resume project ↗</Link> : <Link to="/projects">Your projects ↗</Link>}</div>
+      <div className="mo-session"><span><i/> RESEARCH, WITH A RECORD</span>{recent ? <Link to={projectPath(recent)}>Resume project ↗</Link> : <Link to="/research">Your projects ↗</Link>}</div>
       <div className="mo-intro-copy">
         <p className="mo-eyebrow">COMPUTATIONAL GENOMICS · EVIDENCE-FIRST RESEARCH</p>
         <h1>See the structure.<br/><em>Investigate</em><br/>the uncertainty.</h1>
         <p className="mo-deck">Connect variant measurements, molecular context and published evidence in one inspectable research workspace.</p>
-        <div className="mo-actions"><Link className="mo-primary" to={recent ? `/projects/${recent.id}/explore` : '/projects'}>Open research workspace <span>↗</span></Link><a className="mo-secondary" href="#home-evidence">Explore the evidence ↓</a></div>
+        <div className="mo-actions"><Link className="mo-primary" to={recent ? `/research/${recent.id}/workspace` : '/research'}>Open research workspace <span>↗</span></Link><a className="mo-secondary" href="#home-evidence">Explore the evidence ↓</a></div>
         <p className="mo-scope">Human PTEN reference · public assay evidence<br/>No mutant fold or clinical classification is inferred.</p>
       </div>
       <div className="mo-scroll-note"><span>SCROLL TO CONNECT THE EVIDENCE</span><i>↓</i></div>
@@ -127,7 +127,7 @@ export default function MolecularOverview() {
         <p className="mo-eyebrow">02 / ONE MEASURED POSITION</p>
         <h2>A position is not<br/><em>an explanation.</em></h2>
         <p className="mo-deck">Inspect what was measured, where it maps, and what the evidence still cannot establish.</p>
-        {workspace && variant ? <EvidenceCard variant={variant} workspace={workspace} sourceURL={source ? '/sources/'+source.id : '/sources'} inspectURL={inspect}/> : <div className="mo-measurement-card" role="status"><b>Evidence unavailable</b><p>{error || 'Waiting for audited measurements. No example scores are substituted.'}</p><Link to="/sources">Inspect available sources →</Link></div>}
+        {workspace && variant ? <EvidenceCard variant={variant} workspace={workspace} sourceURL={source ? '/library/'+source.id : '/library'} inspectURL={inspect}/> : <div className="mo-measurement-card" role="status"><b>Evidence unavailable</b><p>{error || 'Waiting for audited measurements. No example scores are substituted.'}</p><Link to="/library">Inspect available sources →</Link></div>}
       </div>
     </section>
   </section>;

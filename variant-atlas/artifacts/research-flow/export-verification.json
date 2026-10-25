@@ -1,0 +1,11 @@
+{
+  "backend": "MongoDB Atlas",
+  "reference": "8GS8",
+  "reference_bytes": 1021192,
+  "projection_bytes": 17175,
+  "source_studies": 3,
+  "saved_observations": 5,
+  "report_status": "completed_with_limitations",
+  "model_calls_started": 0,
+  "scope": "Read-only public-source report and actual archived-coordinate export."
+}

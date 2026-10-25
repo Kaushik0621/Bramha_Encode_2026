@@ -1,0 +1,83 @@
+[
+  {
+    "id": "activity",
+    "title": "PTEN lipid phosphatase scores",
+    "urn": "urn:mavedb:00000054-a-1",
+    "endpoint": "lipid phosphatase-associated yeast fitness",
+    "system": "humanized yeast model",
+    "organism_of_target": "Homo sapiens",
+    "target_taxonomy_id": 9606,
+    "model_system_is_target_organism": false,
+    "scale": "published enrichment/fitness score; original scale",
+    "direction": "higher indicates more assay-associated activity",
+    "construct": "Translated target matches canonical P60484 sequence version 1",
+    "controls": "Synonymous distribution: metadata describes wild-type-like interval [-1.11, 0.89].",
+    "replicate_availability": "Biological A/B and technical subreplicate aggregate scores are supplied; not treated as independent raw observations.",
+    "uncertainty_availability": "Reported standard errors retained.",
+    "source_ids": [
+      "mavedb-activity-metadata",
+      "mavedb-activity-scores"
+    ],
+    "limitations": [
+      "Scale and endpoint differ across assays; no shared normalization is performed.",
+      "Descriptive cross-assay patterns do not establish mechanism or disease effect."
+    ],
+    "methods": "Pair-ended reads were merged with PEAR. Custom Python scripts were used to identify and count sequence variants. Variant count files were then analysed with Enrich2 v.1.2.0. Scores and standard errors were calculated for each variant. A variant was considered high-confidence if the 95% confidence interval of the fitness score was <= 1, or if measurements from each biological replicate were both lower or both higher than the 95% bound of the synonymous distribution.\r\n\r\nVariants were considered wild-type like if they achieved a fitness score between the lower and upper 95th percentile (two-tailed) of synonymous variants, -1.11 and 0.89.\r\n\r\nThe score and SE columns are combined across all replicates as applicable. Scores and SE for each biological replicate (A and B) and technical replicate (A1, A2, etc.) are also provided.",
+    "original_methods": null,
+    "target_audit": {
+      "status": "accepted",
+      "targets": [
+        {
+          "name": "PTEN",
+          "organism_taxonomy_id": 9606,
+          "representation_level": "dna",
+          "translated_length": 403,
+          "reference_match": true,
+          "status": "accepted",
+          "reason": "Exact translated target/reference identity."
+        }
+      ]
+    }
+  },
+  {
+    "id": "abundance",
+    "title": "PTEN VAMP-seq Combined",
+    "urn": "urn:mavedb:00000102-0-1",
+    "endpoint": "relative intracellular abundance",
+    "system": "VAMP-seq abundance measurements; composite of original/fill-in datasets",
+    "organism_of_target": "Homo sapiens",
+    "target_taxonomy_id": 9606,
+    "model_system_is_target_organism": null,
+    "scale": "published VAMP-seq abundance score; original scale (not clamped to 0\u20131)",
+    "direction": "higher indicates greater relative abundance",
+    "construct": "Translated target matches canonical P60484 sequence version 1",
+    "controls": "Original method describes WT score 1 and average nonsense score 0; composite dataset averages available replicate scores.",
+    "replicate_availability": "Up to 15 per-replicate scores with missingness; exchangeability is not established.",
+    "uncertainty_availability": "Reported SE and confidence intervals retained.",
+    "source_ids": [
+      "mavedb-abundance-metadata",
+      "mavedb-abundance-scores",
+      "mavedb-abundance-original-metadata"
+    ],
+    "limitations": [
+      "Scale and endpoint differ across assays; no shared normalization is performed.",
+      "Descriptive cross-assay patterns do not establish mechanism or disease effect."
+    ],
+    "methods": "Abundance scores from the original and fill-in datasets were aggregated and a composite score was calculated by taking the mean of all 15 replicate scores (8 from the original, 7 for the fill-in).",
+    "original_methods": "Barcodes for each bin were counted and associated with variant sequences using Enrich2. Scores were calculated based on the frequency of each variant in each bin using a weighted average such that increased abundance in high-signal bins gives a higher score. Abundance scores were calculated based on a min-max normalization using wild type (score of 1) and the average nonsense variant score (score of 0). The scores reported are the average of the eight replicate scores. Confidence intervals and variance estimates are based on the replicate scores.\r\n\r\nMetadata contains the mapping between abundance classes and the integer values found in the database.",
+    "target_audit": {
+      "status": "accepted",
+      "targets": [
+        {
+          "name": "PTEN",
+          "organism_taxonomy_id": 9606,
+          "representation_level": "dna",
+          "translated_length": 403,
+          "reference_match": true,
+          "status": "accepted",
+          "reason": "Exact translated target/reference identity."
+        }
+      ]
+    }
+  }
+]

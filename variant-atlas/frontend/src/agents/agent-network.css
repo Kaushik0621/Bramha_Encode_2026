@@ -1,0 +1,112 @@
+.an-workspace {
+  --an-bg: var(--atlas-surface, #102a36);
+  --an-line: var(--atlas-line, #385460);
+  --an-ink: var(--atlas-ink, #e0ecec);
+  --an-muted: var(--atlas-muted, #a2bec5);
+  --an-accent: var(--atlas-accent, #91d1c2);
+  container: agent-network / inline-size;
+  min-width: 0;
+  color: var(--an-ink);
+  background: var(--an-bg);
+}
+.an-workspace *, .an-workspace *::before, .an-workspace *::after { box-sizing: border-box; }
+.an-workspace > header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px 24px;
+  padding: 24px;
+  border-bottom: 1px solid var(--an-line);
+}
+.an-workspace > header > div { min-width: 0; }
+.an-workspace > header small { font-size: 11px; letter-spacing: .1em; line-height: 1.6; color: var(--an-muted); }
+.an-workspace > header h3 { font-size: 20px; line-height: 1.4; margin: 8px 0 0; letter-spacing: -.4px; }
+.an-workspace > header > span { font-size: 12px; line-height: 1.6; color: var(--an-muted); }
+.an-network { position: relative; padding: 28px 24px; min-width: 0; }
+.an-connections { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.an-connections > path { fill: none; stroke: var(--an-line); stroke-width: 1.2; opacity: .55; }
+.an-connections marker path { fill: var(--an-accent); }
+.an-connections > path.peer { stroke: var(--an-accent); opacity: .5; }
+.an-connections > path.active { stroke: var(--an-accent); stroke-width: 2; opacity: 1; }
+.an-workspace .an-lead {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 360px);
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 40px;
+  min-width: 0;
+}
+.an-workspace .an-lead > .an-agent { width: 100%; max-width: 100%; margin: 0; }
+.an-workspace .an-lead > p { min-width: 0; max-width: none; margin: 0; padding: 8px 0; background: var(--an-bg); font-size: 13px; line-height: 1.75; color: var(--an-muted); overflow-wrap: break-word; }
+.an-teams { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; position: relative; z-index: 1; }
+.an-team { min-width: 0; background: var(--an-bg); padding-top: 14px; border-top: 2px solid var(--an-line); }
+.an-team h4 { font-size: 12px; font-weight: 550; margin: 0 0 14px; color: var(--an-muted); line-height: 1.6; }
+.an-team > p { font-size: 12px; color: var(--an-muted); line-height: 1.7; padding: 12px 14px; margin: 0; border: 1px dashed var(--an-line); border-radius: 8px; }
+.an-workspace .an-agent {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 18px 16px;
+  margin: 0 0 14px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  text-align: left;
+  white-space: normal;
+  background: var(--an-bg);
+  color: var(--an-ink);
+  border: 1px solid var(--an-line);
+  border-radius: 11px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.an-agent > span, .an-agent > small, .an-agent > b { min-width: 0; overflow-wrap: anywhere; }
+.an-workspace .an-agent.selected { border-color: var(--an-accent); box-shadow: 0 0 0 1px var(--an-accent); }
+.an-agent > b { font-size: 16px; line-height: 1.45; text-transform: capitalize; }
+.an-agent-engine { font-size: 11px; color: var(--an-muted); line-height: 1.6; }
+.an-agent-state { font-size: 12px; line-height: 1.6; display: flex; gap: 8px; align-items: center; }
+.an-agent-state i { width: 7px; height: 7px; background: #8a9ca7; border-radius: 50%; flex-shrink: 0; }
+.an-agent.running .an-agent-state i { background: #68b998; box-shadow: 0 0 0 4px #68b99822; }
+.an-agent.completed .an-agent-state i { background: #7dae8b; }
+.an-agent.failed .an-agent-state i { background: #d58d79; }
+.an-agent.needs_review .an-agent-state i { background: #b6a16c; }
+.an-agent > small { font-size: 11px; color: var(--an-muted); line-height: 1.65; }
+.an-output-count { font-size: 11px; line-height: 1.6; border-top: 1px solid var(--an-line); padding-top: 12px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; color: var(--an-muted); }
+.an-output-count > span { color: var(--an-accent); white-space: nowrap; }
+.an-handoff { padding: 20px 24px; border-block: 1px solid var(--an-line); background: var(--atlas-accent-surface, #173b3e); overflow-wrap: anywhere; }
+.an-handoff > small { font-size: 11px; line-height: 1.6; color: var(--an-muted); }
+.an-handoff > p { font-size: 13px; line-height: 1.75; margin: 10px 0; }
+.an-handoff > p:first-of-type { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.an-handoff b { text-transform: capitalize; font-size: 13px; }
+.an-message-log { padding: 20px 24px; font-size: 12px; line-height: 1.7; color: var(--an-muted); overflow-wrap: anywhere; }
+.an-message-log summary { cursor: pointer; }
+.an-message-log article { padding: 16px 0; border-bottom: 1px solid var(--an-line); }
+.an-message-log p { font-size: 13px; line-height: 1.75; }
+.an-message-log small { font-size: 11px; }
+.an-empty { text-align: center; min-height: 310px; padding: 48px 24px; background: radial-gradient(ellipse, #76c1af12, transparent 70%); }
+.an-empty > span { font-size: 42px; color: var(--an-accent); }
+.an-empty h3 { font-size: 22px; font-weight: 500; letter-spacing: -.5px; }
+.an-empty p { max-width: 440px; margin: 18px auto; font-size: 14px; line-height: 1.8; color: var(--an-muted); }
+.an-empty small { font-size: 12px; color: var(--an-muted); }
+@container agent-network (min-width: 1050px) {
+  .an-teams { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@container agent-network (max-width: 580px) {
+  .an-workspace .an-lead { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .an-workspace .an-lead > .an-agent { max-width: 320px; justify-self: center; }
+  .an-workspace .an-lead > p { max-width: 440px; justify-self: center; }
+  .an-network { padding: 24px 18px; }
+  .an-teams { gap: 24px 16px; }
+}
+@container agent-network (max-width: 380px) {
+  .an-teams { grid-template-columns: minmax(0, 1fr); }
+  .an-workspace > header { padding: 20px 18px; }
+  .an-handoff, .an-message-log { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .an-agent { transition: none; } }
+
+.an-agent-summary{font-size:12px;line-height:1.7;color:var(--an-muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}

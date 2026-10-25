@@ -1,0 +1,34 @@
+{
+  "rows": [
+    {
+      "language": "zh",
+      "study_id": "study-db200c68dd3d8f3d6abe433a",
+      "original_exact": true,
+      "library_status": 200,
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "fallback": true
+    },
+    {
+      "language": "ja",
+      "study_id": "study-a6a93d410aceab020655b19c",
+      "original_exact": true,
+      "library_status": 200,
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "fallback": true
+    },
+    {
+      "language": "ru",
+      "study_id": "study-a3203264434ffab695118217",
+      "original_exact": true,
+      "library_status": 200,
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "fallback": true
+    }
+  ],
+  "errors": [],
+  "modelWrites": 0,
+  "mobileFits": true
+}

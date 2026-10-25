@@ -1,5 +1,7 @@
 # Bramha Atlas: researcher workflow and route map
 
+> Historical project-shell implementation. The [final experience and canonical route map](FINAL_EXPERIENCE_IMPLEMENTATION.md) supersedes the navigation described below; old routes redirect to the final structure. Scientific and persistence history below remains useful.
+
 Implemented 24 October 2026. This document supersedes the earlier all-in-one UI walkthroughs; the scientific engine documents still describe their respective data and verification rules.
 
 ## Research journey
@@ -118,3 +120,27 @@ Screenshots use isolated test storage. Test-created projects are actual saved te
 No public hosting, authentication, multi-user access or private institutional integration was added. Atlas persistence/search, Google/Argon and Live voice require account verification. Full-corpus paper context, scanned-document OCR, general disease/species support and arbitrary uploaded-data scientific analysis are not implemented. Source extraction and lexical discovery do not establish scientific eligibility. Backend-persisted investigation drafts, cross-device resume of unfinished forms and an offline notebook remain future work.
 
 The later [molecular overview](MOLECULAR_OVERVIEW.md) adds a single continuous presentation scene on Home only. Its versioned evidence handoff opens the existing project workflow; routine pages retain their ordinary layouts.
+
+### Public research: duration, agent inspection and reopening
+
+The live theater (`/observatory`) starts a finite public-evidence expedition with **no time deadline by default**. `ExpeditionStart.max_seconds` is nullable; omitting it or sending `null` allows the assigned work to finish without the short investigation-engine clock. Optional explicit deadlines range from 30 seconds to 24 hours. Source scope (1–6 studies) and the existing maximum of 12 model attempts, including fallback, remain bounded. A longer deadline does not force artificial activity or make the investigation exhaustive. Individual provider and public-service request timeouts still apply.
+
+The researcher can choose **Save under** before launch: an existing project or independent research. The expedition's persisted `project_id` is the membership authority when reopening it. Its question, agent tasks, original source references, handoffs, events and available outputs are written to the configured corpus store as execution proceeds (Atlas when configured). Project workspace storage remains separate.
+
+The selected-agent workbench sits above the team map. Selecting a map card brings this panel into view and shows the recorded task summary, actual tool activity, delegated assignments, handoffs and source-linked observations. A completed lead planning phase is distinguished from an expedition that is still running. Replay filters work by the recorded event time; future summaries, observations, provider responses and finish timestamps are withheld from that view.
+
+`Saved research` at the top of the theater reopens recent teams. **My Research → All investigations** includes public team records alongside the other investigation types; the projects view shows a compact recent preview. Search and **Load older research** use server-side filtering and pagination, preserving access beyond the most recent 50 records. A project's Results tab includes its linked expeditions. Opening a record or moving the playback cursor never starts model or tool work.
+
+Closing the browser tab does not cancel the backend task. The backend process must remain running; process interruption retains the saved record and marks the work interrupted on recovery. This is not an automatic process-restart resume mechanism.
+
+Paper workspaces place their searchable biology categories above the context diagram. Choosing a category replaces the overview with its catalogue, while selected objects remain visible and removable in a saved-scope strip. Research area choices are visible on the initial Start research page.
+
+### Start from biology and take away a report
+
+The paper workspace's biology pool includes **Start research with agents**. It starts the public-evidence engine immediately, linked to that project; no paper, selected evidence or selected biological object is required. The default asks the lead to choose a direction from the objective and saved scope. Optional directions focus on comparing published findings, tracing coordinates or identifying evidence gaps. Choices are planning prompts, not scientific findings. Public-tools-only execution remains available. Real plans, discovery, acquisition, specialist checks and outcomes appear in the live theater.
+
+Once an expedition stops, **Read, download and share the research** offers a paper-style HTML report with PDF printing, Markdown, structured JSON and a ZIP bundle. Reports contain the question, actual mode and workers, saved observations and source quotations, reference versions, structural relationships, execution plots, limitations and recorded follow-up paths. Available coordinate files, checksums and actual first-model C-alpha projections accompany the bundle. A projection is explicitly a 2D view of archived coordinates; it does not claim a new fold or mutation effect. Failed, cancelled and interrupted runs produce partial reports. Exporting never starts a model or research tool.
+
+**Draft an email** opens the user's mail application with a summary and, if chosen, a report link; downloaded files can be attached there. It does not dispatch mail. **Share a report snapshot** requires an explicit checkbox and action. A random link serves a frozen report snapshot, and **Revoke link** disables it. No sharing occurs automatically. Snapshots are stored as `expedition_report_share` records in the corpus `searches` collection. They omit project notes, private uploaded files, prompts, raw provider payloads and credentials. Links work only while the Bramha server is reachable; this does not add a multi-user account or public deployment system.
+
+The molecular renderer allows compatible software WebGL, reduces graphics on retry, clears stale hover state after a context loss, and exposes actual coordinate downloads. Observatory structures also provide `/api/observatory/structures/{id}/projection.svg` as a coordinate-derived fallback if the browser cannot maintain 3D graphics.

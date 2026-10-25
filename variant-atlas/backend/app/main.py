@@ -71,7 +71,26 @@ def create_app(settings: Settings | None = None, repository_override=None):
             if config.worker_mode=='embedded':await app.state.blood_engine.launch()
         except Exception as exc:
             app.state.blood_error=str(exc)
+        # Paper reviews use the same immutable run repository. Stopped local jobs
+        # are surfaced as interrupted rather than pretending to remain active.
+        if app.state.blood_store or app.state.research_store:
+            from .paper_review import PaperReviewEngine
+            PaperReviewEngine(app.state.blood_store or app.state.research_store,config).recover()
+        app.state.corpus_store=None
+        app.state.corpus_error=None
+        app.state.expedition_engine=None
+        try:
+            from .corpus_store import CorpusStore
+            from .expeditions import ExpeditionEngine
+            if app.state.storage_error:raise RuntimeError('Primary storage is unavailable; no alternative local store is opened.')
+            app.state.corpus_store=CorpusStore(config)
+            app.state.expedition_engine=ExpeditionEngine(app.state.corpus_store,config)
+            await app.state.expedition_engine.recover()
+        except Exception as exc:
+            app.state.corpus_error='Research corpus startup failed ('+type(exc).__name__+'). Existing scientific workspaces remain available.'
         yield
+        if app.state.expedition_engine:await app.state.expedition_engine.close()
+        if app.state.corpus_store:app.state.corpus_store.close()
         if app.state.blood_engine:await app.state.blood_engine.shutdown()
         if app.state.blood_store:app.state.blood_store.close()
         if app.state.research_engine:await app.state.research_engine.shutdown()
@@ -211,6 +230,28 @@ def create_app(settings: Settings | None = None, repository_override=None):
     app.include_router(blood_router(app))
     from .portfolio import router as portfolio_router
     app.include_router(portfolio_router(app,config))
+    from .research_hub import router as hub_router
+    app.include_router(hub_router(app,config))
+    from .structure_lab import router as structure_router
+    app.include_router(structure_router(app,config))
+    from .biological_pool import router as pool_router
+    app.include_router(pool_router(app,config))
+    from .result_analyst import router as result_router
+    app.include_router(result_router(app,config))
+    from .observatory_api import router as observatory_router
+    app.include_router(observatory_router(app,config))
+    from .expedition_reports import router as expedition_report_router
+    app.include_router(expedition_report_router(app))
+    from .analysis_execution import router as analysis_router
+    app.include_router(analysis_router(app,config))
+    from .structure_comparison import router as structure_comparison_router
+    app.include_router(structure_comparison_router(app,config))
+    from .data_inspector import router as data_router
+    app.include_router(data_router(app,config))
+    from .source_visuals import router as source_visuals_router
+    app.include_router(source_visuals_router(app,config))
+    from .molecular_guidance import router as molecular_guidance_router
+    app.include_router(molecular_guidance_router(app,config))
     def research_endpoint(path,method):
         return next(route.endpoint for route in research_router.routes if route.path==path and method in getattr(route,'methods',set()))
     return app

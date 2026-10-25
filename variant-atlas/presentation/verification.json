@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-25T08:57:56.776211+00:00",
+  "pptx_slides": 19,
+  "pdf_pages": 19,
+  "aspect_ratio": "16:9",
+  "native_chart_count": 1,
+  "native_chart_measurements_match_reference": true,
+  "speaker_notes_present_on_all_slides": true,
+  "visible_text_found_in_native_pdf": true,
+  "out_of_bounds_shapes": [],
+  "editable_3d_diagram_slides": [
+    3,
+    6,
+    8,
+    10,
+    14
+  ],
+  "scientific_3d_trace": "307 accepted experimental C-alpha coordinates; rigid view projection; unobserved gaps not connected",
+  "render_engine": "Microsoft PowerPoint for Mac \u2014 native PDF export",
+  "visual_review": "All 19 slides rendered; dimensional workflow, actual-coordinate molecular trace, agent network and layered architecture inspected.",
+  "demo_browser": "Saved baseline/follow-up links verified; no model-start request; desktop, mobile and dark-theme entry captured.",
+  "frontend_build": "npm run build passed; existing large scientific-library chunk advisory remains.",
+  "market_model": "Customer and market arithmetic checked; sourced company reference pool; time, fit and price assumptions explicit.",
+  "scientific_scope": "Saved public-data artifact inspection and exact chart comparison; no new biological validation or live model call.",
+  "remaining_limitations": [
+    "Argon scientific execution remains unverified.",
+    "Selected PTEN example demonstrates a criterion change, not autonomous limitation-driven hypothesis revision.",
+    "Pricing, pilot size and revenue arithmetic are assumptions.",
+    "Project investigations remain local; public corpus is stored in Atlas."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "method": "Atlas Vector Search \u00b7 local multilingual embeddings",
+  "notice": null,
+  "total": 2,
+  "studies": [
+    {
+      "id": "study-a6a93d410aceab020655b19c",
+      "native_text_languages": [
+        "ja"
+      ],
+      "retrieval_score": 0.8723338842391968
+    },
+    {
+      "id": "study-4905e9ec454df25aac0f1cca",
+      "native_text_languages": [
+        "ja"
+      ],
+      "retrieval_score": 0.822505533695221
+    }
+  ]
+}

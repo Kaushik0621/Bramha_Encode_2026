@@ -80,6 +80,8 @@ class BloodEngine(ResearchEngine):
         provider = (
             "google" if self.settings.google_api_key else self.settings.llm_provider
         )
+        if provider == "gemini":
+            provider = "google"
         if provider not in ("google", "openrouter") or (
             provider == "openrouter" and not self.settings.openrouter_api_key
         ):
@@ -263,6 +265,7 @@ class BloodEngine(ResearchEngine):
                 )
 
                 def record(d):
+                    self.record_actual_provider(d, usage)
                     d["budget"]["usage"].append(usage)
                     costs = [u.get("cost_usd") for u in d["budget"]["usage"]]
                     if len(costs) == d["budget"]["model_requests"] and all(
@@ -461,6 +464,7 @@ class BloodEngine(ResearchEngine):
 
         try:
             provider = self.factory(self.settings, run["provider"])
+            self.bind_provider_fallback(rid, provider, deadline)
             self.task_status(rid, "coordinator", "running", started_at=now())
             self.event(
                 rid,

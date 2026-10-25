@@ -12,7 +12,7 @@ from .orchestration.engine import TERMINAL, now
 from .tools.registry import Registry
 from .scenarios import ScenarioService, SuggestRequest, ApplyRequest
 from .agent_catalog import catalog
-from .papers import PaperLibrary, PaperUpload, PaperRead
+from .papers import PaperLibrary, PaperUpload, PaperRead, PaperTranslate
 from .explorations import ExplorationJournal, CreateExploration, UpdateExploration
 
 
@@ -66,11 +66,37 @@ def router(app, config):
     @r.post("/research/papers/{pid}/read")
     async def read_paper(pid: str, body: PaperRead):
         try:
-            return await PaperLibrary(config).read(pid, body)
+            return await asyncio.wait_for(PaperLibrary(config).read(pid, body), timeout=120)
         except KeyError as exc:
             raise HTTPException(404, str(exc)) from exc
         except (ValueError, RuntimeError) as exc:
             raise HTTPException(422, str(exc)) from exc
+        except TimeoutError as exc:
+            raise HTTPException(504, "Source reading timed out. No reading was saved; retry the selected passages.") from exc
+        except Exception as exc:
+            raise HTTPException(502, "Source reading provider failed (" + type(exc).__name__ + "). No generated result was saved.") from exc
+
+    @r.get("/research/papers/{pid}/translations")
+    def translations(pid: str):
+        library = PaperLibrary(config)
+        try:
+            library.get(pid)
+        except (ValueError, KeyError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+        return [json.loads(p.read_text()) for p in sorted(library.root.glob(pid + "-translation-*.json"))]
+
+    @r.post("/research/papers/{pid}/translate")
+    async def translate(pid: str, body: PaperTranslate):
+        try:
+            return await asyncio.wait_for(PaperLibrary(config).translate(pid, body), timeout=120)
+        except KeyError as exc:
+            raise HTTPException(404, str(exc)) from exc
+        except (ValueError, RuntimeError) as exc:
+            raise HTTPException(422, str(exc)) from exc
+        except TimeoutError as exc:
+            raise HTTPException(504, "Translation timed out. No translation was saved; retry the selected passages.") from exc
+        except Exception as exc:
+            raise HTTPException(502, "Translation provider failed (" + type(exc).__name__ + "). No generated result was saved.") from exc
 
     @r.get("/research/agents")
     def agents():
@@ -127,7 +153,18 @@ def router(app, config):
         try:
             w = lab.validate(body)
             anchor = data.variant(body.anchor_id)
-            proposal = await lab.suggest(body)
+            session_context = None
+            portfolio = None
+            if body.project_id:
+                from .portfolio import Portfolio
+                portfolio = Portfolio(app, config)
+                project = portfolio.project(body.project_id)
+                if project["method"] != "pten":
+                    raise ValueError("Residue assistance requires an active PTEN project.")
+                if body.run_id and portfolio.project_for(portfolio.run(body.run_id)) != body.project_id:
+                    raise ValueError("This investigation is outside the active research context.")
+                session_context = {"project_id": project["id"], "project_title": project["title"], "objective": project["objective"], "active_question": body.question or project["objective"], "run_id": body.run_id, "sources": [{"id": sid, "title": link["source"]["title"], "version": link["version"], "included": link["included"] or link["source"]["method"] == "pten", "preparation": link["source"]["preparation"], "version_changed": link["version_changed"]} for sid, link in project["sources"].items()], "coverage": "Source metadata only. Paper text is not implicitly read by this assistance request."}
+            proposal = await lab.suggest(body, session_context=session_context)
             results = data.preview(body.criteria)["results"]
             neighbors = data.neighbors(body.anchor_id, 10)
             neighbor_ids = {n["variant_id"] for n in neighbors.get("neighbors", [])}
@@ -142,6 +179,8 @@ def router(app, config):
             )[:12]
             history = []
             for saved in store.list():
+                if portfolio and portfolio.project_for(saved) != body.project_id:
+                    continue
                 if body.anchor_id not in saved.get("request", {}).get(
                     "selected_ids", []
                 ):
@@ -179,6 +218,7 @@ def router(app, config):
                     for v in alternatives
                 ],
                 "history": history,
+                "session_context": session_context,
                 "dataset_version": w["dataset_version"],
             }
         except ValueError as exc:
@@ -227,9 +267,17 @@ def router(app, config):
                 "thinking_level": config.google_thinking_level,
             },
             "openrouter": {
-                "configured": bool(config.openrouter_api_key),
+                "configured": bool(config.openrouter_api_key and config.openrouter_model),
                 "model": config.openrouter_model,
                 "challenge_qualifying": False,
+            },
+            "model_fallback": {
+                "primary": "google",
+                "provider": config.llm_fallback_provider,
+                "configured": config.llm_fallback_provider == "openrouter"
+                and bool(config.openrouter_api_key and config.openrouter_model),
+                "model": config.openrouter_model,
+                "scope": "Structured text research, suggestions, paper reading and translation",
             },
             "retrieval": {
                 "method": "atlas_hybrid_configured"

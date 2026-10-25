@@ -11,13 +11,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Literal
 from uuid import uuid4
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, BackgroundTasks
 from pydantic import Field
 from .schemas import Model
 from .repositories.local import LocalRepository
 from .research_schemas import ResearchRequest
 from .blood.schemas import ComparisonRequest
 from .papers import PaperLibrary, PaperUpload
+from .paper_review import PaperReviewEngine, PaperReviewRequest
+from .research_areas import registry
 
 
 def now():
@@ -52,6 +54,11 @@ METHODS = {
         "scope": "Reported ABO/RhD phenotypes in severe P. falciparum malaria; inspected literature and schematic cells. No individual risk, genotyping or infection simulation.",
         "context": "Reported blood groups · severe P. falciparum malaria",
     },
+    "papers": {
+        "title": "Bounded paper review",
+        "scope": "Review selected original-language passages with checked quotations. No new dataset analysis, clinical prediction or independent reproduction of a study.",
+        "context": "Paper-led research · explicit passage coverage",
+    },
 }
 
 
@@ -59,8 +66,9 @@ class ProjectCreate(Model):
     title: str = Field(min_length=3, max_length=140)
     description: str = Field(default="", max_length=3000)
     objective: str = Field(min_length=10, max_length=1800)
-    method: Literal["pten", "blood"]
+    method: Literal["pten", "blood", "papers"]
     source_ids: list[str] = Field(default_factory=list, max_length=40)
+    area: str = Field(default="", max_length=80)
 
 
 class SourceLink(Model):
@@ -84,6 +92,25 @@ class StartProjectRun(Model):
     confirmed: Literal[True]
     pten: ResearchRequest | None = None
     blood: ComparisonRequest | None = None
+    paper: PaperReviewRequest | None = None
+    continuation_id: str | None = None
+
+
+class Visit(Model):
+    tab: Literal["workspace", "evidence", "results", "notebook"]
+    view: Literal["molecule", "table", "alternatives", "criteria", "analysis", "experiments"] | None = None
+    source_id: str | None = None
+    run_id: str | None = None
+
+
+class ContinueRequest(Model):
+    question: str = Field(min_length=10, max_length=1800)
+    reason: str = Field(min_length=5, max_length=2000)
+
+
+class ContinueUpdate(Model):
+    expected_revision: int = Field(ge=0)
+    inputs: dict
 
 
 class AttachRun(Model):
@@ -167,6 +194,8 @@ class Portfolio:
             return new
 
     def run_store(self, method):
+        if method == "papers":
+            return PaperReviewEngine(self.store, self.settings).store
         name = "research_store" if method == "pten" else "blood_store"
         store = getattr(self.app.state, name, None)
         if store:
@@ -176,6 +205,8 @@ class Portfolio:
         return store
 
     def method_available(self, method):
+        if method == "papers":
+            return True  # Extraction/navigation work without a paid provider.
         return bool(
             getattr(
                 self.app.state,
@@ -188,7 +219,7 @@ class Portfolio:
         if hasattr(self, "_runs_cache"):
             return self._runs_cache
         docs = []
-        for method in ["pten", "blood"]:
+        for method in ["pten", "blood", "papers"]:
             store = self.run_store(method)
             if not store:
                 continue
@@ -213,7 +244,7 @@ class Portfolio:
         return self._runs_cache
 
     def run(self, rid):
-        for method in ["pten", "blood"]:
+        for method in ["pten", "blood", "papers"]:
             store = self.run_store(method)
             if store:
                 doc = store.get(rid)
@@ -309,16 +340,17 @@ class Portfolio:
                 p["sha256"],
                 None,
                 preparation=status,
-                origin="local upload",
+                origin=p.get("provenance",{}).get("provider","local upload"),
+                url=p.get("provenance",{}).get("url") or p.get("provenance",{}).get("source_url"),
                 added_at=p["created_at"],
-                licence="Uploader-provided material; access does not establish redistribution rights.",
-                scientific_eligibility="PTEN: optional original-language evidence, subject to applicability review. Blood method: not supported as runtime evidence.",
-                coverage=f"{p['characters']} extracted characters; {'partial extraction' if p['status']=='partial' else p['status']}. Reading: first 12 passages. PTEN investigation: first 6 passages per included paper; at most 3 papers.",
+                licence=p.get("provenance",{}).get("licence") or "Uploader-provided material; access does not establish redistribution rights.",
+                scientific_eligibility="Bounded paper review: explicitly selected original-language passages. PTEN: optional paper evidence, subject to applicability review. Blood method: not runtime evidence.",
+                coverage=f"{p['characters']} extracted characters; {'partial extraction' if p['status']=='partial' else p['status']}. Reading: up to 12 selected passages (first 12 when none selected). Translation: up to 3 per explicit request. PTEN investigation: first 6 passages per included paper; at most 3 papers.",
                 details=p,
             )
         # Historical manifests supply missing catalogue entries, without assigning old work to a project.
         for run in self.runs():
-            kind = "blood" if run.get("workspace_id") == "blood-group" else "pten"
+            kind = self.run_method(run)
             for s in run.get("source_manifest", []):
                 original = s.get("id")
                 if original:
@@ -359,7 +391,7 @@ class Portfolio:
         }
         by_origin = {(r["family"], r["origin_id"]): r for r in rows}
         for run in self.runs():
-            family = "blood" if run.get("workspace_id") == "blood-group" else "pten"
+            family = self.run_method(run)
             for original in run.get("source_manifest", []):
                 base = by_origin.get((family, original.get("id")))
                 if not base:
@@ -413,7 +445,7 @@ class Portfolio:
         raise KeyError("Source not found.")
 
     def run_cites(self, r, s):
-        method = "blood" if r.get("workspace_id") == "blood-group" else "pten"
+        method = self.run_method(r)
         if s["family"] == "paper":
             return any(p["id"] == s["origin_id"] for p in r.get("paper_sources", []))
         return s["family"] == method and (
@@ -463,6 +495,8 @@ class Portfolio:
         else:
             p["readiness"] = "Results ready for review"
         p["missing_required_source_ids"] = missing
+        if p["method"] == "papers" and not any(link.get("included") and catalog.get(sid, {}).get("preparation") == "ready" for sid, link in p["sources"].items()):
+            p["readiness"] = "Add an extracted paper"
         p["method_info"] = {
             **METHODS[p["method"]],
             "available": self.method_available(p["method"]),
@@ -551,7 +585,7 @@ class Portfolio:
         if body.action == "include" and (
             s["preparation"] != "ready"
             or s["family"] == "paper"
-            and p["method"] != "pten"
+            and p["method"] not in ("pten", "papers")
             or s["method"] not in (None, p["method"])
         ):
             raise ValueError(
@@ -602,9 +636,7 @@ class Portfolio:
                     "id": r["run_id"],
                     "question": r["request"]["question"],
                     "status": r["status"],
-                    "method": "blood"
-                    if r.get("workspace_id") == "blood-group"
-                    else "pten",
+                    "method": self.run_method(r),
                     "created_at": r["created_at"],
                     "project_id": pid,
                     "project_title": meta["projects"][pid]["title"]
@@ -620,7 +652,7 @@ class Portfolio:
     def attach(self, pid, rid):
         p = self.raw_project(pid)
         r = self.run(rid)
-        method = "blood" if r.get("workspace_id") == "blood-group" else "pten"
+        method = self.run_method(r)
         if method != p["method"]:
             raise ValueError("The investigation method does not match this project.")
         if self.project_for(r) not in (None, pid):
@@ -638,7 +670,16 @@ class Portfolio:
         return self.project(pid)
 
     def start(self, pid, body):
+        if body.continuation_id and self.db is None:
+            # A repeated click or concurrent local request cannot start the same
+            # saved draft twice. The original scientific run remains untouched.
+            with self.store.locked("followup-" + digest([pid, body.continuation_id])):
+                return self._start(pid, body)
+        return self._start(pid, body)
+
+    def _start(self, pid, body):
         p = self.project(pid)
+        frozen_links = copy.deepcopy(self.raw_project(pid)["sources"])
         if not self.method_available(p["method"]):
             raise ValueError(
                 "The selected scientific method is unavailable. Historical run snapshots remain inspectable."
@@ -656,15 +697,20 @@ class Portfolio:
                         "An included source is not ready or its pinned version changed."
                     )
                 if source["family"] == "paper":
-                    if p["method"] != "pten":
+                    if p["method"] not in ("pten", "papers"):
                         raise ValueError(
                             "Uploaded papers are not runtime evidence for the fixed blood corpus."
                         )
                     paper_ids.append(source["origin_id"])
-        if len(paper_ids) > 3:
+        if p["method"] == "pten" and len(paper_ids) > 3:
             raise ValueError("At most three included papers are supported by PTEN.")
+        continuation = None
+        if body.continuation_id:
+            continuation = self.raw_project(pid).get("continuations", {}).get(body.continuation_id)
+            if not continuation or continuation.get("run_id"):
+                raise ValueError("Follow-up draft is missing or has already started.")
         if p["method"] == "pten":
-            if not body.pten or body.blood:
+            if not body.pten or body.blood or body.paper:
                 raise ValueError("Provide PTEN-specific inputs only.")
             if len(body.pten.selected_ids) > body.pten.capacity:
                 raise ValueError(
@@ -674,24 +720,60 @@ class Portfolio:
                 update={"project_id": pid, "paper_ids": paper_ids}
             )
             run = self.app.state.research_engine.start(req)
-        else:
-            if not body.blood or body.pten:
+        elif p["method"] == "blood":
+            if not body.blood or body.pten or body.paper:
                 raise ValueError("Provide comparative-method inputs only.")
             run = self.app.state.blood_engine.start(
                 body.blood.model_copy(update={"project_id": pid})
             )
+        else:
+            if not body.paper or body.pten or body.blood:
+                raise ValueError("Provide paper review inputs only.")
+            link = p["sources"].get(body.paper.source_id)
+            if not link or not link["included"] or link["version_changed"] or link["source"]["family"] != "paper" or link["version"] != body.paper.source_version:
+                raise ValueError("Link, include and review this exact paper version before starting.")
+            extra=[]
+            seen={body.paper.source_id}
+            for selected in body.paper.additional_sources:
+                other=p["sources"].get(selected.source_id)
+                if selected.source_id in seen or not other or not other["included"] or other["version_changed"] or other["version"]!=selected.source_version or other["source"]["family"]!="paper" or other["source"]["preparation"]!="ready":
+                    raise ValueError("Every comparison study must be a distinct included paper at its reviewed source version.")
+                seen.add(selected.source_id);extra.append(other["source"])
+            run = PaperReviewEngine(self.store, self.settings).start(pid, link["source"], body.paper, extra)
 
         def change(d):
             d["run_links"][run["run_id"]] = {
                 "project_id": pid,
                 "linked_at": now(),
-                "sources": copy.deepcopy(self.raw_project(pid)["sources"]),
+                "sources": frozen_links,
                 "provenance": "Created through reviewed project inputs.",
             }
+            if continuation:
+                d["run_links"][run["run_id"]]["parent_run_id"] = continuation["parent_run_id"]
+                d["run_links"][run["run_id"]]["continuation_id"] = body.continuation_id
+                draft = d["projects"][pid]["continuations"][body.continuation_id]
+                draft["run_id"] = run["run_id"]
+                draft["submitted_inputs"] = copy.deepcopy(run["request"])
+                draft["submitted_sources"] = copy.deepcopy(d["run_links"][run["run_id"]]["sources"])
             return d
 
         self.mutate(change)
         return run
+
+    @staticmethod
+    def run_method(run):
+        return {"blood-group": "blood", "paper-review": "papers"}.get(run.get("workspace_id"), "pten")
+
+    def continue_run(self, pid, rid, body):
+        run = self.run(rid)
+        if self.project_for(run) != pid:
+            raise ValueError("Follow-up must stay in the parent investigation's project.")
+        if run["status"] not in TERMINAL:
+            raise ValueError("Review the completed or stopped investigation before creating a follow-up.")
+        cid = "followup-" + uuid4().hex
+        draft = {"id": cid, "parent_run_id": rid, "created_at": now(), "revision": 0, "reason": body.reason, "previous_question": run["request"]["question"], "baseline_inputs": copy.deepcopy(run["request"]), "inputs": {**copy.deepcopy(run["request"]), "question": body.question}, "baseline_sources": copy.deepcopy(self.read()["run_links"].get(rid, {}).get("sources", {})), "run_id": None}
+        self.edit_project(pid, lambda p: dict(p, continuations={**p.get("continuations", {}), cid: draft}))
+        return draft
 
 
 def router(app, settings):
@@ -723,6 +805,7 @@ def router(app, settings):
             "notes": list(s.read()["notes"].values()),
             "search_method": "lexical local workspace catalogue",
             "local_only": True,
+            "areas": registry(s.method_available),
         }
 
     @r.get("/sources")
@@ -780,6 +863,17 @@ def router(app, settings):
                 if len(json.dumps(body.state)) > 50000:
                     raise ValueError("Exploration state is too large.")
                 state = copy.deepcopy(body.state)
+                if p["method"] == "papers" and state.get("source_id"):
+                    link = p["sources"].get(state["source_id"])
+                    if not link:
+                        raise ValueError("Link this source to the research before saving its reading position.")
+                    source = s.source(state["source_id"])
+                    if source["family"] != "paper":
+                        raise ValueError("Reading position requires an extracted paper.")
+                    ids = state.get("chunk_ids", [])
+                    if not isinstance(ids, list) or len(ids) > 12 or any(not isinstance(i, str) for i in ids):
+                        raise ValueError("Select up to 12 valid passage identities.")
+                    PaperLibrary.selected_chunks(PaperLibrary(settings).get(source["origin_id"]), ids, 12)
                 if p["method"] == "blood" and "blood_request" in state:
                     from .blood.schemas import interpret
 
@@ -848,8 +942,56 @@ def router(app, settings):
         return wrap(go)
 
     @r.post("/projects/{pid}/investigations")
-    def start(pid: str, body: StartProjectRun):
-        return wrap(lambda: service().start(pid, body))
+    def start(pid: str, body: StartProjectRun, background: BackgroundTasks):
+        s = service()
+        run = wrap(lambda: s.start(pid, body))
+        if s.run_method(run) == "papers":
+            background.add_task(PaperReviewEngine(s.store, settings).execute, run["run_id"])
+        return run
+
+    @r.post("/projects/{pid}/visit")
+    def visit(pid: str, body: Visit):
+        def go():
+            s = service()
+            value = body.model_dump()
+            if body.source_id and body.source_id not in s.raw_project(pid)["sources"]:
+                raise ValueError("The selected source is not linked to this project.")
+            if body.run_id and s.project_for(s.run(body.run_id)) != pid:
+                raise ValueError("The investigation does not belong to this research.")
+            if s.raw_project(pid).get("last_context") == value:
+                return s.project(pid)
+            return s.edit_project(pid, lambda p: dict(p, last_context=value, last_opened_at=now()))
+        return wrap(go)
+
+    @r.post("/projects/{pid}/investigations/{rid}/continue")
+    def continue_run(pid: str, rid: str, body: ContinueRequest):
+        return wrap(lambda: service().continue_run(pid, rid, body))
+
+    @r.post("/projects/{pid}/continuations/{cid}")
+    def update_continuation(pid: str, cid: str, body: ContinueUpdate):
+        def go():
+            s = service()
+            def edit(p):
+                draft = p.get("continuations", {}).get(cid)
+                if not draft or draft.get("run_id") or draft["revision"] != body.expected_revision:
+                    raise ValueError("Follow-up draft changed or already started. Reload before saving.")
+                if len(json.dumps(body.inputs)) > 50000:
+                    raise ValueError("Follow-up inputs are too large.")
+                draft["inputs"] = copy.deepcopy(body.inputs)
+                draft["revision"] += 1
+                return p
+            return s.edit_project(pid, edit)
+        return wrap(go)
+
+    @r.post("/investigations/{rid}/cancel")
+    def cancel_paper(rid: str):
+        def go():
+            s = service()
+            run = s.run(rid)
+            if s.run_method(run) != "papers":
+                raise ValueError("Use this scientific method's original cancellation endpoint.")
+            return PaperReviewEngine(s.store, settings).cancel(rid)
+        return wrap(go)
 
     @r.post("/projects/{pid}/attach-investigation")
     def attach(pid: str, body: AttachRun):
@@ -864,9 +1006,8 @@ def router(app, settings):
             return {
                 "run": doc,
                 "project": s.project(pid) if pid else None,
-                "method": "blood"
-                if doc.get("workspace_id") == "blood-group"
-                else "pten",
+                "method": s.run_method(doc),
+                "lineage": s.read()["run_links"].get(rid, {}),
                 "sources": [
                     {
                         **x,

@@ -1,0 +1,87 @@
+{
+  "branch": {
+    "kind": "study_branch",
+    "study_id": "study-f069fb43fe811371c1cb92fc",
+    "at": "2026-10-25T06:26:34.272342+00:00",
+    "request": {
+      "report_id": "proposals-e7a9a9b5dd9c4474be965ba9a5cff913",
+      "proposal_id": "proposal-f04948d22d364fa1abd4a861b5c63a8b",
+      "project_id": "project-e6e7b2caca744e888d0dcfc5d9ad6bc4",
+      "max_seconds": 120,
+      "mode": "agentic",
+      "request_id": "ae367ecc-8f63-4426-8e23-b8e9c317d656"
+    },
+    "project_id": "project-e6e7b2caca744e888d0dcfc5d9ad6bc4",
+    "expedition_id": "expedition-a5865c65a5f3483bac13b2b8facfad62",
+    "provenance": {
+      "report_id": "proposals-e7a9a9b5dd9c4474be965ba9a5cff913",
+      "proposal_id": "proposal-f04948d22d364fa1abd4a861b5c63a8b",
+      "study_id": "study-f069fb43fe811371c1cb92fc",
+      "source_version": "2eff221b32ce8b66ced97e510b199a7acfe8dbd200c9b39c614be2fea9dbc4e2",
+      "passage_ids": [
+        "passage-b8a3b80303a8b4dc32f5c170",
+        "passage-95e4396ebe43da3359052426"
+      ],
+      "source_id": "source-9e81a0b872ab9a9088c5ad5b"
+    },
+    "id": "study-branch-ae367ecc-8f63-4426-8e23-b8e9c317d656"
+  },
+  "status": "completed_with_limitations",
+  "workers": [
+    {
+      "id": "lead",
+      "status": "completed",
+      "engine": "language model",
+      "model": "x-ai/grok-4.3",
+      "error": null
+    },
+    {
+      "id": "evidence",
+      "status": "completed",
+      "engine": "deterministic tools",
+      "model": null,
+      "error": null
+    },
+    {
+      "id": "structure",
+      "status": "completed",
+      "engine": "deterministic tools",
+      "model": null,
+      "error": null
+    },
+    {
+      "id": "methods",
+      "status": "completed",
+      "engine": "language model",
+      "model": "x-ai/grok-4.3",
+      "error": null
+    },
+    {
+      "id": "outcomes",
+      "status": "completed",
+      "engine": "language model",
+      "model": "x-ai/grok-4.3",
+      "error": null
+    },
+    {
+      "id": "verifier",
+      "status": "completed",
+      "engine": "deterministic tools",
+      "model": null,
+      "error": null
+    }
+  ],
+  "tool_calls": 3,
+  "model_attempts": 6,
+  "handoffs": 6,
+  "claims": 6,
+  "events": 26,
+  "limitations": [
+    "Claims restricted to explicit statements in supplied passages only",
+    "No experimental protocols or quantitative dosing data present in source text",
+    "Analysis limited to explicitly stated absences in supplied conclusion and challenges passages",
+    "Focused investigation: checked specialist observations are returned directly. Adaptive replanning and narrative synthesis are reserved for longer investigations.",
+    "A source-linked reconstruction is not an independent experimental reproduction.",
+    "Related reference structures do not establish a mutant fold, binding or causal mechanism."
+  ]
+}

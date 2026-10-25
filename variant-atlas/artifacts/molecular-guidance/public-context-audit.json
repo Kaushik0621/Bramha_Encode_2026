@@ -1,0 +1,56 @@
+{
+  "public_reference_sources": [
+    {
+      "title": "UniProtKB human PTEN P60484",
+      "url": "https://rest.uniprot.org/uniprotkb/P60484.json"
+    },
+    {
+      "title": "pdb-1D5R",
+      "url": "https://files.rcsb.org/download/1D5R.cif"
+    },
+    {
+      "title": "RCSB 1D5R experimental entry metadata",
+      "url": "https://data.rcsb.org/rest/v1/core/entry/1D5R"
+    },
+    {
+      "title": "PTEN lipid phosphatase scores",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000054-a-1"
+    },
+    {
+      "title": "mavedb-activity-scores",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000054-a-1/scores"
+    },
+    {
+      "title": "PTEN VAMP-seq Combined",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000102-0-1"
+    },
+    {
+      "title": "mavedb-abundance-scores",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000102-0-1/scores"
+    },
+    {
+      "title": "PTEN VAMP-seq",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000013-a-1"
+    }
+  ],
+  "public_study_urls": [
+    "https://europepmc.org/article/MED/42735835",
+    "https://europepmc.org/article/MED/42410002",
+    "https://europepmc.org/article/MED/42201356",
+    "https://europepmc.org/article/MED/41862326"
+  ],
+  "context_fields": [
+    "source_id",
+    "source_version",
+    "dataset_version",
+    "position",
+    "site",
+    "variants",
+    "assays",
+    "references",
+    "structure",
+    "selected_variant_id",
+    "protein"
+  ],
+  "patient_project_or_note_context": false
+}

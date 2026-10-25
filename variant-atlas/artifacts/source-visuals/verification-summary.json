@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-25",
+  "backend_tests": {
+    "passed": 147,
+    "warning": "Existing Starlette TestClient/httpx deprecation"
+  },
+  "production_build": "passed; existing large molecular-library chunk advisory",
+  "browser": {
+    "source_visuals": {
+      "passed": 2,
+      "scope": [
+        "interactive real reference",
+        "sequence and gaps",
+        "amino-acid substitutions and missing measurements",
+        "actual saved baseline/follow-up differences",
+        "synthetic numeric-failure fixture",
+        "honest empty state",
+        "single structure download during repeated residue selection",
+        "source citation preserves the original investigation",
+        "mobile and reload",
+        "zero browsing POST requests",
+        "actual nonempty atom selection after numeric author-residue normalization"
+      ],
+      "duration_display": "1.1m"
+    },
+    "existing_reader_theme_workspace": {
+      "passed": 7,
+      "files": [
+        "final-experience.spec.ts",
+        "brand-theme.spec.ts"
+      ]
+    },
+    "analysis_and_supplied_models": {
+      "passed": 2,
+      "file": "analysis-results.spec.ts",
+      "verified_after_shared_viewer_change": true
+    }
+  },
+  "actual_browser_report": "actual-browser-report.json",
+  "clinical_validation": false
+}

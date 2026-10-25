@@ -1,0 +1,195 @@
+{
+  "project_id": "project-c5786c930ae040d693910c78a4a548eb",
+  "baseline_run_id": "research-4df547659b0949898f8ec40e00ee071c",
+  "followup_run_id": "research-6be0a905e61a40eda99c4bcce147da1d",
+  "criteria": {
+    "scenario": "preserved_abundance_reduced_activity",
+    "activity_cutoff": -1.11,
+    "abundance_cutoff": 0.6121866579147568,
+    "mapping": "all",
+    "require_both_measurements": true
+  },
+  "baseline_matching_ids": [
+    "PTEN:p.C124S"
+  ],
+  "followup": {
+    "baseline_run_id": "research-4df547659b0949898f8ec40e00ee071c",
+    "changed_factors": [
+      "criteria.activity_cutoff"
+    ],
+    "entered": [
+      "PTEN:p.Y16T"
+    ],
+    "left": [],
+    "unchanged": [
+      "PTEN:p.C124S"
+    ],
+    "baseline_matching_ids": [
+      "PTEN:p.C124S"
+    ],
+    "current_matching_ids": [
+      "PTEN:p.Y16T",
+      "PTEN:p.C124S"
+    ],
+    "interpretation": "Analytical selection difference; this does not demonstrate biological causation.",
+    "input_changes": [
+      {
+        "field": "criteria.activity_cutoff",
+        "before": -1.11,
+        "after": 10.0
+      }
+    ]
+  },
+  "model_requests": 0,
+  "operations": [
+    "validate_variant_identity",
+    "resolve_reference_sequence",
+    "inspect_assay",
+    "load_structure_metadata",
+    "inspect_assay",
+    "align_structure_reference",
+    "assess_comparability",
+    "map_variant_residues",
+    "summarize_measurement_coverage",
+    "find_spatial_neighbors",
+    "filter_measurements",
+    "calculate_residue_distances"
+  ],
+  "dataset_version": "pten-transform-1.0-97b699d687c8",
+  "variants": [
+    {
+      "id": "PTEN:p.C124S",
+      "status": "accepted",
+      "position": 124,
+      "ref": "C",
+      "alt": "S",
+      "protein_hgvs": "p.C124S",
+      "representation_level": "protein_substitution",
+      "dna_allele_status": "not_uniquely_inferred",
+      "organism_taxonomy_id": 9606,
+      "reference_accession": "P60484",
+      "reference_sequence_version": 1,
+      "reference_entry_version": 226,
+      "activity": -4.895642908999999,
+      "abundance": 1.04741806408857,
+      "activity_se": 0.410233897,
+      "abundance_se": 0.10589328183116199,
+      "activity_record": "urn:mavedb:00000054-a-1#5684",
+      "abundance_record": "urn:mavedb:00000102-0-1#5175",
+      "mapping": {
+        "label_seq_id": 118,
+        "amino_acid": "C",
+        "auth_seq_id": "124",
+        "insertion_code": ".",
+        "chain_id": "A",
+        "label_asym_id": "A",
+        "reference_position": 124,
+        "status": "mapped",
+        "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+        "coordinate": {
+          "x": 39.5,
+          "y": 92.465,
+          "z": 25.288
+        },
+        "mapping_id": "P60484:1D5R:A:124:118",
+        "units": "angstrom",
+        "coordinate_type": "experimental"
+      },
+      "synthetic": false,
+      "evidence_ids": [
+        "passage-activity-0",
+        "passage-activity-650",
+        "passage-abundance-0"
+      ]
+    },
+    {
+      "id": "PTEN:p.R172H",
+      "status": "accepted",
+      "position": 172,
+      "ref": "R",
+      "alt": "H",
+      "protein_hgvs": "p.R172H",
+      "representation_level": "protein_substitution",
+      "dna_allele_status": "not_uniquely_inferred",
+      "organism_taxonomy_id": 9606,
+      "reference_accession": "P60484",
+      "reference_sequence_version": 1,
+      "reference_entry_version": 226,
+      "activity": -0.090125298,
+      "abundance": null,
+      "activity_se": 0.086218426,
+      "abundance_se": null,
+      "activity_record": "urn:mavedb:00000054-a-1#4774",
+      "abundance_record": null,
+      "mapping": {
+        "label_seq_id": 166,
+        "amino_acid": "R",
+        "auth_seq_id": "172",
+        "insertion_code": ".",
+        "chain_id": "A",
+        "label_asym_id": "A",
+        "reference_position": 172,
+        "status": "mapped",
+        "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+        "coordinate": {
+          "x": 32.067,
+          "y": 82.901,
+          "z": 36.417
+        },
+        "mapping_id": "P60484:1D5R:A:172:166",
+        "units": "angstrom",
+        "coordinate_type": "experimental"
+      },
+      "synthetic": false,
+      "evidence_ids": [
+        "passage-activity-0",
+        "passage-activity-650"
+      ]
+    },
+    {
+      "id": "PTEN:p.Y16T",
+      "status": "accepted",
+      "position": 16,
+      "ref": "Y",
+      "alt": "T",
+      "protein_hgvs": "p.Y16T",
+      "representation_level": "protein_substitution",
+      "dna_allele_status": "not_uniquely_inferred",
+      "organism_taxonomy_id": 9606,
+      "reference_accession": "P60484",
+      "reference_sequence_version": 1,
+      "reference_entry_version": 226,
+      "activity": -0.281762937,
+      "abundance": 0.878622335811746,
+      "activity_se": 0.089384208,
+      "abundance_se": 0.119403095902562,
+      "activity_record": "urn:mavedb:00000054-a-1#8116",
+      "abundance_record": "urn:mavedb:00000102-0-1#1090",
+      "mapping": {
+        "label_seq_id": 10,
+        "amino_acid": "Y",
+        "auth_seq_id": "16",
+        "insertion_code": ".",
+        "chain_id": "A",
+        "label_asym_id": "A",
+        "reference_position": 16,
+        "status": "mapped",
+        "reason": "Exact aligned identity agrees with depositor UniProt anchors; experimental C-alpha exists.",
+        "coordinate": {
+          "x": 26.249,
+          "y": 99.903,
+          "z": 26.897
+        },
+        "mapping_id": "P60484:1D5R:A:16:10",
+        "units": "angstrom",
+        "coordinate_type": "experimental"
+      },
+      "synthetic": false,
+      "evidence_ids": [
+        "passage-activity-0",
+        "passage-activity-650",
+        "passage-abundance-0"
+      ]
+    }
+  ]
+}

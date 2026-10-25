@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-24",
+  "build": "passed",
+  "browser_checks": {
+    "passed": 8,
+    "failed": 0,
+    "suites": [
+      "brand-theme.spec.ts",
+      "molecular-overview.spec.ts"
+    ],
+    "isolated_ports": [
+      8002,
+      8502
+    ],
+    "live_model_keys_enabled": false
+  },
+  "emblem": {
+    "width": 1088,
+    "height": 1445,
+    "fully_transparent_pixels": 1185507,
+    "total_pixels": 1572160,
+    "preparation": "built-in imagegen",
+    "dark_variant": "same source raster rendered through an alpha-preserving SVG color matrix"
+  },
+  "exports": [
+    "bramha-lockup-light.svg",
+    "bramha-lockup-dark.svg",
+    "bramha-face-light.svg",
+    "bramha-face-dark.svg",
+    "bramha-face-icon.svg"
+  ],
+  "notes": [
+    "Scientific assay gradient checked unchanged in both themes.",
+    "Native molecule coordinates and measurement data were not modified.",
+    "Existing Molstar build size advisory remains."
+  ]
+}

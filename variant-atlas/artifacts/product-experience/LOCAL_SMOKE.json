@@ -1,0 +1,6 @@
+{
+  "frontend": "http://127.0.0.1:8500",
+  "backend": "http://127.0.0.1:8000",
+  "page_errors": [],
+  "paid_calls_during_navigation": 0
+}

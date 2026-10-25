@@ -1,0 +1,2521 @@
+{
+  "project_id": "project-c5786c930ae040d693910c78a4a548eb",
+  "created_at": "2026-10-25T05:37:20.882454+00:00",
+  "reference_id": "supplied-32c244ffa44641b9d5be258cc7912d4d",
+  "mobile_id": "supplied-05114523b7cda87996d63ecececf042e",
+  "reference_sha256": "ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3",
+  "mobile_sha256": "ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3",
+  "reference_chain": "A",
+  "mobile_chain": "A",
+  "method": "Kabsch rigid-body least-squares fit over identity-matched C-alpha atom pairs; no reflection",
+  "implementation": "app.structure_lab.align_template / NumPy SVD",
+  "correspondence_basis": "Same author residue identifier and insertion code; sequence identity checked",
+  "alignment_atom_count": 307,
+  "rmsd_angstrom": 1.892479828503678e-14,
+  "coverage_fraction": 1.0,
+  "identity_fraction": 1.0,
+  "transform": {
+    "rotation": [
+      [
+        1.0000000000000002,
+        1.5326691581892295e-16,
+        2.9507917519965745e-16
+      ],
+      [
+        4.66877863670415e-17,
+        1.0000000000000009,
+        -1.5400191389656946e-16
+      ],
+      [
+        3.4492532808315317e-16,
+        -1.0982197037384822e-17,
+        1.0000000000000007
+      ]
+    ],
+    "mobile_center": [
+      36.43915636764675,
+      82.34848528187904,
+      31.845257302448882
+    ],
+    "reference_center": [
+      36.43915636764675,
+      82.34848528187904,
+      31.845257302448882
+    ]
+  },
+  "per_residue": [
+    {
+      "reference_residue": "14",
+      "mobile_residue": "14",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "15",
+      "mobile_residue": "15",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "16",
+      "mobile_residue": "16",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "17",
+      "mobile_residue": "17",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7763568394002505e-14
+    },
+    {
+      "reference_residue": "18",
+      "mobile_residue": "18",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 3.056159864571351e-14
+    },
+    {
+      "reference_residue": "19",
+      "mobile_residue": "19",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 3.197442310920451e-14
+    },
+    {
+      "reference_residue": "20",
+      "mobile_residue": "20",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 3.056159864571351e-14
+    },
+    {
+      "reference_residue": "21",
+      "mobile_residue": "21",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 3.197442310920451e-14
+    },
+    {
+      "reference_residue": "22",
+      "mobile_residue": "22",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 3.256115871121665e-14
+    },
+    {
+      "reference_residue": "23",
+      "mobile_residue": "23",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.0097183471152322e-14
+    },
+    {
+      "reference_residue": "24",
+      "mobile_residue": "24",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7763568394002505e-14
+    },
+    {
+      "reference_residue": "25",
+      "mobile_residue": "25",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "26",
+      "mobile_residue": "26",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "27",
+      "mobile_residue": "27",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "28",
+      "mobile_residue": "28",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "29",
+      "mobile_residue": "29",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "30",
+      "mobile_residue": "30",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 2.842170943040401e-14
+    },
+    {
+      "reference_residue": "31",
+      "mobile_residue": "31",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.842170943040401e-14
+    },
+    {
+      "reference_residue": "32",
+      "mobile_residue": "32",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "33",
+      "mobile_residue": "33",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "34",
+      "mobile_residue": "34",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "35",
+      "mobile_residue": "35",
+      "reference_name": "MET",
+      "mobile_name": "MET",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "36",
+      "mobile_residue": "36",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "37",
+      "mobile_residue": "37",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "38",
+      "mobile_residue": "38",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "39",
+      "mobile_residue": "39",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7763568394002505e-14
+    },
+    {
+      "reference_residue": "40",
+      "mobile_residue": "40",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7763568394002505e-14
+    },
+    {
+      "reference_residue": "41",
+      "mobile_residue": "41",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "42",
+      "mobile_residue": "42",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "43",
+      "mobile_residue": "43",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "44",
+      "mobile_residue": "44",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "45",
+      "mobile_residue": "45",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "46",
+      "mobile_residue": "46",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "47",
+      "mobile_residue": "47",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "48",
+      "mobile_residue": "48",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "49",
+      "mobile_residue": "49",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.0175535360778957e-14
+    },
+    {
+      "reference_residue": "50",
+      "mobile_residue": "50",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 3.03543989777123e-14
+    },
+    {
+      "reference_residue": "51",
+      "mobile_residue": "51",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 3.1776437161565096e-14
+    },
+    {
+      "reference_residue": "52",
+      "mobile_residue": "52",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 3.1776437161565096e-14
+    },
+    {
+      "reference_residue": "53",
+      "mobile_residue": "53",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "54",
+      "mobile_residue": "54",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "55",
+      "mobile_residue": "55",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "56",
+      "mobile_residue": "56",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "57",
+      "mobile_residue": "57",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "58",
+      "mobile_residue": "58",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "59",
+      "mobile_residue": "59",
+      "reference_name": "SER",
+      "mobile_name": "SER",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "60",
+      "mobile_residue": "60",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "61",
+      "mobile_residue": "61",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.864289338439558e-14
+    },
+    {
+      "reference_residue": "62",
+      "mobile_residue": "62",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.864289338439558e-14
+    },
+    {
+      "reference_residue": "63",
+      "mobile_residue": "63",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.842170943040401e-14
+    },
+    {
+      "reference_residue": "64",
+      "mobile_residue": "64",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.842170943040401e-14
+    },
+    {
+      "reference_residue": "65",
+      "mobile_residue": "65",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.842170943040401e-14
+    },
+    {
+      "reference_residue": "66",
+      "mobile_residue": "66",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.842170943040401e-14
+    },
+    {
+      "reference_residue": "67",
+      "mobile_residue": "67",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "68",
+      "mobile_residue": "68",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "69",
+      "mobile_residue": "69",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "70",
+      "mobile_residue": "70",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "71",
+      "mobile_residue": "71",
+      "reference_name": "CYS",
+      "mobile_name": "CYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "72",
+      "mobile_residue": "72",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 3.552713678800501e-15
+    },
+    {
+      "reference_residue": "73",
+      "mobile_residue": "73",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "74",
+      "mobile_residue": "74",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "75",
+      "mobile_residue": "75",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "76",
+      "mobile_residue": "76",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "77",
+      "mobile_residue": "77",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "78",
+      "mobile_residue": "78",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "79",
+      "mobile_residue": "79",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "80",
+      "mobile_residue": "80",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "81",
+      "mobile_residue": "81",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "82",
+      "mobile_residue": "82",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.864289338439558e-14
+    },
+    {
+      "reference_residue": "83",
+      "mobile_residue": "83",
+      "reference_name": "CYS",
+      "mobile_name": "CYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.842170943040401e-14
+    },
+    {
+      "reference_residue": "84",
+      "mobile_residue": "84",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "85",
+      "mobile_residue": "85",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "86",
+      "mobile_residue": "86",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "87",
+      "mobile_residue": "87",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "88",
+      "mobile_residue": "88",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "89",
+      "mobile_residue": "89",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "90",
+      "mobile_residue": "90",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "91",
+      "mobile_residue": "91",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 3.552713678800501e-15
+    },
+    {
+      "reference_residue": "92",
+      "mobile_residue": "92",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "93",
+      "mobile_residue": "93",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 3.552713678800501e-15
+    },
+    {
+      "reference_residue": "94",
+      "mobile_residue": "94",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "95",
+      "mobile_residue": "95",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "96",
+      "mobile_residue": "96",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "97",
+      "mobile_residue": "97",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "98",
+      "mobile_residue": "98",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "99",
+      "mobile_residue": "99",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "100",
+      "mobile_residue": "100",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "101",
+      "mobile_residue": "101",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.0048591735576161e-14
+    },
+    {
+      "reference_residue": "102",
+      "mobile_residue": "102",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.0048591735576161e-14
+    },
+    {
+      "reference_residue": "103",
+      "mobile_residue": "103",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "104",
+      "mobile_residue": "104",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "105",
+      "mobile_residue": "105",
+      "reference_name": "CYS",
+      "mobile_name": "CYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "106",
+      "mobile_residue": "106",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "107",
+      "mobile_residue": "107",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "108",
+      "mobile_residue": "108",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "109",
+      "mobile_residue": "109",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "110",
+      "mobile_residue": "110",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "111",
+      "mobile_residue": "111",
+      "reference_name": "TRP",
+      "mobile_name": "TRP",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "112",
+      "mobile_residue": "112",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 3.014577520672848e-14
+    },
+    {
+      "reference_residue": "113",
+      "mobile_residue": "113",
+      "reference_name": "SER",
+      "mobile_name": "SER",
+      "identity_matches": true,
+      "displacement_angstrom": 3.014577520672848e-14
+    },
+    {
+      "reference_residue": "114",
+      "mobile_residue": "114",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 3.014577520672848e-14
+    },
+    {
+      "reference_residue": "115",
+      "mobile_residue": "115",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 3.014577520672848e-14
+    },
+    {
+      "reference_residue": "116",
+      "mobile_residue": "116",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 3.014577520672848e-14
+    },
+    {
+      "reference_residue": "117",
+      "mobile_residue": "117",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "118",
+      "mobile_residue": "118",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "119",
+      "mobile_residue": "119",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 2.842170943040401e-14
+    },
+    {
+      "reference_residue": "120",
+      "mobile_residue": "120",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "121",
+      "mobile_residue": "121",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "122",
+      "mobile_residue": "122",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "123",
+      "mobile_residue": "123",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "124",
+      "mobile_residue": "124",
+      "reference_name": "CYS",
+      "mobile_name": "CYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "125",
+      "mobile_residue": "125",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "126",
+      "mobile_residue": "126",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "127",
+      "mobile_residue": "127",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "128",
+      "mobile_residue": "128",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "129",
+      "mobile_residue": "129",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 3.552713678800501e-15
+    },
+    {
+      "reference_residue": "130",
+      "mobile_residue": "130",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 3.552713678800501e-15
+    },
+    {
+      "reference_residue": "131",
+      "mobile_residue": "131",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "132",
+      "mobile_residue": "132",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "133",
+      "mobile_residue": "133",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "134",
+      "mobile_residue": "134",
+      "reference_name": "MET",
+      "mobile_name": "MET",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "135",
+      "mobile_residue": "135",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "136",
+      "mobile_residue": "136",
+      "reference_name": "CYS",
+      "mobile_name": "CYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "137",
+      "mobile_residue": "137",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 1.0048591735576161e-14
+    },
+    {
+      "reference_residue": "138",
+      "mobile_residue": "138",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "139",
+      "mobile_residue": "139",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "140",
+      "mobile_residue": "140",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "141",
+      "mobile_residue": "141",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "142",
+      "mobile_residue": "142",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "143",
+      "mobile_residue": "143",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "144",
+      "mobile_residue": "144",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "145",
+      "mobile_residue": "145",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "146",
+      "mobile_residue": "146",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "147",
+      "mobile_residue": "147",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 7.944109290391274e-15
+    },
+    {
+      "reference_residue": "148",
+      "mobile_residue": "148",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 7.944109290391274e-15
+    },
+    {
+      "reference_residue": "149",
+      "mobile_residue": "149",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "150",
+      "mobile_residue": "150",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "151",
+      "mobile_residue": "151",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "152",
+      "mobile_residue": "152",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "153",
+      "mobile_residue": "153",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "154",
+      "mobile_residue": "154",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "155",
+      "mobile_residue": "155",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "156",
+      "mobile_residue": "156",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "157",
+      "mobile_residue": "157",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "158",
+      "mobile_residue": "158",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "159",
+      "mobile_residue": "159",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "160",
+      "mobile_residue": "160",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "161",
+      "mobile_residue": "161",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "162",
+      "mobile_residue": "162",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 7.944109290391274e-15
+    },
+    {
+      "reference_residue": "163",
+      "mobile_residue": "163",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 7.944109290391274e-15
+    },
+    {
+      "reference_residue": "164",
+      "mobile_residue": "164",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "165",
+      "mobile_residue": "165",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 3.552713678800501e-15
+    },
+    {
+      "reference_residue": "166",
+      "mobile_residue": "166",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "167",
+      "mobile_residue": "167",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 3.552713678800501e-15
+    },
+    {
+      "reference_residue": "168",
+      "mobile_residue": "168",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 3.552713678800501e-15
+    },
+    {
+      "reference_residue": "169",
+      "mobile_residue": "169",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "170",
+      "mobile_residue": "170",
+      "reference_name": "SER",
+      "mobile_name": "SER",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "171",
+      "mobile_residue": "171",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "172",
+      "mobile_residue": "172",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "173",
+      "mobile_residue": "173",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "174",
+      "mobile_residue": "174",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "175",
+      "mobile_residue": "175",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "176",
+      "mobile_residue": "176",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "177",
+      "mobile_residue": "177",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.0048591735576161e-14
+    },
+    {
+      "reference_residue": "178",
+      "mobile_residue": "178",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.0048591735576161e-14
+    },
+    {
+      "reference_residue": "179",
+      "mobile_residue": "179",
+      "reference_name": "SER",
+      "mobile_name": "SER",
+      "identity_matches": true,
+      "displacement_angstrom": 1.0048591735576161e-14
+    },
+    {
+      "reference_residue": "180",
+      "mobile_residue": "180",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "181",
+      "mobile_residue": "181",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "182",
+      "mobile_residue": "182",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "183",
+      "mobile_residue": "183",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "184",
+      "mobile_residue": "184",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "185",
+      "mobile_residue": "185",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "186",
+      "mobile_residue": "186",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "187",
+      "mobile_residue": "187",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "188",
+      "mobile_residue": "188",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "189",
+      "mobile_residue": "189",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "190",
+      "mobile_residue": "190",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "191",
+      "mobile_residue": "191",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "192",
+      "mobile_residue": "192",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "193",
+      "mobile_residue": "193",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "194",
+      "mobile_residue": "194",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.0097183471152322e-14
+    },
+    {
+      "reference_residue": "195",
+      "mobile_residue": "195",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "196",
+      "mobile_residue": "196",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2469334198890888e-14
+    },
+    {
+      "reference_residue": "197",
+      "mobile_residue": "197",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2469334198890888e-14
+    },
+    {
+      "reference_residue": "198",
+      "mobile_residue": "198",
+      "reference_name": "MET",
+      "mobile_name": "MET",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "199",
+      "mobile_residue": "199",
+      "reference_name": "MET",
+      "mobile_name": "MET",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2469334198890888e-14
+    },
+    {
+      "reference_residue": "200",
+      "mobile_residue": "200",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 2.161031364628563e-14
+    },
+    {
+      "reference_residue": "201",
+      "mobile_residue": "201",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.161031364628563e-14
+    },
+    {
+      "reference_residue": "202",
+      "mobile_residue": "202",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2469334198890888e-14
+    },
+    {
+      "reference_residue": "203",
+      "mobile_residue": "203",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2748467065386707e-14
+    },
+    {
+      "reference_residue": "204",
+      "mobile_residue": "204",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "205",
+      "mobile_residue": "205",
+      "reference_name": "MET",
+      "mobile_name": "MET",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "206",
+      "mobile_residue": "206",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "207",
+      "mobile_residue": "207",
+      "reference_name": "SER",
+      "mobile_name": "SER",
+      "identity_matches": true,
+      "displacement_angstrom": 2.6107007145801953e-14
+    },
+    {
+      "reference_residue": "208",
+      "mobile_residue": "208",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 3.117493601007525e-14
+    },
+    {
+      "reference_residue": "209",
+      "mobile_residue": "209",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 2.3566036520288945e-14
+    },
+    {
+      "reference_residue": "210",
+      "mobile_residue": "210",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.3566036520288945e-14
+    },
+    {
+      "reference_residue": "211",
+      "mobile_residue": "211",
+      "reference_name": "CYS",
+      "mobile_name": "CYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.3566036520288945e-14
+    },
+    {
+      "reference_residue": "212",
+      "mobile_residue": "212",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.3566036520288945e-14
+    },
+    {
+      "reference_residue": "213",
+      "mobile_residue": "213",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2748467065386707e-14
+    },
+    {
+      "reference_residue": "214",
+      "mobile_residue": "214",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "215",
+      "mobile_residue": "215",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "216",
+      "mobile_residue": "216",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "217",
+      "mobile_residue": "217",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "218",
+      "mobile_residue": "218",
+      "reference_name": "CYS",
+      "mobile_name": "CYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "219",
+      "mobile_residue": "219",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "220",
+      "mobile_residue": "220",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 3.552713678800501e-15
+    },
+    {
+      "reference_residue": "221",
+      "mobile_residue": "221",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "222",
+      "mobile_residue": "222",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "223",
+      "mobile_residue": "223",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "224",
+      "mobile_residue": "224",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "225",
+      "mobile_residue": "225",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "226",
+      "mobile_residue": "226",
+      "reference_name": "SER",
+      "mobile_name": "SER",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "227",
+      "mobile_residue": "227",
+      "reference_name": "SER",
+      "mobile_name": "SER",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "228",
+      "mobile_residue": "228",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2469334198890888e-14
+    },
+    {
+      "reference_residue": "229",
+      "mobile_residue": "229",
+      "reference_name": "SER",
+      "mobile_name": "SER",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2748467065386707e-14
+    },
+    {
+      "reference_residue": "230",
+      "mobile_residue": "230",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 2.886238236725078e-14
+    },
+    {
+      "reference_residue": "231",
+      "mobile_residue": "231",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 2.864289338439558e-14
+    },
+    {
+      "reference_residue": "232",
+      "mobile_residue": "232",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.864289338439558e-14
+    },
+    {
+      "reference_residue": "233",
+      "mobile_residue": "233",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 2.886238236725078e-14
+    },
+    {
+      "reference_residue": "234",
+      "mobile_residue": "234",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 2.864289338439558e-14
+    },
+    {
+      "reference_residue": "235",
+      "mobile_residue": "235",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.864289338439558e-14
+    },
+    {
+      "reference_residue": "236",
+      "mobile_residue": "236",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "237",
+      "mobile_residue": "237",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "238",
+      "mobile_residue": "238",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 2.864289338439558e-14
+    },
+    {
+      "reference_residue": "239",
+      "mobile_residue": "239",
+      "reference_name": "MET",
+      "mobile_name": "MET",
+      "identity_matches": true,
+      "displacement_angstrom": 2.864289338439558e-14
+    },
+    {
+      "reference_residue": "240",
+      "mobile_residue": "240",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.842170943040401e-14
+    },
+    {
+      "reference_residue": "241",
+      "mobile_residue": "241",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 2.161031364628563e-14
+    },
+    {
+      "reference_residue": "242",
+      "mobile_residue": "242",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "243",
+      "mobile_residue": "243",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2469334198890888e-14
+    },
+    {
+      "reference_residue": "244",
+      "mobile_residue": "244",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 2.929642751054232e-14
+    },
+    {
+      "reference_residue": "245",
+      "mobile_residue": "245",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2469334198890888e-14
+    },
+    {
+      "reference_residue": "246",
+      "mobile_residue": "246",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2469334198890888e-14
+    },
+    {
+      "reference_residue": "247",
+      "mobile_residue": "247",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "248",
+      "mobile_residue": "248",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "249",
+      "mobile_residue": "249",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "250",
+      "mobile_residue": "250",
+      "reference_name": "CYS",
+      "mobile_name": "CYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "251",
+      "mobile_residue": "251",
+      "reference_name": "GLY",
+      "mobile_name": "GLY",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "252",
+      "mobile_residue": "252",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "253",
+      "mobile_residue": "253",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "254",
+      "mobile_residue": "254",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "255",
+      "mobile_residue": "255",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "256",
+      "mobile_residue": "256",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "257",
+      "mobile_residue": "257",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "258",
+      "mobile_residue": "258",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "259",
+      "mobile_residue": "259",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "260",
+      "mobile_residue": "260",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.3566036520288945e-14
+    },
+    {
+      "reference_residue": "261",
+      "mobile_residue": "261",
+      "reference_name": "GLN",
+      "mobile_name": "GLN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.4868995751603507e-14
+    },
+    {
+      "reference_residue": "262",
+      "mobile_residue": "262",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 2.6107007145801953e-14
+    },
+    {
+      "reference_residue": "263",
+      "mobile_residue": "263",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.774758085844075e-14
+    },
+    {
+      "reference_residue": "264",
+      "mobile_residue": "264",
+      "reference_name": "MET",
+      "mobile_name": "MET",
+      "identity_matches": true,
+      "displacement_angstrom": 2.2748467065386707e-14
+    },
+    {
+      "reference_residue": "265",
+      "mobile_residue": "265",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "266",
+      "mobile_residue": "266",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.9131948672901813e-14
+    },
+    {
+      "reference_residue": "267",
+      "mobile_residue": "267",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.9131948672901813e-14
+    },
+    {
+      "reference_residue": "268",
+      "mobile_residue": "268",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "269",
+      "mobile_residue": "269",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "270",
+      "mobile_residue": "270",
+      "reference_name": "MET",
+      "mobile_name": "MET",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "271",
+      "mobile_residue": "271",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.507288760336424e-14
+    },
+    {
+      "reference_residue": "272",
+      "mobile_residue": "272",
+      "reference_name": "HIS",
+      "mobile_name": "HIS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "273",
+      "mobile_residue": "273",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "274",
+      "mobile_residue": "274",
+      "reference_name": "TRP",
+      "mobile_name": "TRP",
+      "identity_matches": true,
+      "displacement_angstrom": 0.0
+    },
+    {
+      "reference_residue": "275",
+      "mobile_residue": "275",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "276",
+      "mobile_residue": "276",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 7.105427357601002e-15
+    },
+    {
+      "reference_residue": "277",
+      "mobile_residue": "277",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "278",
+      "mobile_residue": "278",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "279",
+      "mobile_residue": "279",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "280",
+      "mobile_residue": "280",
+      "reference_name": "ILE",
+      "mobile_name": "ILE",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "281",
+      "mobile_residue": "281",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "313",
+      "mobile_residue": "313",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 3.256115871121665e-14
+    },
+    {
+      "reference_residue": "314",
+      "mobile_residue": "314",
+      "reference_name": "GLU",
+      "mobile_name": "GLU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.6586074758753436e-14
+    },
+    {
+      "reference_residue": "315",
+      "mobile_residue": "315",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.6586074758753436e-14
+    },
+    {
+      "reference_residue": "316",
+      "mobile_residue": "316",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "317",
+      "mobile_residue": "317",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 2.0097183471152322e-14
+    },
+    {
+      "reference_residue": "318",
+      "mobile_residue": "318",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "319",
+      "mobile_residue": "319",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "320",
+      "mobile_residue": "320",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "321",
+      "mobile_residue": "321",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "322",
+      "mobile_residue": "322",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "323",
+      "mobile_residue": "323",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "324",
+      "mobile_residue": "324",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "325",
+      "mobile_residue": "325",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "326",
+      "mobile_residue": "326",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 5.0242958677880805e-15
+    },
+    {
+      "reference_residue": "327",
+      "mobile_residue": "327",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "328",
+      "mobile_residue": "328",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 1.507288760336424e-14
+    },
+    {
+      "reference_residue": "329",
+      "mobile_residue": "329",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.507288760336424e-14
+    },
+    {
+      "reference_residue": "330",
+      "mobile_residue": "330",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.0048591735576161e-14
+    },
+    {
+      "reference_residue": "331",
+      "mobile_residue": "331",
+      "reference_name": "ASP",
+      "mobile_name": "ASP",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "332",
+      "mobile_residue": "332",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "333",
+      "mobile_residue": "333",
+      "reference_name": "ALA",
+      "mobile_name": "ALA",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "334",
+      "mobile_residue": "334",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "335",
+      "mobile_residue": "335",
+      "reference_name": "ARG",
+      "mobile_name": "ARG",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "336",
+      "mobile_residue": "336",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.7404671430534633e-14
+    },
+    {
+      "reference_residue": "337",
+      "mobile_residue": "337",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.6280579355608324e-14
+    },
+    {
+      "reference_residue": "338",
+      "mobile_residue": "338",
+      "reference_name": "SER",
+      "mobile_name": "SER",
+      "identity_matches": true,
+      "displacement_angstrom": 1.507288760336424e-14
+    },
+    {
+      "reference_residue": "339",
+      "mobile_residue": "339",
+      "reference_name": "PRO",
+      "mobile_name": "PRO",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "340",
+      "mobile_residue": "340",
+      "reference_name": "ASN",
+      "mobile_name": "ASN",
+      "identity_matches": true,
+      "displacement_angstrom": 1.464821375527116e-14
+    },
+    {
+      "reference_residue": "341",
+      "mobile_residue": "341",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "342",
+      "mobile_residue": "342",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "343",
+      "mobile_residue": "343",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 1.4210854715202004e-14
+    },
+    {
+      "reference_residue": "344",
+      "mobile_residue": "344",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "345",
+      "mobile_residue": "345",
+      "reference_name": "LEU",
+      "mobile_name": "LEU",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "346",
+      "mobile_residue": "346",
+      "reference_name": "TYR",
+      "mobile_name": "TYR",
+      "identity_matches": true,
+      "displacement_angstrom": 1.5888218580782548e-14
+    },
+    {
+      "reference_residue": "347",
+      "mobile_residue": "347",
+      "reference_name": "PHE",
+      "mobile_name": "PHE",
+      "identity_matches": true,
+      "displacement_angstrom": 2.0097183471152322e-14
+    },
+    {
+      "reference_residue": "348",
+      "mobile_residue": "348",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "349",
+      "mobile_residue": "349",
+      "reference_name": "LYS",
+      "mobile_name": "LYS",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "350",
+      "mobile_residue": "350",
+      "reference_name": "THR",
+      "mobile_name": "THR",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    },
+    {
+      "reference_residue": "351",
+      "mobile_residue": "351",
+      "reference_name": "VAL",
+      "mobile_name": "VAL",
+      "identity_matches": true,
+      "displacement_angstrom": 2.1316282072803006e-14
+    }
+  ],
+  "missing_reference_residues": [],
+  "missing_mobile_residues": [],
+  "aligned_asset": {
+    "asset_id": "ffacca8bd6cf124ffebeb706c414496b831c4ec29b84344d26c82b9679f35209",
+    "key": "ff/ffacca8bd6cf124ffebeb706c414496b831c4ec29b84344d26c82b9679f35209.cif",
+    "sha256": "ffacca8bd6cf124ffebeb706c414496b831c4ec29b84344d26c82b9679f35209",
+    "size_bytes": 228973
+  },
+  "limitations": [
+    "Differences may reflect construct, method, conditions or conformation; mutation causation is not established.",
+    "Only the first coordinate model and selected observed protein chains are used.",
+    "The alignment transform and aligned display copy are saved separately; original coordinates remain immutable.",
+    "No folding, energy, binding or stability model was run."
+  ],
+  "status": "result_available",
+  "id": "comparison-cc1a14118c2f4c3fb274dd2303ead896",
+  "kind": "structure_comparison"
+}

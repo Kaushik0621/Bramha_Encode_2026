@@ -1,0 +1,108 @@
+{
+  "checked_at": "2026-10-25T05:47:09.471345+00:00",
+  "database": "variant_atlas",
+  "corpus_backend": "atlas",
+  "project_backend": "local",
+  "connected": true,
+  "error": null,
+  "asset_bytes": 34472477,
+  "vector": {
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "enabled": true,
+    "stored_passages": 4533,
+    "recorded_index_status": {
+      "ready": true,
+      "name": "bramha_passages_multilingual_v1",
+      "status": "READY",
+      "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "dimension": 384,
+      "id": "vector-status"
+    }
+  },
+  "backup": {
+    "approved_files": 223,
+    "verified_backups": 223,
+    "verified_bytes": 6017894,
+    "skipped": [],
+    "database": "variant_atlas",
+    "completed_at": "2026-10-25T04:29:13.810902+00:00",
+    "id": "approved-local-backup"
+  },
+  "collections": [
+    {
+      "name": "studies",
+      "count": 480,
+      "physical_name": "bramha_studies"
+    },
+    {
+      "name": "passages",
+      "count": 4784,
+      "physical_name": "bramha_passages"
+    },
+    {
+      "name": "entities",
+      "count": 2394,
+      "physical_name": "bramha_entities"
+    },
+    {
+      "name": "structures",
+      "count": 21,
+      "physical_name": "bramha_structures"
+    },
+    {
+      "name": "relations",
+      "count": 40,
+      "physical_name": "bramha_relations"
+    },
+    {
+      "name": "scenarios",
+      "count": 240,
+      "physical_name": "bramha_scenarios"
+    },
+    {
+      "name": "ingestion_jobs",
+      "count": 1,
+      "physical_name": "bramha_ingestion_jobs"
+    },
+    {
+      "name": "expeditions",
+      "count": 3,
+      "physical_name": "bramha_expeditions"
+    },
+    {
+      "name": "events",
+      "count": 78,
+      "physical_name": "bramha_events"
+    },
+    {
+      "name": "tasks",
+      "count": 25,
+      "physical_name": "bramha_tasks"
+    },
+    {
+      "name": "searches",
+      "count": 1,
+      "physical_name": "bramha_searches"
+    },
+    {
+      "name": "metadata",
+      "count": 2,
+      "physical_name": "bramha_metadata"
+    },
+    {
+      "name": "workspace_snapshots",
+      "count": 223,
+      "physical_name": "bramha_workspace_snapshots"
+    },
+    {
+      "name": "measurements",
+      "count": 7657,
+      "physical_name": "bramha_measurements"
+    },
+    {
+      "name": "assets",
+      "count": 350,
+      "physical_name": "bramha_assets.files / bramha_assets.chunks"
+    }
+  ]
+}

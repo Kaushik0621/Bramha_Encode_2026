@@ -1,0 +1,115 @@
+{
+  "language": "zh",
+  "status_code": 200,
+  "study_id": "study-db200c68dd3d8f3d6abe433a",
+  "library_source_id": "source-a3e21f18e5c06fa5bc2e0b54",
+  "result": {
+    "kind": "study_translation",
+    "status": "completed",
+    "study_id": "study-db200c68dd3d8f3d6abe433a",
+    "source_version": "91a6974fdc0824349242fd6e1b2bea20800293c3914a240af2cae516b116ac27",
+    "target_language": "en",
+    "passage_ids": [
+      "passage-9be3f6b8d1877d972ffe6e6e"
+    ],
+    "passages": [
+      {
+        "passage_id": "passage-9be3f6b8d1877d972ffe6e6e",
+        "original": "目的： 通过二代测序（NGS）技术评估卵巢癌患者的同源重组修复缺陷（HRD）状态，并分析其与临床病理特征、微卫星不稳定性（MSI）及肿瘤突变负荷（TMB）的相关性，为卵巢癌的遗传风险评估、PARP抑制剂（PARPi）精准治疗及预后管理提供依据。 方法： 收集2021年1月至2025年8月于中南大学湘雅二医院行HRD检测的卵巢癌患者182例。通过NGS技术检测乳腺癌相关基因（BRCA）1/2等基因的胚系与体细胞突变、HRD评分、MSI及TMB。HRD阳性定义为存在BRCA1/2致病/可能致病突变和/或HRD评分阳性。采用免疫组织化学（IHC）技术检测错配修复蛋白和p53的表达。 结果： 182例患者的HRD阳性率为65.38%（119/182），HRD评分阳性率为53.30%（97/182）。高级别浆液性癌（HGSC）占比达84.62%（154/182），其HRD阳性率（75.97%，117/154）显著高于其他少见病理亚型（7.14%，2/28， P ＜0.000",
+        "translation": "Objective: To evaluate the homologous recombination repair deficiency (HRD) status of ovarian cancer patients by next-generation sequencing (NGS) technology and analyze its correlation with clinicopathological features, microsatellite instability (MSI) and tumor mutational burden (TMB), providing a basis for genetic risk assessment, PARP inhibitor (PARPi) precision therapy and prognostic management of ovarian cancer. Methods: 182 ovarian cancer patients who underwent HRD testing at Xiangya Second Hospital of Central South University from January 2021 to August 2025 were collected. NGS technology was used to detect germline and somatic mutations in breast cancer-related genes (BRCA) 1/2 and other genes, HRD score, MSI and TMB. HRD positivity was defined as the presence of BRCA1/2 pathogenic/likely pathogenic mutations and/or positive HRD score. Immunohistochemistry (IHC) was used to detect the expression of mismatch repair proteins and p53. Results: The HRD positive rate of 182 patients was 65.38% (119/182), and the HRD score positive rate was 53.30% (97/182). High-grade serous carcinoma (HGSC) accounted for 84.62% (154/182), and its HRD positive rate (75.97%, 117/154) was significantly higher than other rare pathological subtypes (7.14%, 2/28, P ＜0.000",
+        "source_language": "zh",
+        "source_version": "91a6974fdc0824349242fd6e1b2bea20800293c3914a240af2cae516b116ac27",
+        "section": "Publisher abstract · Chinese"
+      }
+    ],
+    "limitations": [
+      "Source text is truncated mid-sentence after 'P ＜0.000'; preserved exactly as fragment without completion."
+    ],
+    "provider": {
+      "provider": "openrouter",
+      "model": "x-ai/grok-4.3",
+      "usage": {
+        "prompt_tokens": 1745,
+        "completion_tokens": 1672,
+        "total_tokens": 3417,
+        "cost": 0.00461405,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 1664,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00461405,
+          "upstream_inference_prompt_cost": 0.00043405,
+          "upstream_inference_completions_cost": 0.00418
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1264,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "cost_usd": 0.00461405,
+      "background": false,
+      "fallback": {
+        "from_provider": "google",
+        "from_model": "gemini-4-argon",
+        "to_provider": "openrouter",
+        "to_model": "x-ai/grok-4.3",
+        "failure_type": "RuntimeError"
+      },
+      "attempts": [
+        {
+          "provider": "google",
+          "model": "gemini-4-argon",
+          "status": "failed_attempt",
+          "cost_usd": null,
+          "failure_type": "RuntimeError"
+        },
+        {
+          "provider": "openrouter",
+          "model": "x-ai/grok-4.3",
+          "usage": {
+            "prompt_tokens": 1745,
+            "completion_tokens": 1672,
+            "total_tokens": 3417,
+            "cost": 0.00461405,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 1664,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00461405,
+              "upstream_inference_prompt_cost": 0.00043405,
+              "upstream_inference_completions_cost": 0.00418
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1264,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "cost_usd": 0.00461405,
+          "background": false
+        }
+      ]
+    },
+    "attempts": [
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "status": "failed_attempt",
+        "cost_usd": null,
+        "failure_type": "RuntimeError"
+      }
+    ],
+    "at": "2026-10-25T07:16:26.716417+00:00",
+    "scope": "Model translation of selected source passages; not an original quotation or scientific validation.",
+    "id": "translation-630c06cfacd7439f800facdc4fd803cd"
+  }
+}

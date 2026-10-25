@@ -142,6 +142,9 @@ class Registry:
                 else run["request"]["selected_ids"]
             )
             rows = [self.data.variant(x) for x in ids]
+            invalid=[v["id"] for v in rows if not (1<=v["position"]<=len(w["protein"]["sequence"]) and w["protein"]["sequence"][v["position"]-1]==v["ref"] and v["alt"] in "ACDEFGHIKLMNPQRSTVWY" and v.get("reference_sequence_version")==w["protein"]["sequence_version"])]
+            if invalid and name in {"validate_variant_identity","filter_measurements","join_measurements","map_variant_residues","calculate_residue_distances","find_spatial_neighbors","compare_measurement_patterns","compare_analysis_scenarios"}:
+                return ToolResult(tool=name,outcome="incompatible",summary="Pinned reference identity mismatch; affected scientific analysis is blocked.",data={"accepted_count":len(rows)-len(invalid),"rejected_ids":invalid},limitations=["Resolve the reference identity mismatch before interpreting measurements or coordinates."])
             criteria = a.criteria or ResearchCriteria.model_validate(
                 run["request"]["criteria"]
             )

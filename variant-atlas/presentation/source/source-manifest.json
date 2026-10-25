@@ -1,0 +1,191 @@
+{
+  "manifest_version": "1.0",
+  "organism_taxonomy_id": 9606,
+  "gene": "PTEN",
+  "reference_accession": "P60484",
+  "sources": [
+    {
+      "id": "uniprot-P60484",
+      "title": "UniProtKB human PTEN P60484",
+      "url": "https://rest.uniprot.org/uniprotkb/P60484.json",
+      "canonical_url": "https://rest.uniprot.org/uniprotkb/P60484.json",
+      "retrieved_at": "2026-10-24T01:34:22.018372+00:00",
+      "accession": "uniprot-P60484",
+      "release": {
+        "firstPublicDate": "2004-02-16",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2004-02-16",
+        "entryVersion": 226,
+        "sequenceVersion": 1
+      },
+      "license": "CC BY 4.0; UniProt database terms",
+      "terms_url": "https://www.uniprot.org/help/license",
+      "terms_status": "source_policy_recorded",
+      "asset": {
+        "asset_id": "01f54fb2f12979ee90ad06243485914f1f6d349725b0fa83d266cbe888f40405",
+        "key": "01/01f54fb2f12979ee90ad06243485914f1f6d349725b0fa83d266cbe888f40405.json",
+        "sha256": "01f54fb2f12979ee90ad06243485914f1f6d349725b0fa83d266cbe888f40405",
+        "size_bytes": 220215
+      },
+      "parser_version": "pten-ingestion-1.0",
+      "acquisition_method": "permitted_local_export"
+    },
+    {
+      "id": "pdb-1D5R",
+      "title": "pdb-1D5R",
+      "url": "https://files.rcsb.org/download/1D5R.cif",
+      "canonical_url": "https://files.rcsb.org/download/1D5R.cif",
+      "retrieved_at": "2026-10-24T01:34:22.021464+00:00",
+      "accession": "pdb-1D5R",
+      "release": null,
+      "license": "wwPDB data freely available under CC0",
+      "terms_url": "https://www.wwpdb.org/about/usage-policies",
+      "terms_status": "source_policy_recorded",
+      "asset": {
+        "asset_id": "ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3",
+        "key": "ea/ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3.cif",
+        "sha256": "ea6f0a6764edea3036979830ad4abb69c8750b5a45d3a06efecf4776be216fc3",
+        "size_bytes": 346885
+      },
+      "parser_version": "pten-ingestion-1.0",
+      "acquisition_method": "permitted_local_export"
+    },
+    {
+      "id": "pdb-1D5R-metadata",
+      "title": "RCSB 1D5R experimental entry metadata",
+      "url": "https://data.rcsb.org/rest/v1/core/entry/1D5R",
+      "canonical_url": "https://data.rcsb.org/rest/v1/core/entry/1D5R",
+      "retrieved_at": "2026-10-24T01:34:22.022112+00:00",
+      "accession": "pdb-1D5R-metadata",
+      "release": {
+        "deposit_date": "1999-10-11T00:00:00.000+00:00",
+        "has_released_experimental_data": "N",
+        "initial_release_date": "1999-11-04T00:00:00.000+00:00",
+        "major_revision": 1,
+        "minor_revision": 5,
+        "revision_date": "2024-02-07T00:00:00.000+00:00",
+        "status_code": "REL"
+      },
+      "license": "RCSB PDB/wwPDB data policy",
+      "terms_url": "https://www.rcsb.org/pages/policies",
+      "terms_status": "source_policy_recorded",
+      "asset": {
+        "asset_id": "d5b87248ef348d2aa5484e20a465c22ea88a6ee5afa51aa735c20df38a341588",
+        "key": "d5/d5b87248ef348d2aa5484e20a465c22ea88a6ee5afa51aa735c20df38a341588.json",
+        "sha256": "d5b87248ef348d2aa5484e20a465c22ea88a6ee5afa51aa735c20df38a341588",
+        "size_bytes": 12090
+      },
+      "parser_version": "pten-ingestion-1.0",
+      "acquisition_method": "permitted_local_export"
+    },
+    {
+      "id": "mavedb-activity-metadata",
+      "title": "PTEN lipid phosphatase scores",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000054-a-1",
+      "canonical_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000054-a-1",
+      "retrieved_at": "2026-10-24T01:34:22.023343+00:00",
+      "accession": "urn:mavedb:00000054-a-1",
+      "release": "2026-06-30",
+      "license": "CC0",
+      "terms_url": "https://www.mavedb.org/docs/mavedb/finding-data/downloading.html",
+      "terms_status": "verified_dataset_CC0",
+      "asset": {
+        "asset_id": "3b709043642c1dab26367d672fde3f6aea6de783d03f15d713b03c3dbaba862f",
+        "key": "3b/3b709043642c1dab26367d672fde3f6aea6de783d03f15d713b03c3dbaba862f.json",
+        "sha256": "3b709043642c1dab26367d672fde3f6aea6de783d03f15d713b03c3dbaba862f",
+        "size_bytes": 150195
+      },
+      "parser_version": "pten-ingestion-1.0",
+      "acquisition_method": "permitted_local_export",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "id": "mavedb-activity-scores",
+      "title": "mavedb-activity-scores",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000054-a-1/scores",
+      "canonical_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000054-a-1/scores",
+      "retrieved_at": "2026-10-24T01:34:22.030640+00:00",
+      "accession": "urn:mavedb:00000054-a-1",
+      "release": null,
+      "license": "License inherited from the corresponding score-set metadata.",
+      "terms_url": "https://www.mavedb.org/docs/mavedb/finding-data/downloading.html",
+      "terms_status": "source_policy_recorded",
+      "asset": {
+        "asset_id": "16764c9b4afed9f7507bb8e615fdcd703329f3145108a8c28bdf0b1c60f076e7",
+        "key": "16/16764c9b4afed9f7507bb8e615fdcd703329f3145108a8c28bdf0b1c60f076e7.csv",
+        "sha256": "16764c9b4afed9f7507bb8e615fdcd703329f3145108a8c28bdf0b1c60f076e7",
+        "size_bytes": 2438297
+      },
+      "parser_version": "pten-ingestion-1.0",
+      "acquisition_method": "permitted_local_export"
+    },
+    {
+      "id": "mavedb-abundance-metadata",
+      "title": "PTEN VAMP-seq Combined",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000102-0-1",
+      "canonical_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000102-0-1",
+      "retrieved_at": "2026-10-24T01:34:22.031532+00:00",
+      "accession": "urn:mavedb:00000102-0-1",
+      "release": "2025-01-04",
+      "license": "CC0",
+      "terms_url": "https://www.mavedb.org/docs/mavedb/finding-data/downloading.html",
+      "terms_status": "verified_dataset_CC0",
+      "asset": {
+        "asset_id": "b05a57d2323f7280d2d6e0404bcd3bc3a7be87fe6520260ff7fc0280dc3150ad",
+        "key": "b0/b05a57d2323f7280d2d6e0404bcd3bc3a7be87fe6520260ff7fc0280dc3150ad.json",
+        "sha256": "b05a57d2323f7280d2d6e0404bcd3bc3a7be87fe6520260ff7fc0280dc3150ad",
+        "size_bytes": 8223
+      },
+      "parser_version": "pten-ingestion-1.0",
+      "acquisition_method": "permitted_local_export",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "id": "mavedb-abundance-scores",
+      "title": "mavedb-abundance-scores",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000102-0-1/scores",
+      "canonical_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000102-0-1/scores",
+      "retrieved_at": "2026-10-24T01:34:22.036431+00:00",
+      "accession": "urn:mavedb:00000102-0-1",
+      "release": null,
+      "license": "License inherited from the corresponding score-set metadata.",
+      "terms_url": "https://www.mavedb.org/docs/mavedb/finding-data/downloading.html",
+      "terms_status": "source_policy_recorded",
+      "asset": {
+        "asset_id": "7ea649a9b53f6ea052c80470bcb15b1081693255c81eb10b4762affadc039928",
+        "key": "7e/7ea649a9b53f6ea052c80470bcb15b1081693255c81eb10b4762affadc039928.csv",
+        "sha256": "7ea649a9b53f6ea052c80470bcb15b1081693255c81eb10b4762affadc039928",
+        "size_bytes": 1805100
+      },
+      "parser_version": "pten-ingestion-1.0",
+      "acquisition_method": "permitted_local_export"
+    },
+    {
+      "id": "mavedb-abundance-original-metadata",
+      "title": "PTEN VAMP-seq",
+      "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000013-a-1",
+      "canonical_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000013-a-1",
+      "retrieved_at": "2026-10-24T01:34:22.037773+00:00",
+      "accession": "urn:mavedb:00000013-a-1",
+      "release": "2026-06-01",
+      "license": "CC0",
+      "terms_url": "https://www.mavedb.org/docs/mavedb/finding-data/downloading.html",
+      "terms_status": "verified_dataset_CC0",
+      "asset": {
+        "asset_id": "60f4ef6a2118a9a0cc0a6a9110b34b4522f8a1cf309435e86e7bda3a2d0e7f85",
+        "key": "60/60f4ef6a2118a9a0cc0a6a9110b34b4522f8a1cf309435e86e7bda3a2d0e7f85.json",
+        "sha256": "60f4ef6a2118a9a0cc0a6a9110b34b4522f8a1cf309435e86e7bda3a2d0e7f85",
+        "size_bytes": 134719
+      },
+      "parser_version": "pten-ingestion-1.0",
+      "acquisition_method": "permitted_local_export",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  ],
+  "data_mode": "real",
+  "notes": [
+    "Immutable raw bytes are stored locally by SHA-256 before transformation.",
+    "No genome assembly or DNA allele is inferred from a protein substitution.",
+    "Primary study DOI 10.1186/s13073-021-00984-x / PMC8518224 is referenced through the MaveDB metadata; full-text bytes are not required or redistributed."
+  ]
+}

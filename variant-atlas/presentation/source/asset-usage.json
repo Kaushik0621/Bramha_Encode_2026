@@ -1,0 +1,32 @@
+[
+  {
+    "slide": 1,
+    "asset": "emblem.png",
+    "crop": null
+  },
+  {
+    "slide": 1,
+    "asset": "linked-structure-results.png",
+    "crop": [
+      0.016,
+      0.229,
+      0.476,
+      0.699
+    ]
+  },
+  {
+    "slide": 4,
+    "asset": "demo-baseline-controls.png",
+    "crop": [
+      0.169,
+      0.655,
+      0.981,
+      0.996
+    ]
+  },
+  {
+    "slide": 19,
+    "asset": "emblem.png",
+    "crop": null
+  }
+]

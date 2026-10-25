@@ -1,6 +1,8 @@
-> The current project-centred UI is documented in [Research workflow and route map](docs/RESEARCH_WORKFLOW_ROUTES.md). Home opens the molecular overview and research dashboard; PTEN and blood-group evidence review are supported project methods. Scientific data and verification details remain in [REAL_DATA_BUILD.md](docs/REAL_DATA_BUILD.md). The synthetic demonstration lives at `/developer/demo`.
+> The current product flow and canonical routes are documented in [Final experience implementation](docs/FINAL_EXPERIENCE_IMPLEMENTATION.md): Home → My Research / Library → Workspace, Evidence, Results and Notebook. PTEN, blood-group evidence and bounded paper review share one project flow. Scientific provenance remains in [REAL_DATA_BUILD.md](docs/REAL_DATA_BUILD.md); the synthetic demonstration stays at `/developer/demo`.
 
 # Bramha Atlas
+
+For a shareable, step-by-step product discussion with diagrams, see [Connected research workflow](docs/BRAMHA_ATLAS_VISUAL_WORKFLOW.md). It separates the existing application from proposed visual improvements.
 
 A runnable local research workspace built from `variant-atlas-codex-build-brief.md` , `variant-atlas-product-plan.md` and `variant-atlas-business-goal.md`. React/TypeScript frontend and Python/FastAPI backend are separate applications, communicating exclusively through HTTP.
 
@@ -175,3 +177,25 @@ The molecular hero includes an [agent research workbench](docs/AGENT_RESEARCH_WO
 New investigations also support [live scenario exploration](docs/LIVE_SCENARIO_EXPLORATION.md): up to ten ranked directions, scoped agents, discoverable tools, evidence-linked path changes and inspectable outcomes.
 
 The [visual research companion](docs/VISUAL_RESEARCH_GUIDE.md) explains selected residues, suggests grounded comparison paths, connects prior investigations, and replaces JSON-first checkpoints with plots, coverage graphics and visual replay. Both authentic and synthetic workspaces have contextual exploration and return navigation.
+
+Branding and color themes: [preview, reusable assets and implementation notes](docs/BRAND_AND_THEME.md).
+
+Argon now has a configured OpenRouter fallback: [behavior, provenance and verification](docs/MODEL_FALLBACK.md).
+
+### Connected research workspace
+
+See [the visual workflow and implementation guide](docs/RESEARCH_WORKSPACE_V2.md) for title-based biological suggestions, searchable public references, online evidence, saved structural proposals, the cited assistant, investigation sizes and storage details.
+
+### Research Observatory and Atlas public corpus
+
+Open **Live research** to watch a saved, bounded multi-agent expedition, or **Worldwide studies** to search published work and inspect source-linked molecular references. Projects link to both views, and project Results includes its public expeditions. The public evidence guide is separate from the executing research team.
+
+See [Research Observatory implementation and walkthrough](docs/RESEARCH_OBSERVATORY_IMPLEMENTATION.md) for the connected flow, actual data counts, Atlas collections, model fallback, public-data expansion and verified limits. [The implementation plan](docs/RESEARCH_OBSERVATORY_PLAN.md) records the design. Existing local projects remain intact; the public corpus and new expedition records use `CORPUS_BACKEND=atlas`. The separately approved local-file backup is additive, rather than continuous project synchronization.
+
+## Executable investigation upgrade
+
+See [the delivery walkthrough and feature matrix](docs/EXPERIMENT_ANALYSIS_DELIVERY.md) and [the operation execution audit](docs/EXPERIMENT_EXECUTION_AUDIT.md) for the real-data baseline/follow-up, autonomous team handoffs, geographic map and supplied-structure alignment.
+
+The separate [MongoDB & Data console](docs/MONGODB_DATA_CONSOLE.md) shows live corpus counts, inspectable documents, storage flows, vector/backup status and the local workspace inventory at `/data`.
+
+Library sources now open a [visual evidence and saved-results view](docs/LIBRARY_VISUAL_EVIDENCE.md), with sequence/coordinate gaps, amino-acid annotations, frozen computation results and failure history.

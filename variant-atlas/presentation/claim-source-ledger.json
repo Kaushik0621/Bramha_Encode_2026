@@ -1,0 +1,102 @@
+[
+  {
+    "slide": 1,
+    "title": "Bramha Atlas",
+    "sources": "Production emblem: frontend/public/branding/bramha-emblem.png; source/reference-check.json; assets/linked-structure-results.png."
+  },
+  {
+    "slide": 2,
+    "title": "The next experiment starts with an evidence decision",
+    "sources": "Customer scenario is an illustrative workflow hypothesis; no measured time savings or customer traction claimed."
+  },
+  {
+    "slide": 3,
+    "title": "From a question to a brief you can check",
+    "sources": "docs/EXPERIMENT_EXECUTION_AUDIT.md; docs/EXPERIMENT_ANALYSIS_DELIVERY.md; backend/app/analysis_execution.py; backend/app/analysis_results.py.",
+    "diagram": "source/diagrams_3d.py"
+  },
+  {
+    "slide": 4,
+    "title": "Three real substitutions. One bounded question.",
+    "sources": "source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8."
+  },
+  {
+    "slide": 5,
+    "title": "Two assays answer different questions",
+    "sources": "source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8."
+  },
+  {
+    "slide": 6,
+    "title": "A mapped position gives context, not causation",
+    "sources": "source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8. Reference coordinates: https://www.rcsb.org/structure/1D5R ; UniProt: https://www.uniprot.org/uniprotkb/P60484/entry .",
+    "diagram": "source/diagrams_3d.py; source/mapping-audit.json"
+  },
+  {
+    "slide": 7,
+    "title": "Change one rule. See exactly what changes.",
+    "sources": "source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8. Baseline research-4df547659b0949898f8ec40e00ee071c; follow-up research-6be0a905e61a40eda99c4bcce147da1d."
+  },
+  {
+    "slide": 8,
+    "title": "Scoped reviews, inspectable handoffs",
+    "sources": "source/agent-run.json; backend/app/orchestration/agent_network.py; assets/agent-network.png. Actual provider: OpenRouter / x-ai/grok-4.3. Argon remains unverified; source/argon-check.json.",
+    "diagram": "source/diagrams_3d.py"
+  },
+  {
+    "slide": 9,
+    "title": "The useful result includes the unknowns",
+    "sources": "source/reference-check.json; source/assay-dictionary.json; source/source-manifest.json. Original records: https://www.mavedb.org/score-sets/urn:mavedb:00000054-a-1 and https://www.mavedb.org/score-sets/urn:mavedb:00000102-0-1. Dataset pten-transform-1.0-97b699d687c8. source/agent-run.json. Adaptive limitation-driven model revision is not verified by this threshold comparison."
+  },
+  {
+    "slide": 10,
+    "title": "Connected evidence, explicit storage boundaries",
+    "sources": "docs/MONGODB_DATA_CONSOLE.md; source/storage-check.json; backend/app/analysis_execution.py; backend/app/corpus_store.py; backend/app/research_hub.py; frontend/src/workspace/ResearchHub.tsx.",
+    "diagram": "source/diagrams_3d.py"
+  },
+  {
+    "slide": 11,
+    "title": "A prototype with evidence you can inspect",
+    "sources": "source/reference-check.json; source/agent-run.json; source/storage-check.json; source/argon-check.json; docs/EXPERIMENT_ANALYSIS_DELIVERY.md. Counts are the recorded 25 October 2026 snapshot."
+  },
+  {
+    "slide": 12,
+    "title": "Start with teams making variant research decisions",
+    "sources": "Proposed customer segmentation and pilot design are hypotheses; no signed pilots or validated willingness to pay claimed."
+  },
+  {
+    "slide": 13,
+    "title": "A focused workflow in an established ecosystem",
+    "sources": "Official pages checked 25 October 2026: Benchling https://www.benchling.com/ ; Galaxy https://galaxyproject.org/ ; MaveDB https://mavedb.org/docs/mavedb/index.html and https://www.mavedb.org/docs/mavedb/mavemd/variant-page.html ; Europe PMC https://europepmc.org/about . Market context: Grand View Research https://www.grandviewresearch.com/horizon/outlook/drug-discovery-informatics-market-size/global ."
+  },
+  {
+    "slide": 14,
+    "title": "The gap is the decision handoff",
+    "sources": "Official sources checked 25 October 2026: Benchling academic plan and AI https://www.benchling.com/academic ; Galaxy https://galaxyproject.org/ ; MaveDB variant interface https://mavedb.org/docs/mavedb/mavemd/variant-page.html . Competitor coverage does not prove unmet demand. Market opportunity and value assumptions: source/market-model.json; Market-Value-Model.xlsx.",
+    "diagram": "source/diagrams_3d.py"
+  },
+  {
+    "slide": 15,
+    "title": "What is closing that gap worth to one lab?",
+    "sources": "Official sources checked 25 October 2026: Benchling academic plan and AI https://www.benchling.com/academic ; Galaxy https://galaxyproject.org/ ; MaveDB variant interface https://mavedb.org/docs/mavedb/mavemd/variant-page.html . Competitor coverage does not prove unmet demand. Market opportunity and value assumptions: source/market-model.json; Market-Value-Model.xlsx."
+  },
+  {
+    "slide": 16,
+    "title": "A testable US entry segment: $0.72\u20132.16M/year",
+    "sources": "BIO, America\u2019s Innovation Engine: The Power of Small and Mid-Sized Biotechs, January 2026: https://www.bio.org/sites/default/files/2026-01/the_power_of_small_and_mid-size_biotechs.pdf . BIO states more than 2,000 US biotech companies. This model uses a rounded 2,000-company reference pool, not a count of qualified buyers. All fit, account and price inputs are assumptions: source/market-model.json; Market-Value-Model.xlsx."
+  },
+  {
+    "slide": 17,
+    "title": "Charge for a bounded research workspace",
+    "sources": "All prices, customer counts and revenue values on this slide are proposed assumptions. Arithmetic only: 20 labs \u00d7 US$300/month \u00d7 12 = US$72,000/year; no traction, forecast, profit or valuation claim."
+  },
+  {
+    "slide": 18,
+    "title": "Pilot the decision, then earn expansion",
+    "sources": "Proposed evaluation plan; pilot counts, durations and success criteria are design hypotheses, not completed customer research."
+  },
+  {
+    "slide": 19,
+    "title": "Help shape a research decision worth trusting",
+    "sources": "Roadmap and partner request are prospective. Argon status: source/argon-check.json. Gene expansion and independent scientific evaluation remain future milestones."
+  }
+]

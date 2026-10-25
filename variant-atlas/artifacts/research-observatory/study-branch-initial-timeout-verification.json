@@ -1,0 +1,94 @@
+{
+  "branch": {
+    "kind": "study_branch",
+    "study_id": "study-f069fb43fe811371c1cb92fc",
+    "at": "2026-10-25T06:22:33.324242+00:00",
+    "request": {
+      "report_id": "proposals-e7a9a9b5dd9c4474be965ba9a5cff913",
+      "proposal_id": "proposal-f04948d22d364fa1abd4a861b5c63a8b",
+      "project_id": null,
+      "max_seconds": 120,
+      "mode": "agentic",
+      "request_id": "32328cd1-3a62-4558-8f8d-ef168e223d20"
+    },
+    "project_id": "project-e6e7b2caca744e888d0dcfc5d9ad6bc4",
+    "expedition_id": "expedition-8a15401430f74475969f13d478c407d8",
+    "provenance": {
+      "report_id": "proposals-e7a9a9b5dd9c4474be965ba9a5cff913",
+      "proposal_id": "proposal-f04948d22d364fa1abd4a861b5c63a8b",
+      "study_id": "study-f069fb43fe811371c1cb92fc",
+      "source_version": "2eff221b32ce8b66ced97e510b199a7acfe8dbd200c9b39c614be2fea9dbc4e2",
+      "passage_ids": [
+        "passage-b8a3b80303a8b4dc32f5c170",
+        "passage-95e4396ebe43da3359052426"
+      ],
+      "source_id": "source-9e81a0b872ab9a9088c5ad5b"
+    },
+    "id": "study-branch-32328cd1-3a62-4558-8f8d-ef168e223d20"
+  },
+  "status": "interrupted",
+  "workers": [
+    {
+      "id": "lead",
+      "status": "completed",
+      "engine": "language model",
+      "model": "x-ai/grok-4.3",
+      "error": null
+    },
+    {
+      "id": "evidence",
+      "status": "completed",
+      "engine": "deterministic tools",
+      "model": null,
+      "error": null
+    },
+    {
+      "id": "structure",
+      "status": "completed",
+      "engine": "deterministic tools",
+      "model": null,
+      "error": null
+    },
+    {
+      "id": "methods",
+      "status": "completed",
+      "engine": "language model",
+      "model": "x-ai/grok-4.3",
+      "error": null
+    },
+    {
+      "id": "outcomes",
+      "status": "completed",
+      "engine": "language model",
+      "model": "x-ai/grok-4.3",
+      "error": null
+    },
+    {
+      "id": "lead-review",
+      "status": "completed",
+      "engine": "language model",
+      "model": "x-ai/grok-4.3",
+      "error": null
+    },
+    {
+      "id": "verifier",
+      "status": "completed",
+      "engine": "deterministic tools",
+      "model": null,
+      "error": null
+    },
+    {
+      "id": "synthesis",
+      "status": "interrupted",
+      "engine": "language model",
+      "model": null,
+      "error": null
+    }
+  ],
+  "tool_calls": 3,
+  "model_attempts": 10,
+  "handoffs": 10,
+  "claims": 0,
+  "events": 34,
+  "limitations": []
+}

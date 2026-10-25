@@ -1,0 +1,83 @@
+BRAMHA ATLAS — PRESENTATION HANDOFF
+25 October 2026 — revised with editable 3D diagrams
+
+3D REVISION
+Slides 3, 6, 8, 10 and 14 now contain dimensional diagrams. The workflow,
+agent network and architecture use editable oblique solids, shaded spheres
+and connectors. These are conceptual diagrams, not measured physical layouts.
+The scientific molecular diagram projects 307 accepted experimental C-alpha
+coordinates from 1D5R, with Y16T, C124S and R172H labelled. It is a rigid 3D view;
+missing regions are not joined, and no mutant coordinates are generated.
+All geometry and labels remain native editable PowerPoint objects. This is
+not an embedded interactive 3D model. Source: source/diagrams_3d.py;
+provenance: source/3d-diagram-manifest.json. The previous deck is retained
+locally in previous-2d/ and excluded from the main handoff ZIP.
+
+Start with Bramha-Atlas-Pitch.pptx (19 slides; 16:9; editable text, chart and diagrams).
+Bramha-Atlas-Pitch.pdf is the native Microsoft PowerPoint PDF export.
+slide-contact-sheet.png previews the complete story; thumbnails/ contains all slides
+at 1536 × 864. Speaker notes are inside PowerPoint and in speaker-notes.txt.
+
+Talk length: approximately 11 minutes plus a 90-second saved-run demo.
+DEMO.md contains exact local links, saved run IDs, a short-pitch route, optional
+fresh deterministic computation, and the unavailable-provider/app fallback.
+The full deck is the core pitch; there is no extra appendix.
+
+The app's My Research screen now has a featured PTEN example. It reuses the saved
+public reference project; it does not reseed, duplicate or auto-execute work.
+On a fresh store, the card leads into the existing explicit project setup flow.
+The approved homepage was not edited.
+
+The central example is the actual saved C124S / R172H / Y16T PTEN comparison.
+A single activity-ceiling change adds Y16T. R172H stays unresolved because abundance
+is missing. All three positions have accepted experimental-reference mappings.
+The model-backed agent run is a separate historical run, explicitly labelled.
+No new paid model call was made to create this presentation.
+
+Material limits are preserved: Argon execution is unverified; the recorded successful
+agent run used a fallback provider. This case does not establish autonomous
+limitation-driven hypothesis revision, mutant folding, disease relevance or clinical
+validation. Public Atlas corpus persistence and local project storage are separate.
+Proposed pricing and revenue arithmetic are assumptions. Market context and current
+competitor descriptions have source URLs and review dates in slide notes.
+
+REPRODUCE
+From a shell with Python 3.11+:
+  python -m venv /private/tmp/bramha-presentation-env
+  /private/tmp/bramha-presentation-env/bin/pip install -r source/requirements.txt
+  /private/tmp/bramha-presentation-env/bin/python source/build-deck.py
+  osascript source/export-pdf.applescript "$PWD/Bramha-Atlas-Pitch.pptx" "$PWD/preview.pdf"
+  # Move preview.pdf to Bramha-Atlas-Pitch.pdf after a successful export.
+  /private/tmp/bramha-presentation-env/bin/python source/render-preview.py
+  /private/tmp/bramha-presentation-env/bin/python source/verify-delivery.py
+
+Native PDF export requires Microsoft PowerPoint for Mac and may take tens of seconds.
+The exporter uses a fresh PDF path to avoid overwrite dialogs. Close an older copy
+of this generated deck before opening a rebuilt one. No macros are required.
+The deck uses Arial; the PDF embeds its rendered typography.
+Rebuilding from the packaged source uses the included public reference JSON and
+assets. If the original repository is present, the builder refreshes those copies.
+
+source/capture-demo.cjs captures the local running app using the repository's
+Playwright install and Google Chrome. It checks saved links, captures the entry in
+mobile/light/dark, and fails on page errors, horizontal overflow or model-start
+requests. It records the ordinary project visit writes separately.
+
+claim-source-ledger.json maps each slide to its evidence.
+asset-manifest.json lists files and SHA-256 checksums; source/asset-usage.json records
+slide-level screenshot crops. The screenshots are real app frames, not generated
+runtime activity. source/scene.json records the editable layout objects.
+verification.json and demo-browser-check.json record the delivery checks.
+
+MARKET-GAP REVISION
+Slides 14–16 add the specific workflow gap hypothesis, customer capacity value and
+a bottom-up US entry-segment model. Gap demand, fit rates and willingness to pay
+remain unvalidated. Market-Value-Model.xlsx is editable and includes formulas,
+sensitivity cases, source links and low-use/break-even examples.
+Base customer scenario: 8 cases/month × 2 net hours × $60/hour × 12 = $11,520/year
+of capacity value, versus a proposed $3,600 annual lab fee. This is not measured
+cash savings. Break-even: 5 net hours/month.
+BIO reports more than 2,000 US biotech companies. A rounded 2,000-company pool,
+assumed 10–30% eligible fit, one account per firm and $3,600 annual pricing imply
+a conditional $0.72–2.16M annual subscription pool, not a forecast or global TAM.
+Run source/build-market-model.py before source/build-deck.py to refresh the model.
