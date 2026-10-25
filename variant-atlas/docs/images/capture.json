@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-10-25T11:38:07.155Z",
+  "source": "Running local Bramha Atlas application; existing saved public research only.",
+  "screenshots": [
+    "research-home.png",
+    "multi-agent-team.png",
+    "molecular-evidence.png",
+    "worldwide-studies.png",
+    "research-report.png"
+  ],
+  "model_calls_started": 0,
+  "errors": [],
+  "notes": "Worldwide image retaken after data loading; selected China publications shown beside country map."
+}
